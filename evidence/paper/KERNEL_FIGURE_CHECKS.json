@@ -1,0 +1,17 @@
+{
+  "operation": "exact_model_illustration",
+  "example_side_size": 4,
+  "conditional_pair_laws": [
+    "I/4",
+    "J/16"
+  ],
+  "row_and_column_marginals": 0.25,
+  "scope": "Illustration of two fixed admissible kernels. The common law also requires the main model and scaling assumptions.",
+  "new_trajectories": 0,
+  "new_ODE_SDE_integrations": 0,
+  "outputs": {
+    "manuscript/figures/kernel_universality.pdf": "ec0a933f12ebfe19b5b326273321e43b61ce0b85722791879b008d5bb382f6a2",
+    "manuscript/figures/kernel_universality.svg": "6fcb208e055b46f61edbae32593da10147664938e7b09cde162b040c88bc8b2c",
+    "manuscript/figures/kernel_universality.png": "c53622a6b9bf43a84ddbe2ca66f011d8dc96bfb5c065f6818ab5067b91bc8a51"
+  }
+}

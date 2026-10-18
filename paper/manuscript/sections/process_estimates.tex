@@ -1,0 +1,91 @@
+\section{Auxiliary process estimates}\label{app:auxestimates}
+These estimates support the main proofs. The label-forgetting coupling,
+midpoint contraction, deterministic restarts, and joint-limit argument remain
+in the main article.
+
+\subsection{Dispersion bound}\label{app:dispersion}
+We prove main-article Lemma~\ref*{lem:moment} with
+$\theta=1/200$, $K_0=16/3$, and $I=(1-\eps)/2$.
+
+\begin{proof}
+Order each community by increasing load, placing left buckets before right buckets at equal load. Use a fixed label order within each side. This order agrees with the left tie rule. For the heaviest $k$ buckets in this order put $t=k/q$. If their two side counts are $a,b$, their internal selection probability is at most $ab/m^2\le t^2$. Cross mass entering this suffix is $x\le\eps t$, while cross mass entering the community is $y\ge x$. Conditional on a community update, its suffix probability is at most
+\[
+ \frac{It^2+\eps t}{I+\eps t}
+ \le t-\delta t(1-t),\qquad
+ \delta=\frac{I-\eps}{I+\eps}=\frac{1-3\eps}{1+\eps}\ge\frac15.
+\]
+The global inclusion probability of a vertex is $1/q$, so its conditional update probability is at most $8/(3q)$. Rank summation by parts, for sorted $g_i=\sinh(\theta\xi_i)$, gives
+\[
+ \sum_i(p_i-q^{-1})g_i
+ \le-\frac\delta2\E|\sinh Y-\sinh Y'|
+ \le-\frac{\delta\Gamma_s}{2q}+\frac\delta2.
+\]
+Here $Y$ is uniform on the centered $\theta\xi_i$ and $Y'$ is independent. The zero-mean inequality $\E|\sinh Y-\sinh Y'|\ge\E|\sinh Y|\ge\E\cosh Y-1$ is proved in Section~\ref{app:gini}.
+For the centered increment $u_i=\one_{i\text{ selected}}-1/q$, its second moment is less than $3/q$. Taylor's formula bounds the total cosh remainder by $4\theta^2\Gamma_s/q$. Since $\theta\le\delta/16$,
+\[
+ \E[\Delta\Gamma_s\mid C_s\text{ updates}]
+ \le-\frac{\theta\delta}{4q}\Gamma_s+\frac{\theta\delta}2.
+\]
+Each community updates with probability at least $3/8$. The total drift is therefore at most
+\[
+ -\frac{3\theta\delta}{32q}\Gamma+\frac{\theta\delta}{2}.
+\] The recurrence from $\Gamma_0=2q$ proves (\ref*{eq:moment}). Only the cross marginals, rather than their independence, were used.
+\end{proof}
+
+\subsection{Fixed-window empirical estimate}\label{app:fluidproof}
+Use the translated initial state and constants in main-article
+section~\ref*{sec:limit}. The mean clock is $u=k/q$, and the fluid starts
+from the exact empirical profile. We prove the uniform estimate
+(\ref*{eq:lln}) for fixed $B,R$.
+
+A valid explicit bound in (\ref*{eq:lln}) is
+\begin{align*}
+ \eta_q(B,R,K_1)
+ &=e^{4B}\left[8(2K_1+1)\sqrt{B/q}
+       +4BC_{R,B}e^{-\theta(K_1-1)}+8B/q\right],\\
+ C_{R,B}&=2e^\theta R\exp\{2B(e^\theta-1)\}.
+\end{align*}
+
+\begin{proof}
+Each event increments exactly one tail coordinate by $2/q$. Its conditional mean increment is exactly $F(X_k^q)/q$, where $F$ is the field in (\ref*{eq:flow}). Subtract these conditional means to obtain a tail-valued martingale at the grid times. Each coordinate has expected quadratic variation at most $4B/q$. Doob's inequality bounds its expected maximum by $4\sqrt{B/q}$. There are $2(2K_1+1)$ retained coordinates, indexed by $|k|\le K_1$.
+
+A bucket has selection probability at most $2/q$ at each internal event. Therefore the expected sum of its translated, uncentered cosh moments grows by at most the factor $1+2(e^\theta-1)/q$ per event. The initial sum of the two side moments is at most $e^\theta R$. The probability that the selected tail increment lies outside the retained coordinates is at most $C_{R,B}e^{-\theta(K_1-1)}$. This follows from the exponential moment bound and the selection-probability bound. Summing actual outside increments and their nonnegative compensators gives expected outside martingale norm at most $4BC_{R,B}e^{-\theta(K_1-1)}$. Initial tails add no martingale error, since the fluid starts from the exact empirical profile.
+
+The field is $4$-Lipschitz in tail $\ell_1$. A single interpolated empirical step has length at most $2/q$. Replacing the stepwise field integral by the interpolated one costs at most $8B/q$. Gronwall gives (\ref*{eq:lln}). 
+\end{proof}
+
+\subsection{Moments for profile tracking}\label{app:trackingmoments}
+The following calculation gives main-article (\ref*{eq:trackingmoment}).
+
+For the real product process, let $W_n$ be the sum of its four side Wasserstein distances to the corresponding orbit laws. Each community uses its actual mean $M_s(n)/q$. Let $\Psi_n$ be the sum of the four empirical cosh moments centered at these means. Lemma~\ref*{lem:moment} implies
+\[
+ \sup_n\E\Psi_n\le C_E=32/3.
+\]
+If $J_n$ is the sum of the four empirical mean absolute centered deviations, Jensen gives
+\[
+ e^{\theta J_n/4}\le\Psi_n/2,\qquad
+ \E J_n^2\le16C_E/\theta^2.
+\]
+The second inequality uses $x^2\le2e^x$ for $x\ge0$. The four orbit absolute deviations sum to at most $8/\theta$, since $V_\theta(\rho^u)\le4$. Thus
+\begin{equation}\label{eq:trackingmomentaux}
+ \sup_n\E W_n^2\le C_*^2=(32C_E+128)/\theta^2.
+\end{equation}
+
+
+\subsection{Label forgetting}\label{app:swapdetails}
+This proves main-article Lemma~\ref*{lem:swap}, using its constants and notation.
+
+\begin{proof}
+Write $P$ for the fixed transition kernel and $\mu=\mu_{n-L}$. Split
+\[
+ \TV(P^L\mu,\tau P^L\mu)
+ \le\TV(P^L\mu,P^L\tau\mu)+\TV(P^L\tau\mu,\tau P^L\mu).
+\]
+These two terms need different couplings. For the first, start $A$ from $\mu$ and $A'$ from $\tau A$. Map internal candidates by $\tau$ until the two tagged loads in $A$ meet. This is legal uniform internal sampling and maintains $A'=\tau A$. Use the same actual cross edge; the relation can fail only when a cross touches a tag, with window probability at most $2\eps\ell$. Once the tag loads meet the configurations agree, so common candidates keep them equal.
+
+Before meeting or a bad cross, the higher tag has no larger internal update rate: a left tag at $h$ has rate $(1-\eps)y_h/q$, a right tag has rate $(1-\eps)x_{h+1}/q$. The embedded positive gap is consequently dominated by a fair nearest-neighbor walk absorbed at zero. Its survival for $J$ jumps from gap $d$ is at most $\min(1,4d/\sqrt{J+1})$, by reflection and the central binomial bound. Fresh direction coins give this domination in the adapted environment; we never condition those coins on a future update count.
+
+Each external uniform tag has expected centered cosh at most $2K_0$, hence expected initial gap at most $4K_0/\theta$. The community receives at least $L/4$ internal arrivals except with probability $e^{-L/48}$, by the binomial lower tail since $I\ge3/8$. At the two window endpoints, all four tag deviations are at most $\ell/16$ except with probability $16K_0e^{-\theta\ell/16}$. Off these events, each tag gains at least $\ell/8$, since the community mean gains at least $\ell/4$. Put $K=\lceil\ell/4\rceil$. If the tags have not met and no cross touches them, at least $K$ embedded internal jumps have occurred. The nonmeeting event is therefore contained in the union of the stated bad events and survival of the dominating fair walk for the fixed number $K$ of jumps. No conditioning on the final random jump count is used. Reflection and $\E d\le4K_0/\theta$ bound this last probability by $32K_0/(\theta\sqrt\ell)$. This controls the first TV term with an additional $2\eps\ell$.
+
+For the second term compare the fixed kernel with its $\tau$-conjugate, from the same law $\tau\mu$. Their internal laws agree; the two swapped cross columns have total conditional mass $2/m$. Coupling all other mass gives another window cost $2\eps\ell$. The reasoning also holds for a weighted doubly stochastic matrix. Adding the costs proves (\ref*{eq:eta}). The separate conjugate-kernel term is necessary: forgetting a swapped initial state alone does not imply invariance of the final law.
+\end{proof}

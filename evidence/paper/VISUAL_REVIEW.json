@@ -1,0 +1,30 @@
+{
+  "rendered_every_page": true,
+  "main_pages": 19,
+  "supplement_pages": 12,
+  "overview_pages_visually_reviewed": 31,
+  "enlarged_main_pages_reviewed": [
+    2,
+    4,
+    6,
+    7,
+    17,
+    18
+  ],
+  "enlarged_supplement_pages_reviewed": [
+    6,
+    7,
+    8
+  ],
+  "scope": "Layout inspection of all pages in contact sheets and enlarged inspection of six figure pages and all four tables. Not mathematical proof verification.",
+  "observed_clipped_content": false,
+  "observed_overlapping_labels_or_legends": false,
+  "contact_sheet_paths": [
+    "render/paper_sicomp_overview.png",
+    "render/supplement_sicomp_overview.png"
+  ],
+  "all_page_renders_remain_in_validation_output": "/workspace/critical-overflow-paper-validation-5/render",
+  "final_validation_output": "/workspace/critical-overflow-paper-validation-5",
+  "final_renders_pixel_identical_to_reviewed_previous_run": true,
+  "render_pixel_comparison_pages": 31
+}

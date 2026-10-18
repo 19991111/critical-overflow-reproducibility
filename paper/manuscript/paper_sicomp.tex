@@ -1,0 +1,54 @@
+\input{engine_compat_before}
+\documentclass[review,nohypdvips,hidelinks,onefignum,onetabnum]{siamart251216}
+\input{engine_compat_after}
+\input{shared}
+\externaldocument[][nocite]{../output/pdf/supplement_sicomp}[supplement_sicomp.pdf]
+\hypersetup{pdftitle={Critical Overflow in Weakly Coupled Two-Choice Allocation},pdfauthor={Silas Lu}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine which candidate information a reduced model must retain to predict
+critical overflow in a fixed two-choice allocation rule.
+Two communities of $q$ buckets have uniform bipartite internal sampling and
+cross sampling of probability $\eps$. Each cross direction uses a predetermined
+doubly stochastic kernel; ties favor the left endpoint.
+For empty starts, $\eps q\to\lambda<\infty$, and integer capacity $c$ with
+$2c/q\to\kappa>0$, we prove a common joint limit for imbalance and the
+overflow curve on the $q^2$ arrival scale.
+A coupling compares the actual fixed-kernel and product processes.
+An exact midpoint evolution proves attraction to a unique two-side lattice profile.
+The imbalance converges to a scalar diffusion whose drift averages the fast
+common phase. Overflow retains the observation phase and the internal profile.
+Community excess alone therefore misses a positive order-$q$ contribution to
+expected overflow. At nominal capacity, expected overflow is order $q$,
+while its fraction tends to zero.
+Joint first Wasserstein convergence justifies both distributional and mean conclusions.
+Certified profile evaluation and preserved samples assess the separate prediction
+steps at specified finite-size tolerances. No effective uniform error bound
+for the joint critical limit is asserted.
+\end{abstract}
+\begin{keywords}
+randomized allocation, two choices, graphical load balancing, overflow,
+universality, diffusion approximation
+\end{keywords}
+\begin{MSCcodes}
+68W20, 60F17, 60C05
+\end{MSCcodes}
+\input{sections/introduction}
+\input{sections/model}
+\input{sections/universality}
+\input{sections/profile}
+\input{sections/limit}
+\FloatBarrier
+\input{sections/experiments}
+\FloatBarrier
+\input{sections/discussion}
+\section*{AI assistance}
+OpenAI's Codex assisted with literature searches, manuscript organization and
+drafting, proof checking, code preparation for reanalysis of preserved outputs,
+figure preparation, and document checks.
+The author is responsible for the manuscript, including its mathematical claims,
+references, code, and interpretation of results.
+\bibliographystyle{siamplain}
+\bibliography{references}
+\end{document}

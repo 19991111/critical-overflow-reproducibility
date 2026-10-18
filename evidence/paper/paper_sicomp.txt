@@ -1,0 +1,1076 @@
+        CRITICAL OVERFLOW IN WEAKLY COUPLED TWO-CHOICE
+                          ALLOCATION
+                                                   SILAS LU∗
+
+          Abstract. We determine which candidate information a reduced model must retain to predict
+5    critical overflow in a fixed two-choice allocation rule. Two communities of q buckets have uniform
+     bipartite internal sampling and cross sampling of probability ε. Each cross direction uses a prede-
+     termined doubly stochastic kernel; ties favor the left endpoint. For empty starts, εq → λ < ∞,
+     and integer capacity c with 2c/q → κ > 0, we prove a common joint limit for imbalance and the
+     overflow curve on the q 2 arrival scale. A coupling compares the actual fixed-kernel and product
+10   processes. An exact midpoint evolution proves attraction to a unique two-side lattice profile. The
+     imbalance converges to a scalar diffusion whose drift averages the fast common phase. Overflow
+     retains the observation phase and the internal profile. Community excess alone therefore misses a
+     positive order-q contribution to expected overflow. At nominal capacity, expected overflow is order q,
+     while its fraction tends to zero. Joint first Wasserstein convergence justifies both distributional and
+15   mean conclusions. Certified profile evaluation and preserved samples assess the separate prediction
+     steps at specified finite-size tolerances. No effective uniform error bound for the joint critical limit
+     is asserted.
+
+          Key words. randomized allocation, two choices, graphical load balancing, overflow, universality,
+     diffusion approximation
+
+20       MSC codes. 68W20, 60F17, 60C05
+
+
+          1. Introduction. Two-choice allocation assigns each item to the less loaded of
+     two candidates [2]. We study the total number of items assigned beyond bucket
+     capacity. At total nominal capacity, overflow equals half the total absolute deviation
+     from capacity. Its prediction requires information beyond the largest load.
+25        We ask which information a reduced model must retain for two weakly coupled
+     communities. Each community has q buckets with uniform internal bipartite can-
+     didates. A fraction ε of candidates connect the communities through any predeter-
+     mined doubly stochastic kernel. Both fixed matchings and product sampling have the
+     required uniform endpoint marginals. Ties favor the left endpoint, as in the internal
+30   two-group Always-Go-Left rule of Vöcking [13].
+          With empty starts and integer capacity c  q, critical fill occurs at n∗ = 2qc 
+     q 2 arrivals. Without cross sampling, community choices produce order-q imbalance
+     fluctuations. Cross arrivals can contribute order εq to the cumulative normalized drift.
+     These scales motivate weak coupling εq → λ < ∞.
+35        Every admissible fixed cross kernel has the same first-order critical law. Internal
+     load variation remains in that law, even at known community imbalance. Expected
+     overflow is order q, while its fraction of arrivals tends to zero. Changing the fixed
+     cross kernel preserves its leading coeﬀicient.
+          Figure 1 shows the missing internal contribution. Section 6 separates this readout
+40   comparison from the unconditional diffusion test.
+          1.1. Contributions. Theorems 2.1–2.3 establish three linked results.
+        (i) Comparison of the actual allocation processes. For any predetermined
+            doubly stochastic cross kernels, we couple the genuine fixed-kernel process to
+            the genuine product process. On each fixed T q 2 horizon, their four sorted side
+45          vectors have expected uniform ℓ1 distance OT,Λ (q 5/6 log2 q) when εq ≤ Λ. The
+
+       ∗ School of Information Management, Nanjing University, Nanjing, China.          ORCID: 0009-0005-
+     1387-2849.
+                                                        1
+    2                                                           SILAS LU
+
+                          (a) Totals miss internal overflow                                          (b) Error at the same endpoints
+                                                                                               1.0
+                    1.5             Saved endpoints
+
+
+
+
+                                                                       Fraction of endpoints
+                                    Internal profile S0(D)
+                                    Totals only |D|/2                                          0.8
+    Overflow Zc/q
+
+
+
+
+                    1.0                                                                        0.6
+
+                                                                                               0.4
+                    0.5
+                                                                                               0.2                   Totals: 0.3963 MAE
+                                               S0(0) ≈ 0.6313                                                        Profile: 0.0174 MAE
+                    0.0                                                                        0.0
+                      −3.0     −1.5     0.0     1.5              3.0                              0.0      0.2      0.4        0.6
+                             Observed imbalance D = Δ/q                                                  Absolute overflow error
+
+
+
+          Fig. 1. Community totals miss internal overflow at critical fill. Left: 4096 saved endpoints at
+    q = 512, κ = 1, λ = 1, with matching crosses. The profile curve retains internal variation; |D|/2
+    uses only community excess. Their gap at D = 0 is approximately 0.6313. Right: absolute-error
+    distributions for the same endpoints, with mean absolute errors in the legend. Both readouts use the
+    observed imbalance. This is a descriptive mechanism comparison; the separate terminal test checks
+    the diffusion. The frozen profile lookup error is at most 0.000026.
+
+
+
+          bound controls imbalance and overflow at all common capacities. Random-label
+          forgetting first controls the whole cross load-pair table. A coupling of sorted
+          ranks then preserves the laws of both actual processes.
+     (ii) An attracting internal lattice profile. We construct a unique mean-locked
+50        periodic family for the two-side tail flow. It has full support, exponential mo-
+          ments, and uniform attraction on fixed centered exponential-moment sublevels.
+          An exact positive midpoint evolution of signed tail differences gives strict con-
+          traction on equal-mean slices. Its half-phase left/right identity records the asym-
+          metric tie rule.
+55  (iii) A joint critical law for imbalance and overflow. For εq → λ, normal-
+          ized imbalance converges to a scalar diffusion. Its restoring drift averages the
+          fast common lattice phase. The overflow curve retains the observation phase of
+          the same internal profile. Joint first Wasserstein convergence controls expected
+          overflow as well as laws. Corollaries 2.4 and 2.5 give the omitted internal con-
+60        tribution and its capacity consequences.
+   The capacity corollaries interpret the joint law for the fixed rule.
+        1.2. Relation to previous work. Existing rules and distribution equations.
+   Vöcking [13] introduced Always-Go-Left. Berenbrink, Czumaj, Steger, and Vöck-
+   ing [4] give sharp heavy-load deviation bounds for greedy and asymmetric allocation.
+65 Mitzenmacher [6] uses differential equations to describe full load distributions. We
+   use this established distribution-level viewpoint. The additional requirements here
+   are long-time attraction of a two-type integer-lattice profile and its coupling to a slow
+   community imbalance.
+        Correlated choices and process comparison. Mitzenmacher [7, 8] shows asymptotic
+70 equivalence between double hashing and fully random balanced allocation, using fluid
+   limits and a coupling through a biased intermediate process. The stated distribution
+   results concern a constant number of choices and T N arrivals into N bins for fixed
+   T . Our comparison treats arbitrary fixed doubly stochastic cross kernels, allows only
+   order-q −1 cross probability, and covers T q 2 arrivals. It bounds the distance between
+                      CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                            3
+
+75 the genuine fixed-kernel and product processes. These differences are needed before
+   passing to the critical overflow law.
+        Graphs and queues. Peres, Talwar, and Wieder [10] study graphical allocation
+   and limited choice. Bansal and Feldheim [3] give a strategy based on graph decompo-
+   sitions. Our rule compares only the two endpoint loads. Queueing universality and
+80 diffusion limits [9, 5, 1] include service and use different scales. Here each item has
+   two candidates and loads only increase.
+        Traveling profiles. Stolyar [11, 12] develops traveling-wave and stationary-limit
+   methods. Contraction and compactness are precedents. The existence result in [11,
+   Theorem 3] permits general jumps. Its uniqueness and attraction result [11, Theorem
+85 4] requires a positive jump density bounded away from zero on compact subsets of
+   R+ . The arithmetic-jump caveat following that theorem prevents its direct use for
+   the present lattice dynamics. We prove the two-side periodic-family result directly,
+   then obtain finite-system tracking without a stationary-limit interchange. The later
+   phase averaging acts on the slow drift, while the critical overflow retains its endpoint
+90 phase.
+        Sections 2–5 state and prove the results. Section 6 evaluates their prediction steps.
+   The supplement gives numerical certificates, statistical protocols, and provenance.
+           2. Model and main results. There are communities C0 = L0 ∪ R0 and C1 =
+      L1 ∪ R1 , each side of size m, and q = 2m. At each arrival choose an internal edge
+95    in Cs with probability (1 − ε)/2, for each s, or direction L0 –R1 or L1 –R0 with prob-
+      ability ε/2 each. Internal edges are uniform on Km,m . In cross direction d, a fixed
+      nonnegative matrix B (d) has all row and column sums one; conditional edge proba-
+                 (d)
+      bility is Bij /m. Product sampling has B = J/m and a matching is a permutation
+      matrix. Matrices may depend deterministically on q. A randomly selected matrix is
+100   admissible if chosen independently before the arrivals, by conditioning on it. Matrices
+      selected from current loads are excluded.
+           Loads Av (n) are nonnegative integers, initially zero. Increment the endpoint of
+      smaller load, breaking every tie to the left side. Let
+                      X                                               X
+            Ms (n) =      Av (n), ∆n = M0 (n) − M1 (n), Zc (n) =          (Av (n) − c)+ .
+                     v∈Cs                                               v
+
+105   For integer c, Zc is also the number of overflows when each bucket stores its first c
+      assigned items. Indeed the capped loads remain min(Av , c) under the same candidate
+      stream: below capacity both comparisons agree, and once both candidates are full
+      the uncapped winner is irrelevant to the overflow count. This identifies the overflow
+      count with the positive-part load functional.
+110       For a pair of integer laws z = (pL , pR ) with finite first moments, write
+            xk = pL ([k, ∞)),   yk = pR ([k, ∞)),   ak = xk − xk+1 ,   bk = yk − yk+1 ,
+      and µ(z) = (EL + ER)/2. The metric d1 is the sum of the two marginal Wasserstein
+      distances, equivalently the sum of absolute tail differences. Integer shift Sj adds j to
+      both laws.
+115        There are three time scales. After k internal arrivals in one community, its mean
+      clock is u = k/q. The common mean at global arrival n is hn = n/(2q). The slow
+      diffusion clock is t = n/q 2 . At critical fill n∗ = 2qc = 4mc, these give hn∗ = c and
+      n∗ /q 2 = c/m → κ. An offset of 2hq arrivals changes the common mean by h while
+      changing slow time by only 2h/q. Figure 2 shows the candidate structure and the two
+120   retained states.
+      4                                              SILAS LU
+
+
+             (a) Candidate structure                               (b) Critical description
+
+               Community C0: q buckets
+                                                                        n * = 2qc ∼ κq 2
+                          (1 − ε)/2
+                                                                    εq → λ; slow time t = n/q 2
+
+                                                                      Community imbalance
+           L0 (m)                           R0 (m)
+                                                                        Dq(t) = Δn/q ⟶ Dt
+                     ε/2 each
+                                                                      phase averaged in drift
+               Community C1: q buckets
+                          (1 − ε)/2                                  Overflow near capacity
+                                                                  Zc(n * + ⌊2hq⌋)/q ⟶ Sh(Dκ)
+           L1 (m)                           R1 (m)
+
+       Choose the smaller load; left wins ties.              observation phase retained in readout
+
+
+
+            Fig. 2. The fixed allocation rule and its critical scales. Each of the four sides contains m = q/2
+      buckets. Internal directions have probability (1−ε)/2 each; cross directions have probability ε/2 each.
+      The offered cross endpoints have uniform marginals under any fixed doubly stochastic kernel. The
+      algorithm increments the smaller endpoint load and chooses the left endpoint at a tie. The limiting
+      diffusion retains community imbalance; the overflow readout also retains the internal profile.
+
+
+           For integer capacities cq , set
+
+                                    n∗ = 2qcq ,        nq (h) = n∗ + b2qhc.
+
+    When cq /m → κ > 0, each bounded h window has nonnegative indices for large q.
+    The imbalance path Dq linearly interpolates ∆n /q at times n/q 2 . The overflow curve
+125 Fq linearly interpolates Zcq (k)/q at coordinates h = (k − n∗ )/(2q). Its distance from
+    Zcq (nq (h))/q is at most 1/q.
+         All path and curve Wasserstein distances below have order one. They use the
+    uniform norm on the corresponding continuous-function space. Joint convergence uses
+    the sum of the path and curve uniform norms. Thus, for a metric d, the transport
+130 distance is inf Ed(U, V ) over couplings with the stated laws.
+
+           Theorem 2.1 (Fixed-kernel universality). For empty starts and fixed T, Λ < ∞,
+      assume q ≥ 4, ε ≤ 1/4 and εq ≤ Λ. A genuine fixed-kernel process and a genuine
+      product process admit a coupling such that, for Dn the sum of absolute differences of
+      their four separately sorted side vectors,
+                                            Dn
+135                               E max2       = OT,Λ (q −1/6 log2 q) −→ 0.
+                                    n≤T q    q
+
+      The same bound controls |∆F −∆P |/q and |ZcF −ZcP |/q, simultaneously for all common
+      capacities c ≥ 0.
+                       CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                             5
+
+          Theorem 2.2 (Internal periodic profile). The mean-clock tail flow
+      (2.1)                     ẋk = 2ak−1 yk−1 ,      ẏk = 2bk−1 xk
+140   has a unique finite-first-moment periodic family ρu = (Lu , Ru ) with mean u, satisfying
+                                  ρu+1 = S1 ρu ,      Φt ρu = ρu+t .
+      It has exponential moments, full support at every integer, and d1 (ρu , ρv ) = 2|u − v|.
+      Attraction is uniform over centered exponential-moment sublevels and all initial phases.
+      No effective attraction rate is asserted.
+145       Define independent-draw comparisons and the overflow readout by
+              H(u, v) = P(Lu ≤ Rv ),
+      (2.2)    g(h, d) = H(h + d/2, h − d/2) − H(h − d/2, h + d/2),
+                         Z 1
+                 g(d) =      g(h, d) dh,
+                          0
+      (2.3)      σ(u) = 12 {E(Lu )+ + E(Ru )+ },     Sh (d) = σ(h + d/2) + σ(h − d/2).
+
+150        Theorem 2.3 (Common critical limit). If εq → λ ∈ [0, ∞), then for every fixed
+      T , Dq → D in first Wasserstein distance for the uniform path norm on [0, T ], where
+      (2.4)                    dDt = dBt + λg(Dt ) dt,         D0 = 0.
+    The function g is odd, smooth, strictly decreasing, globally 2-Lipschitz and negative
+    on (0, ∞), with g ′ (0) < 0 and g(d) → − sign(d) at infinity. Let the integer capacities
+155 satisfy cq /m → κ ∈ (0, ∞). For each H0 < ∞ and T∗ > κ,
+                                                                                 
+                     Dq |[0,T∗ ] , Fq |[−H0 ,H0 ] −→ D|[0,T∗ ] , (Sh (Dκ ))|h|≤H0
+    in first Wasserstein distance for the sum of the two uniform norms. Restriction gives
+    joint convergence with any shorter path horizon. This holds for every fixed kernel
+    above. The function Sh is even and convex in d, 1-Lipschitz in d, and 2-Lipschitz in
+160 h, with S0 (0) > 0.
+          The drift averages the common phase along many complete cycles. The overflow
+      readout at the integer critical count has phase zero and is not phase averaged. The
+      function Sh is not periodic in h: the observation offset changes the fill level as well as
+      the lattice phase. Theorem 2.1 gives an explicit but conservative kernel-comparison
+165   bound. The joint critical limit has no effective uniform finite-size error bound.
+          Figure 3 displays the profile and averaged response.
+           Corollary 2.4 (A leading internal overflow contribution). Under Theorem 2.3,
+      fix κ > 0 and λ < ∞. Let Xu have the equal mixture of the two laws in ρu , and set
+                              r(u) = E(Xu )+ − u+ = 12 (E|Xu | − |u|).
+170   Then r(u) > 0 for every finite u, and
+                                           |d|
+                                 S0 (d) =      + r(d/2) + r(−d/2).
+                                            2
+      For every admissible fixed cross kernel,
+                                               
+                           Zcq (n∗ ) − |∆n∗ |/2
+                   lim E                          = E{r(Dκ /2) + r(−Dκ /2)} > 0.
+                  q→∞                q
+      The positive limit may depend on κ and λ.
+      6                                                            SILAS LU
+
+                                    (a) Two-side lattice profile                                          (b) Restoring response
+                                                                                                 1.0
+
+
+
+
+                                                                       Averaged response g(d)
+                                          L, u = 0   L, u = 1/2
+                         0.6              R, u = 0   R, u = 1/2
+      Atom probability
+
+
+
+
+                                                                                                 0.5
+
+                         0.4
+                                                                                                 0.0
+
+                         0.2                                                                    −0.5
+
+
+                         0.0                                                                    −1.0
+                               −3    −2    −1    0     1     2     3                               −4      −2      0       2       4
+                                           Integer load k                                                 Community imbalance d
+
+
+
+           Fig. 3. Internal structure and restoring response, replotted from saved profile nodes and the
+      frozen response table. Left: left and right atom probabilities at mean phases u = 0 (solid) and
+      u = 1/2 (dashed). Only the displayed load levels are shown. The half-phase operation swaps the
+      sides and shifts the new left law by one. Right: the phase-averaged response g(d); positive imbalance
+      has negative response. Connecting segments are for display. No new trajectory or numerical solution
+      enters this figure.
+
+
+175        Proof. The mixture has mean u. Full support from Theorem 2.2 gives positive
+      mass on both sides of zero. Hence E|Xu | > |EXu | = |u|. Substitution into (2.3) gives
+      the displayed decomposition.
+           At n∗ = 2qcq , the community excess totals are ∆n∗ /2 and −∆n∗ /2. Taking
+      positive parts within each community yields the exact finite-size inequality Zcq (n∗ ) ≥
+180   |∆n∗ |/2. Put κq = n∗ /q 2 → κ. The endpoint-time estimate (5.11) shows E|Dq (κq ) −
+      Dq (κ)| → 0. The joint first Wasserstein convergence in Theorem 2.3 therefore passes
+      expectations for the Lipschitz, linear-growth difference readout. This gives the stated
+      limit. Its integrand is strictly positive at every finite value of Dκ , and its expectation
+      is finite.
+185       This corollary identifies the information omitted by an imbalance-only approxi-
+      mation. It follows from the profile and critical-limit theorems. It does not assert a
+      uniform positive gap over all parameters. The imbalance-only readout is a mechanistic
+      simplification, rather than a claimed strongest published competitor.
+          Corollary 2.5 (Capacity consequences). Under Theorem 2.3, let s∗ = S0 (0) >
+190   0 and Cκ,λ = ES0 (Dκ ). For each fixed a ∈ (0, s∗ ),
+                                           P{Zcq (n∗ ) ≥ aq} −→ 1,                              P{Zcq (n∗ ) = 0} −→ 0.
+      Moreover,
+                                                                                           EZcq (n∗ )   Cκ,λ
+                                      EZcq (n∗ ) = qCκ,λ + o(q),                                      =      + o(q −1 ).
+                                                                                             n∗          κq
+      These conclusions and their leading coeﬀicient hold for every admissible fixed cross
+195   kernel.
+         Proof. Evenness and convexity give S0 (d) ≥ S0 (0) > a for every d. Weak con-
+    vergence of Zcq (n∗ )/q and the open-set inequality therefore give the probability lim-
+    its. First Wasserstein convergence passes its expectation to Cκ,λ < ∞. Finally,
+    n∗ /q 2 → κ > 0 gives the fractional asymptotic. The common limit is independent of
+200 the fixed cross kernel.
+                         CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                                      7
+
+       (a) Fixed matching                                                    (b) Product sampling
+
+
+
+                                             Same uniform
+                                           endpoint marginals
+
+
+
+
+                                 A common leading critical law
+
+
+
+           Fig. 4. Different fixed cross correlations share the critical law under the model and scaling of
+      Theorems 2.1–2.3. The grids show conditional candidate-pair probabilities in one cross direction,
+      with four illustrative labels on each side. Matching probabilities are 1/4 on the diagonal and zero
+      elsewhere; product probabilities are all 1/16. Both have uniform marginals. Internal sampling and
+      rare cross arrivals are essential to the theorem; uniform marginals alone do not imply independent
+      loads.
+
+
+          Kernel choice within the stated class does not remove the leading overflow cost.
+      This consequence of the joint law does not compare other allocation strategies.
+         3. From a fixed cross kernel to product sampling. This section proves
+    Theorem 2.1 by coupling the actual processes. Internal sampling first forgets a random
+205 label transposition under a dispersion bound. This controls the whole cross load-
+    pair table. A sorted-rank coupling then uses greedy nonexpansion. Fix θ = 1/200,
+    K0 = 16/3, and I = (1 − ε)/2. The constants are conservative.
+                                                                      P
+         Lemma 3.1 (Dispersion). With ξv = Av − Ms(v) /q and Γ = v cosh(θξv ), every
+    fixed uniform-marginal kernel satisfies
+210   (3.1)                                    sup EΓn ≤ K0 q.
+                                               n≥0
+
+          Proof. The rank-based potential argument is given in Supplement section SM2.1.
+      It uses only the cross marginals.
+        Lemma 3.2 (Random transposition). Let µn be the law of the actual fixed-kernel
+    configuration. Independently choose two uniform labels i, j in one side, and let τ swap
+215 them. For ℓ ≥ 4, integer L = qℓ, and n ≥ L,
+
+      (3.2)     Ei,j TV(µn , τ µn ) ≤ η,
+                                                                            
+                                             32K0
+                                   η = min 1, √ + 16K0 e−θℓ/16 + e−L/48 + 4εℓ .
+                                              θ ℓ
+           Proof. Compare the original and transposed configurations through the conjugate
+      kernel. The two discrepancies behave as tags until they meet. Suppress cross events
+220   touching a tag; internal updates then make the tag gap no harder to absorb than a
+      fair walk. Dispersion controls the initial gap and deviations at the window endpoints.
+      On the remaining event, nonmeeting requires at least dℓ/4e embedded jumps. A fixed-
+      jump reflection bound gives the first term of η. The conjugate-kernel comparison adds
+      8                                        SILAS LU
+
+
+      a second cross-touch allowance. Supplement section SM2.4 gives the full coupling and
+225   constants; it does not condition a martingale estimate on a future jump count.
+            For one cross direction write Qn for its actual conditional joint load-pair law and
+      pn , rn for the empirical side marginals. If 0 ≤ f ≤ 1, define
+                                     1 X                     1 X
+                         CB (f ) =        Bij f (Ui , Vj ) − 2   f (Ui , Vj ).
+                                     m ij                   m ij
+
+      The test may use parameters unchanged by the side swap, including community means.
+230   Let I0 be uniform, draw J0 | I0 from the corresponding row of B, and draw J0′
+      independently and uniformly. We claim
+                                                            p
+      (3.3)           ECB (f )2 ≤ 2η + 2/m,     E|CB (f )| ≤ 2η + 2/m.
+
+    Write C = CB (f ) and take these auxiliary indices independently of the configuration.
+    Pointwise,                                                        
+235                      C 2 = Eaux C{f (UI0 , VJ0 ) − f (UI0 , VJ0′ )} .
+    For fixed indices let τ exchange J0 , J0′ . The product-marginal term of C is unchanged,
+    and |C(τ A) − C(A)| ≤ 2/m. Apply total variation to G(A) = C(A)f (UI0 , VJ0 ), for
+    which |G| ≤ 1. Thus the expected difference is at most 2 TV(µn , τ µn ) + 2/m. After
+    averaging, (J0 , J0′ ) are independent uniform side labels: column sums make J0 uniform,
+240 even though it depends on I0 . Lemma 3.2 gives (3.3). The bounded-test TV cost is
+    2η. This controls the second moment, rather than only a signed average.
+         Center each load coordinate at its community’s integer mean part. For each fixed
+    offset cell in [−R, R]2 , its indicator satisfies (3.3). Summing over this deterministic
+    square and using (3.1) outside it yields
+                                                               p
+245 (3.4) E kQn − pn ⊗ rn k1 ≤ ρ, ρ = min{2, (2R + 1)
+                                                             2
+                                                                 2η + 2/m + 16K0 e−θ(R−1) }.
+
+      Indeed Q and the product have the same marginals; twice their marginal tail masses
+      bounds the mass outside the square. Replacing the mean by its integer part costs
+      at most one in the exponential bound. No supremum over arbitrary data-dependent
+      tests is taken.
+250        It remains to compare two actual process laws. Sort each side separately. Integer
+      greedy updates using the same offered ranks are nonexpansive in sorted ℓ1 distance:
+      if different winners are chosen, the two relevant coordinate differences have the order-
+      ing needed for their +1, −1 changes not to increase the absolute sum; sorting again
+      minimizes the matching cost. Internally use common independent uniform ranks. At
+255   a cross, sample the actual fixed edge in the fixed process, then maximally couple its
+      load pair from QF to a virtual pair from pF ⊗ rF . Given the virtual loads, choose
+      ranks independently and uniformly inside the equal-load blocks. Conditional on the
+      entire joint past before drawing the current edge, these ranks are independent uni-
+      forms, since a block of size k has mass k/m followed by probability 1/k per rank. Use
+260   the same ranks in the product process, which therefore has its genuine transition law.
+      Independence need not persist after additionally conditioning on the current realized
+      fixed edge.
+           On successful load-pair coupling the actual and virtual sorted fixed-process up-
+      dates agree, including ties. On failure their distance is at most two. Hence
+
+265                       Dn+1 ≤ Dn + 21{cross and load-pair coupling fails} .
+                       CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                              9
+
+      Before L use failure probability one; afterwards its expected conditional value is at
+      most ρ/2. Summing the nonnegative counts gives the explicit bound
+
+      (3.5)                   E max Dn ≤ 2ε min(N, L) + ερ(N − L)+ .
+                                n≤N
+
+
+    Take ℓ = max(4, dq 2/3 e) and R = d(2/θ) log qe + 1. Then (3.5) divided by q, for
+270 N ≤ T q 2 , is O(q −1/6 log q). Both the community difference and every positive-
+                               2
+
+    part sum are 1-Lipschitz in sorted load distance. This proves Theorem 2.1. The
+    bound is asymptotic and extremely conservative; it is not a numerical error bar at
+    the experimental sizes.
+         4. The mean-locked internal orbit. The main step is an exact midpoint equa-
+275 tion for the difference of two tail flows. It gives strict contraction on equal-mean slices
+    without uniform irreducibility on the whole lattice. Compactness then yields the pe-
+    riodic family and uniform attraction on each fixed moment sublevel. In this section
+    all times use the mean clock. Signed lattice coordinates express translated laws; ac-
+    tual allocations remain nonnegative. Equation (2.1) has a unique probability flow on
+280 finite-first-moment laws. It can be constructed by two coupled bounded-rate birth
+    laws with left rate 2yk and right rate 2xk+1 . Picard iteration, or finite truncation fol-
+    lowed by tightness, gives existence and uniqueness. The tail field is globally Lipschitz,
+    probability constraints are invariant, and rates at most two prevent explosion. The
+    sum of the mean derivatives is two, so µ(Φt z) = µ(z) + t.
+285       4.1. Moment compactness and exact nonexpansion. Let
+
+                           Vθ (z) = E cosh(θ(L − µ)) + E cosh(θ(R − µ)).
+
+    The selected-load distribution is wk = ak yk + bk xk+1 , of total mass one, bounded by
+    twice the pooled law ν = (pL + pR )/2. Its suﬀix is xk yk ≤ [(xk + yk )/2]2 . The same
+    rank/Gini argument as in Lemma 3.1, now with pure-internal rank deficit one, and
+290 differentiation of the moving mean give
+
+                     d
+      (4.1)             Vθ (Φt z) ≤ −{θ/2 − 2(eθ − 1 − θ)}Vθ + θ ≤ −θVθ /4 + θ.
+                     dt
+    Truncation justifies this calculation for finite exponential moments. Thus every cen-
+    tered sublevel Vθ ≤ M , M ≥ 4, is invariant. No attraction theorem is used to obtain
+    this bound.
+295      For two solutions put dk = xk − x  ek , ek = yk − yek , and let bars denote midpoint
+    tails or atoms. Their difference satisfies exactly the forward equation on states Xk , Yk
+    with transitions
+
+              Xk −→ Xk+1          at rate 2ȳk ,           Xk −→ Yk        at rate 2b̄k−1 ,
+              Yk −→ Yk+1          at rate 2x̄k+1 ,         Yk −→ Xk+1      at rate 2āk .
+
+300   Exit rates are 2ȳk−1 and 2x̄k , at most two. The midpoint identity is exact for the bilin-
+      ear field, with no discarded remainder. Its evolution is positive and mass preserving,
+      so
+
+      (4.2)                             d1 (Φt z, Φt ze) ≤ d1 (z, ze).
+
+      It also shows that the field is 4-Lipschitz in tail ℓ1 .
+      10                                          SILAS LU
+
+
+305      4.2. Strictness on an equal-mean slice. Positivity needed for strictness must
+    be checked, since the generator need not be irreducible initially. Choose one positive
+    atom on each side. Atoms retain at least e−2t of their initial mass. If a left atom
+    is below a right atom, the left can advance to one above it through positive birth
+    flux, after which the right can advance. If the left begins above the right, advance
+310 the right first. Variation of constants and induction show that every suﬀiciently high
+    atom on each side is positive for every t > 0. Consequently every finite tail is positive
+    at positive times.
+         In the midpoint chain, all same-channel forward edges at finite levels therefore
+    have positive rates, and both crossing types are positive at suﬀiciently high levels.
+315 Any two finite starting states can reach a common high XK in a positive time interval
+    with positive probability: choose a finite path in a compact subinterval of (0, t) and
+    use positive continuous rates there, together with the bounded waiting rates. This is
+    a pointwise argument, with no uniform minorization over the whole lattice.
+         If two distinct initial laws have the same mean, the summable signed tail difference
+320 has zero total mass and both signs. Choose one coordinate of each sign. Positive
+    portions of their transported masses overlap at the common high state, causing strict
+    cancellation. Hence for every t > 0,
+
+      (4.3)              d1 (Φt z, Φt ze) < d1 (z, ze)                z ), z 6= ze.
+                                                          if µ(z) = µ(e
+
+           4.3. Existence, uniqueness and uniform attraction. On a fixed mean slice
+325   define T = S−1 Φ1 . The set {µ = α, Vθ ≤ M } is compact in d1 : exponential tails
+      imply tightness and uniform integrability of first moments; the moment sublevel is
+      closed by lower semicontinuity. It is nonempty for suﬀiciently large M , uniformly for
+      α ∈ [0, 1], using identical mixtures on {0, 1}. The map T is continuous, preserves the
+      set, and strictly decreases distances between distinct points.
+330        Here is the compact argument explicitly. Along an orbit, consecutive distances
+      decrease to r. A convergent subsequence with limit z gives both d1 (z, T z) = r and
+      d1 (T z, T 2 z) = r. Strictness forces r = 0, hence a fixed point. Two fixed points
+      contradict strictness. The distance from any orbit to that point decreases; a second
+      subsequence argument forces convergence to zero. On the compact set the continuous
+335   distance functions decrease pointwise to zero, so a finite-subcover argument makes
+      the convergence uniform. Fixed points in nested sublevels agree.
+           Let z∗ be the mean-zero fixed point and define
+
+                                           ρu = S⌊u⌋ Φ{u} z∗ .
+
+    The flow and period identities follow, with Vθ (ρu ) ≤ 4 by (4.1). Any other finite-first-
+340 moment periodic family would keep its equal-mean distance to this one unchanged
+    over a period, contradicting (4.3). Thus uniqueness extends beyond the exponential
+    class used for construction.
+        For each fixed M ≥ 4, the set KM = {z : µ(z) ∈ [0, 1], Vθ (z) ≤ M } is compact
+    in d1 . The moment bound M remains fixed in this argument. The target ρµ(z)
+345 is continuous because the phase endpoints match. Applying the same decreasing-
+    function compactness argument, and using nonexpansion between integer times, gives
+
+
+      (4.4)                 ωM (t) :=       sup       d1 (Φt z, ρµ(z)+t ) −→ 0.
+                                         µ(z)∈[0,1]
+                                         Vθ (z)≤M
+                      CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                                  11
+
+      Integer translation covers arbitrary means. Along the birth flow each side increases
+350   stochastically. Summing the two mean increments therefore gives
+      (4.5)                                       d1 (ρu , ρv ) = 2|u − v|.
+      All orbit atoms are positive: high-level positivity was proved above, and retention over
+      one period propagates it downwards using the shift relation. This proves Theorem 2.2,
+      except for further geometric identities developed next.
+355      4.4. Interlacing, a single front, and the response. The empty-start flow
+    has invariant inequalities xk ≥ yk ≥ xk+1 . At a boundary equality its gap derivative
+    is nonnegative, directly from (2.1); truncation extends the check to the full lattice.
+    Attraction of centered integer-time empty profiles transfers the inequalities to the
+    orbit. The map J(pL , pR ) = (S1 pR , pL ) commutes with the flow, has J 2 = S1 , and
+360 raises the mean by 1/2. Uniqueness implies
+                                      u+1/2                         u+1/2
+                                    ρL             = S1 ρuR ,     ρR          = ρuL .
+      Set z2k = xk , z2k+1 = yk . The equations and half-phase identity yield a single
+      normalized front F :
+      (4.6)
+      xk (u) = F (2k − 2u), yk (u) = F (2k + 1 − 2u), −F ′ (r) = F (r − 1)[F (r − 2) − F (r)].
+365   It decreases strictly from one to zero, is smooth by repeated differentiation, and its
+      translation is fixed by the mean-zero normalization. This does not assert uniqueness
+      for every unnormalized delay-equation solution.
+           The function w(r) = [F (r) − F (r + 2)]/2 is a positive density of mass one. Ex-
+      panding H as its atom–tail sum and substituting r = 2k − 2h − d in each term gives
+370
+                                  Z
+      (4.7)             g(d) =            w(r)[F (r + 1 + 2d) − F (r + 1 − 2d)] dr.
+                                      R
+    The phase intervals tile the real line; Tonelli applies to the original nonnegative sums.
+    Equation (4.7) proves oddness, strict decrease and the far-field limit by dominated
+    convergence. Bounded derivatives from (4.6) give smoothness. Marginal optimal
+375 couplings and (4.5) give the useful global estimate
+
+      (4.8)                    |g(h, d) − g(h′ , d′ )| ≤ 4|h − h′ | + 2|d − d′ |.
+    An integer comparison changes by at most the integer displacement, so no continuous-
+    density hypothesis is needed.
+        Differentiating the absolutely convergent atom sums gives
+                                 X                              X
+380             ∂1 H(u, u) = −2      a k yk bk , ∂2 H(u, u) = 2   ak xk bk−1 .
+                                              k                                         k
+
+      Integration of the derivative of periodic H(u, u) equates the two sums after phase
+      integration. Thus the restoring coeﬀicient is
+                                          Z 1X
+      (4.9)              α = −g ′ (0) = 4       ak (u)yk (u)bk (u) du > 0.
+                                                      0    k
+                           R              ′
+      This also equals −4 w(r)F (r + 1) dr. Finally the orbit moment bound implies, by
+385   a union bound on centered deviations,
+                         |g(d) + sign(d)| ≤ min(2, 32e−θ|d|/2 ),                        d 6= 0.
+      This is a far-field property of a fixed drift, not an interchange of asymptotic regimes.
+      12                                     SILAS LU
+
+
+           5. Tracking, deterministic averaging and critical overflow. A fixed fluid-
+      time limit does not cover q 2 arrivals, so we restart on fixed windows to obtain tracking
+390   at deterministic times. Blocks of 2q arrivals then average the common phase in the
+      drift. The endpoint overflow keeps its observation phase; a finite mesh gives uniform
+      convergence of its curve. Work with product cross sampling until the final transfer.
+      Discarding finitely many q, choose Λ < ∞ such that εq ≤ Λ and ε ≤ 1/4.
+           5.1. A uniform estimate on a fixed fluid window. Consider one pure com-
+395   munity, with q = 2m buckets. Let Xkq be its pair of empirical side laws after k internal
+      arrivals. The mean clock is u = k/q. Interpolate linearly between these times. Start
+      the fluid X(u) = Φu X0q from the exact empirical laws. Assume
+
+                                   Vθ (X0q ) ≤ R,    θ = 1/200.
+
+    Translate all loads by −bµ(X0q )c. This leaves the metric and dynamics unchanged.
+400 The translated initial mean belongs to [0, 1). Fix an integer B ≥ 1 and a cutoff
+    K1 ≥ 1. Then
+
+      (5.1)                 E sup d1 (X q (u), X(u)) ≤ ηq (B, R, K1 ).
+                              0≤u≤B
+
+
+    The bound is uniform over all empirical initial states satisfying the displayed moment
+    condition.
+405     Supplement section SM2.2 gives an explicit ηq and the estimates proving (5.1).
+    With
+                                   K1 (q) = d2 log(q)/θe ,
+      the bound tends to zero for each fixed B, R. No growing fluid horizon is used.
+          5.2. Moments, cross suppression, and deterministic restarts. For the
+410   real product process, let Wn be the sum of four side distances to orbit laws at the
+      actual community means. Let Ψn sum the four empirical cosh moments centered at
+      these means. Lemma 3.1 and Supplement section SM2.3 give
+
+      (5.2)      sup EΨn ≤ CE = 32/3,         sup EWn2 ≤ C∗2 = (32CE + 128)/θ2 .
+                  n                            n
+
+        Start an auxiliary chain from the real state at a deterministic time. Use the
+415 same internal candidates, but suppress every cross update. Greedy integer updates
+    with the same candidates are nonexpansive in labelled ℓ1 . If N× crosses occur during
+    a window, the total labelled discrepancy is at most N× . Normalizing each side by
+    m = q/2 gives profile distance at most 2N× /q. Each suppressed cross removes one
+    unit of community mass. The sum of the two mean discrepancies is therefore N× /q.
+420 Equation (4.5) adds at most another 2N× /q for the two orbit targets. Consequently
+
+      (5.3)                           Wn ≤ Wnaux + 4N× /q.
+
+          Fix δ > 0 and R ≥ 4. Choose a fixed integer A ≥ 1 such that ωR (u) ≤ δ/2 for all
+      u ≥ A. Put
+                            L = 2q(A + 1),      B = 2(A + 1) + 1.
+425   For any deterministic endpoint n ≥ L, restart at n − L. A start is good if Ψn−L ≤ R.
+      Its complement has probability at most CE /R.
+                      CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                           13
+
+          Let Ns be the internal event count for community s in the window. Its marginal
+      law is Bin(L, (1 − ε)/2). For suﬀiciently large q, its mean exceeds Aq + q/2, while its
+      variance is at most L/4. Chebyshev and a union bound give
+430                    P{min(N0 , N1 ) < Aq} ≤ CA /q,        CA = 4(A + 1).
+    Also Ns ≤ L < Bq. Independence between N0 and N1 is not needed. The internal
+    candidate streams can be chosen independently of all event-type clocks and the restart
+    state. On good starts, the supremum in (5.1) therefore covers every possible terminal
+    clock. This avoids conditioning a martingale estimate on a future count.
+435      On good starts and clocks, the auxiliary fluid targets are within total distance δ of
+    the orbit. The two empirical approximation errors contribute at most 2ηq (B, R, K1 ).
+    On bad starts or clocks, use Cauchy–Schwarz for the real Wn , with (5.2). Taking
+    expectations in (5.3) yields, uniformly over deterministic n ≥ L,
+                                                          p              p
+    (5.4)       EWn ≤ δ + 2ηq (B, R, K1 ) + 4εL/q + C∗ CE /R + C∗ CA /q.
+440   First fix δ, R, then choose A, B. Next let q → ∞. Finally let R → ∞ and δ → 0. This
+      proves
+                                                            X
+      (5.5)             lim lim sup sup EWn = 0,       q −2      EWn −→ 0.
+                     H→∞    q→∞    n≥Hq
+                                                             n<T q 2
+
+      For the second conclusion, the first Hq terms contribute at most C∗ H/q. The re-
+      maining terms are bounded by T supn≥Hq EWn . In particular, EWnq → 0 whenever
+445   the deterministic times satisfy nq /q 2 → t > 0. This is a bound on expectations at
+      deterministic times. It does not assert convergence of the maximum profile error over
+      all times. No effective attraction rate is required or obtained.
+          5.3. Exact imbalance decomposition and Brownian noise. Let Fn contain
+      the history before arrival n + 1. Write Dnq = ∆n /q, hn = n/(2q), and λq = εq. The
+450   exact community means are
+                       M0 (n)/q = hn + Dnq /2,       M1 (n)/q = hn − Dnq /2.
+      For independent product-cross candidates, define
+                           gnact = P(L0 ≤ R1 | Fn ) − P(L1 ≤ R0 | Fn ).
+      Every increment ξn+1 = ∆n+1 − ∆n is ±1. The internal contributions to its mean
+455   cancel. The two cross directions give
+                            bn = E(ξn+1 | Fn ) = εgnact ,  |bn | ≤ ε.
+                                                 P
+      Define the discrete martingale Mk = q −1 n<k (ξn+1 − bn ). Apply the martingale
+      FCLT to the step process M⌊tq2 ⌋ . Its maximum jump is at most 2/q, and
+                                 X
+                hMiq (t) = q −2      (1 − b2n ), sup |hMiq (t) − t| ≤ q −2 + T ε2 .
+                                                   t≤T
+                                n<⌊tq 2 ⌋
+
+460   Bracket jumps are at most q −2 . These deterministic bounds verify the three condi-
+      tions of [14, Theorem 2.1(ii)], including the expected squared-jump condition. Thus
+      the step martingale converges to standard Brownian motion. Let Mq denote its linear
+      interpolation. The interpolation changes it by at most 2/q. Since the limit is contin-
+      uous, Mq converges weakly in C([0, T ]) with its uniform norm. Discrete Doob also
+465   gives
+      (5.6)                        EkMq k2∞,[0,T ] ≤ 4(T + q −2 ).
+      14                                               SILAS LU
+
+
+          5.4. Deterministic averaging of the common phase. Integer optimal cou-
+      plings give
+                                |gnact − g(hn , Dnq )| ≤ Wn .
+470   Indeed, for integer arguments an indicator 1{l≤r} can change by at most the sum of
+      the integer displacements. Couple each of the four side marginals independently with
+      its orbit target. Equations (5.5) and λq ≤ Λ imply
+
+                            ε     X                                           X
+                  E sup                     {gnact − g(hn , Dnq )} ≤ Λq −2             EWn −→ 0.
+                     t≤T    q
+                                n<⌊tq 2 ⌋                                    n<T q 2
+
+
+          The function g(h, d) is one-periodic in h, by integer translation of both orbit laws.
+475   Partition arrival indices into blocks of length exactly 2q. For a block starting at j,
+      discrete Doob and |bn | ≤ ε give
+                                           q
+                                                          p
+                               E max |Dj+r     − Djq | ≤ 2 2/q + 2ε.
+                                        0≤r≤2q
+
+    Freeze Dnq at the block start. The phases hn mod 1 cover the 2q equally spaced points
+    of one period. Equation (4.8) bounds their Riemann-sum error by 2/q, uniformly in
+480 the frozen imbalance. The Lipschitz constants of g and g in d are both at most two.
+    Freezing and unfreezing therefore cost at most four times the displayed block variation.
+    A final incomplete block contributes at most 4/q after normalization. Hence
+
+                             X
+      (5.7)   E sup q −2               [g(hn , Dnq ) − g(Dnq )] ≤ C(T + 1)(q −1/2 + ε + q −1 ) −→ 0.
+               t≤T
+                           n<⌊tq 2 ⌋
+
+
+      This is deterministic phase averaging. It does not replace the two community phases
+485   by independent random phases.
+           Let Dq be the linear interpolation of Dnq at times n/q 2 . Combining the last two
+      estimates, the exact martingale decomposition, and a Riemann sum gives
+                                   Z t
+      (5.8)    Dq (t) = Mq (t) + λ     g(Dq (s)) ds + Rq (t),  EkRq k∞,[0,T ] −→ 0.
+                                             0
+
+      The remaining errors are bounded by T |λq − λ|, OT (Λ/q) for interpolation inside the
+490   drift integral, and O(1/q) for fractional final steps. These bounds use |g| ≤ 1 and its
+      global Lipschitz constant two.
+           For a continuous driver m, let Γλ (m) solve
+                                                              Z t
+                                            x(t) = m(t) + λ         g(x(s)) ds.
+                                                               0
+
+      Picard iteration gives existence and uniqueness. Gronwall gives
+
+495        kΓλ (m) − Γλ (m)k
+                         e ∞ ≤ e2λT km − mk
+                                         e ∞,                        kDq − Γλ (Mq )k∞ ≤ e2λT kRq k∞ .
+
+      The weak convergence of Mq , together with (5.6), implies first Wasserstein conver-
+      gence. For example, use a Skorokhod representation in the Polish space C([0, T ]). Uni-
+      form second moments make the represented uniform distances uniformly integrable.
+      Their almost sure convergence to zero then gives convergence in mean. Applying
+                      CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                            15
+
+500 the Lipschitz map Γλ and (5.8) proves first Wasserstein convergence of Dq to the
+    solution of (2.4). This also identifies Brownian variance one. No second Wasserstein
+    convergence is asserted.
+         The other drift claims in Theorem 2.3 follow from (4.7). The density w has
+    mass one and is strictly positive. The front F is smooth and strictly decreasing, with
+505 bounded derivatives of every fixed order. Differentiation under the integral is therefore
+    valid. In particular,
+                           Z
+                  g (d) = 2 w(r){F ′ (r + 1 + 2d) + F ′ (r + 1 − 2d)} dr < 0.
+                   ′
+                              R
+
+      Oddness, negativity for d > 0, and the far-field sign limits follow directly. Equa-
+      tion (4.9) gives −g ′ (0) > 0. The marginal coupling estimate gives the global Lipschitz
+510   bound.
+           5.5. The endpoint curve, including its joint first moment. The positive-
+      part functional along the orbit satisfies
+                                     X
+      (5.9)                σ ′ (u) =   {ak yk + bk xk+1 } = x0 (u)y0 (u).
+                                      k≥0
+
+    The sum telescopes. Equivalently, a positive-part increment occurs when both offered
+515 loads are nonnegative. The tails increase with u. Thus σ is convex, nondecreasing, and
+    1-Lipschitz. Equation (2.3) gives evenness and convexity in d, the stated 1-Lipschitz
+    bound in d, and the 2-Lipschitz bound in h. Full support gives S0 (0) > 0.
+         Fix H0 < ∞. Write κq = n∗ /q 2 = 2cq /q → κ > 0 and choose a path horizon
+    T∗ > κ. Increase T∗ if a longer joint path is requested. All window times belong to
+520 [0, T∗ ] for large q.
+         Define the continuous curve Fq by linear interpolation of
+                                               
+                                         k − n∗     Zc (k)
+                                   Fq             = q      .
+                                           2q          q
+
+      It is deterministically 2-Lipschitz on [−H0 , H0 ]. Its distance from the original floor-
+      indexed curve is at most 1/q. This specifies the interpolation in Theorem 2.3.
+525        At a fixed h, put n = nq (h), hq = (n − n∗ )/(2q), and τq (h) = n/q 2 . Then
+      |hq − h| ≤ 1/(2q). Integer translation by cq and positive-part Lipschitz continuity
+      give the exact comparison
+
+                                  Zcq (n)
+      (5.10)                              − Shq (Dq (τq (h))) ≤ Wn /2.
+                                    q
+
+      The factor 1/2 comes from m/q = 1/2 for each side. Since τq (h) → κ > 0, the
+530   expectation of Wn tends to zero by (5.5).
+          We also need to move the slow endpoint from τq (h) to κ. Put
+
+                               aq = |κq − κ| + 2H0 /q + 2/q 2 −→ 0.
+
+    All these times lie within aq of κ. A martingale oscillation bound on that deterministic
+    interval, followed by the bounded drift estimate, gives
+                                                   q
+535 (5.11)        E sup |Dq (τq (h)) − Dq (κ)| ≤ C aq + q −2 + CΛaq + C/q −→ 0.
+                    |h|≤H0
+      16                                     SILAS LU
+
+
+      For this bound, start the martingale at the left endpoint of the interval. Doob controls
+      its maximum oscillation by the square root of the interval length. Taking differences
+      through that endpoint controls every requested pair of times. There is no rate as-
+      sumption on cq /m → κ.
+540       Let Gq (h) = Sh (Dq (κ)). Combining (5.10), (5.11), and the interpolation bounds
+      gives
+                           E|Fq (h) − Gq (h)| −→ 0       for every fixed h.
+
+      Both Fq and Gq are 2-Lipschitz. For any fixed mesh with maximum gap at most η,
+
+                        kFq − Gq k∞ ≤       max         |Fq (h) − Gq (h)| + 4η.
+                                        h in the mesh
+
+
+545   Take expectations, then q → ∞, then η ↓ 0. The finite maximum is bounded by the
+      sum of its errors. We obtain the stronger, same-process estimate
+
+      (5.12)                   EkFq − S· (Dq (κ))k∞,[−H0 ,H0 ] −→ 0.
+
+    This step requires no maximum-in-time profile theorem.
+         The map f 7→ (f, S· (f (κ))) is Lipschitz from the uniform path norm to the sum
+550 of the two uniform norms. First Wasserstein convergence of Dq and (5.12) therefore
+    prove the claimed joint path-and-curve convergence. Restriction gives the result on
+    any shorter requested path horizon. In particular, the conclusion controls the expected
+    critical overflow, rather than only its distribution.
+         Finally, couple any admissible fixed cross kernel with the product process using
+555 Theorem 2.1 on [0, T∗ q 2 ]. The joint path-and-curve transport cost is at most twice
+    maxn Dn /q, up to vanishing interpolation errors. Its expectation tends to zero. This
+    transfers the first Wasserstein conclusions and finishes Theorem 2.3.
+
+          6. Evaluation of the critical law. The experiments assess the two prediction
+      steps separately. The readout comparison conditions on observed imbalance to isolate
+560   internal variation. The terminal comparison assesses the diffusion and unconditional
+      overflow mean. All evaluations use preserved samples and frozen lookup tables. The
+      profile readout has no fitted parameter.
+
+           6.1. Certified evaluation. The profile has no closed form here. An a posteri-
+      ori certificate evaluates it from a saved probability trajectory, with binary64 inputs
+565   treated as exact rationals. It combines a full polynomial residual, analytic infinite-
+      tail bounds, and lower transition kernels for the midpoint difference equation. The
+      uniform profile error is D∗ < 9.038 10−6 . The resulting certified interval
+
+                                S0 (0) ∈ [0.63127654, 0.63129462]
+
+    shows the size of the internal contribution even at zero imbalance. The restoring
+570 coeﬀicient satisfies −g ′ (0) ∈ [0.71997987, 0.72012468]. Supplement sections SM3.1
+    and SM4 give the construction, failed early stages, and all reported readout bounds.
+    These are deterministic bounds on the limiting profile, not finite-q error bars.
+         Figure 3 shows the two-side profile and averaged response from the saved numer-
+    ical nodes. The different side laws record the tie rule. Their half-phase shift agrees
+575 with the identity proved in Section 4. The response points toward zero imbalance and
+    saturates at large imbalance, as required by Theorem 2.3.
+                                          CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                                            17
+
+                                     (a) Phase-specific feedback                                      (b) Critical-window overflow
+                              0.10                   λ = 1, matching                           0.08
+      Mean trajectory error
+
+
+
+
+                                                                       Mean trajectory error
+                                                     λ = 1, product
+                              0.08                   λ = 2, matching                           0.07
+                                                     λ = 2, product
+                                                                                               0.06
+                              0.06
+                                                                                               0.05
+                              0.04
+                                                                                               0.04
+                              0.02                                                             0.03
+
+                                     64     128      256     512                                      64     128      256     512
+                                       Buckets per community q                                          Buckets per community q
+
+
+            Fig. 5. Descriptive finite-scale errors from the original saved outcomes. Left: mean per-
+      trajectory feedback RMS over 16 phases. Right: mean per-trajectory maximum overflow error over
+      five offsets. Line styles distinguish matching and product kernels; markers distinguish λ = 1, 2. The
+      horizontal lines show the frozen per-trajectory margins, not confidence limits for these plotted means.
+      Shared labels are not pooled. No convergence rate is fitted.
+
+
+         6.2. The internal contribution at observed imbalance. For each saved
+      endpoint at n∗ = q 2 and κ = 1, compare
+                                         x = Zc (n∗ )/q,     b = |∆n∗ |/(2q),                           p = S0 (∆n∗ /q).
+580   Figure 1 compares the two readouts at the same observed imbalance. Across all four
+      cells, mean absolute error falls from 0.3961–0.4355 to 0.0174–0.0180, a 95.6–95.9%
+      reduction. These are descriptive summaries against a mechanistic simplification. The
+      configuration audit and duplicate-label treatment are in Supplement section SM7.
+          6.3. Finite-scale errors. The original batch uses q = 64, 128, 256, 512, λ =
+585 0, 1, 2, and matching or product crosses. It has respectively 128, 128, 256, and 1024
+    labels per cell. Feedback error compares the actual conditional cross response with
+    g(hn , ∆n /q) at 16 prescribed phases. Overflow error is the maximum of |Zc /q −
+    Sh (∆/q)| over the five prescribed offsets h = −1, −1/2, 0, 1/2, 1. Figure 5 summarizes
+    the nonzero-coupling cells descriptively. The two errors concern different steps of the
+590 proof; neither is a direct estimate of distance to the limiting path law.
+          At q = 512, the frozen inference supports population failure probability at most
+    0.10 for feedback margin 0.10 and overflow margin 0.05. Overflow failures remain,
+    with probability upper bounds 0.058–0.073. The original cross-kernel CDF bounds
+    are at most 0.130602. Supplement section SM5.1 gives every primary cell and the
+595 separate joint error allocation of at most 0.05.
+
+         6.4. Terminal diffusion and unconditional overflow. A separately frozen
+    prospective batch has q = 512, κ = 1, λ = 1, 2, and matching or product crosses.
+    Its four cells each have 4096 labels. The labels are shared across cells, giving 16384
+    endpoints rather than 16384 independent observations. The targets are the uncondi-
+600 tional mean difference E[Zc (q 2 )/q] − E[S0 (D1 )] and the Kolmogorov distance between
+    L(∆q2 /q) and L(D1 ). The reference uses 32768 preserved SDE paths per λ, with
+    16384 Euler steps per path. No observed microscopic imbalance enters its overflow
+    mean.
+      18                                                                   SILAS LU
+
+                                                           λ=1                                        λ=2
+                                      1.0                                             1.0
+                                                 SDE reference
+                                                 Matching
+                                      0.8                                             0.8
+                      Empirical CDF
+
+
+                                                 Product
+
+                                      0.6                                             0.6
+
+                                      0.4                                             0.4
+
+                                      0.2                                             0.2
+
+                                      0.0                                             0.0
+      Fmicro − Fref
+
+
+
+
+                               0.02                                                0.02
+                               0.00                                                0.00
+                      −0.02                                                      −0.02
+
+                                        −3       −2 −1      0    1     2     3          −3   −2 −1      0    1     2   3
+                                                  Terminal imbalance D                        Terminal imbalance D
+
+
+
+           Fig. 6. Terminal imbalance: the two prospective microscopic empirical CDFs and the indepen-
+      dently generated, preserved SDE reference for each λ. The lower panels show microscopic minus
+      reference empirical CDFs at all jumps. Each microscopic cell has 4096 labels; each reference has
+      32768 paths. The curves are descriptive; the numerical and sampling allowances enter the distance
+      bounds in Table 1.
+
+                                                   Table 1
+           Prospective comparisons at q = 512, κ = 1. Mean intervals bound microscopic mean overflow
+      minus the SDE mean readout. CDF upper bounds concern terminal imbalance and have lower bound
+      zero. All displayed limits are rounded outwards and include reference error.
+
+                                             λ     Cross kernel   Mean-difference interval   CDF upper bound
+                                             1     matching         [−0.00840, 0.01010]          0.06542
+                                             1     product          [−0.00860, 0.00993]          0.06500
+                                             2     matching         [−0.00663, 0.00844]          0.07021
+                                             2     product          [−0.00671, 0.00834]          0.07119
+
+
+
+        All mean intervals lie within the frozen [−0.05, 0.05] margin. All CDF upper
+605 bounds lie below the frozen 0.20 margin. The eight comparisons have joint failure allo-
+    cation below 0.018138367441, giving at least 95% coverage under the ideal input-word
+    and reference-arithmetic contracts in Supplement sections SM5 and SM6. Coverage is
+    unconditional over the reused reference and fresh data, in a separate family from the
+    original claims. It requires independent words across labels and fresh streams indepen-
+610 dent of prior history. Pseudorandom reproducibility does not prove these premises.
+    The old reference has no saved register snapshot.
+        The two comparisons answer different questions. The readout comparison isolates
+    internal variation at an observed imbalance. The prospective comparison assesses the
+    predicted imbalance law and unconditional overflow mean. Together they support
+615 the model’s interpretation at the tested parameters; they do not establish a finite-size
+    rate or validation for every fixed kernel.
+
+          7. Discussion. The critical law retains internal load variation and discards fixed
+      cross-endpoint correlations. Replacing a fixed matching by product sampling pre-
+                        CRITICAL OVERFLOW IN TWO-CHOICE ALLOCATION                                     19
+
+      serves the leading overflow cost in this regime. Corollary 2.5 distinguishes order-q
+620   expected overflow from its order-q −1 fraction. The internal profile determines that
+      cost.
+           Complete-bipartite internal sampling supports label forgetting. Double stochas-
+      ticity supplies uniform cross marginals; integer loads and left-favored ties enter non-
+      expansion and profile geometry. Other graphs, adaptive sampling, and other tie rules
+625   require further arguments. Effective profile tracking remains open. The finite-size
+      comparisons cover specified tolerances at κ = 1, λ = 1, 2.
+           Data and code. Frozen code, protocols, outputs, seeds, and logs are in the public
+      repository. Supplement section SM7 lists immutable commits and audit limits.
+          AI assistance. OpenAI’s Codex assisted with literature searches, manuscript
+630   organization and drafting, proof checking, code preparation for reanalysis of preserved
+      outputs, figure preparation, and document checks. The author is responsible for the
+      manuscript, including its mathematical claims, references, code, and interpretation of
+      results.
+
+                                               REFERENCES
+
+635    [1] R. Atar and G. Wolansky, Invariance principle and McKean–Vlasov limit for randomized
+               load balancing in heavy traﬀic, Ann. Appl. Probab., 35 (2025), pp. 3046–3085, https:
+               //doi.org/10.1214/25-AAP2145.
+       [2] Y. Azar, A. Z. Broder, A. R. Karlin, and E. Upfal, Balanced allocations, SIAM J. Comput.,
+               29 (1999), pp. 180–200, https://doi.org/10.1137/S0097539795288490.
+640    [3] N. Bansal and O. N. Feldheim, The power of two choices in graphical allocation, in Proc.
+               54th Annual ACM SIGACT Sympos. Theory Comput. (STOC 2022), 2022, pp. 52–63,
+               https://doi.org/10.1145/3519935.3519995.
+       [4] P. Berenbrink, A. Czumaj, A. Steger, and B. Vöcking, Balanced allocations: The heavily
+               loaded case, SIAM J. Comput., 35 (2006), pp. 1350–1385, https://doi.org/10.1137/S00975
+645            3970444435X.
+       [5] A. Budhiraja, D. Mukherjee, and R. Wu, Supermarket model on graphs, Ann. Appl. Probab.,
+               29 (2019), pp. 1740–1777, https://doi.org/10.1214/18-AAP1437.
+       [6] M. Mitzenmacher, Studying balanced allocations with differential equations, Combin. Probab.
+               Comput., 8 (1999), pp. 473–482, https://doi.org/10.1017/S0963548399003946.
+650    [7] M. Mitzenmacher, Balanced allocations and double hashing, in Proc. 26th ACM Sympos.
+               Parallelism Algorithms Architectures (SPAA 2014), 2014, pp. 331–342, https://doi.org/10
+               .1145/2612669.2612684.
+       [8] M. Mitzenmacher, More analysis of double hashing for balanced allocations, in Proc. Meeting
+               Analytic Algorithmics Combinatorics (ANALCO 2016), 2016, pp. 1–9, https://doi.org/10
+655            .1137/1.9781611974324.1.
+       [9] D. Mukherjee, S. C. Borst, J. S. H. van Leeuwaarden, and P. A. Whiting, Universality
+               of power-of-d load balancing in many-server systems, Stoch. Syst., 8 (2018), pp. 265–292,
+               https://doi.org/10.1287/stsy.2018.0016.
+      [10] Y. Peres, K. Talwar, and U. Wieder, Graphical balanced allocations and the (1 + β)-choice
+660            process, Random Structures Algorithms, 47 (2015), pp. 760–775, https://doi.org/10.1002/
+               rsa.20558.
+      [11] A. L. Stolyar, Large-scale behavior of a particle system with mean-field interaction: Traveling
+               wave solutions, Adv. Appl. Probab., 55 (2023), pp. 245–274, https://doi.org/10.1017/apr.
+               2022.24.
+665   [12] A. L. Stolyar, A particle system with mean field interaction: Large-scale limit of stationary
+               distributions, Stoch. Syst., 13 (2023), pp. 343–359, https://doi.org/10.1287/stsy.2023.0108.
+      [13] B. Vöcking, How asymmetry helps load balancing, J. ACM, 50 (2003), pp. 568–589, https:
+               //doi.org/10.1145/792538.792546.
+      [14] W. Whitt, Proofs of the martingale FCLT, Probab. Surv., 4 (2007), pp. 268–302, https:
+670            //doi.org/10.1214/07-PS122.
+

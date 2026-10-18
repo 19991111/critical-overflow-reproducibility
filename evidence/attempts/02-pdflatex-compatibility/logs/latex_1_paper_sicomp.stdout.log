@@ -1,0 +1,14 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex)
+entering extended mode
+(./paper_sicomp.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(./engine_compat_before.tex
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty))
+! Incomplete \iffalse; all text was ignored after line 6.
+<inserted text> 
+                \fi 
+l.1 \input{engine_compat_before}
+                                
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on ../output/pdf/paper_sicomp.log.

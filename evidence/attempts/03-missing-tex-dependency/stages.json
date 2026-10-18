@@ -1,0 +1,95 @@
+[
+  {
+    "stage": "plot_prepare_figures",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-paper-validation-2/paper/prepare_figures.py"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-2/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 4.027960205999989,
+    "CPU_seconds": 4.018515,
+    "child_max_RSS_kib_highwater_so_far": 185524,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "plot_prepare_mechanism",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-paper-validation-2/paper/prepare_mechanism.py"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-2/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.9686623519999102,
+    "CPU_seconds": 0.9528989999999995,
+    "child_max_RSS_kib_highwater_so_far": 185524,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "plot_prepare_teaser",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-paper-validation-2/paper/prepare_teaser.py"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-2/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 1.1182976709999366,
+    "CPU_seconds": 1.0981550000000002,
+    "child_max_RSS_kib_highwater_so_far": 185524,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "plot_prepare_kernel_figure",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-paper-validation-2/paper/prepare_kernel_figure.py"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-2/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.7677265449999595,
+    "CPU_seconds": 0.7194339999999994,
+    "child_max_RSS_kib_highwater_so_far": 185524,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "latex_1_paper_sicomp",
+    "command": [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-no-shell-escape",
+      "-output-directory=../output/pdf",
+      "paper_sicomp.tex"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-2/paper/manuscript",
+    "exit_code": 1,
+    "timed_out": false,
+    "wall_seconds": 0.3168442779999623,
+    "CPU_seconds": 0.3121180000000005,
+    "child_max_RSS_kib_highwater_so_far": 185524,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  }
+]

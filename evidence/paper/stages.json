@@ -1,0 +1,314 @@
+[
+  {
+    "stage": "plot_prepare_figures",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-paper-validation-5/paper/prepare_figures.py"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 3.8274702190001335,
+    "CPU_seconds": 3.8230760000000004,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "plot_prepare_mechanism",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-paper-validation-5/paper/prepare_mechanism.py"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.9688059969998903,
+    "CPU_seconds": 0.955118,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "plot_prepare_teaser",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-paper-validation-5/paper/prepare_teaser.py"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 1.119262770000205,
+    "CPU_seconds": 1.1038169999999994,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "plot_prepare_kernel_figure",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-paper-validation-5/paper/prepare_kernel_figure.py"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.6686735809998936,
+    "CPU_seconds": 0.6561940000000008,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "latex_1_paper_sicomp",
+    "command": [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-no-shell-escape",
+      "-output-directory=../output/pdf",
+      "paper_sicomp.tex"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper/manuscript",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.7180451670001275,
+    "CPU_seconds": 0.7066949999999994,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "bibtex_paper_sicomp",
+    "command": [
+      "bibtex",
+      "paper_sicomp"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper/output/pdf",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.017579547999957867,
+    "CPU_seconds": 0.009881999999999946,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 30,
+    "CPU_limit_seconds": 30
+  },
+  {
+    "stage": "latex_1_supplement_sicomp",
+    "command": [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-no-shell-escape",
+      "-output-directory=../output/pdf",
+      "supplement_sicomp.tex"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper/manuscript",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.6171524239998689,
+    "CPU_seconds": 0.6063249999999998,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "bibtex_supplement_sicomp",
+    "command": [
+      "bibtex",
+      "supplement_sicomp"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper/output/pdf",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.017648392999944917,
+    "CPU_seconds": 0.009241000000000055,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 30,
+    "CPU_limit_seconds": 30
+  },
+  {
+    "stage": "latex_2_paper_sicomp",
+    "command": [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-no-shell-escape",
+      "-output-directory=../output/pdf",
+      "paper_sicomp.tex"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper/manuscript",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.7171063649998359,
+    "CPU_seconds": 0.7093750000000003,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "latex_2_supplement_sicomp",
+    "command": [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-no-shell-escape",
+      "-output-directory=../output/pdf",
+      "supplement_sicomp.tex"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper/manuscript",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.6176897199998166,
+    "CPU_seconds": 0.5778020000000007,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "latex_3_paper_sicomp",
+    "command": [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-no-shell-escape",
+      "-output-directory=../output/pdf",
+      "paper_sicomp.tex"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper/manuscript",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.7182956110000305,
+    "CPU_seconds": 0.7036399999999992,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "latex_3_supplement_sicomp",
+    "command": [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-no-shell-escape",
+      "-output-directory=../output/pdf",
+      "supplement_sicomp.tex"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper/manuscript",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.6182868679998137,
+    "CPU_seconds": 0.6125500000000004,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "render_paper_sicomp",
+    "command": [
+      "pdftoppm",
+      "-png",
+      "-r",
+      "85",
+      "/workspace/critical-overflow-paper-validation-5/paper/output/pdf/paper_sicomp.pdf",
+      "/workspace/critical-overflow-paper-validation-5/render/paper_sicomp/page"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 2.423590594000416,
+    "CPU_seconds": 2.4189749999999997,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "extract_paper_sicomp",
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/workspace/critical-overflow-paper-validation-5/paper/output/pdf/paper_sicomp.pdf",
+      "/workspace/critical-overflow-paper-validation-5/paper_sicomp.txt"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.1161114390001785,
+    "CPU_seconds": 0.07602499999999979,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 30,
+    "CPU_limit_seconds": 30
+  },
+  {
+    "stage": "render_supplement_sicomp",
+    "command": [
+      "pdftoppm",
+      "-png",
+      "-r",
+      "85",
+      "/workspace/critical-overflow-paper-validation-5/paper/output/pdf/supplement_sicomp.pdf",
+      "/workspace/critical-overflow-paper-validation-5/render/supplement_sicomp/page"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 1.5197752059998493,
+    "CPU_seconds": 1.5154170000000011,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "extract_supplement_sicomp",
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/workspace/critical-overflow-paper-validation-5/paper/output/pdf/supplement_sicomp.pdf",
+      "/workspace/critical-overflow-paper-validation-5/supplement_sicomp.txt"
+    ],
+    "cwd": "/workspace/critical-overflow-paper-validation-5/paper",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.06681795900021825,
+    "CPU_seconds": 0.045770999999998674,
+    "child_max_RSS_kib_highwater_so_far": 183052,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 30,
+    "CPU_limit_seconds": 30
+  }
+]

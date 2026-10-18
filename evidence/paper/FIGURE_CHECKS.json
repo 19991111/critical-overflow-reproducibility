@@ -1,0 +1,80 @@
+{
+  "operation": "replot_preserved_outputs",
+  "new_trajectories": 0,
+  "new_ODE_SDE_integrations": 0,
+  "original_outcomes": 9216,
+  "prospective_outcomes": 16384,
+  "reference_outcomes": 65536,
+  "readout_cell": {
+    "n": 4096,
+    "MAE_imbalance": 0.39633750915527344,
+    "MAE_profile": 0.017408271929607397
+  },
+  "source_hashes": {
+    "analysis/endpoint_comparison.csv": "2c2dc308879012ae2bbf8aafe5b5dcafcb0ce8fcb2718790a99e2fc4be48a1d8",
+    "inputs/sde_end_to_end_return.tar.gz": "8fc271871c0eac1f1c13f40d7b34d10a4cdc68c7ded7d1330e9bb176f5cb10ec",
+    "inputs/paper_v4_release_return.tar.gz": "0f751c1f98bbb033bcd0029c10f396b31b07002cae5bf9c0bf79c8c2bf6eba2b"
+  },
+  "outputs": {
+    "manuscript/figures/finite_scale.png": {
+      "bytes": 130701,
+      "sha256": "7cc2b655b91b88b0e09b9a7121024caf673c09d5b23cc486a32e342bb1cc1299"
+    },
+    "manuscript/figures/internal_contribution.pdf": {
+      "bytes": 38671,
+      "sha256": "6e834b77bd66f7b69e82ea52758f49b259f7fc1133b7a900f3b6a18b6312ad5d"
+    },
+    "manuscript/figures/internal_contribution.png": {
+      "bytes": 155811,
+      "sha256": "84f252af928924c7082a1658243e677bcb6d1adbb9622ac8a2f2ff057132da85"
+    },
+    "manuscript/figures/finite_scale.pdf": {
+      "bytes": 20276,
+      "sha256": "201439b747ae603e4ce20156c1e0c35bc529dcef947a2dd3a8d6b65d721b6466"
+    },
+    "manuscript/figures/model_scales.png": {
+      "bytes": 129918,
+      "sha256": "1cf497fd19b84fc006797ed5fb0da01d2f105801c6edf996f584a6b796f31df8"
+    },
+    "manuscript/figures/terminal_law.png": {
+      "bytes": 107806,
+      "sha256": "a869b4ea980f809fbb02f6d34dbb399b1e4119974c1d8d534914329c13df89b5"
+    },
+    "manuscript/figures/terminal_law.pdf": {
+      "bytes": 102036,
+      "sha256": "cfc73e32f3e9703388ee2a57c3acb727f1d28df6034911d622ce03a2f551b232"
+    },
+    "manuscript/figures/model_scales.pdf": {
+      "bytes": 22185,
+      "sha256": "5c4bacde1f8a57a6898f25c43b8a514cffacffa84c208dce11616e8ce039648c"
+    },
+    "manuscript/figures/terminal_law.svg": {
+      "bytes": 329755,
+      "sha256": "b8e43d516c3b69b38f5b31a9499559574797e25aa3b69bbc18566bfad0c5314c"
+    },
+    "manuscript/figures/finite_scale.svg": {
+      "bytes": 28987,
+      "sha256": "106042f06d3e6e35ea37078ff9f62266b96bc3cc4b2ebd2365895c04265eed40"
+    },
+    "manuscript/figures/internal_contribution.svg": {
+      "bytes": 72405,
+      "sha256": "991279e30700d12f230ebae2ff75bf20e180d3c3dc6b316ebc53e9a014c69381"
+    },
+    "manuscript/figures/model_scales.svg": {
+      "bytes": 34248,
+      "sha256": "c7c9761e349ba28b678e067d8464d02e532ff48895fc85eab1ac59e2c9787e7e"
+    },
+    "verification/plot_data/readout_endpoints.csv": {
+      "bytes": 214818,
+      "sha256": "1b79fe798ad34c80a8c5acaf406204dd8cee2d1dbb87c8a314f8c3fd599a674e"
+    },
+    "verification/plot_data/finite_scale_summary.csv": {
+      "bytes": 1022,
+      "sha256": "357f36484b6bec80f0bfbc5a7dfa41fc6efa6ff1f62287827fcdc5f1a2b3ec77"
+    },
+    "verification/plot_data/terminal_cdf_grid.csv": {
+      "bytes": 524032,
+      "sha256": "c2b45ac4075effe37b92acb9f9ded644f115f468efdcc305505cbe545717cc78"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+\section{SDE reference error budget}\label{app:sdebudget}
+Write $b=\lambda\gb$, $N=16384$ and $h=1/N$. The front representation gives $|b|\le\lambda$, $-2\lambda\le b'\le0$ and $|b''|\le24\lambda$. Thus $x+hb(x)$ is nondecreasing and $1$-Lipschitz. Let $L=2\lambda$ and $C_0=2\lambda^2+12\lambda$.
+
+The local exact-versus-Euler remainder has the It\^o representation
+\[
+ R_k=\int_0^h(h-u)b'(X_{kh+u})\dd B_u
+ +\int_0^h(h-u)(bb'+b''/2)(X_{kh+u})\dd u.
+\]
+Its conditional mean is bounded by $a=C_0h^2/2$. Its centered conditional $L_2$ norm is at most $s=Lh^{3/2}/\sqrt3+C_0h^2/2$. Contraction yields the second-moment recurrence
+\[
+ v_{k+1}\le v_k+2a\sqrt{v_k}+a^2+s^2.
+\]
+Induction gives $\sqrt{v_N}\le\sqrt N s+Na$. Hence the Euler bound has an explicit constant and no exponential amplification.
+
+The global feedback table uses Simpson quadrature over 256 phase intervals and linear interpolation at spacing $1/512$. Its error is at most
+\[
+ 0.00004861+\frac{9472}{180\cdot256^4}+\frac{3}{512^2}<0.000061.
+\]
+For $S_0$, linear interpolation adds $1/(4\cdot512^2)$ to $0.00002440$, giving error below $0.000026$. Certified analytic tails cover constant feedback extension beyond eight and the overflow extension $|d|/2$ beyond 32. All approximate feedback slopes lie in $[-2,0]$, and all approximate overflow slopes lie in $[0,0.5001]$.
+
+For midpoint uniforms of cell width $\delta=2^{-52}$, an explicit Box--Muller coupling gives
+\[
+ \E|Z-Z_{\rm mid}|^2\le100\delta(1+\log(1/\delta))<10^{-12}.
+\]
+The implementation's series and rounding bounds are stated below. Minkowski across $N$ scaled increments gives accumulated driver error at most
+$128(10^{-6}+10^{-9})<0.00013$. This bound does not assume cancellation of coordinate errors.
+
+For clipping at three, the ideal-Gaussian Euler endpoint is a $1$-Lipschitz function of its Gaussian increments. Oddness and contraction give its second moment at most one. The approximate readout has value below $0.632$ at zero and Lipschitz constant $0.5001$. Its mean is below $1.133$. Gaussian concentration \cite{vanhandel} gives clipping bias below
+\[
+ \frac{0.5001^2}{3-1.133}
+ \exp\left[-\frac{(3-1.133)^2}{2(0.5001)^2}\right]<0.00014.
+\]
+
+The reference error allowances include the globally certified feedback/readout tables, Euler discretization, the Gaussian driver, state/readout arithmetic and truncation. The coefficient-table allowances are $0.000061$ for $\gb$ and $0.000026$ for $S_0$, with checked readout Lipschitz bound $0.5001$. The Gaussian-driver accumulated $L_2$ allowance is $0.00013$. The authoritative arithmetic supplement bounds normal-coordinate arithmetic error below $10^{-12}$, supporting the frozen $10^{-9}$ coordinate allowance; state rounding plus readout rounding divided by $0.5001$ is below $4\,10^{-12}$, within the single shared $10^{-6}$ allowance. These statements are conditional on binary round-to-nearest arithmetic with at least 64 significand bits, normal finite operation ranges and exact radix-two exponent reduction. No historical dynamic floating-point register snapshot was saved for the old reference; a later environment probe cannot prove those historical registers. The audited \href{https://github.com/19991111/huaweipro-tpht-linux/blob/943485ae2be727404deaf50a1dc8c5206782fba2/research/paper_sde_posthoc_erratum_20261017/received/ARITHMETIC_SUPPLEMENT.v2.en.txt}{version 2 arithmetic supplement} is included with the source, together with the reference protocol and probability contract.
+
+For clarity, the reference mean budget uses two different readout constants. The exact $S_0$ is $1/2$-Lipschitz, whereas the stored interpolator is $0.5001$-Lipschitz. Let $e_\lambda$ denote the certified Euler $L_2$ bound. With $N=16384$, $L=2\lambda$ and $C_0=2\lambda^2+12\lambda$, the monotone Euler-map estimate gives
+\[
+ e_\lambda=\frac{L/(17/10)+C_0/2}{N}
+            +\frac{C_0}{2N\sqrt N},
+\]
+using $\sqrt3>17/10$ and $\sqrt N=128$. For $\delta_g=0.000061$ and $\delta_S=0.000026$, the mean error is bounded by
+\[
+ \delta_S+\tfrac12(e_\lambda+\lambda\delta_g)
+ +0.5001(0.00013+0.000001)+0.00014.
+\]
+It is less than $0.000514$ at $\lambda=1$ and $0.000857$ at $\lambda=2$. These bounds fit the frozen allowances $0.0006$ and $0.0010$. The CDF coupling follows from
+\[
+ (e_\lambda+0.00013)^2
+ \le0.005(r_\lambda-\lambda\delta_g-0.000001)^2.
+\]
+The first two terms in the mean bound compare the true SDE to the ideal-Gaussian Euler process. The remaining terms cover the computed driver, joint arithmetic error and Gaussian clipping tail. The arithmetic supplement supplies the local rounding bounds; no cancellation of driver errors is assumed.

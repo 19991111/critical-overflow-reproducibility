@@ -1,0 +1,635 @@
+          SUPPLEMENTARY MATERIALS: CRITICAL OVERFLOW IN
+              WEAKLY COUPLED TWO-CHOICE ALLOCATION
+                                              SILAS LU∗
+
+          This supplement documents the evaluation and finite-size comparisons in the main
+5    article. The main article gives the three main proofs; this supplement supplies the
+     auxiliary estimates used there. The numerical bounds concern the preserved inputs
+     and their stated arithmetic and probability contracts.
+         SM1. The centered Gini inequality. For a finite zero-mean real law Y ,
+
+                        E| sinh Y − sinh Y ′ | ≥ E| sinh Y | ≥ E cosh Y − 1.
+
+10   The second inequality holds pointwise. For the first, decompose a zero-mean law into
+     zero-mean two-point laws across zero, plus any atom at zero, by transporting the
+     positive first-moment mass against the negative first-moment mass. For a component
+     on a, −b, a, b > 0, the difference between the two sides is
+                                  (a − b)(b sinh a − a sinh b)
+                                                               ≥ 0,
+                                           (a + b)2
+
+15                R increases on (0, ∞). The Gini functional of a real law is concave, as
+     since sinh(t)/t
+     seen from 2 F (t)(1 − F (t)) dt, whereas the absolute first moment is linear. Mixing
+     the components proves the result. Truncation and mean correction extend it when
+     the stated exponential moments are finite. Rank summation by parts then applies
+     this inequality to suﬀix deficit δt(1 − t), giving the potential drift used in Sections 3
+20   and 4.
+         SM2. Auxiliary process estimates. These estimates support the main proofs.
+     The label-forgetting coupling, midpoint contraction, deterministic restarts, and joint-
+     limit argument remain in the main article.
+        SM2.1. Dispersion bound. We prove main-article Lemma 3.1 with θ = 1/200,
+25   K0 = 16/3, and I = (1 − ε)/2.
+         Proof. Order each community by increasing load, placing left buckets before right
+     buckets at equal load. Use a fixed label order within each side. This order agrees with
+     the left tie rule. For the heaviest k buckets in this order put t = k/q. If their two
+     side counts are a, b, their internal selection probability is at most ab/m2 ≤ t2 . Cross
+30   mass entering this suﬀix is x ≤ εt, while cross mass entering the community is y ≥ x.
+     Conditional on a community update, its suﬀix probability is at most
+
+                     It2 + εt                               I −ε   1 − 3ε  1
+                              ≤ t − δt(1 − t),         δ=        =        ≥ .
+                      I + εt                                I +ε    1+ε    5
+     The global inclusion probability of a vertex is 1/q, so its conditional update probability
+     is at most 8/(3q). Rank summation by parts, for sorted gi = sinh(θξi ), gives
+                    X                     δ                           δΓs  δ
+35                      (pi − q −1 )gi ≤ − E| sinh Y − sinh Y ′ | ≤ −     + .
+                      i
+                                          2                            2q  2
+
+       ∗ School of Information Management, Nanjing University, Nanjing, China.   ORCID: 0009-0005-
+     1387-2849.
+                                                 SM1
+     SM2                                     SILAS LU
+
+
+     Here Y is uniform on the centered θξi and Y ′ is independent. The zero-mean inequality
+     E| sinh Y − sinh Y ′ | ≥ E| sinh Y | ≥ E cosh Y − 1 is proved in Section SM1. For the
+     centered increment ui = 1i selected − 1/q, its second moment is less than 3/q. Taylor’s
+     formula bounds the total cosh remainder by 4θ2 Γs /q. Since θ ≤ δ/16,
+                                                         θδ     θδ
+40                            E[∆Γs | Cs updates] ≤ −       Γs + .
+                                                         4q     2
+     Each community updates with probability at least 3/8. The total drift is therefore at
+     most
+                                       3θδ       θδ
+                                     −     Γ+ .
+                                       32q       2
+     The recurrence from Γ0 = 2q proves (3.1). Only the cross marginals, rather than their
+45   independence, were used.
+         SM2.2. Fixed-window empirical estimate. Use the translated initial state
+     and constants in main-article section 5. The mean clock is u = k/q, and the fluid
+     starts from the exact empirical profile. We prove the uniform estimate (5.1) for fixed
+     B, R.
+50       A valid explicit bound in (5.1) is
+                                  h           p                                 i
+              ηq (B, R, K1 ) = e4B 8(2K1 + 1) B/q + 4BCR,B e−θ(K1 −1) + 8B/q ,
+                     CR,B = 2eθ R exp{2B(eθ − 1)}.
+
+          Proof. Each event increments exactly one tail coordinate by 2/q. Its conditional
+     mean increment is exactly F (Xkq )/q, where F is the field in (2.1). Subtract these
+55   conditional means to obtain a tail-valued martingale at the grid times. Each coordi-
+     nate has expected quadratic
+                               p variation at most 4B/q. Doob’s inequality bounds its
+     expected maximum by 4 B/q. There are 2(2K1 + 1) retained coordinates, indexed
+     by |k| ≤ K1 .
+          A bucket has selection probability at most 2/q at each internal event. Therefore
+60   the expected sum of its translated, uncentered cosh moments grows by at most the
+     factor 1+2(eθ −1)/q per event. The initial sum of the two side moments is at most eθ R.
+     The probability that the selected tail increment lies outside the retained coordinates
+     is at most CR,B e−θ(K1 −1) . This follows from the exponential moment bound and the
+     selection-probability bound. Summing actual outside increments and their nonnega-
+65   tive compensators gives expected outside martingale norm at most 4BCR,B e−θ(K1 −1) .
+     Initial tails add no martingale error, since the fluid starts from the exact empirical
+     profile.
+          The field is 4-Lipschitz in tail ℓ1 . A single interpolated empirical step has length
+     at most 2/q. Replacing the stepwise field integral by the interpolated one costs at
+70   most 8B/q. Gronwall gives (5.1).
+          SM2.3. Moments for profile tracking. The following calculation gives main-
+     article (5.2).
+          For the real product process, let Wn be the sum of its four side Wasserstein
+     distances to the corresponding orbit laws. Each community uses its actual mean
+75   Ms (n)/q. Let Ψn be the sum of the four empirical cosh moments centered at these
+     means. Lemma 3.1 implies
+
+                                     sup EΨn ≤ CE = 32/3.
+                                      n
+                      SUPPLEMENTARY MATERIALS: CRITICAL OVERFLOW                        SM3
+
+      If Jn is the sum of the four empirical mean absolute centered deviations, Jensen gives
+                               eθJn /4 ≤ Ψn /2,      EJn2 ≤ 16CE /θ2 .
+80    The second inequality uses x2 ≤ 2ex for x ≥ 0. The four orbit absolute deviations
+      sum to at most 8/θ, since Vθ (ρu ) ≤ 4. Thus
+      (SM2.1)                   sup EWn2 ≤ C∗2 = (32CE + 128)/θ2 .
+                                 n
+
+          SM2.4. Label forgetting. This proves main-article Lemma 3.2, using its con-
+      stants and notation.
+85        Proof. Write P for the fixed transition kernel and µ = µn−L . Split
+                    TV(P L µ, τ P L µ) ≤ TV(P L µ, P L τ µ) + TV(P L τ µ, τ P L µ).
+      These two terms need different couplings. For the first, start A from µ and A′ from
+      τ A. Map internal candidates by τ until the two tagged loads in A meet. This is legal
+      uniform internal sampling and maintains A′ = τ A. Use the same actual cross edge;
+90    the relation can fail only when a cross touches a tag, with window probability at most
+      2εℓ. Once the tag loads meet the configurations agree, so common candidates keep
+      them equal.
+           Before meeting or a bad cross, the higher tag has no larger internal update rate:
+      a left tag at h has rate (1 − ε)yh /q, a right tag has rate (1 − ε)xh+1 /q. The embedded
+95    positive gap is consequently dominated by a fair nearest-neighbor   √ walk absorbed at
+      zero. Its survival for J jumps from gap d is at most min(1, 4d/ J + 1), by reflection
+      and the central binomial bound. Fresh direction coins give this domination in the
+      adapted environment; we never condition those coins on a future update count.
+           Each external uniform tag has expected centered cosh at most 2K0 , hence ex-
+100   pected initial gap at most 4K0 /θ. The community receives at least L/4 internal
+      arrivals except with probability e−L/48 , by the binomial lower tail since I ≥ 3/8. At
+      the two window endpoints, all four tag deviations are at most ℓ/16 except with proba-
+      bility 16K0 e−θℓ/16 . Off these events, each tag gains at least ℓ/8, since the community
+      mean gains at least ℓ/4. Put K = ⌈ℓ/4⌉. If the tags have not met and no cross
+105   touches them, at least K embedded internal jumps have occurred. The nonmeeting
+      event is therefore contained in the union of the stated bad events and survival of the
+      dominating fair walk for the fixed number K of jumps. No conditioning on the final
+      random jump  √ count is used. Reflection and Ed ≤ 4K0 /θ bound this last probability
+      by 32K0 /(θ ℓ). This controls the first TV term with an additional 2εℓ.
+110        For the second term compare the fixed kernel with its τ -conjugate, from the
+      same law τ µ. Their internal laws agree; the two swapped cross columns have total
+      conditional mass 2/m. Coupling all other mass gives another window cost 2εℓ. The
+      reasoning also holds for a weighted doubly stochastic matrix. Adding the costs proves
+      (3.2). The separate conjugate-kernel term is necessary: forgetting a swapped initial
+115   state alone does not imply invariance of the final law.
+          SM3. Auxiliary numerical estimates.
+           SM3.1. Analytic tails for the true orbit. The posterior certificate requires
+      bounds on the infinite true orbit, not only on the saved finite path. Here are the
+      bounds actually used. Let DLR (u) = E|Lu − Ru | with independent draws. Exact
+120   differentiation of the centered second-moment sum gives
+                           d
+                             {E(Lu − u)2 + E(Ru − u)2 } = 2 − 2DLR (u).
+                          du
+      SM4                                      SILAS LU
+
+                                     R1
+      It follows by periodicity that 0 DLR (u) du = 1. This function is 2-Lipschitz by
+      the monotone marginal coupling, so its maximum is at most 3/2 on the unit circle.
+      Interlacing gives 0 ≤ ELu − ERu ≤ 1. Jensen and positive/negative parts, at mean
+125   zero, then imply
+
+             E(L0 )+ ≤ 5/4,     E(R0 )+ ≤ 3/4,     E(−L0 )+ ≤ 3/4,      E(−R0 )+ ≤ 5/4.
+
+    For example E(L − R)+ = (DLR + EL − ER)/2, while Jensen bounds the marginal
+    positive part by that expression after accounting for the other marginal’s sign of mean.
+    The opposite-sign cases follow identically.
+130     Integrating the front equation and matching the limit at +∞ yields
+                             Z r
+    (SM3.1)          F (r) =      F (s − 1)F (s) ds,     F (r) ≤ F (r − 1)F (r − 2).
+                                r−1
+
+    The first-moment bounds give F (2k) ≤ min(1, 5/(4k)) and F (2k +1) ≤ min(1, 3/(4k))
+    for k ≥ 1. Monotonicity and (SM3.1) give a rational superlinear right-tail recursion.
+    Once F (n) ≤ η < 1, the uncomputed remainder obeys F (r) ≤ ηF (r − 2) for r ≥ n + 2.
+135 Upward rounding and this geometric remainder account for the infinite tail even when
+    finite arithmetic plateaus.                                   R1
+         For the left anchor set zj = (xj (0) + yj (0))/2 and Aj = 0 xj (u)yj (u) du. The
+    pooled equation and the unit-period shift give Aj = zj . Stochastic increase gives
+
+                                     zj ≤ xj−1 (0)yj−1 (0) ≤ zj−1
+                                                              2
+                                                                  .
+                                             P       n
+140 If z−2 ≤ s, mean zero would require 3 ≤ n≥0 s2 . At s = 89/100 the latter sum is
+    strictly below three: sum through n = 5 exactly and bound the rest by s64 /(1 − s64 ).
+    Thus G(−4) = 1 − F (−4) < 11/100.
+         Write a = 11/100, c = 1 − a/2 = 189/200 and γ = 18/25. From (SM3.1), for
+    r ≤ −4,
+                         Z r                                    Z r
+145              G(r) =      [G(s) + (1 − G(s))G(s − 1)] ds ≥ c     G(s) ds.
+                          r−1                                           r−2
+                       R2
+    The kernel mass c 0 e−γs ds is at least one, as verified by a rational Taylor lower
+    bound e36/25 > 21/5. Therefore e−γr G(r) is superharmonic for the backward walk
+    with normalized density proportional to ce−γs on [0, 2]. Starting at −4, stop on
+    entering [x, x+2]. The stopped function is bounded on the traversed compact interval
+150 and the stopping time is finite, so the supermartingale inequality gives
+
+                                  11
+                        G(x) ≤        exp{(18/25)(x + 6)},            x ≤ −6.
+                                  100
+      The walk is only an analytic proof device; it is never simulated. For K2 ≥ 3 its
+      integrated contribution is
+
+                                     11 b2K2 −4 + b2K2 −5
+                       t−
+                        ρ0 (K2 ) ≤                        ,      b = e−18/25 .
+                                     100      1 − b2
+155   The rational right recursion and this geometric left bound are used in (SM4.1). An
+      independent coarser bound with exponent 3/5 was retained as a fallback. All scalar
+      comparisons precede the matrix stages.
+                       SUPPLEMENTARY MATERIALS: CRITICAL OVERFLOW                           SM5
+
+         SM3.2. Validated lower matrices and bootstrap. At saved endpoints, tail
+    values are enclosed by the exact binary rationals plus or minus the strict full-field
+160 trajectory error. Across a cell, true tails are monotone in mean time. An atom bound
+    over a cell of width h is max{0, b al − el } e−2h , where el bounds the left-endpoint atom
+    error and the exponential is bounded below. Over candidate cycle k, nonexpansion
+    and the period residual add at most kr to the discrepancy from the integer-translated
+    first cycle.
+165      The orbit is first enclosed analytically using the preceding tails. After a completed
+    stage gives Eold ≥ d1 (v, ρ0 ), nonexpansion also encloses every orbit phase by first-cycle
+    nodes with error es + Eold , independently of cycle index. Intersect these valid bounds.
+    A stage never assumes its own proposed result.
+         The midpoint-chain lower off-diagonals are the sums of the compared-law lower
+170 tails and atoms, because the rate twice a midpoint is that sum. Negative diagonals
+    use upper exit bounds, rather than replacing every exit by two. After each period
+    shift the finite frame by one and kill any path leaving it. For A = −2I + C, downward
+    arithmetic computes
+                                                       X4
+                                                           hj C j
+                                       ehA ≥ e−2h
+                                                       j=0
+                                                            j!
+
+175   entrywise, with a nonnegative finite right side. Propagating all core columns and
+      summing row minima supplies the stated common mass. The backward verifier uses
+      its own validated bootstrap history. Both histories and their initial target failures are
+      retained; the final readout uses their larger error bound.
+           SM4. Numerical certificate details. Let v be an exact rational probability
+180   profile of mean zero, obtained by normalizing the saved candidate and correcting its
+      mean with an integer-shift mixture. Binary64 input values are treated as exact ratio-
+      nals, not as exact solutions. Its strict one-period return error is r < 4.601 10−9 . The
+      full-cell trajectory error is es , including the mean correction; e = sups es < 4.585 10−9 .
+      Bounds come from the full polynomial residual, including the top outflow. For a
+185   Bernstein residual of degree six, integration of its absolute value is bounded by the
+      cell width times the sum of absolute coeﬀicients divided by seven. Tail nonexpansion
+      then controls the error against the true flow of v.
+        Proposition SM4.1 (A posteriori profile estimate). Fix a core |k| ≤ K2 on both
+    channels. Suppose the exact midpoint difference kernel between the candidate flow and
+190 the orbit, over B mean periods with the co-moving shifts, has common mass at least
+    β > 0 from every core starting state. For
+                                X
+                     tp (K2 ) =   {Ep (X − K2 )+ + Ep (−X − K2 − 1)+ },
+                                 sides
+
+      one has
+
+      (SM4.1)                 d1 (v, ρ0 ) ≤ Br/β + 2tv (K2 ) + 2tρ0 (K2 ).
+
+195        Proof. The signed tail difference has total mass zero. Its outside-core absolute
+      mass is at most tv + tρ0 . On the core the common kernel mass cancels at least β
+      times the smaller of its positive and negative masses, reducing the ℓ1 norm by at least
+      β[d1 − 2(tv + tρ0 )]. Iterating the one-period return bound and nonexpansion gives
+      d1 (v, T B v) ≤ Br. Triangle inequality between v, T B v, ρ0 = T B ρ0 now yields (SM4.1).
+200   In particular the tail term is not divided by β.
+      SM6                                           SILAS LU
+
+
+           The finite lower kernels retain only paths inside their declared moving frame, so
+      deleting escaping paths preserves a lower bound. Validated exit upper bounds avoid
+      unnecessary killing at high starting levels. Each lower Metzler matrix has form −2I +
+      C, C ≥ 0. Downward dyadic arithmetic, the nonnegative exponential terms through
+205   degree four, and a rational lower bound on e−2h propagate all core columns. At each
+      final row take the minimum over all core columns and sum these minima to obtain
+      β. An independent backward implementation propagates all terminal indicators with
+      64-bit directed arithmetic; the forward computation uses 80 bits. Each bootstrap
+      stage uses only an already completed earlier bound. Supplement section SM3.1 gives
+210   the analytic infinite-tail bounds required by (SM4.1).
+           The larger final forward/backward bound is the exact rational
+
+                                      1365032393294082761
+                           E=                               < 9.034 10−6 .
+                                   151115727451828646838272
+      Nonexpansion and integer translation give uniform profile error D∗ = E + e <
+      9.038 10−6 at every real mean. Negative means use translation, not backward in-
+215   tegration.
+          For feedback, the origin coeﬀicient and overflow, exact rational sums over 257
+      saved phase nodes (256 intervals) yield errors
+
+                              9472                                       76288
+        feedback: 2D∗ +                ,   origin coeﬀicient: 8D∗ +               ,   overflow: D∗ .
+                            180 · 2564                                 180 · 2564
+      The profile constants follow by coupling the two independent comparisons, a three-
+220   draw origin event, and positive part. For quadrature, the quadratic field has ∥F ∥1 = 2,
+      ∥DF ∥ ≤ 4, D2 F ≤ 8 and higher field derivatives zero. Its trajectory derivative
+      norms through order four are bounded by 2, 8, 64, 640. Multinomial differentiation
+      gives fourth derivative bounds 9472 for the feedback integrand and 76288 for the
+      origin integrand. Composite Simpson quadrature has error M4 /(180N 4 ); its positive
+      weights do not amplify grid profile errors.
+
+                                                   Table SM1
+           Preserved certificate stages. The first two stages miss the original 0.001 target. The fourth
+      reaches the stricter 0.0001 stopping target. All distance bounds are rounded upwards.
+
+         Core radius    Periods     Frame radius      Subdivisions   Common mass          W1 bound
+                   4           8                8               64        0.0006913        0.050068
+                   6          16               10               64        0.0651929        0.002797
+                   8          24               12              128        0.5510914        0.000157
+                  10          32               14              128        0.5811574     0.000009034
+
+225
+
+         SM5. Statistical protocols and interpretation. Coverage assumes uniform
+    independent underlying words within each stream and across replicate labels. Fresh
+    microscopic streams must also be independent of prior history. Counter-based Split-
+    Mix words and disjoint seeds provide reproducibility, not a proof of those premises.
+230 All sampling statements use this ideal word model.
+         The original and prospective families below are separate. Reusing a reference
+    retains the reference event’s original error cost. Cross-cell independence is unneces-
+    sary for the union bounds. The prospective statement is unconditional over the old
+    reference and fresh data, rather than conditional on the observed reference.
+                        SUPPLEMENTARY MATERIALS: CRITICAL OVERFLOW                                  SM7
+
+                                                 Table SM2
+          Deterministic readouts of the limiting profile. Intervals include profile and quadrature errors.
+      They do not bound finite-allocation error.
+
+
+                                Readout      Certified interval
+                                    ′
+                                −g (0)       [0.71997987, 0.72012468]
+                                g(1)         [−0.62242623, −0.62239004]
+                                g(2)         [−0.90371675, −0.90368056]
+                                S0 (0)       [0.63127654, 0.63129462]
+                                S0 (1)       [0.75422265, 0.75424073]
+
+
+235        SM5.1. Original allocation design. The model is exactly Section 2, with
+      identity matchings in both directions or product crosses, q ∈ {64, 128, 256, 512}, λ ∈
+      {0, 1, 2} and ε = λ/q. Capacity is the integer c = q/2, so κ = 1 and n∗ = q 2 . The
+      respective replicate counts are 128, 128, 256, 1024. Every paired path runs through
+      q 2 + 2q arrivals. There are 4608 fixed/product pairs, or 9216 individual outcomes.
+240   Every planned label was completed; none was replaced or excluded.
+           The 1024 seed labels are the first eight SHA256 bytes of the fixed string prefix
+      and replicate number specified in the protocol, interpreted as a big-endian 64-bit word.
+      Smaller scales use prefixes of this list. A counter-based SplitMix64 driver supplies two
+      words per arrival; disjoint bit fields determine event type, direction and endpoints.
+245   All probabilities are exact power-of-two subdivisions at these parameter values. The
+      same driver words are used within a fixed/product pair and across cells sharing a
+      replicate label. Thus cells and checkpoints are dependent. The seed label, not a
+      checkpoint, is the inferential unit. The confidence guarantees below are conditional on
+      the declared ideal independent-stream reference. Reproducible pseudorandom words
+250   do not establish mathematical independence of machine streams.
+           Compilation and deterministic one-step tests preceded the one authorized sto-
+      chastic batch. The model checks mass and capacity identities, endpoint counting,
+      and left-tie handling. All 9216 full labelled critical configurations were subsequently
+      re-read and independently checked against their mass, imbalance and overflow sum-
+255   maries. A second read-only audit reconstructed all 193536 saved checkpoint masses,
+      overflows, product feedback counts and fixed joint-table marginals, then all 9216 out-
+      come metrics; its largest metric roundoff difference was below 2.3 10−16 . At λ = 0 all
+      32256 paired recorded checkpoints agree, as required. All checkpoint side histograms,
+      fixed joint tables, driver hashes and logs are retained. The single-thread model batch
+260   took about 22.35 seconds of wall time within its fixed 360-second CPU and 420-second
+      wall budgets. This duration is operational evidence, not an algorithm performance
+      benchmark; no competing timed runs were active.
+           For phase-aware feedback there are 16 prescribed checkpoints
+                                                    
+                               2          (q/4 − 1)j      2qj
+                        nj = q /2 + 2q                 +      , j = 0, . . . , 15.
+                                               15         16
+265 The common phase is exactly j/16. The metric is the trajectory RMS of the exact con-
+    ditional feedback minus g(hn , ∆n /q), not minus g. For overflow the metric is the max-
+    imum absolute error of Zc /q − Sh (∆/q) over the five fixed h values −1, −1/2, 0, 1/2, 1.
+    The numerical lookup uses 257 old phase nodes with linear tail interpolation. Its uni-
+    form allowances are 0.00004861 for feedback and 0.00002440 for overflow, including
+270 E + e, interpolation and arithmetic. The interpolation addition in d1 is 1/65536, since
+      SM8                                          SILAS LU
+
+
+      the tail second-derivative norm is at most eight. Numerical allowances are used on
+      both sides of each classification.
+           SM5.2. Original failure-rate and cross-kernel intervals. Formal feed-
+      back/overflow and cross-kernel CDF tolerance decisions apply only at
+275   q = 512; q = 64, 128, 256 are descriptive. Four feedback cells (λ = 1, 2 and both
+      kernels) use RMS margin 0.10. Six overflow cells (all three λ and both kernels) use
+      maximum-error margin 0.05. For each cell the target is a population probability of
+      exceeding the margin at most 0.10. A numerically certain failure exceeds the margin
+      even after subtracting its allowance; a possible failure exceeds it after adding the al-
+280   lowance. Exact binomial tail inversion on a conservative 0.001 grid bounds the failure
+      probability below using certain failures and above using possible failures. Each side
+      uses error probability 1/800, giving simultaneous coverage at least 0.975 over the ten
+      cells by union bound. Entirely interior intervals support the target, lower bounds
+      above it detect mismatch, and all other cases are inconclusive.
+                                                   Table SM3
+           All primary q = 512 cells, with 1024 replicates per cell. All ten support their frozen population
+      target. Overflow failures are present and are retained. Intervals include the deterministic numerical
+      allowance through certain/possible counts.
+
+
+           Metric                     λ, kernel       Certain     Possible     Probability interval
+           Feedback RMS               1, fixed               0            0    [0, 0.007]
+                                      1, product             0            0    [0, 0.007]
+                                      2, fixed               0            0    [0, 0.007]
+                                      2, product             0            0    [0, 0.007]
+           Overflow maximum           0, fixed              37           37    [0.020, 0.058]
+                                      0, product            37           37    [0.020, 0.058]
+                                      1, fixed              38           38    [0.021, 0.059]
+                                      1, product            41           42    [0.023, 0.064]
+                                      2, fixed              49           50    [0.030, 0.073]
+                                      2, product            45           47    [0.026, 0.070]
+
+285       Cross-kernel comparison uses endpoint CDFs of ∆q2 /q and Zc (q 2 )/q at λ = 1, 2.
+      It does not use raw common-random-number path distances: the driver coupling is
+      not the maximal-load-pair rank coupling of Section 3. The frozen practical CDF-
+      distance margin is 0.20. DKW–Massart bounds [SM1] of width 0.057 for each of the
+      eight empirical CDFs yield simultaneous pair bands 0.114, with family error at most
+290   0.025 because
+                               16 exp[−2 · 1024 · (0.057)2 ] < 0.025.
+    The scalar inequality was checked with exact rational Taylor bounds. Independence
+    between the two kernels is unnecessary for the union bound. Observed KS distances, in
+    order λ = 1 imbalance/overflow and λ = 2 imbalance/overflow, are 9/1024, 17/1024,
+295 13/1024 and 1/64. The true CDF-distance upper bounds are respectively 0.122790,
+    0.130602, 0.126696 and 0.129625 after upward rounding. All are below 0.20, sup-
+    porting this specified finite-size equivalence criterion. The lower bounds are zero; no
+    positive separation is established. Adding the primary and CDF family errors bounds
+    the total simultaneous error by 0.05 under the reference model.
+300       SM5.3. Prospective design. The prospective protocol fixes q = 512, κ = 1,
+      λ = 1, 2, matching/product kernels and 4096 shared replicate labels. Each path stops
+                      SUPPLEMENTARY MATERIALS: CRITICAL OVERFLOW                         SM9
+
+      at q 2 arrivals. The source freeze is dated 17 October 2026, 23:42:34 UTC. The input
+      freeze precedes the first trajectory, and the data freeze precedes inference.
+           For label i, form the string
+305                        paper_micro_prospective_v1|replicate=%05d
+      with i formatted as five digits. Interpret its first eight SHA256 bytes as a big-endian
+      64-bit seed. All 4096 values are unique and disjoint from the original and reference
+      seed lists. The frozen protocol permits no stochastic pilot, replacement, extension or
+      threshold change. The artifact retains the complete batch and its checks.
+310        SM5.4. Prospective intervals and coverage allocation. The fixed-time
+      nonnegative-product argument is a simple instance of betting-based mean inference
+      [SM3]. For means, clip Vi = min(Zi /q, 3) only forQinference and retain all unclipped
+      observations. Lower
+                       Q     candidates m ∈ [0, 1] use i [1 + Vi − m]; upper candidates
+      m ∈ [1/2, 3] use i [1 + (2/5)(m − Vi )]. Reject only at capital at least 1000, and invert
+315   on the fixed 10−5 grid outwards using exact integer products. Each endpoint costs at
+      most 0.001 by the fixed-time nonnegative-product bound; no normal approximation
+      is used.
+           Changing one arrival changes final labelled-load ℓ1 distance by at most two and
+      overflow by at most one. At q 2 arrivals, bounded differences thus gives P(X − EX >
+      t) ≤ e−2t for X = Z/q. The fixed coarse bound U = X + 0.030 costs at most
+                 2
+320
+      e−2R(0.030) < 0.001 per cell. On EX ≤ U < 3, add the upward-evaluated clipping-
+                  2
+
+
+      bias bound
+                                                    1
+                                                          e−2(3−U ) .
+                                                                   2
+                                 E(X − 3)+ ≤
+                                                4(3 − U )
+      All four mean-width gates ≤ 0.04 passed. No sample exceeded three, but the popula-
+325   tion tail allowance was still included.
+           The existing reference’s four fixed mean endpoints each cost at most 0.001. Its
+      clipped mean intervals are [0.69875, 0.70333] at λ = 1 and [0.67391, 0.67781] at λ = 2.
+      The audited total approximation and truncation allowances 0.0006 and 0.0010 give
+      true SDE mean intervals [0.69815, 0.70393] and [0.67291, 0.67881]. Both satisfy the
+330   unchanged width gate 0.010. Subtraction of these intervals from the fresh uncondi-
+      tional micro intervals gives Table 1. Eight fresh betting endpoints, four fresh coarse
+      bounds and four existing reference endpoints cost at most 0.016.
+           Fresh micro CDFs use DKW width a = 0.032 with R = 4096; the two existing
+      reference CDF events use b = 0.012 with Nref = 32768. The audited reference-to-
+335   SDE coupling supplies horizontal radius r1 = 0.010, r2 = 0.020 and vertical allowance
+      τ = 0.005. With A the micro empirical law, B the computed reference empirical law,
+      B± = B ± rλ , d(A, B) = supx (FA − FB ) and δ = a + b + τ = 0.049, the distance
+      bounds are
+                            L = max{0, max[d(A, B− ), d(B+ , A)] − δ},
+340                         U = min{1, max[d(A, B+ ), d(B− , A)] + δ}.
+      Every jump, including ties, is included; stored long-double hexadecimal values are
+      parsed as exact rationals. The unchanged reference CDF-envelope width gate 0.10
+      passed for both λ values. The simultaneous failure allocation for this family’s eight
+      comparisons is
+345                        αmean ≤ 0.016,
+                           αCDF ≤ 8e−2·4096(0.032) + 4e−2·32768(0.012) ,
+                                                   2                   2
+
+
+
+                           αjoint < 0.018138367441 < 0.05.
+      SM10                                     SILAS LU
+
+
+    The scalar exponential bounds were certified before sampling with rational Taylor
+    bounds. This is at least 95% simultaneous coverage for these eight new comparisons
+350 under the contracts below. It is a separate family from the original finite-batch claims,
+    not a combined confidence statement for every result in the manuscript. Between-cell
+    independence is not needed for the union bounds.
+         SM5.5. Earlier post-hoc diagnostic kept separate. Before the prospective
+    batch, the old R = 1024 micro endpoints had already been observed when an SDE
+355 follow-up recipe was designed. Its micro mean intervals are fixed-recipe nominal
+    records; coverage adjusted for that actual post-hoc selection was not established. The
+    original unqualified whole-family 95% statement for that diagnostic was withdrawn.
+    The separately documented CDF-only anchor does not repair the micro mean selection
+    gap. See the preserved corrected diagnostic status.
+360       SM6. SDE reference error budget. Write b = λg, N = 16384 and h = 1/N .
+      The front representation gives |b| ≤ λ, −2λ ≤ b′ ≤ 0 and |b′′ | ≤ 24λ. Thus x + hb(x)
+      is nondecreasing and 1-Lipschitz. Let L = 2λ and C0 = 2λ2 + 12λ.
+          The local exact-versus-Euler remainder has the Itô representation
+                     Z h                              Z h
+              Rk =         (h − u)b′ (Xkh+u ) dBu +         (h − u)(bb′ + b′′ /2)(Xkh+u ) du.
+                      0                                0
+
+365   Its conditional mean√is bounded by a = C0 h2 /2. Its centered conditional L2 norm is
+                      3/2         2
+      at most s = Lh / 3 + C0 h /2. Contraction yields the second-moment recurrence
+                                                  √
+                                    vk+1 ≤ vk + 2a vk + a2 + s2 .
+                       √       √
+      Induction gives vN ≤ N s + N a. Hence the Euler bound has an explicit constant
+      and no exponential amplification.
+370        The global feedback table uses Simpson quadrature over 256 phase intervals and
+      linear interpolation at spacing 1/512. Its error is at most
+                                              9472        3
+                             0.00004861 +              +      < 0.000061.
+                                            180 · 2564   5122
+      For S0 , linear interpolation adds 1/(4·5122 ) to 0.00002440, giving error below 0.000026.
+      Certified analytic tails cover constant feedback extension beyond eight and the over-
+375   flow extension |d|/2 beyond 32. All approximate feedback slopes lie in [−2, 0], and all
+      approximate overflow slopes lie in [0, 0.5001].
+          For midpoint uniforms of cell width δ = 2−52 , an explicit Box–Muller coupling
+      gives
+                             E|Z − Zmid |2 ≤ 100δ(1 + log(1/δ)) < 10−12 .
+380 The implementation’s series and rounding bounds are stated below. Minkowski across
+    N scaled increments gives accumulated driver error at most 128(10−6 + 10−9 ) <
+    0.00013. This bound does not assume cancellation of coordinate errors.
+         For clipping at three, the ideal-Gaussian Euler endpoint is a 1-Lipschitz function
+    of its Gaussian increments. Oddness and contraction give its second moment at most
+385 one. The approximate readout has value below 0.632 at zero and Lipschitz constant
+    0.5001. Its mean is below 1.133. Gaussian concentration [SM2] gives clipping bias
+    below                                               
+                            0.50012         (3 − 1.133)2
+                                      exp −                < 0.00014.
+                           3 − 1.133         2(0.5001)2
+                      SUPPLEMENTARY MATERIALS: CRITICAL OVERFLOW                        SM11
+
+        The reference error allowances include the globally certified feedback/readout ta-
+390 bles, Euler discretization, the Gaussian driver, state/readout arithmetic and trun-
+    cation. The coeﬀicient-table allowances are 0.000061 for g and 0.000026 for S0 ,
+    with checked readout Lipschitz bound 0.5001. The Gaussian-driver accumulated
+    L2 allowance is 0.00013. The authoritative arithmetic supplement bounds normal-
+    coordinate arithmetic error below 10−12 , supporting the frozen 10−9 coordinate al-
+395 lowance; state rounding plus readout rounding divided by 0.5001 is below 4 10−12 ,
+    within the single shared 10−6 allowance. These statements are conditional on binary
+    round-to-nearest arithmetic with at least 64 significand bits, normal finite operation
+    ranges and exact radix-two exponent reduction. No historical dynamic floating-point
+    register snapshot was saved for the old reference; a later environment probe cannot
+400 prove those historical registers. The audited version 2 arithmetic supplement is in-
+    cluded with the source, together with the reference protocol and probability contract.
+        For clarity, the reference mean budget uses two different readout constants. The
+    exact S0 is 1/2-Lipschitz, whereas the stored interpolator is 0.5001-Lipschitz. Let eλ
+    denote the certified Euler L2 bound. With N = 16384, L = 2λ and C0 = 2λ2 + 12λ,
+405 the monotone Euler-map estimate gives
+
+                                      L/(17/10) + C0 /2     C0
+                               eλ =                     +    √ ,
+                                             N            2N N
+             √            √
+      using 3 > 17/10 and N = 128. For δg = 0.000061 and δS = 0.000026, the mean
+      error is bounded by
+
+                    δS + 12 (eλ + λδg ) + 0.5001(0.00013 + 0.000001) + 0.00014.
+
+410   It is less than 0.000514 at λ = 1 and 0.000857 at λ = 2. These bounds fit the frozen
+      allowances 0.0006 and 0.0010. The CDF coupling follows from
+
+                         (eλ + 0.00013)2 ≤ 0.005(rλ − λδg − 0.000001)2 .
+
+    The first two terms in the mean bound compare the true SDE to the ideal-Gaussian
+    Euler process. The remaining terms cover the computed driver, joint arithmetic error
+415 and Gaussian clipping tail. The arithmetic supplement supplies the local rounding
+    bounds; no cancellation of driver errors is assumed.
+          SM7. Artifacts and verification scope. The numerical evidence comes from
+      preserved experiments and numerical certificates. It generates no allocation trajectory,
+      seed or ODE/SDE solution. All original archives and earlier manuscript versions
+420   remain separate.
+          The original allocation batch contains 9216 outcomes and 193536 checkpoint ob-
+      servations. Its archive is pinned at
+                           dddf58f43c0831e1c24e3017fc11618938453478.
+    The prospective batch contains 16384 endpoints from 4096 shared labels. Its pinned
+425 artifact includes source, protocol, seeds, configurations, hashes and logs. The SDE
+    reference is pinned at
+                           067543228ccdc4efbce5b8df7a0849b03f5fc1ec.
+      Its reused status and original confidence events are part of the comparison design.
+           The source bundle retains the authoritative arithmetic supplement, probability
+430   contract, frozen prospective plan and corrected post-hoc status. File manifests identify
+      the exact input bytes. Local audit receipts record the saved-output checks.
+      SM12                                        SILAS LU
+
+
+           The completed numerical audit independently recomputes all 256 full-cell residual
+      bounds, 24 fluid readout estimates, 20482 coeﬀicient nodes and 65536 reference end-
+      point readouts. It exactly reduces the saved forward and backward terminal matrices.
+435   It does not replay matrix propagation. That stage relies on the inspected comparison
+      proof and archived implementation.
+           The endpoint audit recomputes mass, imbalance and overflow from all 25600 saved
+      allocation configurations. The statistical audit recomputes prospective betting end-
+      points and neighboring grids, clipping bounds, CDF suprema and family allocations.
+440   It also checks the original ten failure-rate intervals and four cross-kernel CDF compar-
+      isons. The earlier experiment artifact records a separate checkpoint reconstruction;
+      the later audit does not repeat that full reconstruction.
+           The recorded freeze hashes and chronology are internally consistent. They are not
+      an external timestamp attestation. The old reference has no saved dynamic floating-
+445   point register snapshot. Its arithmetic guarantee therefore remains conditional on
+      the contract in Supplement section SM6. Pseudorandom reproducibility does not
+      establish the ideal independence premises.
+           Build instructions, compiler logs, the source manifest and document-check re-
+      ceipts accompany this version. Internal mathematical review and computational
+450   checks are not machine formalization or external peer review. The experiments mea-
+      sure allocation overflow and the stated approximation errors.
+
+                                               REFERENCES
+
+      [SM1] P. Massart, The tight constant in the Dvoretzky–Kiefer–Wolfowitz inequality, Ann. Probab.,
+              18 (1990), pp. 1269–1283, https://doi.org/10.1214/aop/1176990746.
+455   [SM2] R. van Handel, Probability in high dimension, 2016, https://web.math.princeton.edu/~rva
+              n/APC550.pdf. APC 550 lecture notes, Princeton University, December 2016.
+      [SM3] I. Waudby-Smith and A. Ramdas, Estimating means of bounded random variables by betting,
+              J. R. Stat. Soc. Ser. B Stat. Methodol., 86 (2024), pp. 1–27, https://doi.org/10.1093/jrsssb
+             /qkad009.
+

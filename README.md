@@ -1,8 +1,8 @@
-# Critical Overflow: reproducibility core
+# Critical Overflow: reproducibility repository
 
-Portable CPU reproduction for **Critical Overflow in Weakly Coupled Two-Choice Allocation**. This private repository contains selected fixed experimental evidence, original numerical sources, exact seed lists, and a portable runner. It does not copy the Huawei business workspace or the full research history.
+Portable CPU reproduction for **Critical Overflow in Weakly Coupled Two-Choice Allocation**, SICOMP v2. Read the [current article](paper/output/pdf/paper_sicomp.pdf), [supplement](paper/output/pdf/supplement_sicomp.pdf), and [theorem/figure/table map](docs/PAPER_MAP.md). This private repository contains the current editable paper, selected fixed experimental evidence, original numerical sources, exact seed lists, and portable runners. It does not copy the Huawei business workspace or the full research history.
 
-**Current scope:** fixed-evidence core. The authoritative uploaded SICOMP v2 ZIP was resolved in Library but could not be downloaded in this execution environment. Its manuscript source and `prepare_figures.py` have therefore **not been read or integrated here**. The paper-level mapping in [docs/PAPER_MAP.md](docs/PAPER_MAP.md) marks the supplied manuscript descriptions and the remaining integration work. The older v4.2 manuscript is not substituted for v2. No paper link is changed.
+The authoritative uploaded ZIP is preserved unchanged in `source_inputs/`, SHA-256 `c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432`. It was obtained from the exact private GitHub transfer commit after Library transport failed; all 112 source-manifest entries and the complete 113-file package were verified locally. Current TeX, bibliography and SIAM class bytes are unchanged. The older v4.2 manuscript is not substituted, and no link inside the paper has been changed.
 
 ## Problem and evidence
 
@@ -32,7 +32,28 @@ This mode generates no new model trajectories or random words. It rebuilds the t
 .venv/bin/python -B tools/reproduce.py recompute --out runs/recompute
 ```
 
-Outputs include `PACKAGE_CHECKS.json`, `checks.json`, `stages.json`, stdout/stderr logs, and `analysis/`. `analysis/observed_imbalance_readout.csv` and `analysis/mechanism.json` reconstruct the mechanism comparison from fixed prospective outcomes and the fixed lookup. `analysis/endpoint_comparison.csv` is rebuilt from the original microscopic outcomes using the explicit descriptive schema; compatibility with the unavailable manuscript plotting script is pending. This is more than copying retained plot data, but it is not yet a claim that all six v2 figures have been regenerated.
+Outputs include `PACKAGE_CHECKS.json`, `checks.json`, `stages.json`, stdout/stderr logs, and `analysis/`. `analysis/observed_imbalance_readout.csv` and `analysis/mechanism.json` reconstruct the mechanism comparison from fixed prospective outcomes and the fixed lookup. The core's `analysis/endpoint_comparison.csv` contains aggregated descriptive fields. The paper runner below separately reconstructs the actual per-endpoint schema needed by the authoritative plotting script; it does not use those aggregates as a substitute.
+
+## Rebuild all six figures and both documents
+
+In addition to the core requirements, install XeLaTeX, BibTeX, Poppler tools, and standard LaTeX packages used by the bundled SIAM class, including **algorithms** (`algorithm.sty`). Typical Debian packages are `texlive-xetex`, `texlive-latex-extra`, `texlive-science` and `poppler-utils`. No shell escape is enabled. The original pdfLaTeX compatibility claim fails on the tested engine, so this entry uses the same XeTeX engine family as the original Tectonic build.
+
+On a Debian/Ubuntu system where these optional paper-build dependencies are missing:
+
+```sh
+sudo apt-get install --no-install-recommends texlive-xetex texlive-latex-extra texlive-science poppler-utils
+```
+
+```sh
+.venv/bin/python -m pip install -r requirements-paper.txt
+.venv/bin/python -B tools/build_paper.py --out runs/paper
+```
+
+This starts with an empty output tree, checks the authoritative ZIP and editable sources, reconstructs 25,600 original/prospective endpoint rows from fixed raw data, and regenerates every displayed figure. It checks all five plotted datasets against the authoritative retained datasets and all four tables against rational results, including outward rounding and nonzero failures. The two PDFs are built in alternating multiple passes until cross-document auxiliaries stabilize, then checked for unresolved references/citations, duplicate labels, missing characters, overfull boxes, embedded fonts and successful rendering of every page.
+
+`runs/paper/paper/output/pdf/` holds the PDFs; `runs/paper/render/` holds every rendered page and contact sheets. `DOCUMENT_CHECKS.json`, `PLOT_DATA_CHECKS.json`, `checks.json`, `stages.json` and logs are the new acceptance evidence. The uploaded revision notes referred to a missing `verification/PACKAGE_CHECKS.json`; that absence is recorded, and the new top-level acceptance report is not represented as an original file.
+
+The legacy plotting reader receives small runtime tar containers containing only byte-identical selected members. These are explicitly **not** the complete historical return archives and do not claim their archive hashes. Their members map back through `provenance/FILES.json`; original complete archive hashes remain in `provenance/ARCHIVES.json`. This keeps the repository small while rebuilding from raw outcomes, not copied plot data.
 
 ## Replay the fixed stochastic batches
 
@@ -60,20 +81,20 @@ For the complete core reproduction, including data recomputation, all three stoc
 .venv/bin/python -B tools/reproduce.py all --out runs/full
 ```
 
-Measured results, command exits, runtime, memory high-water marks and remaining failures are recorded in [evidence/VALIDATION.md](evidence/VALIDATION.md). Paper compilation is pending receipt of the authoritative source. Its two TeX documents must eventually follow the supplied `BUILD.txt`, including the required cross-document multiple passes.
+For the entire release, run the `all` command above followed by `build_paper.py` in two new output directories. Measured results, command exits, runtime, memory high-water marks and retained failed setup attempts are recorded in [evidence/VALIDATION.md](evidence/VALIDATION.md). The paper build follows the supplied cross-document pass dependency with native XeLaTeX and BibTeX; it retains the original class, source and bibliography.
 
 ## Conditions and limits
 
 - Ideal within-stream and across-label iid input words are mathematical assumptions. The fixed counter-based PRNG is a reproducible implementation, not a proof of iid randomness. Shared drivers across cells are intentional.
 - The old post-hoc joint 95% mean/CDF statement was withdrawn. [provenance/history/STATUS_CORRECTED.json](provenance/history/STATUS_CORRECTED.json) and the correction commit remain traceable. Replaying numbers does not restore that statement. The prospective family and its unchanged conditions are kept separately.
-- The supplied v2 manuscript description uses `D_* < 9.038e-6` for the uniform profile error and `9.034e-6` for the fourth-stage W1 certificate bound. They are distinct quantities; actual rational bounds are retained in the evidence.
+- The v2 manuscript uses `D_* < 9.038e-6` for the uniform profile error and `9.034e-6` for the fourth-stage W1 certificate bound. They are distinct quantities, checked separately against the retained rational values.
 - Only the terminal-law comparison tests an unconditional diffusion prediction. The mechanism MAE comparison conditions both predictions on observed imbalance, carries no confidence claim, and does not compare against published allocation algorithms.
 - Fixed-kernel comparison `O(q^(-1/6) log²q)` is not a practical uniform error bound for the whole limit. Load-adaptive kernels are excluded. Qualitative attraction does not supply an effective finite-scale convergence rate.
 - The historical SDE executable has no retained dynamic floating-point register snapshot. New runs cannot retroactively supply one. Platform arithmetic contracts and this limitation remain explicit.
 
 ## Layout, provenance, contribution
 
-`src/` holds selected original numerical code; `configs/` holds original plans and labels; `data/` holds selected raw observations, configurations, lookup inputs and sealed comparisons, compressing large files losslessly; `tools/` contains the portable orchestration. `provenance/FILES.json` maps every selected frozen file to its fixed commit, archive/member, uncompressed checksum and stored checksum. `provenance/ARCHIVES.json` records the original archive checksums. `docs/` holds the mapping and selected proof material. Historical documents are retained as sources, not current paper entrypoints.
+`paper/` is the current paper entry; `src/` holds selected original numerical code; `configs/` holds original plans and labels; `data/` holds selected raw observations, configurations, lookup inputs and sealed comparisons, compressing large files losslessly; `tools/` contains orchestration and exact upstream figure scripts. `provenance/FILES.json` maps every selected frozen numerical file to its fixed commit, archive/member, uncompressed checksum and stored checksum. `provenance/ARCHIVES.json` records original archive checksums; `provenance/manuscript/` records the authoritative paper intake. Historical documents are retained as sources, not current paper entrypoints.
 
 For a contribution, describe the change, use a new output directory, retain the fixed seed lists, and attach the relevant `PACKAGE_CHECKS.json` and logs. An additional experiment needs its own source/configuration freeze and clearly stated scope. Do not overwrite sealed data or infer proof correctness from code tests.
 

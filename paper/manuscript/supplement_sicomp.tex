@@ -1,0 +1,26 @@
+\input{engine_compat_before}
+\documentclass[review,supplement,nohypdvips,hidelinks,onefignum,onetabnum]{siamart251216}
+\input{engine_compat_after}
+\input{shared}
+\headers{Critical Overflow}{Silas Lu}
+\externaldocument[][nocite]{../output/pdf/paper_sicomp}[paper_sicomp.pdf]
+\hypersetup{pdftitle={Supplementary Material: Critical Overflow in Weakly Coupled Two-Choice Allocation},pdfauthor={Silas Lu}}
+\begin{document}
+\maketitle
+This supplement documents the evaluation and finite-size comparisons in the
+main article. The main article gives the three main proofs; this supplement supplies
+the auxiliary estimates used there.
+The numerical bounds concern the preserved inputs and their stated arithmetic
+and probability contracts.
+\input{sections/gini}
+\input{sections/process_estimates}
+\input{sections/numerical_details}
+\input{sections/certificate_details}
+\input{sections/certificate_tables}
+\input{sections/inference_details}
+\input{sections/sde_details}
+\input{sections/artifact}
+\FloatBarrier
+\bibliographystyle{siamplain}
+\bibliography{references}
+\end{document}

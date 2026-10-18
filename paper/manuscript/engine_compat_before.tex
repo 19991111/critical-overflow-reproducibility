@@ -1,0 +1,12 @@
+% SIAM's class tests ifpdf for the legacy dvips-only breakurl branch.
+% Tectonic/XeTeX produces PDF via xdvipdfmx, so bypass that branch while the
+% unmodified class loads. Restore the actual engine test immediately after it.
+% With pdfLaTeX these two compatibility files have no effect.
+\RequirePackage{iftex}
+\ifXeTeX
+  \RequirePackage{ifpdf}
+  \let\SIAMactualifpdf\ifpdf
+  % Leave hyperref's engine detection intact. The class's graphics branch
+  % follows immediately after hyperref and is the only test we override.
+  \AddToHook{package/hyperref/after}{\let\ifpdf\iftrue}
+\fi

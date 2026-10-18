@@ -3,7 +3,7 @@
   "authoritative_library_file_id": "libfile_ee592c5200088191aff61338f9396060",
   "authoritative_file_name": "critical_overflow_sicomp_v2_editable.zip",
   "reported_size_bytes": 4054233,
-  "authoritative_bytes_available_here": false,
+  "authoritative_bytes_available_here": true,
   "known_reference_route": {
     "prepare_materialize": "succeeded; exact Library ID resolved",
     "explicit_destination": "/workspace/source-input",
@@ -26,7 +26,20 @@
   "github_target_id": "1424643088",
   "github_last_verified_visibility": "private",
   "github_verified_owner": "19991111",
-  "github_verified_permissions": {"push": true, "admin": true},
-  "github_prior_public_state": "No research content uploaded while public; user changed visibility to private before upload authorization was exercised.",
-  "credential_creation": false
+  "github_verified_permissions": {
+    "push": true,
+    "admin": true
+  },
+  "github_prior_public_state": "No research content uploaded while public; private verified before each upload.",
+  "credential_creation": false,
+  "resolution": {
+    "route": "Exact commit read through GitHub connector and managed Git fetch; same execution environment",
+    "commit": "2a19828175063a37fad1d68c6a8caa70f3af9448",
+    "path": "source_inputs/critical_overflow_sicomp_v2_editable.zip",
+    "bytes": 4054233,
+    "sha256": "c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432",
+    "git_blob": "11ba0afbc33e6655261d277b11929c4e4ad9427e",
+    "source_manifest_verified": 112,
+    "total_files": 113
+  }
 }

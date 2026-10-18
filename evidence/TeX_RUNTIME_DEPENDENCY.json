@@ -1,0 +1,14 @@
+{
+  "dependency": "algorithm.sty v0.1, 2009-08-24",
+  "scope": "External TeX runtime dependency; not a repository license selection. Not bundled as repository-authored code.",
+  "local_install": "/workspace/critical-overflow-texdeps/algorithm.sty",
+  "source": "https://github.com/aitcsim/ait-thesis-latex-template/blob/ae9b45824798b5333c57725a127cdca047686e9c/algorithm.sty",
+  "git_blob": "85585654b1b9393a64c385200edeea37b8dd7d27",
+  "sha256": "d63fdf24879f0efd535bc6d06bc2a008b79ae77f6d6d2bc96156ff1f35e96bd7",
+  "bytes": 3249,
+  "upstream_package": "https://ctan.org/pkg/algorithms",
+  "system_install_alternative": "TeX Live algorithms package, e.g. texlive-science on Debian",
+  "retained_upstream_copyright_and_license_header": true,
+  "apt_attempt": "texlive-science has no candidate in this environment cache",
+  "CTAN_direct_download_attempt": "network proxy CONNECT 403; no proxy bypass or alternate execution environment used"
+}

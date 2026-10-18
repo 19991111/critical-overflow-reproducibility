@@ -1,0 +1,38 @@
+{
+  "engine": "native XeLaTeX and BibTeX; unmodified SIAM class and TeX sources",
+  "engine_version": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)",
+  "external_TEXINPUTS": "/workspace/critical-overflow-texdeps//:",
+  "alternating_cross_document_rounds": 3,
+  "documents": {
+    "paper_sicomp": {
+      "pages": 19,
+      "sha256": "d1738a6ba90742cbe67d80859e227a2c075dfe7199114ef30a8006dd0e004b51",
+      "bytes": 412350,
+      "fonts": 42,
+      "final_log_counts": {
+        "undefined_reference": 0,
+        "duplicate_label": 0,
+        "overfull": 0,
+        "missing_character": 0
+      },
+      "rendered_pages": 19
+    },
+    "supplement_sicomp": {
+      "pages": 12,
+      "sha256": "f94602da9c49672a8ce7b50220aef23a0f9b16eb4b40f1557ac87e7f1fdf9096",
+      "bytes": 152152,
+      "fonts": 26,
+      "final_log_counts": {
+        "undefined_reference": 0,
+        "duplicate_label": 0,
+        "overfull": 0,
+        "missing_character": 0
+      },
+      "rendered_pages": 12
+    }
+  },
+  "page_count_difference_from_Tectonic_input": {
+    "paper_sicomp": 0,
+    "supplement_sicomp": 0
+  }
+}

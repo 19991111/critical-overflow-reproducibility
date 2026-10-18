@@ -1,0 +1,34 @@
+\section{Numerical certificate details}\label{app:certificate}
+Let $v$ be an exact rational probability profile of mean zero, obtained by normalizing the saved candidate and correcting its mean with an integer-shift mixture. Binary64 input values are treated as exact rationals, not as exact solutions. Its strict one-period return error is $r<4.601\,10^{-9}$. The full-cell trajectory error is $e_s$, including the mean correction; $e=\sup_s e_s<4.585\,10^{-9}$. Bounds come from the full polynomial residual, including the top outflow. For a Bernstein residual of degree six, integration of its absolute value is bounded by the cell width times the sum of absolute coefficients divided by seven. Tail nonexpansion then controls the error against the true flow of $v$.
+
+\begin{proposition}[A posteriori profile estimate]\label{prop:posterior}
+Fix a core $|k|\le K_2$ on both channels. Suppose the exact midpoint difference kernel between the candidate flow and the orbit, over $B$ mean periods with the co-moving shifts, has common mass at least $\beta>0$ from every core starting state. For
+\[
+ t_p(K_2)=\sum_{\text{sides}}\{\E_p(X-K_2)_++\E_p(-X-K_2-1)_+\},
+\]
+one has
+\begin{equation}\label{eq:posterior}
+ d_1(v,\rho^0)\le Br/\beta+2t_v(K_2)+2t_{\rho^0}(K_2).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The signed tail difference has total mass zero. Its outside-core absolute mass is at most $t_v+t_{\rho^0}$. On the core the common kernel mass cancels at least $\beta$ times the smaller of its positive and negative masses, reducing the $\ell_1$ norm by at least $\beta[d_1-2(t_v+t_{\rho^0})]$. Iterating the one-period return bound and nonexpansion gives $d_1(v,T^Bv)\le Br$. Triangle inequality between $v,T^Bv,\rho^0=T^B\rho^0$ now yields \eqref{eq:posterior}. In particular the tail term is not divided by $\beta$.
+\end{proof}
+
+The finite lower kernels retain only paths inside their declared moving frame, so deleting escaping paths preserves a lower bound. Validated exit upper bounds avoid unnecessary killing at high starting levels. Each lower Metzler matrix has form $-2I+C$, $C\ge0$. Downward dyadic arithmetic, the nonnegative exponential terms through degree four, and a rational lower bound on $e^{-2h}$ propagate all core columns. At each final row take the minimum over all core columns and sum these minima to obtain $\beta$. An independent backward implementation propagates all terminal indicators with 64-bit directed arithmetic; the forward computation uses 80 bits. Each bootstrap stage uses only an already completed earlier bound. Supplement section~\ref{app:tails} gives the analytic infinite-tail bounds required by \eqref{eq:posterior}.
+
+
+The larger final forward/backward bound is the exact rational
+\[
+ E=\frac{1365032393294082761}{151115727451828646838272}
+ <9.034\,10^{-6}.
+\]
+Nonexpansion and integer translation give uniform profile error $D_*=E+e<9.038\,10^{-6}$ at every real mean. Negative means use translation, not backward integration.
+
+For feedback, the origin coefficient and overflow, exact rational sums over 257 saved phase nodes (256 intervals) yield errors
+\begin{align*}
+ \text{feedback: }&2D_*+\frac{9472}{180\cdot256^4},&
+ \text{origin coefficient: }&8D_*+\frac{76288}{180\cdot256^4},&
+ \text{overflow: }&D_*.
+\end{align*}
+The profile constants follow by coupling the two independent comparisons, a three-draw origin event, and positive part. For quadrature, the quadratic field has $\norm{F}_1=2$, $\norm{DF}\le4$, $\norm{D^2F}\le8$ and higher field derivatives zero. Its trajectory derivative norms through order four are bounded by $2,8,64,640$. Multinomial differentiation gives fourth derivative bounds 9472 for the feedback integrand and 76288 for the origin integrand. Composite Simpson quadrature has error $M_4/(180N^4)$; its positive weights do not amplify grid profile errors.

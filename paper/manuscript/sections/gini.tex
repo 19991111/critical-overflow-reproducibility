@@ -1,0 +1,11 @@
+\section{The centered Gini inequality}\label{app:gini}
+For a finite zero-mean real law $Y$,
+\[
+ \E|\sinh Y-\sinh Y'|\ge\E|\sinh Y|
+ \ge\E\cosh Y-1.
+\]
+The second inequality holds pointwise. For the first, decompose a zero-mean law into zero-mean two-point laws across zero, plus any atom at zero, by transporting the positive first-moment mass against the negative first-moment mass. For a component on $a,-b$, $a,b>0$, the difference between the two sides is
+\[
+ \frac{(a-b)(b\sinh a-a\sinh b)}{(a+b)^2}\ge0,
+\]
+since $\sinh(t)/t$ increases on $(0,\infty)$. The Gini functional of a real law is concave, as seen from $2\int F(t)(1-F(t))\dd t$, whereas the absolute first moment is linear. Mixing the components proves the result. Truncation and mean correction extend it when the stated exponential moments are finite. Rank summation by parts then applies this inequality to suffix deficit $\delta t(1-t)$, giving the potential drift used in Sections~\ref*{sec:universality} and \ref*{sec:profile}.

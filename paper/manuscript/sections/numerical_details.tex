@@ -1,0 +1,58 @@
+\section{Auxiliary numerical estimates}
+\subsection{Analytic tails for the true orbit}\label{app:tails}
+The posterior certificate requires bounds on the infinite true orbit, not only on the saved finite path. Here are the bounds actually used. Let $D_{LR}(u)=\E|L_u-R_u|$ with independent draws. Exact differentiation of the centered second-moment sum gives
+\[
+ \frac\dd{\dd u}\{\E(L_u-u)^2+\E(R_u-u)^2\}=2-2D_{LR}(u).
+\]
+It follows by periodicity that $\int_0^1D_{LR}(u)\dd u=1$. This function is $2$-Lipschitz by the monotone marginal coupling, so its maximum is at most $3/2$ on the unit circle. Interlacing gives $0\le\E L_u-\E R_u\le1$. Jensen and positive/negative parts, at mean zero, then imply
+\[
+ \E(L_0)_+\le5/4,\quad \E(R_0)_+\le3/4,\quad
+ \E(-L_0)_+\le3/4,\quad \E(-R_0)_+\le5/4.
+\]
+For example $\E(L-R)_+=(D_{LR}+\E L-\E R)/2$, while Jensen bounds the marginal positive part by that expression after accounting for the other marginal's sign of mean. The opposite-sign cases follow identically.
+
+Integrating the front equation and matching the limit at $+\infty$ yields
+\begin{equation}\label{eq:frontintegral}
+ F(r)=\int_{r-1}^rF(s-1)F(s)\dd s,
+ \qquad F(r)\le F(r-1)F(r-2).
+\end{equation}
+The first-moment bounds give $F(2k)\le\min(1,5/(4k))$ and $F(2k+1)\le\min(1,3/(4k))$ for $k\ge1$. Monotonicity and \eqref{eq:frontintegral} give a rational superlinear right-tail recursion. Once $F(n)\le\eta<1$, the uncomputed remainder obeys $F(r)\le\eta F(r-2)$ for $r\ge n+2$. Upward rounding and this geometric remainder account for the infinite tail even when finite arithmetic plateaus.
+
+For the left anchor set $z_j=(x_j(0)+y_j(0))/2$ and $A_j=\int_0^1x_j(u)y_j(u)\dd u$. The pooled equation and the unit-period shift give $A_j=z_j$. Stochastic increase gives
+\[
+ z_j\le x_{j-1}(0)y_{j-1}(0)\le z_{j-1}^2.
+\]
+If $z_{-2}\le s$, mean zero would require $3\le\sum_{n\ge0}s^{2^n}$. At $s=89/100$ the latter sum is strictly below three: sum through $n=5$ exactly and bound the rest by $s^{64}/(1-s^{64})$. Thus $G(-4)=1-F(-4)<11/100$.
+
+Write $a=11/100$, $c=1-a/2=189/200$ and $\gamma=18/25$. From \eqref{eq:frontintegral}, for $r\le-4$,
+\[
+ G(r)=\int_{r-1}^r[G(s)+(1-G(s))G(s-1)]\dd s
+ \ge c\int_{r-2}^rG(s)\dd s.
+\]
+The kernel mass $c\int_0^2e^{-\gamma s}\dd s$ is at least one, as verified by a rational Taylor lower bound $e^{36/25}>21/5$. Therefore $e^{-\gamma r}G(r)$ is superharmonic for the backward walk with normalized density proportional to $ce^{-\gamma s}$ on $[0,2]$. Starting at $-4$, stop on entering $[x,x+2]$. The stopped function is bounded on the traversed compact interval and the stopping time is finite, so the supermartingale inequality gives
+\[
+ G(x)\le\frac{11}{100}\exp\{(18/25)(x+6)\},\qquad x\le-6.
+\]
+The walk is only an analytic proof device; it is never simulated. For $K_2\ge3$ its integrated contribution is
+\[
+ t^-_{\rho^0}(K_2)\le\frac{11}{100}
+ \frac{b^{2K_2-4}+b^{2K_2-5}}{1-b^2},\qquad b=e^{-18/25}.
+\]
+The rational right recursion and this geometric left bound are used in \eqref{eq:posterior}. An independent coarser bound with exponent $3/5$ was retained as a fallback. All scalar comparisons precede the matrix stages.
+
+\subsection{Validated lower matrices and bootstrap}
+At saved endpoints, tail values are enclosed by the exact binary rationals plus
+or minus the strict full-field trajectory error. Across a cell, true tails
+are monotone in mean time. An atom bound over a cell of width $h$ is
+$\max\{0,\widehat a_l-e_l\}\,\underline{e^{-2h}}$, where $e_l$ bounds the
+left-endpoint atom error and the exponential is bounded below.
+Over candidate cycle $k$, nonexpansion and the period residual add at most
+$kr$ to the discrepancy from the integer-translated first cycle.
+
+The orbit is first enclosed analytically using the preceding tails. After a completed stage gives $E_{\rm old}\ge d_1(v,\rho^0)$, nonexpansion also encloses every orbit phase by first-cycle nodes with error $e_s+E_{\rm old}$, independently of cycle index. Intersect these valid bounds. A stage never assumes its own proposed result.
+
+The midpoint-chain lower off-diagonals are the sums of the compared-law lower tails and atoms, because the rate twice a midpoint is that sum. Negative diagonals use upper exit bounds, rather than replacing every exit by two. After each period shift the finite frame by one and kill any path leaving it. For $A=-2I+C$, downward arithmetic computes
+\[
+ e^{hA}\ \ge\ \underline{e^{-2h}}\sum_{j=0}^4\frac{h^jC^j}{j!}
+\]
+entrywise, with a nonnegative finite right side. Propagating all core columns and summing row minima supplies the stated common mass. The backward verifier uses its own validated bootstrap history. Both histories and their initial target failures are retained; the final readout uses their larger error bound.

@@ -1,0 +1,43 @@
+{
+  "operation": "replot_preserved_nodes",
+  "new_trajectories": 0,
+  "new_ODE_SDE_integrations": 0,
+  "profile_rows": 196,
+  "response_nodes": 4097,
+  "negative_response": "Odd reflection of frozen nodes",
+  "profile_phase_indices": [
+    0,
+    128
+  ],
+  "profile_array": [
+    "x_128",
+    "y_128"
+  ],
+  "source_sha256": {
+    "evidence/raw_profiles.npz": "ce934a121ace06657aaf8ea516e876e37c46367489cc4d3e4460c094e814b02c",
+    "evidence/FROZEN_GBAR_NODES.csv": "8a70546d1550dcb6b1c63c2195e6589028810d5f7c98858833b07b198477e00c"
+  },
+  "outputs": {
+    "manuscript/figures/profile_mechanism.pdf": {
+      "bytes": 20921,
+      "sha256": "d934967b8dda17939b3bf010d33c18e553befbe319018f96809b42179ad0704b"
+    },
+    "manuscript/figures/profile_mechanism.svg": {
+      "bytes": 29672,
+      "sha256": "ba32360a9af81b556218c0d758decbccd71ce96085cf8a0ef976d87e728bbeda"
+    },
+    "manuscript/figures/profile_mechanism.png": {
+      "bytes": 124595,
+      "sha256": "ff95ae6a62ad27a12e2d12be1600f70b12dec446034f141a6c3fc3c17a26f283"
+    },
+    "verification/plot_data/profile_atoms.csv": {
+      "bytes": 4876,
+      "sha256": "cf5dfd61f6950df288ad199fe00259a4f5292b187982ad00a7f1e0dfd70e1ec1"
+    },
+    "verification/plot_data/averaged_response.csv": {
+      "bytes": 131157,
+      "sha256": "39346f59067589552b90164faaff28021caa6a740612a6a8998d07fd39806510"
+    }
+  },
+  "scope": "Display of saved nodes; connecting segments do not certify intermediate values."
+}

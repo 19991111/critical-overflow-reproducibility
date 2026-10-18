@@ -1,0 +1,13 @@
+{
+  "operation": "replot_preserved_outputs",
+  "new_trajectories": 0,
+  "new_ODE_SDE_integrations": 0,
+  "original_outcomes": 9216,
+  "prospective_outcomes": 16384,
+  "reference_outcomes": 65536,
+  "readout_cell": {
+    "n": 4096,
+    "MAE_imbalance": 0.39633750915527344,
+    "MAE_profile": 0.017408271929607397
+  }
+}

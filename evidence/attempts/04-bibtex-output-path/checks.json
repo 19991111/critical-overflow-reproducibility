@@ -1,0 +1,532 @@
+[
+  {
+    "name": "frozen_inputs",
+    "passed": true,
+    "detail": {
+      "files": 217,
+      "all_lengths_and_SHA256_match": true
+    }
+  },
+  {
+    "name": "finite_seeds",
+    "passed": true,
+    "detail": {
+      "labels": 1024,
+      "sha256": "f11dc99d12b1cde6e7a2762c10c85ef2b45d6dfa4620bc4d1c1600b8c8ac3d9a"
+    }
+  },
+  {
+    "name": "prospective_seeds",
+    "passed": true,
+    "detail": {
+      "labels": 4096,
+      "sha256": "63cc762d85878a55416837b1090796d6a6ea0534295e233883ce1f10f4061cbc"
+    }
+  },
+  {
+    "name": "reference_seeds",
+    "passed": true,
+    "detail": {
+      "labels": 32768,
+      "sha256": "83b7d35ab6f00dc72af32b6c573fa6f1ef56103d6bc9bfa4633ff9a84da11f9b"
+    }
+  },
+  {
+    "name": "seed_namespaces_disjoint",
+    "passed": true,
+    "detail": "No new labels generated or selected."
+  },
+  {
+    "name": "authoritative_zip",
+    "passed": true,
+    "detail": "c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432"
+  },
+  {
+    "name": "authoritative_manifest_file_set",
+    "passed": true,
+    "detail": {
+      "manifest_files": 112,
+      "all_files": 113
+    }
+  },
+  {
+    "name": "current_source/manuscript/shared.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/paper_sicomp.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/references.bib",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/engine_compat_after.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/engine_compat_before.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/supplement_sicomp.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/siamart251216.cls",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/siamplain.bst",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/inference_details.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/experiments.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/universality.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/limit.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/introduction.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/certificate_details.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/process_estimates.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/artifact.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/model.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/numerical_details.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/certificate_tables.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/discussion.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/profile.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/gini.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "current_source/manuscript/sections/sde_details.tex",
+    "passed": true,
+    "detail": "Unmodified authoritative source."
+  },
+  {
+    "name": "authoritative_lookup_vs_frozen_reference",
+    "passed": true,
+    "detail": {
+      "gbar_nodes": 4097,
+      "overflow_nodes": 16385
+    }
+  },
+  {
+    "name": "authoritative_profile_vs_frozen_raw",
+    "passed": true,
+    "detail": "Exact NPZ bytes."
+  },
+  {
+    "name": "Table1/1/matching",
+    "passed": true,
+    "detail": {
+      "outward_mean": [
+        "-0.00840",
+        "0.01010"
+      ],
+      "outward_CDF": "0.06542",
+      "exact_mean": [
+        "-21/2500",
+        "5046872627/500000000000"
+      ],
+      "exact_CDF": [
+        "0",
+        "133977/2048000"
+      ]
+    }
+  },
+  {
+    "name": "Table1/1/product",
+    "passed": true,
+    "detail": {
+      "outward_mean": [
+        "-0.00860",
+        "0.00993"
+      ],
+      "outward_CDF": "0.06500",
+      "exact_mean": [
+        "-43/5000",
+        "9923738667/1000000000000"
+      ],
+      "exact_CDF": [
+        "0",
+        "66551/1024000"
+      ]
+    }
+  },
+  {
+    "name": "Table1/2/matching",
+    "passed": true,
+    "detail": {
+      "outward_mean": [
+        "-0.00663",
+        "0.00844"
+      ],
+      "outward_CDF": "0.07021",
+      "exact_mean": [
+        "-663/100000",
+        "8432929743/1000000000000"
+      ],
+      "exact_CDF": [
+        "0",
+        "287579/4096000"
+      ]
+    }
+  },
+  {
+    "name": "Table1/2/product",
+    "passed": true,
+    "detail": {
+      "outward_mean": [
+        "-0.00671",
+        "0.00834"
+      ],
+      "outward_CDF": "0.07119",
+      "exact_mean": [
+        "-671/100000",
+        "4166463509/500000000000"
+      ],
+      "exact_CDF": [
+        "0",
+        "291579/4096000"
+      ]
+    }
+  },
+  {
+    "name": "TableSM1/K4_B8_J64",
+    "passed": true,
+    "detail": {
+      "acceptance_met": false,
+      "printed_W1_upper": "0.050068",
+      "exact_W1_upper": "295163854098824358488868392885815122837916799470803218757509505745973380283360666512729323752378348322621163707329789488221980117402138239032895704550532437495571498707531069764568673673277828394423458938273684458903745100405538610026049956695742146097179997390673321518319772909779722713860555367504335482910664425816218762565682026243040616868333922941270802888262969861799478165746485762283624407148650633699335632041310917440133/5895346986743111151601477736958161536594171013829192473666352767408363633935130203823982052234404674053450575437180197577301908193773804558037341409358935325930588726954142204878042374744167856739166156575511040399677306765734565644352513835969212767162515875970823354682508446901385798933232733390993212175472499227540287132842899052746828308152317406664298463851331443179873295345894803129350285795163609585567166329600960626688000"
+    }
+  },
+  {
+    "name": "TableSM1/K6_B16_J64",
+    "passed": true,
+    "detail": {
+      "acceptance_met": false,
+      "printed_W1_upper": "0.002797",
+      "exact_W1_upper": "7335196778539797599715208655322070680294828778674266638462208329753299581598672594899108026441977758650841079360995372000602706918303188557701208429420782154182766436958812440068029036217016580725798747095231176257829147811642051265949919175964772670193567556658454336254395278788919470339778705512146764343498763956954095096471192030219259045289017206552978889477293761762556526241101333467479316270771183367627171095842275400594901399756131438476710724556669799512352301583812625698169813286021466095398712200708179951466389897799380555897639396610618253339104752960106402063509084588005621035219419/2622572789429173799954220216133370626898509361696809069107282616371674778718216154720414020644955479701264059690038382415698737412651830473643391556853912469756787614821680190801502690325738526066729247038177720704448111078783810691422158523741106435799061652717250230511563978523902405662101016218820927139040003752563376507459552995065250209942451476261891045941636841713546742185620923442128637410002110979853052977777525551621412688563675057801171816149682876177615085348950508246684833644833988345849559732559745539828157664005312588911154770494792713937996936453250531629811660564151538710216704000"
+    }
+  },
+  {
+    "name": "TableSM1/K8_B24_J128",
+    "passed": true,
+    "detail": {
+      "acceptance_met": true,
+      "printed_W1_upper": "0.000157",
+      "exact_W1_upper": "330755927671249973015725179812365188168415603392578352449017914650338189675334306064596657837819947459722859438456094570736785495937068093036517138290289373178156946091732728598219792569756951177799185512315654237250793519924175396184416282474607573935897705639916755241796126136512797615570436863642198604811624921320194198112839715931888050425678844458152952149921370501751575301999867797801547411403663/2108973043466796045962514583897063083282157978301561321159747042020560304000034372490110720536638559525084993251063536828966637670770090760965984613721084494039489532155143236962744308351248465622153190679101264021632363267845394750009847613568812453002158760113629715912169743797651454275597774693730277010060334531158368570492022566894342379455060449723802342780346095477870804853937820160335829583003648000"
+    }
+  },
+  {
+    "name": "TableSM1/K10_B32_J128",
+    "passed": true,
+    "detail": {
+      "acceptance_met": true,
+      "printed_W1_upper": "0.000009034",
+      "exact_W1_upper": "241076957991366386228713511617595880967024274358078665241243620549308331917076277247053962253412443753194494616738487617746565531376482682270022632731440385337213952388782006376673171794465643332774042149639683092466326935777634689052478959225473206730678643797701967264025324044423184614528583304795041884017478734230157864474405894967057702901108674453874917679117105365525277396050783028478273079344317/26688392200587648755201418355005784102885464808955533644742398322187235103173511395756716736913901815420384420566111133342752292956295578187390869672254651681934888783441589576295762169694747918761444440581152965514190396429376636921626876326267141654132786167376582839526320713219126735639297814936059652905054677406361745403413704108254974824756733538411929952267610509040048110474862831947518560113262592000"
+    }
+  },
+  {
+    "name": "TableSM2/1",
+    "passed": true,
+    "detail": [
+      "0.71997987",
+      "0.72012468"
+    ]
+  },
+  {
+    "name": "TableSM2/2",
+    "passed": true,
+    "detail": [
+      "-0.62242623",
+      "-0.62239004"
+    ]
+  },
+  {
+    "name": "TableSM2/3",
+    "passed": true,
+    "detail": [
+      "-0.90371675",
+      "-0.90368056"
+    ]
+  },
+  {
+    "name": "TableSM2/4",
+    "passed": true,
+    "detail": [
+      "0.63127654",
+      "0.63129462"
+    ]
+  },
+  {
+    "name": "TableSM2/5",
+    "passed": true,
+    "detail": [
+      "0.75422265",
+      "0.75424073"
+    ]
+  },
+  {
+    "name": "TableSM3/feedback_RMSE/1/fixed",
+    "passed": true,
+    "detail": {
+      "certain": "0",
+      "possible": "0",
+      "interval": [
+        "0",
+        "0.007"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/feedback_RMSE/1/product",
+    "passed": true,
+    "detail": {
+      "certain": "0",
+      "possible": "0",
+      "interval": [
+        "0",
+        "0.007"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/feedback_RMSE/2/fixed",
+    "passed": true,
+    "detail": {
+      "certain": "0",
+      "possible": "0",
+      "interval": [
+        "0",
+        "0.007"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/feedback_RMSE/2/product",
+    "passed": true,
+    "detail": {
+      "certain": "0",
+      "possible": "0",
+      "interval": [
+        "0",
+        "0.007"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/spill_window/0/fixed",
+    "passed": true,
+    "detail": {
+      "certain": "37",
+      "possible": "37",
+      "interval": [
+        "0.020",
+        "0.058"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/spill_window/0/product",
+    "passed": true,
+    "detail": {
+      "certain": "37",
+      "possible": "37",
+      "interval": [
+        "0.020",
+        "0.058"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/spill_window/1/fixed",
+    "passed": true,
+    "detail": {
+      "certain": "38",
+      "possible": "38",
+      "interval": [
+        "0.021",
+        "0.059"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/spill_window/1/product",
+    "passed": true,
+    "detail": {
+      "certain": "41",
+      "possible": "42",
+      "interval": [
+        "0.023",
+        "0.064"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/spill_window/2/fixed",
+    "passed": true,
+    "detail": {
+      "certain": "49",
+      "possible": "50",
+      "interval": [
+        "0.030",
+        "0.073"
+      ]
+    }
+  },
+  {
+    "name": "TableSM3/spill_window/2/product",
+    "passed": true,
+    "detail": {
+      "certain": "45",
+      "possible": "47",
+      "interval": [
+        "0.026",
+        "0.070"
+      ]
+    }
+  },
+  {
+    "name": "distinct_profile_error_bounds",
+    "passed": true,
+    "detail": "Uniform D_* and fourth-stage W1 quantities checked separately."
+  },
+  {
+    "name": "plot_data/averaged_response.csv",
+    "passed": true,
+    "detail": {
+      "rows": 4097,
+      "largest_numeric_difference": 0.0,
+      "sha256": "39346f59067589552b90164faaff28021caa6a740612a6a8998d07fd39806510"
+    }
+  },
+  {
+    "name": "plot_data/finite_scale_summary.csv",
+    "passed": true,
+    "detail": {
+      "rows": 16,
+      "largest_numeric_difference": 0.0,
+      "sha256": "357f36484b6bec80f0bfbc5a7dfa41fc6efa6ff1f62287827fcdc5f1a2b3ec77"
+    }
+  },
+  {
+    "name": "plot_data/profile_atoms.csv",
+    "passed": true,
+    "detail": {
+      "rows": 196,
+      "largest_numeric_difference": 0.0,
+      "sha256": "cf5dfd61f6950df288ad199fe00259a4f5292b187982ad00a7f1e0dfd70e1ec1"
+    }
+  },
+  {
+    "name": "plot_data/readout_endpoints.csv",
+    "passed": true,
+    "detail": {
+      "rows": 4096,
+      "largest_numeric_difference": 0.0,
+      "sha256": "1b79fe798ad34c80a8c5acaf406204dd8cee2d1dbb87c8a314f8c3fd599a674e"
+    }
+  },
+  {
+    "name": "plot_data/terminal_cdf_grid.csv",
+    "passed": true,
+    "detail": {
+      "rows": 10004,
+      "largest_numeric_difference": 0.0,
+      "sha256": "c2b45ac4075effe37b92acb9f9ded644f115f468efdcc305505cbe545717cc78"
+    }
+  },
+  {
+    "name": "figure/readout_teaser",
+    "passed": true,
+    "detail": "Regenerated all three formats."
+  },
+  {
+    "name": "figure/model_scales",
+    "passed": true,
+    "detail": "Regenerated all three formats."
+  },
+  {
+    "name": "figure/profile_mechanism",
+    "passed": true,
+    "detail": "Regenerated all three formats."
+  },
+  {
+    "name": "figure/kernel_universality",
+    "passed": true,
+    "detail": "Regenerated all three formats."
+  },
+  {
+    "name": "figure/finite_scale",
+    "passed": true,
+    "detail": "Regenerated all three formats."
+  },
+  {
+    "name": "figure/terminal_law",
+    "passed": true,
+    "detail": "Regenerated all three formats."
+  }
+]

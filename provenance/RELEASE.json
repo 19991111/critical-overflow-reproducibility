@@ -1,7 +1,7 @@
 {
-  "scope": "validated fixed-evidence core; authoritative SICOMP v2 source integration pending",
+  "scope": "authoritative SICOMP v2 integrated, fixed-evidence core and clean paper build validated",
   "authoritative_library_file_id": "libfile_ee592c5200088191aff61338f9396060",
-  "authoritative_archive_sha256": null,
+  "authoritative_archive_sha256": "c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432",
   "tested_runner_sha256": "5bed5445ed0c30ab6bc00cd58e60f8b745a981922ec1b02c0c01c5663b5ca3d2",
   "acceptance_report": "evidence/full-core/PACKAGE_CHECKS.json",
   "acceptance_report_sha256": "51d1705261d9b1ecc91f8ea13b215bce88506399c5cff3a94edc46586618ea02",
@@ -9,5 +9,10 @@
   "license": "pending author decision",
   "remote_repository": "19991111/critical-overflow-reproducibility",
   "privacy": "private verified before initial connector write",
-  "initial_connector_commit": "8d910f6e77767ccd069aba911d78d8ba60fbbf81"
+  "initial_connector_commit": "8d910f6e77767ccd069aba911d78d8ba60fbbf81",
+  "authoritative_transfer_commit": "2a19828175063a37fad1d68c6a8caa70f3af9448",
+  "paper_acceptance_report": "evidence/paper/PACKAGE_CHECKS.json",
+  "paper_acceptance_report_sha256": "614b214c4336c20dc9c4d04754d6bd38e987d48834ef8d6e33fb0ee0490c9282",
+  "tested_paper_runner_sha256": "c0827e35f41235ce321082c9b7ee27f09582e311faef5ab2b3cbb6db382cec85",
+  "original_paper_text_class_bibliography_unchanged": true
 }

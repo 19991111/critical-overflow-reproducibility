@@ -1,0 +1,105 @@
+\section{The mean-locked internal orbit}\label{sec:profile}
+The main step is an exact midpoint equation for the difference of two tail
+flows. It gives strict contraction on equal-mean slices without uniform
+irreducibility on the whole lattice. Compactness then yields the periodic
+family and uniform attraction on each fixed moment sublevel.
+In this section all times use the mean clock. Signed lattice coordinates express translated laws; actual allocations remain nonnegative. Equation~\eqref{eq:flow} has a unique probability flow on finite-first-moment laws. It can be constructed by two coupled bounded-rate birth laws with left rate $2y_k$ and right rate $2x_{k+1}$. Picard iteration, or finite truncation followed by tightness, gives existence and uniqueness. The tail field is globally Lipschitz, probability constraints are invariant, and rates at most two prevent explosion. The sum of the mean derivatives is two, so $\mu(\Phi_tz)=\mu(z)+t$.
+
+\subsection{Moment compactness and exact nonexpansion}
+Let
+\[
+ V_\theta(z)=\E\cosh(\theta(L-\mu))+\E\cosh(\theta(R-\mu)).
+\]
+The selected-load distribution is $w_k=a_ky_k+b_kx_{k+1}$, of total mass one, bounded by twice the pooled law $\nu=(p_L+p_R)/2$. Its suffix is $x_ky_k\le[(x_k+y_k)/2]^2$. The same rank/Gini argument as in Lemma~\ref{lem:moment}, now with pure-internal rank deficit one, and differentiation of the moving mean give
+\begin{equation}\label{eq:fluidmoment}
+ \frac\dd{\dd t}V_\theta(\Phi_tz)
+ \le-\{\theta/2-2(e^\theta-1-\theta)\}V_\theta+\theta
+ \le-\theta V_\theta/4+\theta.
+\end{equation}
+Truncation justifies this calculation for finite exponential moments. Thus every centered sublevel $V_\theta\le M$, $M\ge4$, is invariant. No attraction theorem is used to obtain this bound.
+
+For two solutions put $d_k=x_k-\widetilde x_k$, $e_k=y_k-\widetilde y_k$, and let bars denote midpoint tails or atoms. Their difference satisfies exactly the forward equation on states $X_k,Y_k$ with transitions
+\begin{align*}
+ X_k&\longrightarrow X_{k+1} &&\text{at rate }2\bar y_k,&
+ X_k&\longrightarrow Y_k &&\text{at rate }2\bar b_{k-1},\\
+ Y_k&\longrightarrow Y_{k+1} &&\text{at rate }2\bar x_{k+1},&
+ Y_k&\longrightarrow X_{k+1} &&\text{at rate }2\bar a_k.
+\end{align*}
+Exit rates are $2\bar y_{k-1}$ and $2\bar x_k$, at most two. The midpoint identity is exact for the bilinear field, with no discarded remainder. Its evolution is positive and mass preserving, so
+\begin{equation}\label{eq:nonexp}
+ d_1(\Phi_tz,\Phi_t\widetilde z)\le d_1(z,\widetilde z).
+\end{equation}
+It also shows that the field is $4$-Lipschitz in tail $\ell_1$.
+
+\subsection{Strictness on an equal-mean slice}
+Positivity needed for strictness must be checked, since the generator need not be irreducible initially. Choose one positive atom on each side. Atoms retain at least $e^{-2t}$ of their initial mass. If a left atom is below a right atom, the left can advance to one above it through positive birth flux, after which the right can advance. If the left begins above the right, advance the right first. Variation of constants and induction show that every sufficiently high atom on each side is positive for every $t>0$. Consequently every finite tail is positive at positive times.
+
+In the midpoint chain, all same-channel forward edges at finite levels therefore have positive rates, and both crossing types are positive at sufficiently high levels. Any two finite starting states can reach a common high $X_K$ in a positive time interval with positive probability: choose a finite path in a compact subinterval of $(0,t)$ and use positive continuous rates there, together with the bounded waiting rates. This is a pointwise argument, with no uniform minorization over the whole lattice.
+
+If two distinct initial laws have the same mean, the summable signed tail difference has zero total mass and both signs. Choose one coordinate of each sign. Positive portions of their transported masses overlap at the common high state, causing strict cancellation. Hence for every $t>0$,
+\begin{equation}\label{eq:strict}
+ d_1(\Phi_tz,\Phi_t\widetilde z)<d_1(z,\widetilde z)
+ \quad\text{if }\mu(z)=\mu(\widetilde z),\ z\ne\widetilde z.
+\end{equation}
+
+\subsection{Existence, uniqueness and uniform attraction}
+On a fixed mean slice define $T=\sh_{-1}\Phi_1$. The set
+$\{\mu=\alpha,V_\theta\le M\}$ is compact in $d_1$: exponential tails imply tightness and uniform integrability of first moments; the moment sublevel is closed by lower semicontinuity. It is nonempty for sufficiently large $M$, uniformly for $\alpha\in[0,1]$, using identical mixtures on $\{0,1\}$. The map $T$ is continuous, preserves the set, and strictly decreases distances between distinct points.
+
+Here is the compact argument explicitly. Along an orbit, consecutive distances decrease to $r$. A convergent subsequence with limit $z$ gives both $d_1(z,Tz)=r$ and $d_1(Tz,T^2z)=r$. Strictness forces $r=0$, hence a fixed point. Two fixed points contradict strictness. The distance from any orbit to that point decreases; a second subsequence argument forces convergence to zero. On the compact set the continuous distance functions decrease pointwise to zero, so a finite-subcover argument makes the convergence uniform. Fixed points in nested sublevels agree.
+
+Let $z_*$ be the mean-zero fixed point and define
+\[
+ \rho^u=\sh_{\lfloor u\rfloor}\Phi_{\{u\}}z_*.
+\]
+The flow and period identities follow, with $V_\theta(\rho^u)\le4$ by \eqref{eq:fluidmoment}. Any other finite-first-moment periodic family would keep its equal-mean distance to this one unchanged over a period, contradicting \eqref{eq:strict}. Thus uniqueness extends beyond the exponential class used for construction.
+
+For each fixed $M\ge4$, the set $K_M=\{z:\mu(z)\in[0,1],\ V_\theta(z)\le M\}$ is compact in $d_1$. The moment bound $M$ remains fixed in this argument. The target $\rho^{\mu(z)}$ is continuous because the phase endpoints match. Applying the same decreasing-function compactness argument, and using nonexpansion between integer times, gives
+\begin{equation}\label{eq:omega}
+ \omega_M(t):=\sup_{\substack{\mu(z)\in[0,1]\\V_\theta(z)\le M}}
+ d_1(\Phi_tz,\rho^{\mu(z)+t})\longrightarrow0.
+\end{equation}
+Integer translation covers arbitrary means. Along the birth flow each side increases stochastically. Summing the two mean increments therefore gives
+\begin{equation}\label{eq:geometry}
+ d_1(\rho^u,\rho^v)=2|u-v|.
+\end{equation}
+All orbit atoms are positive: high-level positivity was proved above, and retention over one period propagates it downwards using the shift relation. This proves Theorem~\ref{thm:profile}, except for further geometric identities developed next.
+
+\subsection{Interlacing, a single front, and the response}
+The empty-start flow has invariant inequalities $x_k\ge y_k\ge x_{k+1}$. At a boundary equality its gap derivative is nonnegative, directly from \eqref{eq:flow}; truncation extends the check to the full lattice. Attraction of centered integer-time empty profiles transfers the inequalities to the orbit. The map $J(p_L,p_R)=(\sh_1p_R,p_L)$ commutes with the flow, has $J^2=\sh_1$, and raises the mean by $1/2$. Uniqueness implies
+\[
+ \rho_L^{u+1/2}=\sh_1\rho_R^u,\qquad
+ \rho_R^{u+1/2}=\rho_L^u.
+\]
+Set $z_{2k}=x_k$, $z_{2k+1}=y_k$. The equations and half-phase identity yield a single normalized front $F$:
+\begin{equation}\label{eq:front}
+ x_k(u)=F(2k-2u),\quad y_k(u)=F(2k+1-2u),\quad
+ -F'(r)=F(r-1)[F(r-2)-F(r)].
+\end{equation}
+It decreases strictly from one to zero, is smooth by repeated differentiation, and its translation is fixed by the mean-zero normalization. This does not assert uniqueness for every unnormalized delay-equation solution.
+
+The function $w(r)=[F(r)-F(r+2)]/2$ is a positive density of mass one. Expanding $H$ as its atom--tail sum and substituting $r=2k-2h-d$ in each term gives
+\begin{equation}\label{eq:frontdrift}
+ \gb(d)=\int_\R w(r)[F(r+1+2d)-F(r+1-2d)]\dd r.
+\end{equation}
+The phase intervals tile the real line; Tonelli applies to the original nonnegative sums. Equation~\eqref{eq:frontdrift} proves oddness, strict decrease and the far-field limit by dominated convergence. Bounded derivatives from \eqref{eq:front} give smoothness. Marginal optimal couplings and \eqref{eq:geometry} give the useful global estimate
+\begin{equation}\label{eq:glip}
+ |g(h,d)-g(h',d')|\le4|h-h'|+2|d-d'|.
+\end{equation}
+An integer comparison changes by at most the integer displacement, so no continuous-density hypothesis is needed.
+
+Differentiating the absolutely convergent atom sums gives
+\[
+ \partial_1H(u,u)=-2\sum_k a_k y_k b_k,\qquad
+ \partial_2H(u,u)=2\sum_k a_k x_k b_{k-1}.
+\]
+Integration of the derivative of periodic $H(u,u)$ equates the two sums after phase integration. Thus the restoring coefficient is
+\begin{equation}\label{eq:alpha}
+ \alpha=-\gb'(0)=4\int_0^1\sum_k a_k(u)y_k(u)b_k(u)\dd u>0.
+\end{equation}
+This also equals $-4\int w(r)F'(r+1)\dd r$. Finally the orbit moment bound implies, by a union bound on centered deviations,
+\[
+ |\gb(d)+\operatorname{sign}(d)|\le
+ \min(2,32e^{-\theta|d|/2}),\qquad d\ne0.
+\]
+This is a far-field property of a fixed drift, not an interchange of asymptotic regimes.

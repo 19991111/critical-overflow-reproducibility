@@ -1,0 +1,20 @@
+{
+  "operation": "replot_saved_readout_comparison",
+  "samples": 4096,
+  "MAE_totals_only": 0.39633750915527344,
+  "MAE_profile": 0.017408271929607397,
+  "new_trajectories": 0,
+  "new_ODE_SDE_integrations": 0,
+  "observed_imbalance_used_by_both_readouts": true,
+  "new_confidence_claim": false,
+  "input_sha256": {
+    "verification/plot_data/readout_endpoints.csv": "1b79fe798ad34c80a8c5acaf406204dd8cee2d1dbb87c8a314f8c3fd599a674e",
+    "evidence/FROZEN_OVERFLOW_NODES.csv": "7e36daf91842cbd07da17e84c67cf0dac113a3c8c6919144652baac95e9725a7"
+  },
+  "output_sha256": {
+    "manuscript/figures/readout_teaser.pdf": "b63eae487830ba6f94bf1c894b22557d0ee5f27aff451d2042711368d2cd42a4",
+    "manuscript/figures/readout_teaser.svg": "0a4d062acb43ca89c076523d3bbea795d954106af900cc28c7328bc00f2d3254",
+    "manuscript/figures/readout_teaser.png": "a6648055349f7f13b717590361bea1026fb0e29889b1dfa17842bd9b3533b130"
+  },
+  "scope": "Descriptive mechanism comparison; not a comparison with a published algorithm or an unconditional diffusion validation."
+}

@@ -1,0 +1,18 @@
+\section{Artifacts and verification scope}\label{app:artifact}
+The numerical evidence comes from preserved experiments and numerical certificates. It generates no allocation trajectory, seed or ODE/SDE solution. All original archives and earlier manuscript versions remain separate.
+
+The original allocation batch contains 9216 outcomes and 193536 checkpoint observations. Its archive is pinned at
+\begin{center}\small\texttt{dddf58f43c0831e1c24e3017fc11618938453478}.\end{center}
+The prospective batch contains 16384 endpoints from 4096 shared labels. Its \href{https://github.com/19991111/huaweipro-tpht-linux/tree/09480b6e9afcd54574245433df21c1cfac1eede6/research/paper_micro_prospective_20261017}{pinned artifact} includes source, protocol, seeds, configurations, hashes and logs. The SDE reference is pinned at
+\begin{center}\small\texttt{067543228ccdc4efbce5b8df7a0849b03f5fc1ec}.\end{center}
+Its reused status and original confidence events are part of the comparison design.
+
+The source bundle retains the \href{https://github.com/19991111/huaweipro-tpht-linux/blob/943485ae2be727404deaf50a1dc8c5206782fba2/research/paper_sde_posthoc_erratum_20261017/received/ARITHMETIC_SUPPLEMENT.v2.en.txt}{authoritative arithmetic supplement}, probability contract, frozen prospective plan and corrected post-hoc status. File manifests identify the exact input bytes. Local audit receipts record the saved-output checks.
+
+The completed numerical audit independently recomputes all 256 full-cell residual bounds, 24 fluid readout estimates, 20482 coefficient nodes and 65536 reference endpoint readouts. It exactly reduces the saved forward and backward terminal matrices. It does not replay matrix propagation. That stage relies on the inspected comparison proof and archived implementation.
+
+The endpoint audit recomputes mass, imbalance and overflow from all 25600 saved allocation configurations. The statistical audit recomputes prospective betting endpoints and neighboring grids, clipping bounds, CDF suprema and family allocations. It also checks the original ten failure-rate intervals and four cross-kernel CDF comparisons. The earlier experiment artifact records a separate checkpoint reconstruction; the later audit does not repeat that full reconstruction.
+
+The recorded freeze hashes and chronology are internally consistent. They are not an external timestamp attestation. The old reference has no saved dynamic floating-point register snapshot. Its arithmetic guarantee therefore remains conditional on the contract in Supplement section~\ref{app:sdebudget}. Pseudorandom reproducibility does not establish the ideal independence premises.
+
+Build instructions, compiler logs, the source manifest and document-check receipts accompany this version. Internal mathematical review and computational checks are not machine formalization or external peer review. The experiments measure allocation overflow and the stated approximation errors.

@@ -1,0 +1,201 @@
+\section{Tracking, deterministic averaging and critical overflow}\label{sec:limit}
+A fixed fluid-time limit does not cover $q^2$ arrivals, so we restart on fixed
+windows to obtain tracking at deterministic times. Blocks of $2q$ arrivals
+then average the common phase in the drift. The endpoint overflow keeps its
+observation phase; a finite mesh gives uniform convergence of its curve.
+Work with product cross sampling until the final transfer.
+Discarding finitely many $q$, choose $\Lambda<\infty$ such that
+$\eps q\le\Lambda$ and $\eps\le1/4$.
+
+\subsection{A uniform estimate on a fixed fluid window}
+Consider one pure community, with $q=2m$ buckets. Let $X_k^q$ be its pair of empirical side laws after $k$ internal arrivals. The mean clock is $u=k/q$. Interpolate linearly between these times. Start the fluid $X(u)=\Phi_uX_0^q$ from the exact empirical laws. Assume
+\[
+ V_\theta(X_0^q)\le R,\qquad \theta=1/200.
+\]
+Translate all loads by $-\lfloor\mu(X_0^q)\rfloor$. This leaves the metric and dynamics unchanged. The translated initial mean belongs to $[0,1)$. Fix an integer $B\ge1$ and a cutoff $K_1\ge1$. Then
+\begin{align}
+ \E\sup_{0\le u\le B}d_1(X^q(u),X(u))
+ &\le\eta_q(B,R,K_1).\label{eq:lln}
+\end{align}
+The bound is uniform over all empirical initial states satisfying the displayed moment condition.
+
+Supplement section~\ref*{app:fluidproof} gives an explicit $\eta_q$ and the estimates proving \eqref{eq:lln}. With
+\[
+ K_1(q)=\left\lceil2\log(q)/\theta\right\rceil,
+\]
+the bound tends to zero for each fixed $B,R$. No growing fluid horizon is used.
+
+\subsection{Moments, cross suppression, and deterministic restarts}
+For the real product process, let $W_n$ be the sum of four side distances to
+orbit laws at the actual community means. Let $\Psi_n$ sum the four empirical
+cosh moments centered at these means. Lemma~\ref{lem:moment} and Supplement
+section~\ref*{app:trackingmoments} give
+\begin{equation}\label{eq:trackingmoment}
+ \sup_n\E\Psi_n\le C_E=32/3,\qquad
+ \sup_n\E W_n^2\le C_*^2=(32C_E+128)/\theta^2.
+\end{equation}
+
+Start an auxiliary chain from the real state at a deterministic time. Use the same internal candidates, but suppress every cross update. Greedy integer updates with the same candidates are nonexpansive in labelled $\ell_1$. If $N_\times$ crosses occur during a window, the total labelled discrepancy is at most $N_\times$. Normalizing each side by $m=q/2$ gives profile distance at most $2N_\times/q$. Each suppressed cross removes one unit of community mass. The sum of the two mean discrepancies is therefore $N_\times/q$. Equation~\eqref{eq:geometry} adds at most another $2N_\times/q$ for the two orbit targets. Consequently
+\begin{equation}\label{eq:suppression}
+ W_n\le W_n^{\rm aux}+4N_\times/q.
+\end{equation}
+
+Fix $\delta>0$ and $R\ge4$. Choose a fixed integer $A\ge1$ such that $\omega_R(u)\le\delta/2$ for all $u\ge A$. Put
+\[
+ L=2q(A+1),\qquad B=2(A+1)+1.
+\]
+For any deterministic endpoint $n\ge L$, restart at $n-L$. A start is good if $\Psi_{n-L}\le R$. Its complement has probability at most $C_E/R$.
+
+Let $N_s$ be the internal event count for community $s$ in the window. Its marginal law is $\operatorname{Bin}(L,(1-\eps)/2)$. For sufficiently large $q$, its mean exceeds $Aq+q/2$, while its variance is at most $L/4$. Chebyshev and a union bound give
+\[
+ \Prob\{\min(N_0,N_1)<Aq\}\le C_A/q,
+ \qquad C_A=4(A+1).
+\]
+Also $N_s\le L<Bq$. Independence between $N_0$ and $N_1$ is not needed. The internal candidate streams can be chosen independently of all event-type clocks and the restart state. On good starts, the supremum in \eqref{eq:lln} therefore covers every possible terminal clock. This avoids conditioning a martingale estimate on a future count.
+
+On good starts and clocks, the auxiliary fluid targets are within total distance $\delta$ of the orbit. The two empirical approximation errors contribute at most $2\eta_q(B,R,K_1)$. On bad starts or clocks, use Cauchy--Schwarz for the real $W_n$, with \eqref{eq:trackingmoment}. Taking expectations in \eqref{eq:suppression} yields, uniformly over deterministic $n\ge L$,
+\begin{equation}\label{eq:restart}
+ \E W_n\le\delta+2\eta_q(B,R,K_1)+4\eps L/q
+       +C_*\sqrt{C_E/R}+C_*\sqrt{C_A/q}.
+\end{equation}
+First fix $\delta,R$, then choose $A,B$. Next let $q\to\infty$. Finally let $R\to\infty$ and $\delta\to0$. This proves
+\begin{equation}\label{eq:tracking}
+ \lim_{H\to\infty}\limsup_{q\to\infty}
+ \sup_{n\ge Hq}\E W_n=0,
+ \qquad q^{-2}\sum_{n<Tq^2}\E W_n\longrightarrow0.
+\end{equation}
+For the second conclusion, the first $Hq$ terms contribute at most $C_*H/q$. The remaining terms are bounded by $T\sup_{n\ge Hq}\E W_n$. In particular, $\E W_{n_q}\to0$ whenever the deterministic times satisfy $n_q/q^2\to t>0$. This is a bound on expectations at deterministic times. It does not assert convergence of the maximum profile error over all times. No effective attraction rate is required or obtained.
+
+\subsection{Exact imbalance decomposition and Brownian noise}
+Let $\mathcal F_n$ contain the history before arrival $n+1$. Write $D_n^q=\Delta_n/q$, $h_n=n/(2q)$, and $\lambda_q=\eps q$. The exact community means are
+\[
+ M_0(n)/q=h_n+D_n^q/2,\qquad M_1(n)/q=h_n-D_n^q/2.
+\]
+For independent product-cross candidates, define
+\[
+ g_n^{\rm act}=\Prob(L_0\le R_1\mid\mathcal F_n)
+                -\Prob(L_1\le R_0\mid\mathcal F_n).
+\]
+Every increment $\xi_{n+1}=\Delta_{n+1}-\Delta_n$ is $\pm1$. The internal contributions to its mean cancel. The two cross directions give
+\[
+ b_n=\E(\xi_{n+1}\mid\mathcal F_n)=\eps g_n^{\rm act},
+ \qquad |b_n|\le\eps.
+\]
+Define the discrete martingale $\mathcal M_k=q^{-1}\sum_{n<k}(\xi_{n+1}-b_n)$. Apply the martingale FCLT to the step process $\mathcal M_{\lfloor tq^2\rfloor}$. Its maximum jump is at most $2/q$, and
+\[
+ \langle\mathcal M\rangle_q(t)
+ =q^{-2}\sum_{n<\lfloor tq^2\rfloor}(1-b_n^2),
+ \quad
+ \sup_{t\le T}|\langle\mathcal M\rangle_q(t)-t|
+ \le q^{-2}+T\eps^2.
+\]
+Bracket jumps are at most $q^{-2}$. These deterministic bounds verify the three conditions of \cite[Theorem~2.1(ii)]{whitt}, including the expected squared-jump condition. Thus the step martingale converges to standard Brownian motion. Let $M_q$ denote its linear interpolation. The interpolation changes it by at most $2/q$. Since the limit is continuous, $M_q$ converges weakly in $C([0,T])$ with its uniform norm. Discrete Doob also gives
+\begin{equation}\label{eq:martmoment}
+ \E\|M_q\|_{\infty,[0,T]}^2\le4(T+q^{-2}).
+\end{equation}
+
+\subsection{Deterministic averaging of the common phase}
+Integer optimal couplings give
+\[
+ |g_n^{\rm act}-g(h_n,D_n^q)|\le W_n.
+\]
+Indeed, for integer arguments an indicator $\one_{\{l\le r\}}$ can change by at most the sum of the integer displacements. Couple each of the four side marginals independently with its orbit target. Equations~\eqref{eq:tracking} and $\lambda_q\le\Lambda$ imply
+\[
+ \E\sup_{t\le T}\left|\frac\eps q
+ \sum_{n<\lfloor tq^2\rfloor}\{g_n^{\rm act}-g(h_n,D_n^q)\}\right|
+ \le\Lambda q^{-2}\sum_{n<Tq^2}\E W_n\longrightarrow0.
+\]
+
+The function $g(h,d)$ is one-periodic in $h$, by integer translation of both orbit laws. Partition arrival indices into blocks of length exactly $2q$. For a block starting at $j$, discrete Doob and $|b_n|\le\eps$ give
+\[
+ \E\max_{0\le r\le2q}|D_{j+r}^q-D_j^q|
+ \le2\sqrt{2/q}+2\eps.
+\]
+Freeze $D_n^q$ at the block start. The phases $h_n\bmod1$ cover the $2q$ equally spaced points of one period. Equation~\eqref{eq:glip} bounds their Riemann-sum error by $2/q$, uniformly in the frozen imbalance. The Lipschitz constants of $g$ and $\gb$ in $d$ are both at most two. Freezing and unfreezing therefore cost at most four times the displayed block variation. A final incomplete block contributes at most $4/q$ after normalization. Hence
+\begin{equation}\label{eq:phaseaverage}
+ \E\sup_{t\le T}\left|q^{-2}\sum_{n<\lfloor tq^2\rfloor}
+       [g(h_n,D_n^q)-\gb(D_n^q)]\right|
+ \le C(T+1)(q^{-1/2}+\eps+q^{-1})\longrightarrow0.
+\end{equation}
+This is deterministic phase averaging. It does not replace the two community phases by independent random phases.
+
+Let $D_q$ be the linear interpolation of $D_n^q$ at times $n/q^2$. Combining the last two estimates, the exact martingale decomposition, and a Riemann sum gives
+\begin{equation}\label{eq:diffusionremainder}
+ D_q(t)=M_q(t)+\lambda\int_0^t\gb(D_q(s))\dd s+R_q(t),
+ \qquad \E\|R_q\|_{\infty,[0,T]}\longrightarrow0.
+\end{equation}
+The remaining errors are bounded by $T|\lambda_q-\lambda|$, $O_T(\Lambda/q)$ for interpolation inside the drift integral, and $O(1/q)$ for fractional final steps. These bounds use $|\gb|\le1$ and its global Lipschitz constant two.
+
+For a continuous driver $m$, let $\Gamma_\lambda(m)$ solve
+\[
+ x(t)=m(t)+\lambda\int_0^t\gb(x(s))\dd s.
+\]
+Picard iteration gives existence and uniqueness. Gronwall gives
+\[
+ \|\Gamma_\lambda(m)-\Gamma_\lambda(\widetilde m)\|_\infty
+ \le e^{2\lambda T}\|m-\widetilde m\|_\infty,
+ \qquad
+ \|D_q-\Gamma_\lambda(M_q)\|_\infty
+ \le e^{2\lambda T}\|R_q\|_\infty.
+\]
+The weak convergence of $M_q$, together with \eqref{eq:martmoment}, implies first Wasserstein convergence. For example, use a Skorokhod representation in the Polish space $C([0,T])$. Uniform second moments make the represented uniform distances uniformly integrable. Their almost sure convergence to zero then gives convergence in mean. Applying the Lipschitz map $\Gamma_\lambda$ and \eqref{eq:diffusionremainder} proves first Wasserstein convergence of $D_q$ to the solution of \eqref{eq:sde}. This also identifies Brownian variance one. No second Wasserstein convergence is asserted.
+
+The other drift claims in Theorem~\ref{thm:limit} follow from \eqref{eq:frontdrift}. The density $w$ has mass one and is strictly positive. The front $F$ is smooth and strictly decreasing, with bounded derivatives of every fixed order. Differentiation under the integral is therefore valid. In particular,
+\[
+ \gb'(d)=2\int_\R w(r)\{F'(r+1+2d)+F'(r+1-2d)\}\dd r<0.
+\]
+Oddness, negativity for $d>0$, and the far-field sign limits follow directly. Equation~\eqref{eq:alpha} gives $-\gb'(0)>0$. The marginal coupling estimate gives the global Lipschitz bound.
+
+\subsection{The endpoint curve, including its joint first moment}
+The positive-part functional along the orbit satisfies
+\begin{equation}\label{eq:sigmaprime}
+ \sigma'(u)=\sum_{k\ge0}\{a_ky_k+b_kx_{k+1}\}=x_0(u)y_0(u).
+\end{equation}
+The sum telescopes. Equivalently, a positive-part increment occurs when both offered loads are nonnegative. The tails increase with $u$. Thus $\sigma$ is convex, nondecreasing, and $1$-Lipschitz. Equation~\eqref{eq:spill} gives evenness and convexity in $d$, the stated $1$-Lipschitz bound in $d$, and the $2$-Lipschitz bound in $h$. Full support gives $S_0(0)>0$.
+
+Fix $H_0<\infty$. Write $\kappa_q=n_*/q^2=2c_q/q\to\kappa>0$ and choose a path horizon $T_*>\kappa$. Increase $T_*$ if a longer joint path is requested. All window times belong to $[0,T_*]$ for large $q$.
+
+Define the continuous curve $F_q$ by linear interpolation of
+\[
+ F_q\left(\frac{k-n_*}{2q}\right)=\frac{Z_{c_q}(k)}q.
+\]
+It is deterministically $2$-Lipschitz on $[-H_0,H_0]$. Its distance from the original floor-indexed curve is at most $1/q$. This specifies the interpolation in Theorem~\ref{thm:limit}.
+
+At a fixed $h$, put $n=n_q(h)$, $h_q=(n-n_*)/(2q)$, and $\tau_q(h)=n/q^2$. Then $|h_q-h|\le1/(2q)$. Integer translation by $c_q$ and positive-part Lipschitz continuity give the exact comparison
+\begin{equation}\label{eq:endpointcomparison}
+ \left|\frac{Z_{c_q}(n)}q-S_{h_q}(D_q(\tau_q(h)))\right|
+ \le W_n/2.
+\end{equation}
+The factor $1/2$ comes from $m/q=1/2$ for each side. Since $\tau_q(h)\to\kappa>0$, the expectation of $W_n$ tends to zero by \eqref{eq:tracking}.
+
+We also need to move the slow endpoint from $\tau_q(h)$ to $\kappa$. Put
+\[
+ a_q=|\kappa_q-\kappa|+2H_0/q+2/q^2\longrightarrow0.
+\]
+All these times lie within $a_q$ of $\kappa$. A martingale oscillation bound on that deterministic interval, followed by the bounded drift estimate, gives
+\begin{equation}\label{eq:endpointtime}
+ \E\sup_{|h|\le H_0}|D_q(\tau_q(h))-D_q(\kappa)|
+ \le C\sqrt{a_q+q^{-2}}+C\Lambda a_q+C/q\longrightarrow0.
+\end{equation}
+For this bound, start the martingale at the left endpoint of the interval. Doob controls its maximum oscillation by the square root of the interval length. Taking differences through that endpoint controls every requested pair of times. There is no rate assumption on $c_q/m\to\kappa$.
+
+Let $G_q(h)=S_h(D_q(\kappa))$. Combining \eqref{eq:endpointcomparison}, \eqref{eq:endpointtime}, and the interpolation bounds gives
+\[
+ \E|F_q(h)-G_q(h)|\longrightarrow0
+ \quad\text{for every fixed }h.
+\]
+Both $F_q$ and $G_q$ are $2$-Lipschitz. For any fixed mesh with maximum gap at most $\eta$,
+\[
+ \|F_q-G_q\|_\infty
+ \le\max_{h\text{ in the mesh}}|F_q(h)-G_q(h)|+4\eta.
+\]
+Take expectations, then $q\to\infty$, then $\eta\downarrow0$. The finite maximum is bounded by the sum of its errors. We obtain the stronger, same-process estimate
+\begin{equation}\label{eq:curveL1}
+ \E\|F_q-S_{\cdot}(D_q(\kappa))\|_{\infty,[-H_0,H_0]}
+ \longrightarrow0.
+\end{equation}
+This step requires no maximum-in-time profile theorem.
+
+The map $f\mapsto(f,S_{\cdot}(f(\kappa)))$ is Lipschitz from the uniform path norm to the sum of the two uniform norms. First Wasserstein convergence of $D_q$ and \eqref{eq:curveL1} therefore prove the claimed joint path-and-curve convergence. Restriction gives the result on any shorter requested path horizon. In particular, the conclusion controls the expected critical overflow, rather than only its distribution.
+
+Finally, couple any admissible fixed cross kernel with the product process using Theorem~\ref{thm:universal} on $[0,T_*q^2]$. The joint path-and-curve transport cost is at most twice $\max_n\mathcal D_n/q$, up to vanishing interpolation errors. Its expectation tends to zero. This transfers the first Wasserstein conclusions and finishes Theorem~\ref{thm:limit}.

@@ -1,44 +1,49 @@
-# Paper-to-evidence map — manuscript integration pending
+# SICOMP v2: theorem, figure and table map
 
-The authoritative input is Library `libfile_ee592c5200088191aff61338f9396060`, `critical_overflow_sicomp_v2_editable.zip`, reported size 4,054,233 bytes. Its ZIP bytes have not been accessible in this execution environment. The manuscript structure in this document comes from the main thread's independent read-only inspection, not from a local reading of that ZIP. Local verification covers the pinned evidence named below. Exact theorem numbers, labels, captions, table transcription and plotting-script dependencies still need checking against the actual v2 source.
+The exact authoritative ZIP was read locally after transfer commit 2a19828175063a37fad1d68c6a8caa70f3af9448. Its 4,054,233 bytes have SHA-256 c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432. All 112 source-manifest entries and the complete 113-file set were verified. This replaces the provisional map. Final compiled labels confirm three main theorems, two corollaries, six figures, one article table and three supplement tables.
 
-## Mathematical claims
+The [machine-readable map](../provenance/PAPER_MAP.json) names code, configuration, exact seed protocols, raw inputs and commands. Numerical inputs resolve through provenance/FILES.json to fixed original commits, archives, members and checksums.
 
-| Current-paper claim (exact label pending) | Fixed proof sources | Code/evidence and limits |
+## Mathematical results
+
+| Result | Current statement and proof | Numerical relationship and limits |
 | --- | --- | --- |
-| Periodic profile, mean locking, existence and attraction | `docs/theory/paper_periodic_profile_limit_20261017/PERIODIC_PROFILE.en.txt` and `SINGLE_FRONT.en.txt` | Saved profile nodes in `data/profile/tail_h512_K24/raw_profiles.npz`; rational certificate sources in `src/certificate/`. No automated proof verification. |
-| Critical imbalance diffusion and phase-locked overflow | `docs/theory/paper_periodic_profile_limit_20261017/CRITICAL_TRACKING.en.txt`, `UNIFORM_WINDOW_LLN.en.txt`, `COMMON_LIMIT_AND_SPILL.en.txt` | Prospective endpoint/CDF comparison and reused SDE inputs; qualitative attraction and iid/arithmetic contracts remain conditions. |
-| Fixed balanced-kernel equivalence/universality | `docs/theory/paper_critical_pair_tables_20261017/CRITICAL_EQUIVALENCE.en.txt` | Fixed matching/product runs and exact schematic kernels; excludes load-adaptive kernels. The fixed-kernel rate is not a full-limit practical error bound. |
-| New capacity corollary | Current manuscript proof and precise statement not accessible here | Not reconstructed or claimed proved from a transferred description. Integrate from authoritative source. |
+| Theorem 2.1, thm:universal | paper/manuscript/sections/model.tex:53; Section 3 in universality.tex; supplement process_estimates.tex | Fixed matching/product data illustrate two finite-scale kernels. They do not verify the theorem over all admissible kernels. The q^(-1/6) log²q bound is a kernel-comparison bound. |
+| Theorem 2.2, thm:profile | model.tex:63; Section 4 in profile.tex; supplement Gini/process estimates | Saved profile, residual enclosure and forward/backward certificate code evaluate the profile. No new ODE solve; numerical tests do not verify existence, uniqueness or attraction proofs. |
+| Theorem 2.3, thm:limit | model.tex:87; Section 5 in limit.tex and supplement auxiliary estimates | Prospective endpoints and the reused SDE reference assess finite-size predictions. The complete joint limit has no effective uniform finite-scale error bound here. |
+| Corollary 2.4, cor:internalexcess | model.tex:124, proof at line 140 | Figure 1 illustrates the omitted internal contribution. It is not verification of the strict asymptotic conclusion. |
+| Corollary 2.5, cor:capacity | model.tex:148, proof at line 164 | Capacity consequences follow from Theorem 2.3, convexity and first-Wasserstein convergence. No new experiment or seed; no algorithmic optimality claim. |
 
-## Six display figures
+These are mathematical proofs with no simulation seed that can certify them. Model conditions include empty starts, a predetermined doubly stochastic cross kernel, left tie rule, epsilon*q tending to finite lambda, and integer capacity with c_q/m tending to positive kappa. Load-adaptive kernels are excluded.
 
-| Figure described by source thread | Fixed inputs and source | Reproduction status |
+## Six displayed figures
+
+Run tools/build_paper.py with a new output directory. The exact upstream scripts are retained under tools/paper/ and invoked in a disposable copy after reconstructing their required inputs.
+
+| Figure; label and page | Fixed inputs and script | Actual validation |
 | --- | --- | --- |
-| 1 `readout_teaser` | All 4,096 prospective λ=1 matching outcomes; observed integer imbalance; fixed `TABLES.hex` S nodes | `recompute` rebuilds per-label mass-only `abs(D)/2` and profile predictions, MAEs and CSV. Both use observed imbalance. No confidence or algorithm-superiority claim. Authoritative rendering pending. |
-| 2 `model_scales` | Model definitions | Schematic, no stochastic experiment. Exact rendering awaits source. |
-| 3 `profile_mechanism` | `raw_profiles.npz`, `x_128` / `y_128`, phase indices 0 and 128, and 4,097-node response in `TABLES.hex` | Raw profile and lookup are present and checksummed; lookup is regenerated by `recompute`. Source figure rendering pending. |
-| 4 `kernel_universality` | Exact `I/4` and `J/16` | Rational schematic, not experimental evidence. Source rendering pending. |
-| 5 `finite_scale` | All original outcomes plus 193,536 raw checkpoints; q=64/128/256/512, λ=1/2; 16-phase feedback RMS and maximum overflow error across five offsets | `recompute` independently audits checkpoints and reconstructs descriptive fields and `analysis/endpoint_comparison.csv`. Plotting-script schema check and exact rendering pending. |
-| 6 `terminal_law` | Prospective D/q endpoints, all reused SDE D hex endpoints and fixed comparison rules | `recompute` regenerates exact CDF comparison intervals and audits them independently. This is the unconditional diffusion comparison. Exact plotting source pending. |
+| 1; fig:profileablation, p.2; readout_teaser | All 4096 prospective lambda1 matching endpoints, q512/kappa1; frozen S lookup; prepare_figures.py then prepare_teaser.py | MAEs 0.39633750915527344 and 0.017408271929607397; lookup allowance at most 0.000026. Both predictions use observed imbalance. No confidence or published-algorithm superiority claim. |
+| 2; fig:model, p.4; model_scales | Model definitions; prepare_figures.py | Schematic, no experimental seed. Probabilities/scales and enlarged rendering checked. |
+| 3; fig:mechanism, p.6; profile_mechanism | raw_profiles.npz, x_128/y_128, rows 0/128; frozen response nodes; prepare_mechanism.py | NPZ and lookup agree with fixed original inputs. All 196 atom rows and 4097 displayed response rows match. Connecting lines are not additional certificates. |
+| 4; fig:kernels, p.7; kernel_universality | Exact I/4 and J/16; prepare_kernel_figure.py | Exact uniform row/column marginals 1/4. Schematic, not an experiment. Marginals alone do not imply independent loads. |
+| 5; fig:finite, p.17; finite_scale | All original outcomes at q64/128/256/512, lambda1/2, both kernels; 128/128/256/1024 prefix labels; prepare_figures.py | All 16 plot rows match. Core audited 193536 checkpoints and reconstructed 9216 outcome metrics. RMS uses 16 phases; overflow maximum uses five prescribed offsets. Margins are not confidence bands on plotted means. |
+| 6; fig:terminal, p.18; terminal_law | All prospective D/q endpoints and reused 32768-per-lambda SDE hex endpoints, 16384 Euler steps; prepare_figures.py | All 10004 CDF grid rows match. Difference panels use every empirical jump. This is the unconditional diffusion comparison. Core independently audited the exact rational CDF allowances. |
 
-`internal_contribution` is described as an old figure and is not counted as a seventh current display figure.
+The old internal_contribution illustration remains in the original ZIP and the legacy batched generator may redraw it. It is not a seventh displayed figure and is not a default current-paper asset.
 
-## Four tables (main and supplement combined)
+## Four tables
 
-| Table content | Fixed source | Command and checks |
+| Table; label and page | Inputs and command | Actual checks |
 | --- | --- | --- |
-| Main prospective four-row mean/CDF comparison | `data/prospective/MEAN_COMPARISONS.json`, `CDF_COMPARISONS.json`, raw terminal configurations and reused reference | `recompute`; exact rational interval endpoints and raw-configuration/CDF audit, preserving shared labels and reference reuse. |
-| Supplement four-stage certificate, including failed acceptance stages | `data/certificate/K*/CERTIFICATE.json`, matrices and original plans | `certificates`; compare stage rational values and exact matrices. Original failed profile attempt remains under `data/profile/posterior_attempt_v2/`. |
-| Supplement five deterministic readout intervals | `data/certificate/CERTIFIED_READOUTS.json`, profile nodes and exact Simpson source | `recompute` runs `certify_readouts.py`; exact manuscript selection/transcription pending. |
-| Supplement original q512 ten failure-rate criteria | `data/finite/PRIMARY_FAILURE_RATES.json`, raw observations and frozen finite plan | `recompute`; keep nonzero failures and separate certain/possible counts. |
+| Article Table 1; tab:prospective, p.18 | Prospective MEAN_COMPARISONS.json, CDF_COMPARISONS.json, raw configurations and reused reference; core recompute plus paper build | All four outward mean intervals and CDF bounds enclose exact fractions. Four configurations share 4096 labels, giving 16384 records, not independent observations. The prospective family remains separate. |
+| Supplement SM1; tab:certificate, SM6 | Four data/certificate/K*/CERTIFICATE.json and matrices; core certificates | Common mass displays are lower bounds and W1 bounds round upwards. Both initial failed stages remain. Full forward/backward propagation was rerun in the core, separately from the earlier attachment-only inspection. |
+| Supplement SM2; tab:readouts, SM7 | Five selected CERTIFIED_READOUTS.json entries; core recompute plus paper build | All five outward intervals checked. Uniform D_* less than 9.038e-6 and fourth-stage W1 less than 9.034e-6 checked separately. These are not finite-q error bars. |
+| Supplement SM3; tab:primary, SM8 | PRIMARY_FAILURE_RATES.json and complete original checkpoints/outcomes; core recompute | All ten criteria, certain/possible counts and outward intervals match. Nonzero failures and ambiguous classifications are retained. |
 
-The main thread reported four main-table rows approximately `[-.00840,.01010]/.06542`, `[-.00860,.00993]/.06500`, `[-.00663,.00844]/.07021`, `[-.00671,.00834]/.07119` for λ1 matching/product and λ2 matching/product. The core retains and recomputes rational endpoints rather than using these rounded descriptions as data.
+## Repaired dependencies and preserved provenance
 
-## Outstanding source integration
+The old workspace endpoint_comparison.csv was absent. The paper runner reconstructs 25600 per-endpoint rows (9216 original and 16384 prospective) from checksummed raw outcomes and the frozen S lookup, with the actual schema consumed by the authoritative script. It does not use copied plot data. The core's earlier same-named CSV is an aggregate report and is not used as this input.
 
-1. Obtain the exact ZIP bytes, inspect its safe inventory, and verify its reported 112-file source manifest locally. Do not present the main thread's successful read as local access.
-2. Add only current paper/source assets and verify all theorem labels and figure/table numbers. Reconcile changed conclusions against the preserved correction.
-3. Read `prepare_figures.py`; adapt its fixed archive dependencies and confirm the schema of the formerly missing `analysis/endpoint_comparison.csv`. Do not replace raw-data reanalysis with copied plot outputs.
-4. Record that revision notes referred to `verification/PACKAGE_CHECKS.json` absent from the uploaded ZIP. This repository's newly generated acceptance report is separate.
-5. Build both TeX documents exactly as `BUILD.txt` requires across multiple cross-document passes; verify page count, citations, references and figure/table rendering. No such compilation is claimed here.
+Two small runtime tar containers contain only exact original members required by the legacy reader. They are not the complete historical return archives and do not claim their hashes. Member hashes and source provenance are recorded separately from new container hashes. The documented entrypoint requires no old workspace fallback.
+
+The original revision notes referred to an absent verification/PACKAGE_CHECKS.json. Its absence is recorded in evidence/paper/ZIP_INTAKE.json; evidence/paper/PACKAGE_CHECKS.json is a new report. Old post-hoc corrections, failed certificates and missing historical dynamic SDE register snapshots remain traceable. No old confidence statement is restored.

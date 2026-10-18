@@ -1,0 +1,541 @@
+{
+  "authoritative_zip_sha256": "c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432",
+  "mathematical_results": [
+    {
+      "number": "2.1",
+      "label": "thm:universal",
+      "statement": {
+        "file": "paper/manuscript/sections/model.tex",
+        "line": 53
+      },
+      "proof": {
+        "file": "paper/manuscript/sections/universality.tex",
+        "line": 1
+      },
+      "conditions": "Empty starts; predetermined doubly stochastic cross kernels, possibly q-dependent but independent of arrival/load history; left tie rule; epsilon*q tends to finite lambda; integer c_q with c_q/m tending to positive kappa.",
+      "experimental_seed_for_proof": null,
+      "verification": "Mathematical argument; no code test verifies this proof.",
+      "render_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": "2.2",
+      "label": "thm:profile",
+      "statement": {
+        "file": "paper/manuscript/sections/model.tex",
+        "line": 63
+      },
+      "proof": {
+        "file": "paper/manuscript/sections/profile.tex",
+        "line": 1
+      },
+      "conditions": "Empty starts; predetermined doubly stochastic cross kernels, possibly q-dependent but independent of arrival/load history; left tie rule; epsilon*q tends to finite lambda; integer c_q with c_q/m tending to positive kappa.",
+      "experimental_seed_for_proof": null,
+      "verification": "Mathematical argument; no code test verifies this proof.",
+      "render_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": "2.3",
+      "label": "thm:limit",
+      "statement": {
+        "file": "paper/manuscript/sections/model.tex",
+        "line": 87
+      },
+      "proof": {
+        "file": "paper/manuscript/sections/limit.tex",
+        "line": 1
+      },
+      "conditions": "Empty starts; predetermined doubly stochastic cross kernels, possibly q-dependent but independent of arrival/load history; left tie rule; epsilon*q tends to finite lambda; integer c_q with c_q/m tending to positive kappa.",
+      "experimental_seed_for_proof": null,
+      "verification": "Mathematical argument; no code test verifies this proof.",
+      "render_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": "2.4",
+      "label": "cor:internalexcess",
+      "statement": {
+        "file": "paper/manuscript/sections/model.tex",
+        "line": 124
+      },
+      "proof": {
+        "file": "paper/manuscript/sections/model.tex",
+        "line": 140
+      },
+      "conditions": "Empty starts; predetermined doubly stochastic cross kernels, possibly q-dependent but independent of arrival/load history; left tie rule; epsilon*q tends to finite lambda; integer c_q with c_q/m tending to positive kappa.",
+      "experimental_seed_for_proof": null,
+      "verification": "Mathematical argument; no code test verifies this proof.",
+      "render_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": "2.5",
+      "label": "cor:capacity",
+      "statement": {
+        "file": "paper/manuscript/sections/model.tex",
+        "line": 148
+      },
+      "proof": {
+        "file": "paper/manuscript/sections/model.tex",
+        "line": 164
+      },
+      "conditions": "Empty starts; predetermined doubly stochastic cross kernels, possibly q-dependent but independent of arrival/load history; left tie rule; epsilon*q tends to finite lambda; integer c_q with c_q/m tending to positive kappa.",
+      "experimental_seed_for_proof": null,
+      "verification": "Mathematical argument; no code test verifies this proof.",
+      "render_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    }
+  ],
+  "figures": [
+    {
+      "number": 1,
+      "label": "fig:profileablation",
+      "page": 2,
+      "asset": "paper/manuscript/figures/readout_teaser.pdf",
+      "upstream_script": "tools/paper/prepare_teaser.py",
+      "script_sha256": "1921d72018b62df1cf28190aeb1df2dfa97dc50a53de2f97b55edecd5555d419",
+      "input_assets": [
+        "prospective_outcomes",
+        "reference_lookup"
+      ],
+      "seed_protocols": [
+        "prospective"
+      ],
+      "configuration": {
+        "q": 512,
+        "kappa": 1,
+        "lambda": 1,
+        "kernel": "matching",
+        "records": 4096,
+        "both_readouts_use_observed_imbalance": true,
+        "confidence_claim": false
+      },
+      "generation_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": 2,
+      "label": "fig:model",
+      "page": 4,
+      "asset": "paper/manuscript/figures/model_scales.pdf",
+      "upstream_script": "tools/paper/prepare_figures.py",
+      "script_sha256": "1ca74d366d66bf502befc3b94d551e33cf7f1289b149aca630b4e410487c778d",
+      "input_assets": [],
+      "seed_protocols": [],
+      "configuration": {
+        "scope": "model schematic; no stochastic data"
+      },
+      "generation_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": 3,
+      "label": "fig:mechanism",
+      "page": 6,
+      "asset": "paper/manuscript/figures/profile_mechanism.pdf",
+      "upstream_script": "tools/paper/prepare_mechanism.py",
+      "script_sha256": "2587a85b473fad8a80da33af4105c68d8a4d4d36046bd3fe4ee0075a5a80efd9",
+      "input_assets": [
+        "profile_nodes",
+        "reference_lookup"
+      ],
+      "seed_protocols": [],
+      "configuration": {
+        "arrays": [
+          "x_128",
+          "y_128"
+        ],
+        "phase_indices": [
+          0,
+          128
+        ],
+        "frozen_positive_response_nodes": 4097,
+        "display_response_nodes": 4097,
+        "display_atom_rows": 196,
+        "new_ODE_runs": 0
+      },
+      "generation_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": 4,
+      "label": "fig:kernels",
+      "page": 7,
+      "asset": "paper/manuscript/figures/kernel_universality.pdf",
+      "upstream_script": "tools/paper/prepare_kernel_figure.py",
+      "script_sha256": "93709ee2c7f1a19b5cebe38a4b50cdd10f47a974429c790d2c348d72c682cce8",
+      "input_assets": [],
+      "seed_protocols": [],
+      "configuration": {
+        "kernels": [
+          "I/4",
+          "J/16"
+        ],
+        "marginals": "1/4",
+        "scope": "exact schematic, not experiment"
+      },
+      "generation_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": 5,
+      "label": "fig:finite",
+      "page": 17,
+      "asset": "paper/manuscript/figures/finite_scale.pdf",
+      "upstream_script": "tools/paper/prepare_figures.py",
+      "script_sha256": "1ca74d366d66bf502befc3b94d551e33cf7f1289b149aca630b4e410487c778d",
+      "input_assets": [
+        "finite_outcomes",
+        "finite_checkpoints_0",
+        "finite_checkpoints_1",
+        "finite_checkpoints_2"
+      ],
+      "seed_protocols": [
+        "finite"
+      ],
+      "configuration": {
+        "q": [
+          64,
+          128,
+          256,
+          512
+        ],
+        "lambda": [
+          1,
+          2
+        ],
+        "kernels": [
+          "matching",
+          "product"
+        ],
+        "labels_per_cell": [
+          128,
+          128,
+          256,
+          1024
+        ],
+        "feedback_phases": 16,
+        "overflow_offsets": [
+          -1,
+          -0.5,
+          0,
+          0.5,
+          1
+        ],
+        "fitted_convergence_rate": false
+      },
+      "generation_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    },
+    {
+      "number": 6,
+      "label": "fig:terminal",
+      "page": 18,
+      "asset": "paper/manuscript/figures/terminal_law.pdf",
+      "upstream_script": "tools/paper/prepare_figures.py",
+      "script_sha256": "1ca74d366d66bf502befc3b94d551e33cf7f1289b149aca630b4e410487c778d",
+      "input_assets": [
+        "prospective_outcomes",
+        "reference_endpoints"
+      ],
+      "seed_protocols": [
+        "prospective",
+        "reference"
+      ],
+      "configuration": {
+        "q": 512,
+        "kappa": 1,
+        "lambda": [
+          1,
+          2
+        ],
+        "micro_labels_per_cell": 4096,
+        "reference_rows_per_lambda": 32768,
+        "Euler_steps_per_path": 16384,
+        "reference_reused": true,
+        "unconditional_diffusion_comparison": true
+      },
+      "generation_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT"
+    }
+  ],
+  "tables": [
+    {
+      "number": "1",
+      "label": "tab:prospective",
+      "page": "18",
+      "input_assets": [
+        "prospective_means",
+        "prospective_CDF"
+      ],
+      "raw_analysis_command": ".venv/bin/python -B tools/reproduce.py recompute --out NEW_CORE_OUTPUT",
+      "transcription_and_rounding_check_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT",
+      "validation": "Exact numeric values, outward intervals, and preserved certain/possible counts checked against authoritative TeX."
+    },
+    {
+      "number": "SM1",
+      "label": "tab:certificate",
+      "page": "SM6",
+      "input_assets": [
+        "K4_B8_J64",
+        "K6_B16_J64",
+        "K8_B24_J128",
+        "K10_B32_J128"
+      ],
+      "raw_analysis_command": ".venv/bin/python -B tools/reproduce.py certificates --out NEW_CORE_OUTPUT",
+      "transcription_and_rounding_check_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT",
+      "validation": "Exact numeric values, outward intervals, and preserved certain/possible counts checked against authoritative TeX."
+    },
+    {
+      "number": "SM2",
+      "label": "tab:readouts",
+      "page": "SM7",
+      "input_assets": [
+        "certified_readouts",
+        "profile_nodes"
+      ],
+      "raw_analysis_command": ".venv/bin/python -B tools/reproduce.py recompute --out NEW_CORE_OUTPUT",
+      "transcription_and_rounding_check_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT",
+      "validation": "Exact numeric values, outward intervals, and preserved certain/possible counts checked against authoritative TeX."
+    },
+    {
+      "number": "SM3",
+      "label": "tab:primary",
+      "page": "SM8",
+      "input_assets": [
+        "primary_failure_rates",
+        "finite_outcomes",
+        "finite_checkpoints_0",
+        "finite_checkpoints_1",
+        "finite_checkpoints_2"
+      ],
+      "raw_analysis_command": ".venv/bin/python -B tools/reproduce.py recompute --out NEW_CORE_OUTPUT",
+      "transcription_and_rounding_check_command": ".venv/bin/python -B tools/build_paper.py --out NEW_PAPER_OUTPUT",
+      "validation": "Exact numeric values, outward intervals, and preserved certain/possible counts checked against authoritative TeX."
+    }
+  ],
+  "assets": {
+    "finite_outcomes": {
+      "stored_path": "data/finite/validation/outcomes.csv.gz",
+      "sha256_uncompressed": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6",
+      "bytes_uncompressed": 1288315,
+      "stored_sha256": "2518917d6d76b33be4b51cd92685036edaed74802383c585caed3acfa6701db4",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "dddf58f43c0831e1c24e3017fc11618938453478",
+        "archive_path": "research/paper_v4_release_20261017/paper_v4_release_return.tar.gz",
+        "archive_sha256": "09496860413bce8310d17a4b7d299d2662612caa6d70688522183e8173167ec6",
+        "member": "paper_v4_release_20261017/results/validation/outcomes.csv"
+      }
+    },
+    "prospective_outcomes": {
+      "stored_path": "data/prospective/micro/outcomes.csv.gz",
+      "sha256_uncompressed": "77bd9d4e4df33a145d0a2d02a61cf9e7ef73dd35bf8c6af07d49d8ad578bf149",
+      "bytes_uncompressed": 792589,
+      "stored_sha256": "fe93d76e4e08f2f1d113c1c2fc1acb09a43474fb4d23070323be287f1608aa53",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "09480b6e9afcd54574245433df21c1cfac1eede6",
+        "archive_path": "research/paper_micro_prospective_20261017/micro_prospective_return.tar.gz",
+        "archive_sha256": "7deb29f884b76ce2088fd938ddcc98a31ceb6f1c7f04cef1c5c1d028ff3a4555",
+        "member": "paper_micro_prospective_20261017/results/micro/outcomes.csv"
+      }
+    },
+    "reference_endpoints": {
+      "stored_path": "data/reference/reference_endpoints.csv.gz",
+      "sha256_uncompressed": "19daef9fe3bc0c3d6bf386861fd65815ae6ba9cd900af468b19163a4ce770de1",
+      "bytes_uncompressed": 4878625,
+      "stored_sha256": "11853fd1e9c4c7b6da46803be80142c0a65b10e97f08994b62140239736e5208",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "067543228ccdc4efbce5b8df7a0849b03f5fc1ec",
+        "archive_path": "research/paper_sde_end_to_end_20261017/sde_end_to_end_return.tar.gz",
+        "archive_sha256": "19de4b36cf055457485c38493fc96af3d6b484c3fc28b24f0b7ca9c0af76293f",
+        "member": "paper_sde_end_to_end_20261017/results/reference_endpoints.csv"
+      }
+    },
+    "reference_lookup": {
+      "stored_path": "data/reference/TABLES.hex.gz",
+      "sha256_uncompressed": "48455dbbe470cdc807c5d419701f9a94f798ce230ca971ab2d8d9a61658a1a77",
+      "bytes_uncompressed": 434222,
+      "stored_sha256": "8cc1dd70d9b1d84e49dd515002c9c299e7793d5ca4d0834a999a30f38b766b8e",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "067543228ccdc4efbce5b8df7a0849b03f5fc1ec",
+        "archive_path": "research/paper_sde_end_to_end_20261017/sde_end_to_end_return.tar.gz",
+        "archive_sha256": "19de4b36cf055457485c38493fc96af3d6b484c3fc28b24f0b7ca9c0af76293f",
+        "member": "paper_sde_end_to_end_20261017/results/TABLES.hex"
+      }
+    },
+    "profile_nodes": {
+      "stored_path": "data/profile/tail_h512_K24/raw_profiles.npz",
+      "sha256_uncompressed": "ce934a121ace06657aaf8ea516e876e37c46367489cc4d3e4460c094e814b02c",
+      "bytes_uncompressed": 445017,
+      "stored_sha256": "ce934a121ace06657aaf8ea516e876e37c46367489cc4d3e4460c094e814b02c",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "a33deca6cb65ffd6d5a2c70bfc2721d35276d366",
+        "archive_path": "research/paper_profile_numerics_20261017/profile_numerics_return.tar.gz",
+        "archive_sha256": "a2b767f563a1d7ff2f41f44bf250cd99235b6e6f9fbefa19836409b061cc0c05",
+        "member": "paper_profile_numerics_20261017/results/tail_h512_K24/raw_profiles.npz"
+      }
+    },
+    "certified_readouts": {
+      "stored_path": "data/certificate/CERTIFIED_READOUTS.json",
+      "sha256_uncompressed": "25e40f95610f8f5af377493954f8128971d94d6ee313fe39f5599c6258bf66b2",
+      "bytes_uncompressed": 79963,
+      "stored_sha256": "25e40f95610f8f5af377493954f8128971d94d6ee313fe39f5599c6258bf66b2",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "a33deca6cb65ffd6d5a2c70bfc2721d35276d366",
+        "archive_path": "research/paper_profile_certificate_20261017/profile_certificate_return.tar.gz",
+        "archive_sha256": "6dc729a9d22adec4252c113100be396b47195f81fc7da62312eebae739c3e4ff",
+        "member": "paper_profile_certificate_20261017/results/CERTIFIED_READOUTS.json"
+      }
+    },
+    "primary_failure_rates": {
+      "stored_path": "data/finite/PRIMARY_FAILURE_RATES.json",
+      "sha256_uncompressed": "4ae9b4a7ea37da2623976582c3b8b8595fdcc6fd473191dcbf1265f681c5fda3",
+      "bytes_uncompressed": 3672,
+      "stored_sha256": "4ae9b4a7ea37da2623976582c3b8b8595fdcc6fd473191dcbf1265f681c5fda3",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "dddf58f43c0831e1c24e3017fc11618938453478",
+        "archive_path": "research/paper_v4_release_20261017/paper_v4_release_return.tar.gz",
+        "archive_sha256": "09496860413bce8310d17a4b7d299d2662612caa6d70688522183e8173167ec6",
+        "member": "paper_v4_release_20261017/results/PRIMARY_FAILURE_RATES.json"
+      }
+    },
+    "prospective_means": {
+      "stored_path": "data/prospective/MEAN_COMPARISONS.json",
+      "sha256_uncompressed": "5cc70ba10c0a1612cb91c5013307b2dc85a85fc2483215ff8f0fec731334172d",
+      "bytes_uncompressed": 1285,
+      "stored_sha256": "5cc70ba10c0a1612cb91c5013307b2dc85a85fc2483215ff8f0fec731334172d",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "09480b6e9afcd54574245433df21c1cfac1eede6",
+        "archive_path": "research/paper_micro_prospective_20261017/micro_prospective_return.tar.gz",
+        "archive_sha256": "7deb29f884b76ce2088fd938ddcc98a31ceb6f1c7f04cef1c5c1d028ff3a4555",
+        "member": "paper_micro_prospective_20261017/results/MEAN_COMPARISONS.json"
+      }
+    },
+    "prospective_CDF": {
+      "stored_path": "data/prospective/CDF_COMPARISONS.json",
+      "sha256_uncompressed": "007a5b143e67ddc194481d91870124130a2234ccfbf37eb7eb0a2239ee9cc6cd",
+      "bytes_uncompressed": 1322,
+      "stored_sha256": "007a5b143e67ddc194481d91870124130a2234ccfbf37eb7eb0a2239ee9cc6cd",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "09480b6e9afcd54574245433df21c1cfac1eede6",
+        "archive_path": "research/paper_micro_prospective_20261017/micro_prospective_return.tar.gz",
+        "archive_sha256": "7deb29f884b76ce2088fd938ddcc98a31ceb6f1c7f04cef1c5c1d028ff3a4555",
+        "member": "paper_micro_prospective_20261017/results/CDF_COMPARISONS.json"
+      }
+    },
+    "finite_checkpoints_0": {
+      "stored_path": "data/finite/validation/observations_part00.csv.gz",
+      "sha256_uncompressed": "7fe2b182cf5318110848287f230a2dc80ea4246f800af38c0adf7fae1487a978",
+      "bytes_uncompressed": 33565650,
+      "stored_sha256": "95d08c3c825e92fda99014cfb4ecbf86596349cc23f9439ac82f2a03008b554c",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "dddf58f43c0831e1c24e3017fc11618938453478",
+        "archive_path": "research/paper_v4_release_20261017/paper_v4_release_return.tar.gz",
+        "archive_sha256": "09496860413bce8310d17a4b7d299d2662612caa6d70688522183e8173167ec6",
+        "member": "paper_v4_release_20261017/results/validation/observations_part00.csv"
+      }
+    },
+    "finite_checkpoints_1": {
+      "stored_path": "data/finite/validation/observations_part01.csv.gz",
+      "sha256_uncompressed": "2822076a197a0ce0224789d2c07696063225f481a3bccb7f8febd89bef3c5f5f",
+      "bytes_uncompressed": 33555754,
+      "stored_sha256": "0a3916f7a39ddddc24cdb62767a45574cab2b38bd89855380e8216ba6ab56762",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "dddf58f43c0831e1c24e3017fc11618938453478",
+        "archive_path": "research/paper_v4_release_20261017/paper_v4_release_return.tar.gz",
+        "archive_sha256": "09496860413bce8310d17a4b7d299d2662612caa6d70688522183e8173167ec6",
+        "member": "paper_v4_release_20261017/results/validation/observations_part01.csv"
+      }
+    },
+    "finite_checkpoints_2": {
+      "stored_path": "data/finite/validation/observations_part02.csv.gz",
+      "sha256_uncompressed": "87f08caadf1b769339b30c43901e4a45a471bfe0ac39bb61edfb7d986b1e19e8",
+      "bytes_uncompressed": 23108282,
+      "stored_sha256": "f296d36fe11b5da3fee1294f35749799cad257f5f413d868a286a1bb2b636427",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "dddf58f43c0831e1c24e3017fc11618938453478",
+        "archive_path": "research/paper_v4_release_20261017/paper_v4_release_return.tar.gz",
+        "archive_sha256": "09496860413bce8310d17a4b7d299d2662612caa6d70688522183e8173167ec6",
+        "member": "paper_v4_release_20261017/results/validation/observations_part02.csv"
+      }
+    },
+    "K4_B8_J64": {
+      "stored_path": "data/certificate/K4_B8_J64/CERTIFICATE.json",
+      "sha256_uncompressed": "2970b4158207db830c9a14f0470c32b8fc772aaa7a688b88dd94ee9d5b4fefbd",
+      "bytes_uncompressed": 4207,
+      "stored_sha256": "2970b4158207db830c9a14f0470c32b8fc772aaa7a688b88dd94ee9d5b4fefbd",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "a33deca6cb65ffd6d5a2c70bfc2721d35276d366",
+        "archive_path": "research/paper_profile_certificate_20261017/profile_certificate_return.tar.gz",
+        "archive_sha256": "6dc729a9d22adec4252c113100be396b47195f81fc7da62312eebae739c3e4ff",
+        "member": "paper_profile_certificate_20261017/results/K4_B8_J64/CERTIFICATE.json"
+      }
+    },
+    "K6_B16_J64": {
+      "stored_path": "data/certificate/K6_B16_J64/CERTIFICATE.json",
+      "sha256_uncompressed": "f3d848652810ab4722610a3804392e8e285a942bbd01c6aa85019582b046bde9",
+      "bytes_uncompressed": 5275,
+      "stored_sha256": "f3d848652810ab4722610a3804392e8e285a942bbd01c6aa85019582b046bde9",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "a33deca6cb65ffd6d5a2c70bfc2721d35276d366",
+        "archive_path": "research/paper_profile_certificate_20261017/profile_certificate_return.tar.gz",
+        "archive_sha256": "6dc729a9d22adec4252c113100be396b47195f81fc7da62312eebae739c3e4ff",
+        "member": "paper_profile_certificate_20261017/results/K6_B16_J64/CERTIFICATE.json"
+      }
+    },
+    "K8_B24_J128": {
+      "stored_path": "data/certificate/K8_B24_J128/CERTIFICATE.json",
+      "sha256_uncompressed": "3d266dead2e972b3caa239a53941c6599f73f4058ef3df8bff097680f5db5816",
+      "bytes_uncompressed": 4874,
+      "stored_sha256": "3d266dead2e972b3caa239a53941c6599f73f4058ef3df8bff097680f5db5816",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "a33deca6cb65ffd6d5a2c70bfc2721d35276d366",
+        "archive_path": "research/paper_profile_certificate_20261017/profile_certificate_return.tar.gz",
+        "archive_sha256": "6dc729a9d22adec4252c113100be396b47195f81fc7da62312eebae739c3e4ff",
+        "member": "paper_profile_certificate_20261017/results/K8_B24_J128/CERTIFICATE.json"
+      }
+    },
+    "K10_B32_J128": {
+      "stored_path": "data/certificate/K10_B32_J128/CERTIFICATE.json",
+      "sha256_uncompressed": "6a52f05390208889dd3aa6c9c2b8ebc3a359bcee36e281bda0c5a905e8cb14e5",
+      "bytes_uncompressed": 5258,
+      "stored_sha256": "6a52f05390208889dd3aa6c9c2b8ebc3a359bcee36e281bda0c5a905e8cb14e5",
+      "origin": {
+        "repository": "19991111/huaweipro-tpht-linux",
+        "commit": "a33deca6cb65ffd6d5a2c70bfc2721d35276d366",
+        "archive_path": "research/paper_profile_certificate_20261017/profile_certificate_return.tar.gz",
+        "archive_sha256": "6dc729a9d22adec4252c113100be396b47195f81fc7da62312eebae739c3e4ff",
+        "member": "paper_profile_certificate_20261017/results/K10_B32_J128/CERTIFICATE.json"
+      }
+    }
+  },
+  "seed_protocols": {
+    "finite": {
+      "file": "configs/finite/SEEDS_V1.txt",
+      "sha256": "f11dc99d12b1cde6e7a2762c10c85ef2b45d6dfa4620bc4d1c1600b8c8ac3d9a",
+      "labels": 1024,
+      "reuse": "labels shared across lambda/kernel cells; smaller finite q scales use prescribed prefixes",
+      "new_labels_generated": 0
+    },
+    "prospective": {
+      "file": "configs/prospective/SEEDS_V1.txt",
+      "sha256": "63cc762d85878a55416837b1090796d6a6ea0534295e233883ce1f10f4061cbc",
+      "labels": 4096,
+      "reuse": "labels shared across lambda/kernel cells; smaller finite q scales use prescribed prefixes",
+      "new_labels_generated": 0
+    },
+    "reference": {
+      "file": "configs/reference/REFERENCE_SEEDS_V1.txt",
+      "sha256": "83b7d35ab6f00dc72af32b6c573fa6f1ef56103d6bc9bfa4633ff9a84da11f9b",
+      "labels": 32768,
+      "reuse": "labels shared across lambda/kernel cells; smaller finite q scales use prescribed prefixes",
+      "new_labels_generated": 0
+    }
+  },
+  "scope": "All figure/table checks executed. No proof verification, ideal iid proof, historical FP snapshot reconstruction, or new ODE solve is claimed."
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "file": "averaged_response.csv",
+    "rows": 4097,
+    "maximum_numeric_difference": 0.0
+  },
+  {
+    "file": "finite_scale_summary.csv",
+    "rows": 16,
+    "maximum_numeric_difference": 0.0
+  },
+  {
+    "file": "profile_atoms.csv",
+    "rows": 196,
+    "maximum_numeric_difference": 0.0
+  },
+  {
+    "file": "readout_endpoints.csv",
+    "rows": 4096,
+    "maximum_numeric_difference": 0.0
+  },
+  {
+    "file": "terminal_cdf_grid.csv",
+    "rows": 10004,
+    "maximum_numeric_difference": 0.0
+  }
+]

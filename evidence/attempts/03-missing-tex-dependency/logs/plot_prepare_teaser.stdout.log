@@ -1,0 +1,11 @@
+{
+  "operation": "replot_saved_readout_comparison",
+  "samples": 4096,
+  "MAE_totals_only": 0.39633750915527344,
+  "MAE_profile": 0.017408271929607397,
+  "new_trajectories": 0,
+  "new_ODE_SDE_integrations": 0,
+  "observed_imbalance_used_by_both_readouts": true,
+  "new_confidence_claim": false,
+  "scope": "Descriptive mechanism comparison; not a comparison with a published algorithm or an unconditional diffusion validation."
+}

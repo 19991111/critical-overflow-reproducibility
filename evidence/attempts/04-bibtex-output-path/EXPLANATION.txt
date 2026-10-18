@@ -1,0 +1,1 @@
+XeLaTeX completed the first clean main-document pass. BibTeX refused a parent-relative output path under its standard openout_any=p policy. The runner now executes BibTeX from the disposable PDF output directory and supplies dynamically derived BIBINPUTS/BSTINPUTS. No TeX security policy, class, source text or bibliography was changed.

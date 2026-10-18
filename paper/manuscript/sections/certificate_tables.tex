@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\caption{Preserved certificate stages. The first two stages miss the original
+$0.001$ target. The fourth reaches the stricter $0.0001$ stopping target.
+All distance bounds are rounded upwards.}
+\label{tab:certificate}
+\centering\small
+\begin{tabular}{rrrrrr}\toprule
+Core radius & Periods & Frame radius & Subdivisions & Common mass & $W_1$ bound\\\midrule
+4 & 8 & 8 & 64 & 0.0006913 & 0.050068\\
+6 & 16 & 10 & 64 & 0.0651929 & 0.002797\\
+8 & 24 & 12 & 128 & 0.5510914 & 0.000157\\
+10 & 32 & 14 & 128 & 0.5811574 & 0.000009034\\\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{Deterministic readouts of the limiting profile. Intervals include
+profile and quadrature errors. They do not bound finite-allocation error.}
+\label{tab:readouts}
+\centering
+\begin{tabular}{ll}\toprule
+Readout & Certified interval\\\midrule
+$-\gb'(0)$ & $[0.71997987,\ 0.72012468]$\\
+$\gb(1)$ & $[-0.62242623,\ -0.62239004]$\\
+$\gb(2)$ & $[-0.90371675,\ -0.90368056]$\\
+$S_0(0)$ & $[0.63127654,\ 0.63129462]$\\
+$S_0(1)$ & $[0.75422265,\ 0.75424073]$\\\bottomrule
+\end{tabular}
+\end{table}

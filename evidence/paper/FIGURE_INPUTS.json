@@ -1,0 +1,36 @@
+{
+  "endpoint_rows": 25600,
+  "original_rows": 9216,
+  "prospective_rows": 16384,
+  "endpoint_sha256": "2c2dc308879012ae2bbf8aafe5b5dcafcb0ce8fcb2718790a99e2fc4be48a1d8",
+  "archives": {
+    "paper_v4_release_return.tar.gz": {
+      "sha256": "0f751c1f98bbb033bcd0029c10f396b31b07002cae5bf9c0bf79c8c2bf6eba2b",
+      "members": [
+        {
+          "workspace_path": "research/paper_v4_release_20261017/results/validation/outcomes.csv",
+          "bytes": 1288315,
+          "sha256": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6"
+        }
+      ],
+      "scope": "Runtime compatibility container containing selected byte-identical frozen members. It is not the complete original return archive and does not share its archive checksum."
+    },
+    "sde_end_to_end_return.tar.gz": {
+      "sha256": "8fc271871c0eac1f1c13f40d7b34d10a4cdc68c7ded7d1330e9bb176f5cb10ec",
+      "members": [
+        {
+          "workspace_path": "research/paper_sde_end_to_end_20261017/results/TABLES.hex",
+          "bytes": 434222,
+          "sha256": "48455dbbe470cdc807c5d419701f9a94f798ce230ca971ab2d8d9a61658a1a77"
+        },
+        {
+          "workspace_path": "research/paper_sde_end_to_end_20261017/results/reference_endpoints.csv",
+          "bytes": 4878625,
+          "sha256": "19daef9fe3bc0c3d6bf386861fd65815ae6ba9cd900af468b19163a4ce770de1"
+        }
+      ],
+      "scope": "Runtime compatibility container containing selected byte-identical frozen members. It is not the complete original return archive and does not share its archive checksum."
+    }
+  },
+  "new_random_words_or_trajectories": 0
+}

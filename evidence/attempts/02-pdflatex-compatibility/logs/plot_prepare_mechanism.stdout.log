@@ -1,0 +1,17 @@
+{
+  "operation": "replot_preserved_nodes",
+  "new_trajectories": 0,
+  "new_ODE_SDE_integrations": 0,
+  "profile_rows": 196,
+  "response_nodes": 4097,
+  "negative_response": "Odd reflection of frozen nodes",
+  "profile_phase_indices": [
+    0,
+    128
+  ],
+  "profile_array": [
+    "x_128",
+    "y_128"
+  ],
+  "scope": "Display of saved nodes; connecting segments do not certify intermediate values."
+}

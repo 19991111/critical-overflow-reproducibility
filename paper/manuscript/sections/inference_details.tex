@@ -1,0 +1,84 @@
+\section{Statistical protocols and interpretation}\label{app:inference}
+Coverage assumes uniform independent underlying words within each stream and across replicate labels. Fresh microscopic streams must also be independent of prior history. Counter-based SplitMix words and disjoint seeds provide reproducibility, not a proof of those premises. All sampling statements use this ideal word model.
+
+The original and prospective families below are separate. Reusing a reference retains the reference event's original error cost. Cross-cell independence is unnecessary for the union bounds. The prospective statement is unconditional over the old reference and fresh data, rather than conditional on the observed reference.
+
+\subsection{Original allocation design}\label{app:original}
+The model is exactly Section~\ref*{sec:model}, with identity matchings in both directions or product crosses, $q\in\{64,128,256,512\}$, $\lambda\in\{0,1,2\}$ and $\eps=\lambda/q$. Capacity is the integer $c=q/2$, so $\kappa=1$ and $n_*=q^2$. The respective replicate counts are $128,128,256,1024$. Every paired path runs through $q^2+2q$ arrivals. There are 4608 fixed/product pairs, or 9216 individual outcomes. Every planned label was completed; none was replaced or excluded.
+
+The 1024 seed labels are the first eight SHA256 bytes of the fixed string prefix and replicate number specified in the protocol, interpreted as a big-endian 64-bit word. Smaller scales use prefixes of this list. A counter-based SplitMix64 driver supplies two words per arrival; disjoint bit fields determine event type, direction and endpoints. All probabilities are exact power-of-two subdivisions at these parameter values. The same driver words are used within a fixed/product pair and across cells sharing a replicate label. Thus cells and checkpoints are dependent. The seed label, not a checkpoint, is the inferential unit. The confidence guarantees below are conditional on the declared ideal independent-stream reference. Reproducible pseudorandom words do not establish mathematical independence of machine streams.
+
+Compilation and deterministic one-step tests preceded the one authorized stochastic batch. The model checks mass and capacity identities, endpoint counting, and left-tie handling. All 9216 full labelled critical configurations were subsequently re-read and independently checked against their mass, imbalance and overflow summaries. A second read-only audit reconstructed all 193536 saved checkpoint masses, overflows, product feedback counts and fixed joint-table marginals, then all 9216 outcome metrics; its largest metric roundoff difference was below $2.3\,10^{-16}$. At $\lambda=0$ all 32256 paired recorded checkpoints agree, as required. All checkpoint side histograms, fixed joint tables, driver hashes and logs are retained. The single-thread model batch took about 22.35 seconds of wall time within its fixed 360-second CPU and 420-second wall budgets. This duration is operational evidence, not an algorithm performance benchmark; no competing timed runs were active.
+
+For phase-aware feedback there are 16 prescribed checkpoints
+\[
+ n_j=q^2/2+2q\left\lfloor\frac{(q/4-1)j}{15}\right\rfloor
+                  +\frac{2qj}{16},\quad j=0,\ldots,15.
+\]
+The common phase is exactly $j/16$. The metric is the trajectory RMS of the exact conditional feedback minus $g(h_n,\Delta_n/q)$, not minus $\gb$. For overflow the metric is the maximum absolute error of $Z_c/q-S_h(\Delta/q)$ over the five fixed $h$ values $-1,-1/2,0,1/2,1$. The numerical lookup uses 257 old phase nodes with linear tail interpolation. Its uniform allowances are $0.00004861$ for feedback and $0.00002440$ for overflow, including $E+e$, interpolation and arithmetic. The interpolation addition in $d_1$ is $1/65536$, since the tail second-derivative norm is at most eight. Numerical allowances are used on both sides of each classification.
+
+\subsection{Original failure-rate and cross-kernel intervals}
+\textbf{Formal feedback/overflow and cross-kernel CDF tolerance decisions apply only at $q=512$; $q=64,128,256$ are descriptive.} Four feedback cells ($\lambda=1,2$ and both kernels) use RMS margin $0.10$. Six overflow cells (all three $\lambda$ and both kernels) use maximum-error margin $0.05$. For each cell the target is a population probability of exceeding the margin at most $0.10$. A numerically certain failure exceeds the margin even after subtracting its allowance; a possible failure exceeds it after adding the allowance. Exact binomial tail inversion on a conservative $0.001$ grid bounds the failure probability below using certain failures and above using possible failures. Each side uses error probability $1/800$, giving simultaneous coverage at least $0.975$ over the ten cells by union bound. Entirely interior intervals support the target, lower bounds above it detect mismatch, and all other cases are inconclusive.
+
+\begin{table}[ht]
+\caption{All primary $q=512$ cells, with 1024 replicates per cell. All ten support their frozen population target. Overflow failures are present and are retained. Intervals include the deterministic numerical allowance through certain/possible counts.}
+\label{tab:primary}
+\centering
+\begin{tabular}{llrrl}\toprule
+Metric & $\lambda$, kernel & Certain & Possible & Probability interval\\\midrule
+Feedback RMS & 1, fixed & 0 & 0 & $[0,0.007]$\\
+ & 1, product & 0 & 0 & $[0,0.007]$\\
+ & 2, fixed & 0 & 0 & $[0,0.007]$\\
+ & 2, product & 0 & 0 & $[0,0.007]$\\\midrule
+Overflow maximum & 0, fixed & 37 & 37 & $[0.020,0.058]$\\
+ & 0, product & 37 & 37 & $[0.020,0.058]$\\
+ & 1, fixed & 38 & 38 & $[0.021,0.059]$\\
+ & 1, product & 41 & 42 & $[0.023,0.064]$\\
+ & 2, fixed & 49 & 50 & $[0.030,0.073]$\\
+ & 2, product & 45 & 47 & $[0.026,0.070]$\\\bottomrule
+\end{tabular}
+
+\end{table}
+
+Cross-kernel comparison uses endpoint CDFs of $\Delta_{q^2}/q$ and $Z_c(q^2)/q$ at $\lambda=1,2$. It does not use raw common-random-number path distances: the driver coupling is not the maximal-load-pair rank coupling of Section~\ref*{sec:universality}. The frozen practical CDF-distance margin is $0.20$. DKW--Massart bounds \cite{massart} of width $0.057$ for each of the eight empirical CDFs yield simultaneous pair bands $0.114$, with family error at most $0.025$ because
+\[
+ 16\exp[-2\cdot1024\cdot(0.057)^2]<0.025.
+\]
+The scalar inequality was checked with exact rational Taylor bounds. Independence between the two kernels is unnecessary for the union bound. Observed KS distances, in order $\lambda=1$ imbalance/overflow and $\lambda=2$ imbalance/overflow, are $9/1024$, $17/1024$, $13/1024$ and $1/64$. The true CDF-distance upper bounds are respectively $0.122790$, $0.130602$, $0.126696$ and $0.129625$ after upward rounding. All are below $0.20$, supporting this specified finite-size equivalence criterion. The lower bounds are zero; no positive separation is established. Adding the primary and CDF family errors bounds the total simultaneous error by $0.05$ under the reference model.
+
+
+\subsection{Prospective design}
+The prospective protocol fixes $q=512$, $\kappa=1$, $\lambda=1,2$, matching/product kernels and 4096 shared replicate labels. Each path stops at $q^2$ arrivals. The source freeze is dated 17 October 2026, 23:42:34 UTC. The input freeze precedes the first trajectory, and the data freeze precedes inference.
+
+For label $i$, form the string
+\begin{center}\small\texttt{paper\_micro\_prospective\_v1|replicate=\%05d}\end{center}
+with $i$ formatted as five digits. Interpret its first eight SHA256 bytes as a big-endian 64-bit seed. All 4096 values are unique and disjoint from the original and reference seed lists. The frozen protocol permits no stochastic pilot, replacement, extension or threshold change. The artifact retains the complete batch and its checks.
+
+\subsection{Prospective intervals and coverage allocation}
+The fixed-time nonnegative-product argument is a simple instance of betting-based mean inference \cite{betting}. For means, clip $V_i=\min(Z_i/q,3)$ only for inference and retain all unclipped observations. Lower candidates $m\in[0,1]$ use $\prod_i[1+V_i-m]$; upper candidates $m\in[1/2,3]$ use $\prod_i[1+(2/5)(m-V_i)]$. Reject only at capital at least 1000, and invert on the fixed $10^{-5}$ grid outwards using exact integer products. Each endpoint costs at most $0.001$ by the fixed-time nonnegative-product bound; no normal approximation is used.
+
+Changing one arrival changes final labelled-load $\ell_1$ distance by at most two and overflow by at most one. At $q^2$ arrivals, bounded differences thus gives $\Prob(X-\E X>t)\le e^{-2t^2}$ for $X=Z/q$. The fixed coarse bound $U=\overline X+0.030$ costs at most $e^{-2R(0.030)^2}<0.001$ per cell. On $\E X\le U<3$, add the upward-evaluated clipping-bias bound
+\[
+ \E(X-3)_+\le\frac{1}{4(3-U)}e^{-2(3-U)^2}.
+\]
+All four mean-width gates $\le0.04$ passed. No sample exceeded three, but the population tail allowance was still included.
+
+The existing reference's four fixed mean endpoints each cost at most $0.001$. Its clipped mean intervals are $[0.69875,0.70333]$ at $\lambda=1$ and $[0.67391,0.67781]$ at $\lambda=2$. The audited total approximation and truncation allowances $0.0006$ and $0.0010$ give true SDE mean intervals $[0.69815,0.70393]$ and $[0.67291,0.67881]$. Both satisfy the unchanged width gate $0.010$. Subtraction of these intervals from the fresh unconditional micro intervals gives Table~\ref*{tab:prospective}. Eight fresh betting endpoints, four fresh coarse bounds and four existing reference endpoints cost at most $0.016$.
+
+Fresh micro CDFs use DKW width $a=0.032$ with $R=4096$; the two existing reference CDF events use $b=0.012$ with $N_{\rm ref}=32768$. The audited reference-to-SDE coupling supplies horizontal radius $r_1=0.010$, $r_2=0.020$ and vertical allowance $\tau=0.005$. With $A$ the micro empirical law, $B$ the computed reference empirical law, $B_\pm=B\pm r_\lambda$, $d(A,B)=\sup_x(F_A-F_B)$ and $\delta=a+b+\tau=0.049$, the distance bounds are
+\begin{align*}
+ L&=\max\{0,\max[d(A,B_-),d(B_+,A)]-\delta\},\\
+ U&=\min\{1,\max[d(A,B_+),d(B_-,A)]+\delta\}.
+\end{align*}
+Every jump, including ties, is included; stored long-double hexadecimal values are parsed as exact rationals. The unchanged reference CDF-envelope width gate $0.10$ passed for both $\lambda$ values. The simultaneous failure allocation for this family's eight comparisons is
+\begin{align*}
+ \alpha_{\rm mean}&\le0.016,\\
+ \alpha_{\rm CDF}&\le8e^{-2\cdot4096(0.032)^2}
+                +4e^{-2\cdot32768(0.012)^2},\\
+ \alpha_{\rm joint}&<0.018138367441<0.05.
+\end{align*}
+The scalar exponential bounds were certified before sampling with rational Taylor bounds. This is at least $95\%$ simultaneous coverage for these eight new comparisons under the contracts below. It is a separate family from the original finite-batch claims, not a combined confidence statement for every result in the manuscript. Between-cell independence is not needed for the union bounds.
+
+
+\subsection{Earlier post-hoc diagnostic kept separate}
+Before the prospective batch, the old $R=1024$ micro endpoints had already been observed when an SDE follow-up recipe was designed. Its micro mean intervals are fixed-recipe nominal records; coverage adjusted for that actual post-hoc selection was not established. The original unqualified whole-family $95\%$ statement for that diagnostic was withdrawn. The separately documented CDF-only anchor does not repair the micro mean selection gap. See the \href{https://github.com/19991111/huaweipro-tpht-linux/blob/943485ae2be727404deaf50a1dc8c5206782fba2/research/paper_sde_posthoc_erratum_20261017/results/STATUS_CORRECTED.json}{preserved corrected diagnostic status}.
