@@ -1,5 +1,5 @@
 {
-  "endpoint_comparison.csv": "Reconstructed from fixed original outcomes via DESCRIPTIVE.json. This core schema is explicit; compatibility with unavailable manuscript prepare_figures.py remains unchecked.",
+  "endpoint_comparison.csv": "Core aggregate report reconstructed from fixed original outcomes via DESCRIPTIVE.json. The current paper entrypoint, tools/build_paper.py, separately rebuilds per-endpoint figure inputs at figure-inputs/analysis/endpoint_comparison.csv from fixed raw outcomes and lookup values; this aggregate CSV is not used as that input.",
   "mechanism": {
     "rows": 4096,
     "q": 512,

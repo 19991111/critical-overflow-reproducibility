@@ -2,7 +2,7 @@
   "scope": "authoritative SICOMP v2 integrated, fixed-evidence core and clean paper build validated",
   "authoritative_library_file_id": "libfile_ee592c5200088191aff61338f9396060",
   "authoritative_archive_sha256": "c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432",
-  "tested_runner_sha256": "5bed5445ed0c30ab6bc00cd58e60f8b745a981922ec1b02c0c01c5663b5ca3d2",
+  "tested_runner_sha256": "6d48696943353b6ff4d7f887a392cf9217fd175cbce4378032307d393e643a24",
   "acceptance_report": "evidence/full-core/PACKAGE_CHECKS.json",
   "acceptance_report_sha256": "51d1705261d9b1ecc91f8ea13b215bce88506399c5cff3a94edc46586618ea02",
   "original_repository_modified": false,
@@ -14,5 +14,7 @@
   "paper_acceptance_report": "evidence/paper/PACKAGE_CHECKS.json",
   "paper_acceptance_report_sha256": "614b214c4336c20dc9c4d04754d6bd38e987d48834ef8d6e33fb0ee0490c9282",
   "tested_paper_runner_sha256": "c0827e35f41235ce321082c9b7ee27f09582e311faef5ab2b3cbb6db382cec85",
-  "original_paper_text_class_bibliography_unchanged": true
+  "original_paper_text_class_bibliography_unchanged": true,
+  "full_core_tested_runner_sha256": "5bed5445ed0c30ab6bc00cd58e60f8b745a981922ec1b02c0c01c5663b5ca3d2",
+  "core_validation_basis": "Original full-core 33-check acceptance plus evidence/SCOPE_DESCRIPTION_CHECK.json for the later description-only edit; no stochastic or matrix rerun."
 }

@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "scope": "CSV scope description only",
+  "source_change_is_one_description_constant_only": true,
+  "non_description_AST_identical": true,
+  "generator_exercised": "Replay.mechanism on hash-verified fixed inputs",
+  "fixed_inputs": {
+    "research/paper_micro_prospective_20261017/results/micro/outcomes.csv": "77bd9d4e4df33a145d0a2d02a61cf9e7ef73dd35bf8c6af07d49d8ad578bf149",
+    "research/paper_sde_end_to_end_20261017/results/TABLES.hex": "48455dbbe470cdc807c5d419701f9a94f798ce230ca971ab2d8d9a61658a1a77",
+    "research/paper_v4_release_20261017/results/DESCRIPTIVE.json": "26fefa7bf121bd1ba9c70ce65e69315f4a2c4bea661546f8db175d284dd6353b"
+  },
+  "numeric_outputs": [
+    {
+      "file": "endpoint_comparison.csv",
+      "byte_identical_to_baseline": true,
+      "sha256": "ab733c2442c59e1d29b5f97b3b370a1b1a5772526acdbaf453ba59febcff78a8"
+    },
+    {
+      "file": "mechanism.json",
+      "byte_identical_to_baseline": true,
+      "sha256": "38232d60599ef6df114029dcf04b1933477ccc96ea3e0db2fe84a30794adf6be"
+    },
+    {
+      "file": "observed_imbalance_readout.csv",
+      "byte_identical_to_baseline": true,
+      "sha256": "ba99782b8739e64415582f003aa56f0b82d8cd974ef140e96eccdc63aee4256d"
+    }
+  ],
+  "generated_scope_matches_current_roles": true,
+  "core_aggregate_rows": 24,
+  "current_paper_endpoint_rows": 25600,
+  "stochastic_or_matrix_experiments_run": 0,
+  "wall_seconds": 0.1542491139998674,
+  "baseline_commit": "69ee8a403e08e7c5f0d95e37587919ddc30432c8",
+  "full_core_tested_runner_sha256": "5bed5445ed0c30ab6bc00cd58e60f8b745a981922ec1b02c0c01c5663b5ca3d2",
+  "current_runner_sha256": "6d48696943353b6ff4d7f887a392cf9217fd175cbce4378032307d393e643a24"
+}

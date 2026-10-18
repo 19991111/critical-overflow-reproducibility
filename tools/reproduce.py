@@ -218,7 +218,7 @@ class Replay:
         with (output / 'endpoint_comparison.csv').open('w') as stream:
             writer = csv.DictWriter(stream, fieldnames=list(desc[0]))
             writer.writeheader();writer.writerows(desc)
-        write(output / 'CSV_SCOPE.json', {'endpoint_comparison.csv': 'Reconstructed from fixed original outcomes via DESCRIPTIVE.json. This core schema is explicit; compatibility with unavailable manuscript prepare_figures.py remains unchecked.', 'mechanism': result})
+        write(output / 'CSV_SCOPE.json', {'endpoint_comparison.csv': 'Core aggregate report reconstructed from fixed original outcomes via DESCRIPTIVE.json. The current paper entrypoint, tools/build_paper.py, separately rebuilds per-endpoint figure inputs at figure-inputs/analysis/endpoint_comparison.csv from fixed raw outcomes and lookup values; this aggregate CSV is not used as that input.', 'mechanism': result})
 
     def rerun(self, work, group):
         base = work / 'research' / NAMES[group]
