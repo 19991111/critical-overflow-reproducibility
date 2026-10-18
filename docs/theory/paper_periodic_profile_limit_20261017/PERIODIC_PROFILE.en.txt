@@ -1,0 +1,64 @@
+The mean-locked periodic profile of the pure internal two-side fluid
+17 October 2026. Analytic proof; no ODE simulation or rate fitted from data.
+Clock convention throughout this file: t=n/q on the two-community GLOBAL clock with a fair community choice. A community mean increases at speed1/2. In mean-load clock u=t/2 all displayed rates acquire a factor2.
+
+P1. State space, flow, moment bound
+A state z=(p_L,p_R) consists of probability laws on the integer lattice Z with finite first moments. Negative coordinates are allowed ONLY to express integer-translated profiles; the actual allocation chain still starts from nonnegative empty loads. Write tails x_k=P_L(A>=k), y_k=P_R(A>=k), k in Z, and mean mu=(E_L A+E_R A)/2. The fluid equations are
+ x'_k=(x_(k-1)-x_k)y_(k-1),
+ y'_k=(y_(k-1)-y_k)x_k.                                    (P1)
+They define a unique probability flow Phi_t. One construction is the two bounded-rate time-inhomogeneous pure-birth laws with rates y_k and x_(k+1), coupled through their marginal tails. The vector field is globally3-Lipschitz in tail sup norm; finite truncations or Picard iteration give existence/uniqueness. Monotonicity and probability constraints are invariant, and the rates<=1 prevent explosion. Finite first moments persist. The sum of the two mean derivatives is P(L<=R)+P(R<L)=1, so mu(t)=mu(0)+t/2. Integer shifts commute with Phi_t.
+Use theta=1/200 and Phi_exp(z)=.5(E_L cosh(theta(A-mu))+E_R cosh(theta(A-mu))). The previously sealed rank/Gini/Taylor argument, with pure-internal rank deficit delta=1, implies
+ Phi_exp(Phi_t z)<=2+exp(-theta t/8)(Phi_exp(z)-2).            (P2)
+One direct verification avoids a circular use of attraction. Let nu=(p_L+p_R)/2, Y=theta(A-mu), and w_k=p_L(k)y_k+p_R(k)x_(k+1), the selected-load law, whose mass is1 and w<=2nu. Rank summation and the zero-mean Gini inequality give E_w sinh Y-E_nu sinh Y<=-(Phi_exp-1)/2. Exact differentiation, with mu'=1/2, gives
+ Phi_exp'=theta/2(E_w sinh Y-E_nu sinh Y)
+       +(sinh(theta)-theta)E_w sinh Y/2+(cosh(theta)-1)E_w cosh Y/2
+ <=-theta Phi_exp/4+theta/4+(exp(theta)-1-theta)Phi_exp
+ <=-theta Phi_exp/8+theta/4.
+The last scalar bound holds at theta=.005. Finite exponential moments justify truncation and differentiation since all birth rates are<=1. Rank/Gini is the same finite-law inequality proved in the sealed critical note; rational splitting and truncation extend it to these laws. Alternatively replicate finite rational profiles to finite populations and pass the previously proved cosh drift through the fixed-time LLN/Fatou argument. Neither proof assumes a periodic profile. Integer translation makes the bound valid on Z. Thus every M>=2 exponential-moment sublevel is invariant after centering at its evolving mean.
+
+P2. Exact conservative linearization and L1 nonexpansion
+For two solutions (x,y),(xt,yt), let d_k=x_k-xt_k, e_k=y_k-yt_k and bars denote arithmetic means of the two tails. Their difference satisfies EXACTLY the forward equation of a bounded-rate Markov chain on states {X_k,Y_k:k in Z}:
+ X_k -> X_(k+1) at rate ybar_k,
+ X_k -> Y_k     at rate ybar_(k-1)-ybar_k,
+ Y_k -> Y_(k+1) at rate xbar_(k+1),
+ Y_k -> X_(k+1) at rate xbar_k-xbar_(k+1).
+The diagonal losses are ybar_(k-1) at X_k and xbar_k at Y_k. All off-diagonal coefficients are nonnegative, every column sum is0, and every exit rate<=1. This follows by the midpoint identity for the bilinear vector field, not a linear approximation with a discarded remainder.
+Consequently, for the tail-L1 metric
+ d_1(z,zt)=sum_k(|x_k-xt_k|+|y_k-yt_k|)=W1(p_L,pt_L)+W1(p_R,pt_R),
+ d_1(Phi_t z,Phi_t zt)<=d_1(z,zt).                           (P3)
+Finite first moments make these sums finite. The signed difference is transported by a positive mass-preserving evolution; its L1 norm cannot increase. This also proves flow continuity in d_1.
+
+P3. Strict decrease on each equal-mean slice
+We first check the necessary positivity rather than assuming an irreducible generator everywhere at time0. Choose ANY finite positive-mass initial atom in each side. Existing atoms retain at least exp(-t) of their mass. If a left atom lies below a right atom, the left can reach one level above it through positive birth flux; then the right can advance, and the two sides can alternate. If the left starts above the right, first let the right reach it. Induction using variation of constants proves: there is a finite H such that every atom on either side at every level k>=H is positive for EVERY t>0. In particular every finite-level tail is positive for t>0. This argument works for arbitrary initial probability laws on Z, not only a point mass.
+Apply this to both compared solutions. In the difference-chain rates above, forward same-channel edges at every finite level have positive rates for t>0; channel-crossing edges have positive rates at all sufficiently high levels. Any two finite initial states can therefore reach a COMMON sufficiently high state X_K in any positive time interval with positive probability. Choose finitely many required jumps inside a compact subinterval of(0,t), where their continuous rates have positive minima, and wait elsewhere; bounded exit rates give positive waiting probabilities. No uniform lower bound over all loads is asserted.
+If z and zt have the same mean and are distinct, the summable signed tail difference has total mass0 and nonzero positive and negative parts. Pick one nonzero coordinate of each sign. Their transition masses overlap at the common state just constructed, causing strict cancellation of signed mass. Hence for EVERY t>0,
+ d_1(Phi_t z,Phi_t zt)<d_1(z,zt)                             (P4)
+whenever the means agree and z!=zt. This strictness is qualitative; it supplies no uniform spectral gap on the unbounded lattice.
+
+P4. A compact strict-contraction argument gives a unique periodic orbit
+Let S_j add integer j to both load laws. On states of mean alpha define T_alpha=S_-1 Phi_2. For M>=2 let K_(M,alpha)={mean alpha, Phi_exp<=M}. This is a compact d_1 space: exponential tails give uniform integrability of first moments and tightness; finite-coordinate truncation gives total boundedness; the moment bound is lower semicontinuous and the mean is d_1-continuous. It is nonempty for alpha in[0,1], using identical mixtures on{0,1}, and for every alpha by integer shifts.
+P2 makes T_alpha a self-map, P3 makes it continuous and nonexpansive, and P4 makes it strictly distance-decreasing on distinct points. Here is the fixed-point argument, so no unquoted compact-mapping theorem is needed. Along any orbit the consecutive distances decrease to r. A convergent subsequence has limit z; continuity gives both d_1(z,Tz)=r and d_1(Tz,T^2z)=r. Strict decrease forces r=0, hence z=Tz. Two fixed points would contradict strict decrease. Distances of ANY orbit to this unique fixed point decrease; a compact-subsequence argument again forces their limit0. The convergence is uniform on the compact set: the continuous functions d_1(T^n z,z_*) decrease pointwise to0, and a finite-subcover argument gives uniform convergence.
+The fixed points obtained for different M>=2 agree, by nesting and uniqueness. Let z_* be the mean0 point. Then
+ Phi_2 z_*=S_1 z_*.
+Define rho^mu=S_floor(mu) Phi_(2 frac(mu)) z_* for every real mu. It is the unique finite-exponential-moment periodic family locked to the mean, with
+ rho^(mu+1)=S_1 rho^mu,
+ Phi_t rho^mu=rho^(mu+t/2),
+ Phi_exp(rho^mu)<=2.                                       (P5)
+There is no extra free initial phase once the mean is specified.
+Uniqueness does not require an unmentioned common exponential parameter: any other finite-first-moment periodic family at the same mean would have a positive d_1 distance unchanged after one period by translation, contradicting P4. Thus it must equal rho. The compact existence/attraction argument uses the stated theta-moment sublevels.
+
+P5. Uniform attraction over phases and quantitative geometry
+The union K_M={mean in[0,1], Phi_exp<=M} is compact. T=S_-1 Phi_2 preserves each mean. Its target rho^(mean z) is continuous: Phi_t is continuous, and the phase endpoints match by P5. Nonexpansion and the slice-wise convergence above imply, by the same finite-subcover argument,
+ omega_M(t):=sup_(z in K_M) d_1(Phi_t z,rho^(mean z+t/2))->0.   (P6)
+For times between even integers, use nonexpansion and the flow identity. Integer translation extends this statement to arbitrary means. This is a proved uniform attraction modulus, but no explicit rate is extracted.
+Along the periodic flow both side loads increase stochastically. Thus for nu>=mu the two coordinate laws are stochastically ordered, and
+ d_1(rho^nu,rho^mu)=2(nu-mu).                               (P7)
+The equality follows by adding the two mean increments. In particular the family is globally2-Lipschitz in its mean parameter, including across integer phases.
+Every orbit atom is positive at EVERY integer level: positivity at high levels follows from P3's birth argument; retention over one period gives p(k-1)=p_2(k)>=exp(-2)p_0(k), propagating positivity downwards. The same holds for the right side. The orbit also inherits x_k>=y_k>=x_(k+1), since empty-start flow has this invariant and its centered even-time iterates converge to z_*. At x_k=y_k the first gap's derivative is nonnegative because a_(k-1)>=b_(k-1) and y_(k-1)>=x_k; at y_k=x_(k+1) the second gap's derivative is nonnegative because b_(k-1)>=a_k and x_k>=y_k. Finite truncation followed by limits gives the infinite-coordinate invariant.
+
+P6. Optional half-phase identity (clock check)
+The transformation J(p_L,p_R)=(S_1 p_R,p_L) commutes with the ODE, has J^2=S_1 and increases the mean by1/2. It sends a periodic orbit point to another finite-exponential-moment point with that new mean. Uniqueness across moment sublevels therefore gives
+ rho_L^(mu+1/2)=S_1 rho_R^mu, rho_R^(mu+1/2)=rho_L^mu.        (P8)
+It is not necessary that J preserve the particular sublevel M=2; finiteness and uniqueness across nested sublevels suffice. This identity is a useful phase/tie check, not an assumed symmetry between the two sides.
+
+Status: existence, uniqueness, phase locking and uniform compact-set attraction are proved above. What remains non-effective is the rate omega_M(t). The next file uses only qualitative attraction plus fixed-window LLN, so it does not silently claim a critical-time error rate from P6.

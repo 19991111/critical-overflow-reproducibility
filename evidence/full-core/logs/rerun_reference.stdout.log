@@ -1,0 +1,9 @@
+{"reference_replicates_completed":4096}
+{"reference_replicates_completed":8192}
+{"reference_replicates_completed":12288}
+{"reference_replicates_completed":16384}
+{"reference_replicates_completed":20480}
+{"reference_replicates_completed":24576}
+{"reference_replicates_completed":28672}
+{"reference_replicates_completed":32768}
+{"status":"all_reference_paths_completed","replicates_per_lambda":32768,"steps":16384,"CPU_seconds":102.602}

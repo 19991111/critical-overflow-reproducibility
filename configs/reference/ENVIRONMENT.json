@@ -1,0 +1,14 @@
+{
+  "UTC": "2026-10-17T18:23:29.361824+00:00",
+  "CPU": "existing AMD EPYC9V74; same CPU as micro data, no second-CPU claim",
+  "allowed_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "selected_single_core": 0,
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "new_paid_resources": false
+}

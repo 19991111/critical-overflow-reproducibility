@@ -1,0 +1,50 @@
+[
+  {
+    "file": "critical_configs.bin",
+    "sha256": "196a548c94e3689e73925c92595eb54e3a425b7f10a462d25122bafd16643cb9",
+    "expected_sha256": "196a548c94e3689e73925c92595eb54e3a425b7f10a462d25122bafd16643cb9",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "observations_part00.csv",
+    "sha256": "7fe2b182cf5318110848287f230a2dc80ea4246f800af38c0adf7fae1487a978",
+    "expected_sha256": "7fe2b182cf5318110848287f230a2dc80ea4246f800af38c0adf7fae1487a978",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "observations_part01.csv",
+    "sha256": "2822076a197a0ce0224789d2c07696063225f481a3bccb7f8febd89bef3c5f5f",
+    "expected_sha256": "2822076a197a0ce0224789d2c07696063225f481a3bccb7f8febd89bef3c5f5f",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "observations_part02.csv",
+    "sha256": "87f08caadf1b769339b30c43901e4a45a471bfe0ac39bb61edfb7d986b1e19e8",
+    "expected_sha256": "87f08caadf1b769339b30c43901e4a45a471bfe0ac39bb61edfb7d986b1e19e8",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "outcomes.csv",
+    "sha256": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6",
+    "expected_sha256": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "progress.csv",
+    "sha256": "f617996cd1a9d1446d0aa233bcd7473b2a4357d9296bbe3b72b48340fe8e215c",
+    "expected_sha256": "f617996cd1a9d1446d0aa233bcd7473b2a4357d9296bbe3b72b48340fe8e215c",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  }
+]

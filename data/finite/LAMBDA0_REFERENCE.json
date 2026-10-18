@@ -1,0 +1,23 @@
+{
+  "status": "deterministic_Brownian_mean_reference_enclosed",
+  "lambda": 0,
+  "T": "1",
+  "cutoff": "8",
+  "midpoint_step": "1/4096",
+  "deterministic_error_upper": "0.0022538981445421528009982726135573964984002723811970346485176894833",
+  "mean_lower": "0.74610953275568703207310556818545906089606294739320549107837723961",
+  "mean_upper": "0.75061732904477133767510211341257385389286349215559956037541402031",
+  "wave_lookup_included": true,
+  "normal_tail_upper": "1.0902800998272613557396498400272381197034648517689483210821165839E-14",
+  "new_SDE_samples": 0,
+  "largest_q_mean_spill": 0.747039794921875,
+  "MCSE": 0.004703203662255573,
+  "mean_minus_reference_nominal_3MCSE_interval": [
+    -0.01768714510966296,
+    0.01503987315295463
+  ],
+  "nominal_interval_strict_coverage_claim": false,
+  "eta": 0.05,
+  "halfwidth_precision_gate": true,
+  "nominal_interval_inside_eta": true
+}

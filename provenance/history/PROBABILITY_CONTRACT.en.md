@@ -1,0 +1,13 @@
+# Ideal input-word model versus the implemented PRNG
+
+All probabilistic claims must state the input model precisely: the underlying input words are assumed iid uniform BOTH across replicate labels AND within each underlying stream. For the new reference, the retained52-bit fields must be iid uniform on{0,...,2^52-1} across all Box--Muller input positions, not merely independent between completed replicates. New reference streams are also assumed independent of the old-data/design history.
+
+One mathematical construction starts with iid64-bit uniform words W_(rep,j). Their low52-bit fields K_(rep,j) are iid uniform. The simulation uses midpoint uniforms (K+1/2)/2^52. For the Gaussian-coupling proof one can introduce independent continuous jitters J_(rep,j), uniform on(0,1), independent of all words, and set U=(K+J)/2^52. These U are iid continuous uniforms, so the exact Box--Muller transform supplies iid Gaussian coordinates. The quantized normal coordinates are coupled approximations, not exact independent standard normal coordinates; the frozen error bound accounts for that approximation.
+
+Independence only between completed replicate streams would justify some sampling statements about their common endpoint law, but it would not establish that their within-stream dynamics approximate Brownian increments. Perfectly correlated words within each stream illustrate the gap. The Gaussian coupling and stochastic allocation model require the stronger within-stream word contract.
+
+The actual implementation is deterministic word(seed,j) using a fixed SplitMix counter mixer and fixed hashed seed labels. It is a reproducible PRNG substitute. Distinct seeds, disjoint namespaces and reproducibility do not prove physical randomness, iid machine words or the mathematical independence contract. No such proof is claimed. Statistical and SDE approximation claims are conditional on the ideal word model, not established frequentist coverage for this fixed deterministic output merely by inspecting its hashes.
+
+Intentional driver sharing across lambda or kernel cells reuses the same underlying word array; these cells are dependent. The assumed independent indices are replicate and position of the underlying array, not each reuse in a different cell. Union bounds do not count shared cells as independent evidence. Old micro-model arrivals likewise require the ideal independent-word model for their independent arrival-mark interpretation.
+
+This clarification changes neither any seed nor any trajectory, numeric interval, margin, clipping rule or stake. It is an assumption clarification and limitation, not a newly verified randomness property.

@@ -1,0 +1,14 @@
+Exact product symmetry, as a separate one-sided check
+At every deterministic time of the true PRODUCT chain, the complete law is invariant under independent permutations within the four sides: empty start, uniform internal/product candidates and global-left tie all preserve this group. Conditional on the four side load multisets, the labeled arrays are independent uniform permutations of those multisets (the group acts transitively on that orbit). This is stronger than exchangeability of only the paired labels in a fixed matching graph.
+
+For any predetermined pairing and payoff0<=f<=1, let F_ij=f(U_i,V_j), and let Ftilde subtract row and column means and add the grand mean. Conditional on the multisets, a matching residual C_f is a uniform permutation-assignment residual, with mean0 and variance
+ Var(C_f|multisets)=sum_ij Ftilde_ij^2/[m^2(m-1)], m>=2.
+Expand products of two permutation entries: diagonal terms have probability1/m and distinct rows use distinct columns with probability1/[m(m-1)]. Zero row/column sums give the formula. Orthogonal centering decreases the Frobenius norm; subtracting the grand mean first gives sum Ftilde^2<=m^2/4 for f in[0,1]. Thus the variance is<=1/[4(m-1)].
+The two cross directions use disjoint side classes, so their residuals are conditionally independent. For the virtual FIXED-minus-actual-PRODUCT feedback at the SAME actual product state,
+ E|g_FIXED(Y_n)-g_PRODUCT(Y_n)|<=1/sqrt(m), m>=2,
+uniformly for every n, with no early-time restriction. Therefore on N<=Tq^2,
+ (epsilon/a) E max_(l<=N)|sum_(n<l)(g_FIXED-g_PRODUCT)(Y_n)|
+ <=(epsilon N/a)/sqrt(m)=O(q^-1/2) if epsilon q is bounded and a/q stays positive.
+No independence across times was used. For a fixed doubly-stochastic weighted kernel the same one-sided mean/variance conclusion follows by averaging permutation matrices and Jensen (or direct expansion).
+
+This lemma alone does not compare two actual processes: it is a virtual kernel test on PRODUCT states. FIXED lacks the four independent label symmetries. The final critical theorem supplies the missing matching-state decorrelation by random transpositions and then a true two-process coupling. Do not mistake conditional permutation symmetry in this lemma for independence between the eventual coupled product path and the fixed path or its future.

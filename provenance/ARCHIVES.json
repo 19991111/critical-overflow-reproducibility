@@ -1,0 +1,45 @@
+{
+  "v4": {
+    "repo": "19991111/huaweipro-tpht-linux",
+    "commit": "dddf58f43c0831e1c24e3017fc11618938453478",
+    "path": "research/paper_v4_release_20261017/paper_v4_release_return.tar.gz",
+    "archive_sha256": "09496860413bce8310d17a4b7d299d2662612caa6d70688522183e8173167ec6",
+    "archive_bytes": 31575326,
+    "entry_count": 125,
+    "total_member_bytes": 126792424
+  },
+  "prospective": {
+    "repo": "19991111/huaweipro-tpht-linux",
+    "commit": "09480b6e9afcd54574245433df21c1cfac1eede6",
+    "path": "research/paper_micro_prospective_20261017/micro_prospective_return.tar.gz",
+    "archive_sha256": "7deb29f884b76ce2088fd938ddcc98a31ceb6f1c7f04cef1c5c1d028ff3a4555",
+    "archive_bytes": 5503113,
+    "entry_count": 65,
+    "total_member_bytes": 68895415
+  },
+  "sde": {
+    "repo": "19991111/huaweipro-tpht-linux",
+    "commit": "067543228ccdc4efbce5b8df7a0849b03f5fc1ec",
+    "path": "research/paper_sde_end_to_end_20261017/sde_end_to_end_return.tar.gz",
+    "archive_sha256": "19de4b36cf055457485c38493fc96af3d6b484c3fc28b24f0b7ca9c0af76293f",
+    "archive_bytes": 2670793,
+    "entry_count": 68,
+    "total_member_bytes": 6295799
+  },
+  "certificate": {
+    "repo": "19991111/huaweipro-tpht-linux",
+    "commit": "a33deca6cb65ffd6d5a2c70bfc2721d35276d366",
+    "path": "research/paper_profile_certificate_20261017/profile_certificate_return.tar.gz",
+    "archive_sha256": "6dc729a9d22adec4252c113100be396b47195f81fc7da62312eebae739c3e4ff",
+    "archive_bytes": 237131,
+    "entry_count": 64
+  },
+  "profile": {
+    "repo": "19991111/huaweipro-tpht-linux",
+    "commit": "a33deca6cb65ffd6d5a2c70bfc2721d35276d366",
+    "path": "research/paper_profile_numerics_20261017/profile_numerics_return.tar.gz",
+    "archive_sha256": "a2b767f563a1d7ff2f41f44bf250cd99235b6e6f9fbefa19836409b061cc0c05",
+    "archive_bytes": 3210501,
+    "entry_count": 103
+  }
+}

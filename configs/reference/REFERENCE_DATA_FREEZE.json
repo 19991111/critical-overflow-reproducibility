@@ -1,0 +1,18 @@
+{
+  "UTC": "2026-10-17T18:32:39.536808+00:00",
+  "all_reference_data_complete_before_independent_audit": true,
+  "files": {
+    "logs/reference_means.stdout.log": "d17c66b8f70ef760d11e2ff61d6c3ea6b08b6f0d7b1d1579a241cfe97209eb41",
+    "results/END_TO_END_D_CDF_COMPARISONS.json": "e962904f9efbed8f6eb9040da0877c1aa56e6d5a41e64b11eae1dcdf656c45da",
+    "results/END_TO_END_MEAN_COMPARISONS.json": "dcfc90eedcf494e603a36806f13a7fd294e164f8c2f4be18b7f604ae942a6fc5",
+    "results/MICRO_MEAN_INTERVALS.json": "c360f87f5a40b78492923c6f5b6ebeb46763f26a31244f37fe72d629f6c1b27e",
+    "results/MICRO_PRECHECK.json": "489276ede238c2a83d70f8a0f0284e5bd80c383bf00318b467aa6bba4b0ece11",
+    "results/REFERENCE_QUALITY.json": "86e17c89cc979db4ccbf449944704033063a8f8c75cd4d7359b3d8815ba95f08",
+    "results/SUMMARY.json": "ca95079b7a236b6ac4d2c6d17c0c014dd0d6665a21e9ee6af0609788c3bcfb21",
+    "results/TABLES.hex": "48455dbbe470cdc807c5d419701f9a94f798ce230ca971ab2d8d9a61658a1a77",
+    "results/TABLE_CERTIFICATE.json": "6b07d6d0672edd66c345a13ee2cf9aeffa37707c04d8bdcfe1ca5a6044ab7720",
+    "results/compiled_reference.bin": "83eb3aeedc62ac1e749a372015fa5d4d2c0443f195c862ea8695fee764fab711",
+    "results/reference_endpoints.csv": "19daef9fe3bc0c3d6bf386861fd65815ae6ba9cd900af468b19163a4ce770de1",
+    "results/reference_endpoints.csv.progress.csv": "4a7b5ba68ea07787d1d3d0ff2d4d6036230fd4d62f8cca23d618f26b0a67b316"
+  }
+}

@@ -1,0 +1,1 @@
+The first clean replay stopped before compilation: large reference seed list was correctly in the manifest but compressed under configs/. The CLI expected the plain config path. Packaging was corrected to expose the original exact seed text, with identical SHA-256 and labels. No research experiment ran in this attempt.

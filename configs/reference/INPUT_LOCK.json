@@ -1,0 +1,41 @@
+{
+  "base_commit": "43fbe515b304f71cee043a86cc65f451fe48f58e",
+  "inputs": {
+    "research/paper_v4_release_20261017/results/validation/outcomes.csv": {
+      "bytes": 1288315,
+      "sha256": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6"
+    },
+    "research/paper_v4_release_20261017/results/WAVE_TABLE.hex": {
+      "bytes": 430924,
+      "sha256": "aa8ba2c1f973dd744811c8e8c4b8846539959975783d98289ec7b7e7fae8fd35"
+    },
+    "research/paper_v4_release_20261017/results/WAVE_LOOKUP_CERTIFICATE.json": {
+      "bytes": 925,
+      "sha256": "e0c415c8c1398604100079e469a3fa7113ec729558699d0844e5ca55d4659a7e"
+    },
+    "research/paper_profile_certificate_20261017/results/CERTIFIED_READOUTS.json": {
+      "bytes": 79963,
+      "sha256": "25e40f95610f8f5af377493954f8128971d94d6ee313fe39f5599c6258bf66b2"
+    },
+    "research/paper_periodic_profile_limit_20261017/COMMON_LIMIT_AND_SPILL.en.txt": {
+      "bytes": 9365,
+      "sha256": "17efe9dd488dc5d49fa6afa653b5df9a14e5c08cea82a1955562d0d9d492bed2"
+    },
+    "research/paper_periodic_profile_limit_20261017/SINGLE_FRONT.en.txt": {
+      "bytes": 3625,
+      "sha256": "33a519508294c3cb1270eb8bf1b34f4bcdadd08a5fc520fddcbe3a53136cd034"
+    },
+    "research/paper_profile_certificate_20261017/TAIL_REFINEMENT.en.txt": {
+      "bytes": 5417,
+      "sha256": "d33bff34a81a13816743b17576331ff5c8a2123b9fec0272830296d4acef8859"
+    },
+    "research/paper_v4_release_20261017/FINITE_Q_VALIDATION_PLAN.v1.json": {
+      "bytes": 4025,
+      "sha256": "cbb29c411ac2daf90bccb6cfe220e21c8ad8f89750755fb31a9c9be12bf352c9"
+    },
+    "research/paper_v4_1_erratum_20261017/paper/paper_core_v4-corrected.pdf": {
+      "bytes": 515477,
+      "sha256": "5f9ee594895ba9da3b0bb57e9df08e5d33765d3e81f39f303037b4a8e053b4fd"
+    }
+  }
+}

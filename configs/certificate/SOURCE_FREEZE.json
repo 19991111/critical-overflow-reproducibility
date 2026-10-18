@@ -1,0 +1,17 @@
+{
+  "UTC": "2026-10-17T17:02:05.104767+00:00",
+  "purpose": "Before first certificate stage: fixed sharper-tail proof, all stage parameters, directed arithmetic, bootstrap order, CPU budget and unchanged acceptance. No new ODE solve.",
+  "files": {
+    "MATRIX_BOOTSTRAP.en.txt": "2383dd927d7480eca1e7f470f255cd8dc016244beda9903d05a117dafa13f840",
+    "READ_FIRST.zh.txt": "b2e40104b76c30b27c00ac04549fad2ba341a44b406b72bd7875ddb47bcb4db2",
+    "TAIL_REFINEMENT.en.txt": "d33bff34a81a13816743b17576331ff5c8a2123b9fec0272830296d4acef8859",
+    "protocol/ENVIRONMENT.json": "236d5ad18e5d3868271fded2174e26c3dc526795ffe50c77eb2d26a3498782ca",
+    "protocol/INPUT_LOCK.json": "49bb28dcd1ad5f6f907caf30cfd906a8180831db7ec6b08745aeaabf15d355e4",
+    "protocol/LOCAL_BRANCHES_BEFORE.txt": "b947af299c15d3efc026f12117765e273199a10dab12e1e06fe712da26c427a7",
+    "protocol/PLAN_V1.json": "6e078738d6e7e8437b6f076f8ccbce1c11201f62f54e88c6742c7a8cb5631fed",
+    "protocol/REMOTE_REFS_BEFORE.txt": "676c24e17659ebcbc0a9c8c2f04c2c55e0212d87fb20aa7692106eefbce1a4fe",
+    "src/bounds.py": "1ed667022bcc6de7e965f1b0db5766dbd3392217a1ea14fd897b9941748afb1f",
+    "src/run_frozen.py": "bb5a9ca93eaae35c6fb5e7eddbc980f49e4f73a74882c3acc78410c8ad1ae87b",
+    "src/run_stage.py": "75c9d721e89f80f412e0a7c6f204e1369eb71ef04cacdc0ea4429f225858d3eb"
+  }
+}

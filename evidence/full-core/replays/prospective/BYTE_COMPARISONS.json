@@ -1,0 +1,82 @@
+[
+  {
+    "file": "outcomes.csv",
+    "sha256": "77bd9d4e4df33a145d0a2d02a61cf9e7ef73dd35bf8c6af07d49d8ad578bf149",
+    "expected_sha256": "77bd9d4e4df33a145d0a2d02a61cf9e7ef73dd35bf8c6af07d49d8ad578bf149",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "progress.csv",
+    "sha256": "3c9c29318a661493c528849cbdb5024bc9aebac349c1ccbfd7f5de5a6b25cbb7",
+    "expected_sha256": "3c9c29318a661493c528849cbdb5024bc9aebac349c1ccbfd7f5de5a6b25cbb7",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "terminal_configs_lambda1_part0.bin",
+    "sha256": "90ea99ec694728671d6bc445e27b0bf9ae3bbbe57796522b150af54189289aa9",
+    "expected_sha256": "90ea99ec694728671d6bc445e27b0bf9ae3bbbe57796522b150af54189289aa9",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "terminal_configs_lambda1_part1.bin",
+    "sha256": "7d2ff2c7c1c23560f076f0516e93f812c4ad4f835832d2f7535eb1fe32378810",
+    "expected_sha256": "7d2ff2c7c1c23560f076f0516e93f812c4ad4f835832d2f7535eb1fe32378810",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "terminal_configs_lambda1_part2.bin",
+    "sha256": "7a4e0651e97a19756df847eea405a3cfc433f8d096d28d6786c5f132dbb0051f",
+    "expected_sha256": "7a4e0651e97a19756df847eea405a3cfc433f8d096d28d6786c5f132dbb0051f",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "terminal_configs_lambda1_part3.bin",
+    "sha256": "e192ebdd72fd969113b3ad4e7a875014c646efc9318e251b2e96af7510d6a910",
+    "expected_sha256": "e192ebdd72fd969113b3ad4e7a875014c646efc9318e251b2e96af7510d6a910",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "terminal_configs_lambda2_part0.bin",
+    "sha256": "6679b34d6ab8096bc39911ccdf9dcabc3536e5e186278183f0dd102d7e346fc8",
+    "expected_sha256": "6679b34d6ab8096bc39911ccdf9dcabc3536e5e186278183f0dd102d7e346fc8",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "terminal_configs_lambda2_part1.bin",
+    "sha256": "128f27f7989299704ddbb2d6b23a86235cd653b90a4fda6d763fc9eb1ecadcc2",
+    "expected_sha256": "128f27f7989299704ddbb2d6b23a86235cd653b90a4fda6d763fc9eb1ecadcc2",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "terminal_configs_lambda2_part2.bin",
+    "sha256": "01c113f812ee9877ca40257fbb005b1490b639e0e46c31313df5fc1bc8aa6f2f",
+    "expected_sha256": "01c113f812ee9877ca40257fbb005b1490b639e0e46c31313df5fc1bc8aa6f2f",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "terminal_configs_lambda2_part3.bin",
+    "sha256": "a17dd04b337a414860e2933aef430e04dee55379a80ed0aa10d03d0d038d229c",
+    "expected_sha256": "a17dd04b337a414860e2933aef430e04dee55379a80ed0aa10d03d0d038d229c",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  }
+]

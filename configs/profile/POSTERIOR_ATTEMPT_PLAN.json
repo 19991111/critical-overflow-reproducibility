@@ -1,0 +1,10 @@
+{
+ "source":"src/validate_saved_cycle.py",
+ "command":"OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 -B research/paper_profile_numerics_20261017/src/validate_saved_cycle.py",
+ "inputs":["results/tail_h512_K24/raw_profiles.npz","results/MEAN_ZERO_CANDIDATE.json"],
+ "method":"Exact-rational probability Bezier residual and80-bit downward sub-Markov matrices from saved nodes; no ODE solving",
+ "cells":256,"core_K":2,"chain_radius":4,"block_B":1,"fixedpoint_bits":80,"exponential_degree":4,
+ "target_W1":0.001,"wall_seconds":90,"memory_MiB":1024,
+ "expected_limitation":"The rigorous strong-moment tail term alone exceeds target atK=2. Do not expand the grid/core/block to force a pass.",
+ "preserve_attempt_once":true,"new_random_experiments":0,"new_ODE_runs":0
+}

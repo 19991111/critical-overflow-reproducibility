@@ -1,0 +1,13 @@
+{
+  "main_pipeline_wall_seconds": 171.76418775500497,
+  "independent_read_only_verification_wall_seconds": 25.14216981399659,
+  "total_computation_stage_wall_seconds": 196.90635756900156,
+  "limit_overall_seconds": 1200,
+  "reference_CPU_seconds": 166.13038899999998,
+  "reference_CPU_limit_seconds": 600,
+  "one_pinned_core": 0,
+  "all_budgets_met": true,
+  "no_new_micro_samples_or_reference_extensions": true,
+  "timing_excludes_human_review_archiving_and_network_storage_readback": true,
+  "continuous_elapsed_from_source_freeze_to_independent_check_completion_seconds": 243.87590622901917
+}

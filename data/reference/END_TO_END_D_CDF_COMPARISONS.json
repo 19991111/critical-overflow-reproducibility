@@ -1,0 +1,66 @@
+[
+  {
+    "lambda": 1,
+    "kernel": 0,
+    "empirical_KS_to_computed_reference": "363/16384",
+    "true_CDF_distance_interval": [
+      "0",
+      "212571/2048000"
+    ],
+    "practical_margin": "1/5",
+    "horizontal_radius": "1/100",
+    "micro_DKW": "3/50",
+    "reference_DKW": "3/250",
+    "vertical_coupling_allowance": "1/200",
+    "reference_precision_passed": true,
+    "decision": "supported"
+  },
+  {
+    "lambda": 1,
+    "kernel": 1,
+    "empirical_KS_to_computed_reference": "355/16384",
+    "true_CDF_distance_interval": [
+      "0",
+      "105723/1024000"
+    ],
+    "practical_margin": "1/5",
+    "horizontal_radius": "1/100",
+    "micro_DKW": "3/50",
+    "reference_DKW": "3/250",
+    "vertical_coupling_allowance": "1/200",
+    "reference_precision_passed": true,
+    "decision": "supported"
+  },
+  {
+    "lambda": 2,
+    "kernel": 0,
+    "empirical_KS_to_computed_reference": "91/4096",
+    "true_CDF_distance_interval": [
+      "0",
+      "456517/4096000"
+    ],
+    "practical_margin": "1/5",
+    "horizontal_radius": "1/50",
+    "micro_DKW": "3/50",
+    "reference_DKW": "3/250",
+    "vertical_coupling_allowance": "1/200",
+    "reference_precision_passed": true,
+    "decision": "supported"
+  },
+  {
+    "lambda": 2,
+    "kernel": 1,
+    "empirical_KS_to_computed_reference": "811/32768",
+    "true_CDF_distance_interval": [
+      "0",
+      "459517/4096000"
+    ],
+    "practical_margin": "1/5",
+    "horizontal_radius": "1/50",
+    "micro_DKW": "3/50",
+    "reference_DKW": "3/250",
+    "vertical_coupling_allowance": "1/200",
+    "reference_precision_passed": true,
+    "decision": "supported"
+  }
+]

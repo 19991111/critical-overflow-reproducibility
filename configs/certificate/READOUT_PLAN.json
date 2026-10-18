@@ -1,0 +1,9 @@
+{
+ "purpose":"Propagate the achieved profile certificate to exact-rational Simpson feedback/origin/spill intervals on the existing256 saved phases. No new ODE or grid refinement.",
+ "source":"src/certify_readouts.py","wall_seconds":45,"memory_MiB":1024,
+ "phase_nodes":256,"quadrature":"periodic composite Simpson, positive exact rational weights",
+ "feedback_d":[0.03125,0.0625,0.25,0.5,1,2,4,8],
+ "spill_h":[-0.5,0,0.5],"spill_d":[0,0.5,1,2,4],
+ "errors":"D=max(forward_E,backward_E)+validated_max_cycle_error; feedback2D+9472/(180N^4), alpha8D+76288/(180N^4), spillD",
+ "all_sums_exact_rational":true,"new_ODE_runs":0,"new_random_experiments":0
+}

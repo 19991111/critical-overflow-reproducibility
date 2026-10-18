@@ -1,0 +1,10 @@
+{"status":"environment_before_words","affinity_count":1,"FE_TONEAREST":true,"long_double_digits":64,"x87_control_word":895,"MXCSR":8064}
+{"lambda":1,"paired_replicates_completed":1024}
+{"lambda":1,"paired_replicates_completed":2048}
+{"lambda":1,"paired_replicates_completed":3072}
+{"lambda":1,"paired_replicates_completed":4096}
+{"lambda":2,"paired_replicates_completed":1024}
+{"lambda":2,"paired_replicates_completed":2048}
+{"lambda":2,"paired_replicates_completed":3072}
+{"lambda":2,"paired_replicates_completed":4096}
+{"status":"complete_once","paired_runs":8192,"endpoint_rows":16384,"new_SDE_paths":0}

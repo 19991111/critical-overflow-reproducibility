@@ -1,0 +1,28 @@
+{
+  "UTC": "2026-10-17T17:55:40.528569+00:00",
+  "files": {
+    "BUILD.md": "590e4484de5a25701708d5cbcec74b29ed3596e647e36a27787f77acc594f8b9",
+    "paper/paper_core_v4.tex": "06a7049fabf2fe6c4151156005c4d71fd9e6d5ab4cb818482879c02ba2379706",
+    "paper/references.tex": "684477226d5f1b6f22decdbf19be216ff47cd2ee8637fbe6a2e3b73444861dba",
+    "paper/sections/artifact.tex": "e1070a6006c809eb05ed79042fc20b15807c5c65b4597db0ff1874a1c16437e9",
+    "paper/sections/details.tex": "d2ddac97f59f59c4a7461d031f436862cddf44188bcd6d2179af5268460e338a",
+    "paper/sections/discussion.tex": "3ca85be6f0ba781eb7806660d751fc5d2cbacc666b0a4c86d5e228066c8d36e8",
+    "paper/sections/introduction.tex": "6039fc4a5a3acbc76ab2e61cad304f9f895c77f785183f703b24d74dbae4e23e",
+    "paper/sections/limit.tex": "6bcf6001febc898a5bf28cf2158eef8bd3f7a53b4447e93216700971e2706935",
+    "paper/sections/model.tex": "6c3e2be5685d7aedd8f304fb6b1deb46b61453817a7e7649345f95609046a74e",
+    "paper/sections/numerics.tex": "ec2df04571175e45775431e7140aef704b55ab85152af36f6c8a7894656c5906",
+    "paper/sections/profile.tex": "9038dd5b14053f72afd654355351c036420fbadc2727213f55eb00f0d22f47b2",
+    "paper/sections/universality.tex": "65262a4f56cf3de7a311167ea96abae17c1a9fc82c63f736bf9aea8650b16cae",
+    "paper/sections/validation.tex": "8688441cc32c9acedf3464dbbf67614493a32c9617de567846a5da881accc1d8",
+    "src/analyze_validation.py": "6cb62566461974038bee5ab226cc3a1a9c595c0bed46c3f11f52eed1d74d50f9",
+    "src/audit_document.py": "e099b93bddafbdc5ba06e52e7f78c95754e7bc929b25f2482c85b82627a4acdf",
+    "src/audit_observations.py": "a63e545adcdc808d95cf496bd7be13b97763a4ee5e733b59774e09b7de5d8ccb",
+    "src/build_document.py": "9886beeca1bdcb3becd0ed7c43b81ad7119dc07328921914836dc4ae9b4f9b7a",
+    "src/build_paper_assets.py": "a411188001bdd0ae171e07a13dbba75145efc81598a323188429ae7b4062a500",
+    "src/export_wave.py": "810e4825722e6ddb26cfa74f396bd8d95e30291a4161c085e4b1a919fbf3a32c",
+    "src/finite_q.cpp": "1e5ce40680f3accc5ca06bddd9bb4e069c6145278f76d59bc1733def615e95f4",
+    "src/run_validation.py": "e6dbdb9b5feab9163388a34cea77b1ec6b64a1062e64fb77bd76118d2f49daea",
+    "src/seal_release.py": "b7dfb10298b3828fbcc040622da90d5e5ce71cc4e27f621577bae0c1e7c1f94f",
+    "src/verify_remote_release.py": "8255eb7de3254449c108d2f612d9d51f6591ed9095fb4ba3a33feea36a91de0d"
+  }
+}

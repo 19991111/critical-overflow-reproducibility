@@ -1,0 +1,11 @@
+{
+  "before_first_reference_trajectory": true,
+  "files": {
+    "results/compiled_reference.bin": "83eb3aeedc62ac1e749a372015fa5d4d2c0443f195c862ea8695fee764fab711",
+    "results/TABLES.hex": "48455dbbe470cdc807c5d419701f9a94f798ce230ca971ab2d8d9a61658a1a77",
+    "protocol/REFERENCE_SEEDS_V1.txt": "83b7d35ab6f00dc72af32b6c573fa6f1ef56103d6bc9bfa4633ff9a84da11f9b",
+    "protocol/PLAN_V1.json": "42c68fea45f5ec72c00480c4bb7f68e9420e12d1e39aecc90583b696f17198ea",
+    "protocol/SOURCE_FREEZE.json": "ffcf9f041ff9e21044b9e520913878bba740d86ffe2b0628ae5bd29325beaf8f"
+  },
+  "calibration_cost_gate_passed": true
+}

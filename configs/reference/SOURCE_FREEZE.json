@@ -1,0 +1,17 @@
+{
+  "UTC": "2026-10-17T18:29:01.083811+00:00",
+  "before_any_reference_trajectory_or_new_micro_interval": true,
+  "files": {
+    "ANALYTIC_ERROR_BUDGET.en.md": "c1e6b0c843f084efc0ff4fa79cc4d209dee39eecf1fd2f63f7193777107475f8",
+    "protocol/ACTIVE_WORK_CHECK.json": "26b589facb9a89d66775d01caed0f82b6c712a1f12fec1b7212f6ea07b12990e",
+    "protocol/AUTHORIZATION_UPDATE.zh.txt": "89b2884da118085decea2be11a617342b5aa63adb872f254eea70f38d82f1b32",
+    "protocol/ENVIRONMENT.json": "dab92aa672cb8cfa942c52a528dd1894c3099596080804081d6eb32faa740010",
+    "protocol/INPUT_LOCK.json": "7c31b9ab87aa4092057ca14515d34d111a39fbf7519ca3cc02635a82141bc4d5",
+    "protocol/PLAN_V1.json": "42c68fea45f5ec72c00480c4bb7f68e9420e12d1e39aecc90583b696f17198ea",
+    "protocol/REFERENCE_SEEDS_V1.txt": "83b7d35ab6f00dc72af32b6c573fa6f1ef56103d6bc9bfa4633ff9a84da11f9b",
+    "src/analyze.py": "c43b60dbae818d2aa318ab1547a0abb776455ec3b2ebe40a1f469da98cc273d3",
+    "src/export_reference_tables.py": "c242c9af00e8de784d8d0d56450204c0bef4a8a6c56eabedb4ae2de3807f337d",
+    "src/reference.cpp": "c8b1bb07d99d46647277a4bdf1d7463e0ea543b6a0f771e24cf6d9c461ff8174",
+    "src/run_pipeline.py": "d62d61b5c8d7dfde08f780848e1de687644b5e4d82a7e051581a55eb7c3c603d"
+  }
+}

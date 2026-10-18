@@ -1,0 +1,7 @@
+{
+  "no_new_sampling_or_decision_rule": true,
+  "files": {
+    "src/verify_intervals.py": "dd5c28874b2c10a61f31cc52f266dc5f75f43a15824c3991aa9e27b44135b0b1",
+    "protocol/REFERENCE_DATA_FREEZE.json": "22ed221acb27033f1699a13ae472c24d94b261823ef5d459e513cf53f7d99df2"
+  }
+}

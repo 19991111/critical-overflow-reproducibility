@@ -1,0 +1,8 @@
+本包导航与旧状态澄清
+
+旧paper_profile_numerics_20261017/NEXT_CERTIFICATE.en.txt是当时的待办草案。其后同包VALIDATED_RESIDUAL.en.txt、POSTERIOR_CONTRACT.en.txt及posterior_attempt_v2已证明theta=.4强矩、完成严格r和beta并记录0.001精度目标失败。不能只读旧NEXT就误认为这些工作尚未运行。本包不覆盖任何旧冻结字节。
+
+本轮从旧失败界出发，先拆账，再用周期流的解析恒等式锐化真波尾，最后联合计算多周期有限矩阵共同质量。不是增加诊断数值的小数位，不重跑八组ODE。
+
+依次读：TAIL_REFINEMENT.en.txt、MATRIX_BOOTSTRAP.en.txt、protocol/PLAN_V1.json、results/ANALYTIC_BUDGET.json、results/SUMMARY.json及最终REPORT.zh.txt。每阶段的CERTIFICATE.json、LOWER_MATRIX.json和PERIOD_TRACE.json给实际证据。
+原科学验收阈值始终是1/1000；预先规定的1/10000只是更严格的节省计算停止条件，不替代验收式。任何失败、超时或预算停止都会保留。

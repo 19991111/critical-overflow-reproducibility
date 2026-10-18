@@ -1,0 +1,39 @@
+{
+  "UTC": "2026-10-17T23:42:32.986759+00:00",
+  "status": "prospective_fixed_before_fresh_data",
+  "base_commit": "943485ae2be727404deaf50a1dc8c5206782fba2",
+  "branch": "research/paper-weak-bridge-window-20261017",
+  "q": 512,
+  "kappa": 1,
+  "lambda_values": [
+    1,
+    2
+  ],
+  "kernels": [
+    "identity_matching",
+    "uniform_product"
+  ],
+  "R_per_cell": 4096,
+  "arrivals_per_run": 262144,
+  "mean_margin": "1/20",
+  "CDF_margin": "1/5",
+  "statistics": "STATISTICAL_PLAN.en.md",
+  "micro_DKW": "4/125",
+  "reference_DKW": "3/250",
+  "mean_clip": "3",
+  "coarse_u": "3/100",
+  "betting_stakes": [
+    "1",
+    "2/5"
+  ],
+  "per_endpoint_alpha": "1/1000",
+  "joint_alpha_ceiling": "1/20",
+  "new_SDE_paths": 0,
+  "shared_old_reference": true,
+  "CPU_seconds_total": 600,
+  "wall_seconds_total": 1200,
+  "threads": 1,
+  "selected_single_core": 0,
+  "retry_or_replacement_allowed": false,
+  "old_results_and_manuscripts_change_allowed": false
+}

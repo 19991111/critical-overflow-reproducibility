@@ -1,0 +1,21 @@
+{
+  "status": "acceptance_met",
+  "completed_stages": 4,
+  "skipped": [
+    {
+      "stage": "K12_B40_J128",
+      "reason": "predeclared_optional_stricter_stop_met"
+    },
+    {
+      "stage": "K12_B48_J256",
+      "reason": "predeclared_optional_stricter_stop_met"
+    }
+  ],
+  "best_W1_upper_rational": "5460129573176327543/604462909807314587353088",
+  "best_W1_upper_float_diagnostic": 9.033026649917792e-06,
+  "acceptance_threshold": "1/1000",
+  "acceptance_met": true,
+  "elapsed_matrix_budget_seconds": 15.129955424003128,
+  "new_ODE_runs": 0,
+  "new_random_experiments": 0
+}

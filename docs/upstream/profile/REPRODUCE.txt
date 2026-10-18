@@ -1,0 +1,34 @@
+Reproduce in disposable copies only. Preserve all sealed outputs.
+
+Original formal batch:
+ python3 -B research/paper_profile_numerics_20261017/src/run_frozen.py
+The guard refuses to overwrite logs/ATTEMPTS.jsonl. It verifies SOURCE_FREEZE, runs exactly the8 PLAN_V1 attempts sequentially, and invokes the frozen readout script once. The6 floating solves and2 exact integer paths are already complete; do not run old models/analyzers.
+
+To replay that batch from a fresh disposable directory, from the repository root:
+ python3 -B - <<'PY'
+from pathlib import Path
+import shutil,tempfile,subprocess
+src=Path('research/paper_profile_numerics_20261017').resolve()
+dst=Path(tempfile.mkdtemp(prefix='profile_numerics_reproduce_'))/src.name
+shutil.copytree(src,dst)
+shutil.rmtree(dst/'results');shutil.rmtree(dst/'logs')
+(dst/'results').mkdir();(dst/'logs').mkdir()
+subprocess.run(['python3','-B',str(dst/'src/run_frozen.py')],check=True)
+print(dst)
+PY
+Never delete the original result directories. Environment versions and one-thread limits are recorded. Across platforms/libraries, compare the diagnostic table with an explicit tolerance; do not require bit-identical floating trajectories or treat that tolerance as a true-orbit bound.
+
+Exact posterior replay uses the SEALED floating node bytes as mathematical rational input. It does not need a new ODE solve. In another disposable full copy, delete only results/posterior_attempt_v2 in that COPY, then run:
+ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 -B <copy>/src/validate_saved_cycle_v2.py
+The script verifies POSTERIOR_ATTEMPT_V2_FREEZE, including raw-profile and exact-mean candidate hashes. Its rational result, matrix and trajectory enclosures should reproduce exactly. Keep the failed V1 source/logs; do not replace them or rerunV1 as though it had passed.
+The normalizer and saved-state export scripts have their own freezes. Their output files also use exclusive creation where applicable. Replay only in an appropriately prepared disposable copy.
+
+Error map:
+ FINITE_TIME_CERTIFICATE: rigorous integer-path finite-time error, not periodic error.
+ QUADRATURE_AND_PHASE: ideal-orbit integration bounds and phase obstruction.
+ VALIDATED_RESIDUAL / POSTERIOR_CONTRACT: strong tails, rational proof path, full return certificate and readout propagation.
+ results/posterior_attempt_v2/CERTIFICATE_STATUS.json: actual final bound and FAILED precision goal.
+ results/SUMMARY.json and both CSV exports: diagnostic periodic predictions.
+ logs: every frozen numerical attempt, original failure and versioned correction.
+
+Storage verification hashes all source freezes, raw outputs, old inputs and prior archives; it never reruns any solver or certificate kernel. The archive excludes delivery/readback metadata to avoid recursive hashes. Independent network readback checks every archived payload's bytes, mode and Git object identity. The failed0.001 goal remains failed in the delivered evidence.

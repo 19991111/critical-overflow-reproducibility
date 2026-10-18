@@ -1,0 +1,11 @@
+{
+  "UTC": "2026-10-17T17:08:23.642704+00:00",
+  "files": {
+    "src/certify_readouts.py": "a8f4c12c0400c627c93cf7a5788c09f3041898d1863f9845f7f3dc04ed06dbaf",
+    "protocol/READOUT_PLAN.json": "f074ce6f16759cb6129aaccbbbd66fc5c16a90f6d2991da71749c50f33ff9fa7",
+    "CERTIFIED_READOUT_CONTRACT.en.txt": "ad7b1bbcaa9725907fd4bb6365e5ec52ca443fff62062fa633339719421f0710",
+    "src/bounds.py": "1ed667022bcc6de7e965f1b0db5766dbd3392217a1ea14fd897b9941748afb1f",
+    "results/SUMMARY.json": "5a3eb3f0ae2b041344e3903580ed0f2400cbdbed2cba7b56ef938bab46475db5",
+    "results/INDEPENDENT_BACKWARD_CHECK.json": "8694ec113ff64b47f33c5c2397047c3349550fb14794c57b0c10e0c6bc68c29d"
+  }
+}

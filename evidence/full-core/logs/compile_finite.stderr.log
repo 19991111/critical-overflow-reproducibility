@@ -1,0 +1,7 @@
+/workspace/critical-overflow-clean-2/src/finite/finite_q.cpp: In function ‘int main(int, char**)’:
+/workspace/critical-overflow-clean-2/src/finite/finite_q.cpp:61:2: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   61 |  if(argc<3)throw std::runtime_error("usage: executable --selftest wave OR --run wave seeds output");Wave wave(argv[2]);if(std::string(argv[1])=="--selftest"){selftest(wave);return 0;}if(argc!=5||std::string(argv[1])!="--run")throw std::runtime_error("arguments");
+      |  ^~
+/workspace/critical-overflow-clean-2/src/finite/finite_q.cpp:61:101: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   61 |  if(argc<3)throw std::runtime_error("usage: executable --selftest wave OR --run wave seeds output");Wave wave(argv[2]);if(std::string(argv[1])=="--selftest"){selftest(wave);return 0;}if(argc!=5||std::string(argv[1])!="--run")throw std::runtime_error("arguments");
+      |                                                                                                     ^~~~

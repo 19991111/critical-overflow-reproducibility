@@ -1,0 +1,32 @@
+[
+  {
+    "lambda": 1,
+    "clipped_reference_mean_interval": [
+      "559/800",
+      "70333/100000"
+    ],
+    "true_SDE_unconditional_spill_mean_interval": [
+      "13963/20000",
+      "70393/100000"
+    ],
+    "reference_approximation_allowance": "3/5000",
+    "reference_CDF_envelope_width_upper": "190389/4096000",
+    "mean_precision_passed": true,
+    "CDF_precision_passed": true
+  },
+  {
+    "lambda": 2,
+    "clipped_reference_mean_interval": [
+      "67391/100000",
+      "67781/100000"
+    ],
+    "true_SDE_unconditional_spill_mean_interval": [
+      "67291/100000",
+      "67881/100000"
+    ],
+    "reference_approximation_allowance": "1/1000",
+    "reference_CDF_envelope_width_upper": "64191/1024000",
+    "mean_precision_passed": true,
+    "CDF_precision_passed": true
+  }
+]

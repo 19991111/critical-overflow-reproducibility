@@ -1,0 +1,46 @@
+[
+  {
+    "lambda": 1,
+    "quantity": "Dcrit/q",
+    "empirical_KS": "9/1024",
+    "true_CDF_distance_lower": "0",
+    "true_CDF_distance_upper": "15717/128000",
+    "margin": "1/5",
+    "decision": "supported",
+    "pair_band": "57/500",
+    "joint_family_alpha": "1/40"
+  },
+  {
+    "lambda": 1,
+    "quantity": "Zcrit/q",
+    "empirical_KS": "17/1024",
+    "true_CDF_distance_lower": "0",
+    "true_CDF_distance_upper": "16717/128000",
+    "margin": "1/5",
+    "decision": "supported",
+    "pair_band": "57/500",
+    "joint_family_alpha": "1/40"
+  },
+  {
+    "lambda": 2,
+    "quantity": "Dcrit/q",
+    "empirical_KS": "13/1024",
+    "true_CDF_distance_lower": "0",
+    "true_CDF_distance_upper": "16217/128000",
+    "margin": "1/5",
+    "decision": "supported",
+    "pair_band": "57/500",
+    "joint_family_alpha": "1/40"
+  },
+  {
+    "lambda": 2,
+    "quantity": "Zcrit/q",
+    "empirical_KS": "1/64",
+    "true_CDF_distance_lower": "0",
+    "true_CDF_distance_upper": "1037/8000",
+    "margin": "1/5",
+    "decision": "supported",
+    "pair_band": "57/500",
+    "joint_family_alpha": "1/40"
+  }
+]

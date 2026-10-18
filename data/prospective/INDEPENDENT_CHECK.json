@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "terminal_configurations_independently_checked": 16384,
+  "progress_records_checked": 8192,
+  "paired_and_cross_lambda_driver_hashes_checked": 4096,
+  "exact_endpoint_and_neighbor_products_checked": 16,
+  "CDF_comparisons_independently_checked_by_bisection": 4,
+  "clipping_tail_bounds_checked_at_100_digits": 4,
+  "mean_difference_and_all_eight_decisions_checked": true,
+  "new_random_words_or_trajectories": 0,
+  "wall_seconds": 17.894411244997173
+}

@@ -1,0 +1,24 @@
+{
+  "stage": "compile_reference",
+  "command": [
+    "g++",
+    "-std=c++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "/workspace/huaweipro-tpht-linux/research/paper_sde_end_to_end_20261017/src/reference.cpp",
+    "-o",
+    "/tmp/paper_sde_reference_20261017"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 1.3722931039956165,
+  "CPU_seconds": 1.3190289999999996,
+  "reference_CPU_total": 5.6521289999999995,
+  "CPU_limit": 594,
+  "single_core": 0,
+  "max_RSS_kib_child_highwater": 111320
+}

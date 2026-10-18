@@ -1,0 +1,12 @@
+{
+  "namespace": "paper_micro_prospective_v1|replicate=%05d",
+  "fresh_seed_count": 4096,
+  "fresh_duplicates": 0,
+  "old_micro_actual_64bit_value_overlap": 0,
+  "old_reference_actual_64bit_value_overlap": 0,
+  "old_seed_counts": [
+    1024,
+    32768
+  ],
+  "before_first_trajectory": true
+}

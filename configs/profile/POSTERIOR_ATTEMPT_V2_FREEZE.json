@@ -1,0 +1,11 @@
+{
+  "UTC": "2026-10-17T16:37:02.121319+00:00",
+  "files": {
+    "src/validate_saved_cycle_v2.py": "377f76255df6c77cbcccb3f581e79809034aa8eeead8e5ab69e82364cba98bb6",
+    "protocol/POSTERIOR_ATTEMPT_V2_PLAN.json": "1cb09dd4f9560cd3b355fef9303a999f1bba2e20c1a77872a5f191d58d1fdc44",
+    "protocol/POSTERIOR_ATTEMPT_PLAN.json": "701aef122211d334d71e1873d6dfb7c1c87a86160cb71a1a5a27017358389a63",
+    "VALIDATED_RESIDUAL.en.txt": "3423db380a6e214fc095dc0b82553abc497cbc04de4098deca0e743eebcc54c4",
+    "results/tail_h512_K24/raw_profiles.npz": "ce934a121ace06657aaf8ea516e876e37c46367489cc4d3e4460c094e814b02c",
+    "results/MEAN_ZERO_CANDIDATE.json": "f66367360d94b7253b011b26071f723e03ce962d70e32fc2fd797620a233e538"
+  }
+}

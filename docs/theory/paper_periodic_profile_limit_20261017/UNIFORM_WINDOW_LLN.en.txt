@@ -1,0 +1,37 @@
+An explicit fixed-window LLN and alternative uniform restart closure
+17 October 2026. Independently checked from the received analytic candidate.
+This supplements the global-clock restart proof in CRITICAL_TRACKING.en.txt. It uses the COMMUNITY MEAN clock for a pure community, with ODE rates multiplied by2. No finite-q simulation is used.
+
+U1. Uniform conditional finite-window bound
+Let q=2m, theta=1/200. A pure community receives one ball per event and its mean clock is k/q. Translate the initial integer loads by-floor(mu_0), so mu_0 in[0,1). Assume the sum of its two centered cosh moments is<=R. Fix an INTEGER B>=1 and consider 0<=u<=B, linearly interpolating the qB steps. Start the deterministic ODE from the exact initial empirical profile.
+Let ||.||_tail denote the sum of the absolute differences of both tails, which is the sum of the two marginal W1 distances. The exact midpoint difference generator has exit rates<=2, so its l1 operator norm is<=4. Thus the vector field is globally4-Lipschitz in this metric; its own l1 mass is2. Each empirical step increments one tail coordinate by2/q, and its conditional drift is F/q exactly, including the left tie.
+For each tail coordinate the martingale has total quadratic variation expectation<=4B/q. Doob and Cauchy-Schwarz give expected supremum<=4sqrt(B/q). There are2(2K+1) coordinates with |k|<=K, whose contribution is<=8(2K+1)sqrt(B/q).
+No finite-support initial condition is needed. A given bucket is incremented with probability<=2/q per internal event. For uncentered exp(+/-theta A), positivity of increments gives the upper recurrence factor1+2(e^theta-1)/q. After the initial integer shift,
+ E Phi_uncentered(u)<=e^theta R exp[2B(e^theta-1)].
+Write C_(R,B)=2e^theta R exp[2B(e^theta-1)]. The selected-load law w is bounded pointwise by p_L+p_R. Hence the probability that an event increments a tail coordinate outside |k|<=K is at most C_(R,B)exp[-theta(K-1)]. The supremum of the outside-coordinate martingale l1 norm is bounded by the total actual tail increments plus their predictable compensator. Both have equal expectations, so this part is<=4B C_(R,B)exp[-theta(K-1)]. This argument also covers infinitely many nonzero initial tails: only subsequent increments contribute to the martingale.
+The linear interpolation is within2/q of its left grid endpoint in tail l1. Integrating its4-Lipschitz drift discrepancy costs<=8B/q. The martingale integral equation and Gronwall now give
+ E sup_(u<=B)||X^q(u)-X(u)||_tail <=eta_q(B,R,K)
+ :=e^(4B){8(2K+1)sqrt(B/q)+4B C_(R,B)e^[-theta(K-1)]+8B/q}. (U1)
+Taking K=ceil(2log(q)/theta) makes eta_q->0 for FIXED B,R. The bound is uniform over all empirical initial profiles with the stated moment and any initial fractional mean. It is not asserted small when B grows with q.
+
+U2. Holding at cross events is an alternative short-window coupling
+From an actual deterministic-time configuration, start an auxiliary chain which shares all internal candidate labels and stays still at cross events. Same-candidate integer greedy is labeled-l1 nonexpansive and a real cross adds one ball; therefore, throughout a window,
+ ||A_actual-A_aux||_l1<=N_cross.
+The total-ball difference is exactly N_cross. Since a vector's l1 difference equals its total difference here, each coordinate discrepancy is nonnegative as well. The four empirical marginal W1 discrepancies sum to at most2N_cross/q. The two community mean discrepancies are nonnegative and sum to N_cross/q. The proved orbit distance2|mu-nu| therefore adds another2N_cross/q when comparing targets. Actual tracking error is at most auxiliary tracking error plus4N_cross/q. Its expectation over a window of L arrivals is<=4epsilon L/q. This proof does not require uniformity of the chosen winner.
+
+U3. Uniform integrability and the random internal clocks
+Let Psi_n be the sum of the FOUR side-centered empirical cosh moments of the actual process; from the sealed Gamma moment, sup_n E Psi_n<=C_E, with C_E=2K_moment and K_moment=16/3. Let J_n be the sum of the four mean absolute centered deviations. Jensen gives
+ exp(theta J_n/4)<=Psi_n/2.
+Since e^x>=x^2/2 for x>=0, E J_n^2<=16 C_E/theta^2. The four orbit mean absolute deviations sum to at most8/theta. Hence total actual tracking error W_n obeys
+ sup_n E W_n^2<=C_*^2:=(32C_E+128)/theta^2.             (U2)
+This supplies, for ANY bad-start event {Psi_start>R},
+ E[W_end 1_badstart]<=C_*sqrt(C_E/R).                   (U3)
+No independence of the endpoint from the event is needed. A probability estimate alone would be insufficient.
+Fix delta>0,R>=4. Uniform deterministic attraction supplies an INTEGER mean time A large enough that each good initial community reaches error<=delta/2 for every mean time>=A, uniformly in phase. Choose L=ceil[2q(A+1)]. Under bounded epsilon q, for large q each community's internal-event count I_s has distribution Bin(L,(1-epsilon)/2), and
+ E I_s/q>=(A+1/2), P(min_s I_s/q<A)<=C_A/q.
+Also I_s/q<=B:=2(A+1)+1 deterministically. The auxiliary internal candidate streams are independent of the event-type clocks. Conditional on the starting state each is the pure chain of U1. Its time-sup bound covers EVERY possible I_s/q; there is no conditioning on a future random terminal clock. On good starts/clocks, auxiliary error is at most delta plus two fluid-approximation errors. On either bad event bound the REAL endpoint tracking error by U2/Cauchy-Schwarz; it is not necessary to control an auxiliary bad-event endpoint separately. Thus, for every deterministic n>=L,
+ E W_n<=delta+2eta_q(B,R,K)+4epsilon L/q
+                  +C_*sqrt(C_E/R)+C_*sqrt(C_A/q).        (U4)
+This bound does not depend on n. Fix R and delta, hence A,B, before taking q to infinity. Then let R grow and delta shrink, choosing the larger fixed A needed each time. We obtain
+ lim_(H->infinity)limsup_(q->infinity)sup_(n>=Hq)E W_n=0. (U5)
+If the supplied moment estimate holds only up to Tq^2, restrict the endpoint supremum to that horizon. The first Hq states have uniformly bounded expected error by U2 and contribute O(H/q) to the q^-2 time integral. Every positive slow-time endpoint eventually exceeds Hq. Thus the integrated and endpoint hypotheses used for the common SDE and spill are proved. This alternative proof avoids a full q^2 union bound and avoids any need to quantify the deterministic attraction rate.

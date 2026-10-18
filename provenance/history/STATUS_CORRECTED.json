@@ -1,0 +1,42 @@
+{
+  "study_design": "post_hoc_followup_to_old_micro_data_with_new_independent_reference",
+  "lambda_values": [
+    1,
+    2
+  ],
+  "q": 512,
+  "kappa": 1,
+  "old_micro_data_seen_before_followup_plan": true,
+  "plan_fixed_before_new_reference_draws": true,
+  "original_fixed_recipe_numeric_counts": {
+    "means": {
+      "supported": 4,
+      "detected_mismatch": 0,
+      "inconclusive": 0
+    },
+    "terminal_D_CDF": {
+      "supported": 4,
+      "detected_mismatch": 0,
+      "inconclusive": 0
+    }
+  },
+  "selection_adjusted_confirmatory_status": "not_established",
+  "joint_postselection_coverage_at_least_0_95": "not_proved; prior unqualified statement withdrawn",
+  "reference_only_coverage": "new reference rule was fixed before its draws and can be analyzed conditional on old history under ideal iid words and arithmetic contract; this does not repair old-micro mean recipe selection",
+  "thresholds_stakes_seeds_clip_and_numeric_endpoints_changed": false,
+  "new_experiments_or_statistical_recomputations": 0,
+  "overall_math_stat_review": "numerical math review complete under stated contracts; mean selection coverage not established",
+  "selection_adjusted_population_coverage_by_component": {
+    "unconditional_spill_mean": "not_established_for_actual_post_hoc_recipe_selection",
+    "terminal_D_CDF": "reused old predeclared marginal event plus prospective reference: CDF-only joint coverage at least0.9746 under ideal iid input-word and arithmetic contracts; post_hoc_diagnostic"
+  },
+  "no_evidence_of_seed_selection_threshold_change_or_repeated_trials": "reported by parent independent statistical review",
+  "probability_contract": {
+    "mathematical_assumption": "underlying input words iid uniform both across replicates and within each stream; reference52-bit fields iid uniform; new reference independent of old history",
+    "actual_implementation": "fixed deterministic SplitMix word(seed,j), reproducible PRNG substitute",
+    "physical_or_PRNG_iid_independence_proved": false,
+    "intentional_shared_cell_drivers": "same underlying stream may be reused across lambda/kernel cells; no independent cell-count claim"
+  },
+  "arithmetic_supplement": "received v2; constant-enclosure widths included; normal error<1e-12 and shared state/readout error<4e-12 support frozen budgets",
+  "historical_dynamic_fenv_snapshot_saved": false
+}

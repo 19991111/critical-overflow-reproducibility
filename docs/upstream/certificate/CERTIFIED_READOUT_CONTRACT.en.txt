@@ -1,0 +1,21 @@
+Certified feedback, origin coefficient and spill from the proved profile bound
+
+Use the larger of the independently certified forward80-bit and backward64-bit W1 boundsE. The previous saved probability path has a rigorous first-cycle error e_s from the TRUE forward flow of the EXACT mean0 candidate. Let e=max_s e_s (the old cell defect bounds cover the whole cells). Nonexpansion and integer translation give a uniform numerical-law errorD=E+e to the unique phase-locked orbit for all real mean parameters. Negative means use translation, never backward integration.
+
+Exact rational readouts are computed from the saved probability node tails. H uses the integer comparison and a finite atom/tail sum; outside the saved support its tails are exactly1 or0 for the PROOF path. Infinite true-wave tails are already covered byE+e and are not silently discarded. Feedback error is<=2D, spillS error<=D. The local origin integrand4sum a*y*b is four times an event probability for one independentL and two independentR draws; its profile error is<=8D.
+
+Sharper phase quadrature, using the SAME256 nodes
+The full quadratic tail field has ||F||_l1=2, ||DF||<=4, ||D²F[h,k]||<=8||h|| ||k||. The last bound follows directly by differentiating2(xprev-x)yprev and its right counterpart and using ||Delta h||_l1<=2||h||_l1. Higher field derivatives vanish. Along a probability solution the derivative norms are therefore bounded by
+ a1=2, a2=8, a3=64, a4=640.
+For example a3<=8a1²+4a2 and a4<=3*8a1*a2+4a3. Marginal mass-derivative l1 bounds are twice the corresponding tail bounds:4,16,128,1280. A tail derivative's sup is bounded by its l1 norm.
+Four differentiations of H along common phase give
+ |H^(4)|<=640+4*4*64+6*16*8+4*128*2+1280=4736.
+Thus the feedback phase integrand has fourth derivative<=9472. For the three-factor origin integrand use multinomial Leibniz with mass bounds(1,4,16,128,1280), tail bounds(1,2,8,64,640), and the same mass bounds again. The fourth derivative bound is76288 after multiplying by4. All series are absolutely differentiable under these uniform l1 bounds.
+
+A Simpson pair with step h has error<=h^5 sup|f^(4)|/90; summing N/2 pairs on[0,1] givesM4/(180N^4). For the EXACT periodic orbit its endpoint equals the starting value. Reusing the approximate phase0 value as the approximate endpoint is valid: it approximates that same true value with the same profile error. The Simpson weights are positive and sum1, so grid-point profile errors do not amplify. WithN=256,
+ feedback total error<=2D+9472/(180*256^4),
+ alpha total error<=8D+76288/(180*256^4),
+ spill total error<=D.
+This uses no new ODE or finer grid. It replaces an integration error component by a proved fourth-derivative bound AFTER the profile certificate has passed. Exact rational sums have zero unaccounted floating roundoff. Output intervals are stored as rational endpoints plus directed Decimal bounds.
+
+These are numerical intervals for the unique fluid-wave coefficients/readouts. They do not include an unproved finite-q stochastic approximation rate, a diffusion-PDE numerical error, CPU performance uncertainty, or empirical confidence intervals. The acceptance target for the profile remains0.001.

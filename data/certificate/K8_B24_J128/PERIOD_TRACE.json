@@ -1,0 +1,122 @@
+[
+  {
+    "cycle_completed": 1,
+    "beta_lower_counts": "0",
+    "minimum_retained_column_mass_counts": "1174824489175310419127599"
+  },
+  {
+    "cycle_completed": 2,
+    "beta_lower_counts": "0",
+    "minimum_retained_column_mass_counts": "1144016204345130055123455"
+  },
+  {
+    "cycle_completed": 3,
+    "beta_lower_counts": "0",
+    "minimum_retained_column_mass_counts": "1115058410824717907415793"
+  },
+  {
+    "cycle_completed": 4,
+    "beta_lower_counts": "0",
+    "minimum_retained_column_mass_counts": "1087370005910613038424651"
+  },
+  {
+    "cycle_completed": 5,
+    "beta_lower_counts": "219573427311308",
+    "minimum_retained_column_mass_counts": "1060663596901675083938387"
+  },
+  {
+    "cycle_completed": 6,
+    "beta_lower_counts": "952301056175167219792",
+    "minimum_retained_column_mass_counts": "1034781341791091273384656"
+  },
+  {
+    "cycle_completed": 7,
+    "beta_lower_counts": "100046552137607866902365",
+    "minimum_retained_column_mass_counts": "1009629832004040236511648"
+  },
+  {
+    "cycle_completed": 8,
+    "beta_lower_counts": "397180305717818301258330",
+    "minimum_retained_column_mass_counts": "985149604515666677835169"
+  },
+  {
+    "cycle_completed": 9,
+    "beta_lower_counts": "598188891142656542583322",
+    "minimum_retained_column_mass_counts": "961299928522144223773717"
+  },
+  {
+    "cycle_completed": 10,
+    "beta_lower_counts": "706035569531734341102813",
+    "minimum_retained_column_mass_counts": "938050839508690211055705"
+  },
+  {
+    "cycle_completed": 11,
+    "beta_lower_counts": "779328503488736098032655",
+    "minimum_retained_column_mass_counts": "915378794909665087878299"
+  },
+  {
+    "cycle_completed": 12,
+    "beta_lower_counts": "830561892640015058744771",
+    "minimum_retained_column_mass_counts": "893264221844987841669410"
+  },
+  {
+    "cycle_completed": 13,
+    "beta_lower_counts": "856758915682374154278329",
+    "minimum_retained_column_mass_counts": "871690091835206906534869"
+  },
+  {
+    "cycle_completed": 14,
+    "beta_lower_counts": "849084899475923351364298",
+    "minimum_retained_column_mass_counts": "850641071332747465990249"
+  },
+  {
+    "cycle_completed": 15,
+    "beta_lower_counts": "829458956736917642269173",
+    "minimum_retained_column_mass_counts": "830103004133623753364701"
+  },
+  {
+    "cycle_completed": 16,
+    "beta_lower_counts": "809758003633043543554949",
+    "minimum_retained_column_mass_counts": "810062589619757007576676"
+  },
+  {
+    "cycle_completed": 17,
+    "beta_lower_counts": "790381307341068111367110",
+    "minimum_retained_column_mass_counts": "790507178905482042118057"
+  },
+  {
+    "cycle_completed": 18,
+    "beta_lower_counts": "771365289126607897014374",
+    "minimum_retained_column_mass_counts": "771424643220618121060640"
+  },
+  {
+    "cycle_completed": 19,
+    "beta_lower_counts": "752777515077930987521943",
+    "minimum_retained_column_mass_counts": "752803287233114346596484"
+  },
+  {
+    "cycle_completed": 20,
+    "beta_lower_counts": "734619694893997544009127",
+    "minimum_retained_column_mass_counts": "734631790712756605090941"
+  },
+  {
+    "cycle_completed": 21,
+    "beta_lower_counts": "716893878549414018231731",
+    "minimum_retained_column_mass_counts": "716899168290056270717675"
+  },
+  {
+    "cycle_completed": 22,
+    "beta_lower_counts": "699592244610333038383598",
+    "minimum_retained_column_mass_counts": "699594740902112437255070"
+  },
+  {
+    "cycle_completed": 23,
+    "beta_lower_counts": "682706953020571912299640",
+    "minimum_retained_column_mass_counts": "682708114870186864380400"
+  },
+  {
+    "cycle_completed": 24,
+    "beta_lower_counts": "666228653087551035599862",
+    "minimum_retained_column_mass_counts": "666229166015917009558146"
+  }
+]

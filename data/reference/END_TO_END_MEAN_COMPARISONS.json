@@ -1,0 +1,46 @@
+[
+  {
+    "lambda": 1,
+    "kernel": 0,
+    "true_unconditional_mean_difference_interval": [
+      "-1477/100000",
+      "10447425489/500000000000"
+    ],
+    "absolute_margin": "1/20",
+    "decision": "supported",
+    "reference_precision_passed": true
+  },
+  {
+    "lambda": 1,
+    "kernel": 1,
+    "true_unconditional_mean_difference_interval": [
+      "-299/20000",
+      "10347421009/500000000000"
+    ],
+    "absolute_margin": "1/20",
+    "decision": "supported",
+    "reference_precision_passed": true
+  },
+  {
+    "lambda": 2,
+    "kernel": 0,
+    "true_unconditional_mean_difference_interval": [
+      "-123/10000",
+      "20303838181/1000000000000"
+    ],
+    "absolute_margin": "1/20",
+    "decision": "supported",
+    "reference_precision_passed": true
+  },
+  {
+    "lambda": 2,
+    "kernel": 1,
+    "true_unconditional_mean_difference_interval": [
+      "-1239/100000",
+      "4038766899/200000000000"
+    ],
+    "absolute_margin": "1/20",
+    "decision": "supported",
+    "reference_precision_passed": true
+  }
+]

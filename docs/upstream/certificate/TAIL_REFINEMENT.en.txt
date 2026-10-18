@@ -1,0 +1,58 @@
+Sharper analytic orbit tails from the periodic flow, not fitted numerical decay
+
+The clock is COMMUNITY MEAN timeu, and Pi_u=(L_u,R_u) is the already proved mean-locked orbit. All moments below exist by the sealed theta=.4 cosh bound. Write D(u)=E|L_u-R_u| for INDEPENDENT marginal draws. It is1-periodic and2-Lipschitz by the orbit W1 identity.
+
+T1. Uniform first moments from a periodic second-moment identity
+For V2(u)=E(L_u-u)^2+E(R_u-u)^2, the birth rule selects min(L_u,R_u), including the fixed left tie. Exact differentiation gives
+ V2'(u)=4E min(L_u,R_u)+2-4u=2-2D(u).
+Periodicity gives integral_0^1 D(u)du=1. On a circle of length1, a2-Lipschitz function differs from its mean by at most2*integral_0^1 min(t,1-t)dt=1/2. Hence D(u)<=3/2.
+Interlacing x_k>=y_k>=x_(k+1) gives0<=delta=E L_u-E R_u<=1. At mean0, E L=delta/2 and E R=-delta/2. Convexity and independent marginal sampling imply
+ E L_+<=E(L-R)_+=(D+delta)/2<=5/4,
+ E(-R)_+<=5/4,
+ E(-L)_+<=E(R-L)_++delta/2=D/2<=3/4,
+ E R_+<=3/4.                                                (T1)
+For example (-L)_+<=(E R-L)_+-E R and Jensen supplies the third inequality. None of these constants uses a numerical orbit estimate.
+
+T2. A front integral identity and superlinear right-tail recursion
+The sealed half-phase reduction gives x_k(u)=F(2k-2u), y_k(u)=F(2k+1-2u), and
+ -F'(r)=F(r-1)[F(r-2)-F(r)].
+The derivative of integral_(r-1)^r F(s-1)F(s)ds equals F'(r). Both terms vanish asr->infinity. Therefore
+ F(r)=integral_(r-1)^r F(s-1)F(s)ds,
+ F(r)<=F(r-1)F(r-2).                                      (T2)
+At integer arguments Markov andT1 give F(2k)<=min(1,5/(4k)), F(2k+1)<=min(1,3/(4k)) fork>=1. Apply monotonicity andT2 to get strict rational right-tail upper bounds. Positive powers are rounded UP, never to zero. An uncomputed tail is bounded geometrically: once F(n)<=eta<1, F(r)<=eta F(r-2) forr>=n+2. This accounts for the infinite remainder even if upward fixed-point values plateau.
+
+T3. A proved left exponential bound with an explicit anchor
+Set G=1-F. T1 gives G(-4)=P(L_0<=-3)<=1/4. Hence G(r)<=a=1/4 forr<=r0=-4. The integral identity gives
+ G(r)=integral_(r-1)^r [G(s)+(1-G(s))G(s-1)]ds
+     >=(1-a/2) integral_(r-2)^r G(s)ds, r<=r0.
+The final step uses monotonicity: the newer unit interval has at least as much integral as the older one. Put c=7/8,gamma=3/5. Then
+ c*integral_0^2 exp(-gamma s)ds>=1,
+because exp(6/5)>35/11, verified by a finite rational Taylor LOWER sum. Thus H(r)=exp(-gamma r)G(r) is superharmonic for the backwards random walk with normalized density proportional to c exp(-gamma s) on[0,2]. This is a proof device; no random walk is simulated.
+Forx<=r0-2, stop when the backwards sum first enters[x,x+2]. The stopped H is bounded on[x,r0], the hitting time is finite, and the supermartingale inequality gives
+ H(r0)>=E H(stop)>=exp[-gamma(x+2)]G(x).
+Consequently
+ G(x)<=1/4 exp[(3/5)(x+6)], x<=-6.                         (T3)
+For other arguments use Markov on the negative parts inT1, monotonicity and the anchor. This is a rigorous bound on the TRUE wave, not an extrapolation of observed nodes.
+
+T4. Integrated tails for the unchanged posterior theorem
+ForK>=3, the negative outside-core sum is bounded by the explicit geometric series
+ tau_neg(K)<= [b^(2K-4)+b^(2K-5)]/[4(1-b^2)], b=exp(-3/5).
+The positive sum is sum_(j>K)[F(2j)+F(2j+1)], bounded by the rational recursion and a geometric remainder. Denote their sum bytau_pi(K). The exact posterior theorem then gives
+ d1(v,Pi_0)<=B*r/beta+2t_v(K)+2tau_pi(K).                  (T4)
+The original acceptance threshold remains0.001. The new tail estimate replaces the old100exp(-.4K) by a proved sharper term, without modifying old frozen claims or their failed result.
+
+T5. A sharper normalized anchor from pooled flux (used in this computation)
+Let z_j=(x_j(0)+y_j(0))/2. Set A_j=integral_0^1 x_j(t)y_j(t)dt. The exact pooled ODE is z_j'(t)=x_(j-1)(t)y_(j-1)(t)-x_j(t)y_j(t). Periodicity gives z_(j-1)-z_j=A_(j-1)-A_j; both sequences vanish asj->infinity, so A_j=z_j. Monotone flow then yields
+ z_j<=x_(j-1)(0)y_(j-1)(0)<=z_(j-1)^2.                      (T5)
+This identity and its indices are independently checked here. Also D>=Gini(pooled)>=E_pooled|X|: the first difference is (1/2)sum_j(x_j-y_j)^2>=0, and the second is Jensen at pooled mean0. Thus E_pooled X_+<=3/4 and z_2<=3/8. This confirms the independently supplied right-tail route, though the stronger front recursionT2 is retained in the program.
+
+For the LEFT anchor, if z_-2<=s, T5 implies z_(-2+n)<=s^(2^n). Pooled mean0 requires
+ 3<=sum_(n>=0) s^(2^n).
+At s=89/100 the sum is strictly less than3: sum throughn=5 and bound its remainder by s^64/(1-s^64), an exact rational comparison. Hence z_-2>89/100. Since x_-2>=z_-2,
+ G(-4)=1-x_-2<11/100.
+RepeatT3 with a=11/100,c=189/200,gamma=18/25. Its required kernel mass>=1 follows from exp(36/25)>21/5, again checked by a finite rational Taylor LOWER polynomial. Therefore
+ G(r)<=11/100*exp[(18/25)(r+6)], r<=-6.                   (T6)
+The computation uses this stronger bound. InT4 the negative tail is correspondingly
+ tau_neg(K)<= (11/100)[b^(2K-4)+b^(2K-5)]/(1-b^2),
+ b=exp(-18/25), K>=3.
+The earlier3/5 bound remains a valid independent fallback, not an asserted numerical improvement. All anchor and exponential comparisons are checked exactly before any matrix stage. No proposed constant is accepted only because a supplied review says it passed.

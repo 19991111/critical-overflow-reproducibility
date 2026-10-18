@@ -1,0 +1,203 @@
+{
+  "prior_archives": [
+    {
+      "path": "research/paper_scope_20261015/paper_scope_formal_return.tar.gz",
+      "sha256": "c3593cb5e7c3b19a3adbb1b8104249b5c52f0d934b43d90eccd330876a0e0200",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_causal_20261016/pilot_return.tar.gz",
+      "sha256": "36b6309e59e640a36326cefdebea88a9f14dc96487971d1976dc28ecefe985ef",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_aa_20261016/aa_return.tar.gz",
+      "sha256": "191ecb483e56d4d476d7fce048a2e052219cc89ec8e8a94a122d7f99dde26d52",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_placement_20261016/artifacts/placement_return.tar.gz",
+      "sha256": "8de43ccb1625aae4a4910399c21b74407231a21e42dea1cb95b7d953e52c5017",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_bench_env_20261016/env_return.tar.gz",
+      "sha256": "7c3c662f9fba97ec9d59159c65a93f4863d607a23040edd333abcb699ef217a2",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_marker_20261016/marker_return.tar.gz",
+      "sha256": "14d323c74d987b00abd5a47212b475f5f1954f41513530b3f31cb4f6bc9e26e0",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_problem_audit_20261016/problem_audit_return.tar.gz",
+      "sha256": "7784d17c6a216fb5d1ea8269fb667700922809155ca5d41456c754ddb6f10ffd",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_rescreen_20261016/rescreen_return.tar.gz",
+      "sha256": "f20e2300da4b70d36977643e80f71546987084cc916bd540fe4d7afe9a753f6c",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_overlap_question_20261016/overlap_question_return.tar.gz",
+      "sha256": "d3c748d38eb275a2b6ef1cf9a74fa879665fdb7078dcc0595968f680ada23337",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_overlap_validation_20261016/c1_cpu_validation_return.tar.gz",
+      "sha256": "0930e3fb3b846be2829238d5aa724b1c7d8139a533487e377d6b3a25476736c3",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_overlap_theory_20261016/residual_theory_return.tar.gz",
+      "sha256": "6c087fc5725a1efa212e7c367e3c357c85bc2dea7ddd9512128a597c134720ae",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_overlap_mechanism_20261016/mechanism_return.tar.gz",
+      "sha256": "a67c88e86915bdee0a8e5de69a0e049181b7c850a4dd6f5990aa38245a4e0eac",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_phase_transport_20261016/phase_transport_return.tar.gz",
+      "sha256": "bd54905cdcc43acae7dc345aadbeeb6d7ede8b7c9c212d3cb9bdda4438bcea5a",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_backward_causal_20261017/backward_causal_return.tar.gz",
+      "sha256": "deb6818aad3813f26e0b16c4a5143340eda0223b6cc6dd9ef817971f355ae885",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_lazy_fixedt_20261017/lazy_fixedt_return.tar.gz",
+      "sha256": "fa61510bc1e68baf306144378adffbcf03e40e82db1d2a57fba5cbc4457beb32",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_spill_theory_20261017/spill_theory_return.tar.gz",
+      "sha256": "939d42576054416aa71a734f8d276ba68076705f839265afd22cad5dc7d189a7",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_spill_adjoint_20261017/spill_adjoint_return.tar.gz",
+      "sha256": "6fff22d977400490ff63d29ed18fa5f391ccc2a41ab9ddce50b4cb0bc8ddefa3",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_spill_energy_20261017/spill_energy_return.tar.gz",
+      "sha256": "09e82fbb9cd6f8ede319c791530f21224608d7d0997f6383136ec2101f5985e0",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_spill_energy_20261017/revision_v2/spill_energy_return_v2.tar.gz",
+      "sha256": "84c4b2ef5df20730fe307ccfc6031c1d5f909826df4c209025a3593148dab59b",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_general_bound_20261017/general_bound_return.tar.gz",
+      "sha256": "0a2fc65f8f9272d02c90fb6042bfcb6e8622e700529b4daa37365b1416f7c7c1",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_iid_corollary_20261017/iid_corollary_return.tar.gz",
+      "sha256": "a62a2fa893ee8ce85464c2f4be8c25c527ba0ad601061b196ccf0d4edb8f2a25",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_iid_corollary_20261017/review_v1/iid_review_v1_return.tar.gz",
+      "sha256": "edc52533f9fcfdfec89165a851fd75f330736a1156d3a01469b83bd5f9b42b31",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_weak_bridge_lower_20261017/weak_bridge_lower_return.tar.gz",
+      "sha256": "78e5760cf59ba420d7eb99fcf91b843ad07d1d12a9bb544d0e235be557fd4eef",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_weak_bridge_window_20261017/weak_bridge_window_return.tar.gz",
+      "sha256": "812dc0eceacc4beacd3c6f5e2128af91f0b90bd5fd6795e56865d211d0258b8d",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_weak_bridge_upper_20261017/weak_bridge_upper_return.tar.gz",
+      "sha256": "1452fbd22ad5b2ae69ed1a375ed12cac7dfc6dcd84aaa1a2d286b17333e024da",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_weak_bridge_upper_20261017/standard_upper_v1/standard_upper_appendix.tar.gz",
+      "sha256": "34a834db7a47751c98b01b7791fcf741e7b0733f599f59fb82b05266ccab9d78",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_core_20261017/paper_core_return.tar.gz",
+      "sha256": "661d6eafd08a72cb5bf0b9c66956e728a98efcdbde9ba2811bdbe334c7a87dda",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_cpu_validation_20261017/cpu_validation_return.tar.gz",
+      "sha256": "54c4f6f4e189da3f52a38e132ff53605bbfd90f207a06aa3d525ba0c8240f9c8",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_v3_diagnostic_20261017/paper_v3_diagnostic_return.tar.gz",
+      "sha256": "fdd5ab1ee1a2ac07cb98cb27504143ccc3b65a4358ad548fb45bcffdb9f05a9a",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_reusable_compression_20261017/reusable_compression_return.tar.gz",
+      "sha256": "e594b5a807fcf01f6ae37f10f04304f59e317cd998ca55cea091512168af9da0",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_bound_sharpness_20261017/bound_sharpness_return.tar.gz",
+      "sha256": "26971e52fbb1cbdda70e586195a199e1601ca516963ec2e9db6c2f9a44bf35c8",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_profile_dynamics_20261017/profile_dynamics_return.tar.gz",
+      "sha256": "de0dedd7811857374bd41bf5a16f586060acc261f01a7d0f42845bbaf457f82e",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_critical_pair_tables_20261017/critical_pair_tables_return.tar.gz",
+      "sha256": "0821e3943241ba34d1c3e6667142e162c403369997ef67ac77141863d832f35b",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_periodic_profile_limit_20261017/periodic_profile_limit_return.tar.gz",
+      "sha256": "032388318fcf6a650449006473958a8d8e5e974e5e5e0c788e7fdb7617338fd7",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_profile_numerics_20261017/profile_numerics_return.tar.gz",
+      "sha256": "a2b767f563a1d7ff2f41f44bf250cd99235b6e6f9fbefa19836409b061cc0c05",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_profile_certificate_20261017/profile_certificate_return.tar.gz",
+      "sha256": "6dc729a9d22adec4252c113100be396b47195f81fc7da62312eebae739c3e4ff",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_v4_release_20261017/paper_v4_release_return.tar.gz",
+      "sha256": "09496860413bce8310d17a4b7d299d2662612caa6d70688522183e8173167ec6",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_v4_1_erratum_20261017/paper_v4_1_erratum_return.tar.gz",
+      "sha256": "c36487320ace02a829b122ec17229916b447c9eb25ee8fe12cff5cadb8d03c37",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_sde_end_to_end_20261017/sde_end_to_end_return.tar.gz",
+      "sha256": "19de4b36cf055457485c38493fc96af3d6b484c3fc28b24f0b7ca9c0af76293f",
+      "unchanged": true
+    },
+    {
+      "path": "research/paper_sde_posthoc_erratum_20261017/sde_posthoc_erratum_return.tar.gz",
+      "sha256": "e27673e4751d767b3e9fb088b764a6b18323282fcdcd2f98ccb5ebdb078826ee"
+    }
+  ]
+}

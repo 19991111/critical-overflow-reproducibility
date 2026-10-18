@@ -1,0 +1,19 @@
+Second-derivative quadrature bounds and the normalization obstruction
+
+This is an analytic/postprocessing addition after the frozen8-run batch. It changes no numerical source, grid, state or output of that batch.
+
+In mean clock, ||(x',y')||_tail-l1=2. The exact linearization has l1 norm<=4. Thus ||(x'',y'')||_l1<=8. A marginal mass is a difference of adjacent tails, giving ||a'||_l1,||b'||_l1<=4 and ||a''||_l1,||b''||_l1<=16. Also |x'|,|y'|<=2 and |x''|,|y''|<=8 coordinatewise. All estimates hold uniformly along the proved periodic orbit. Bounded-rate smoothness and absolute summability justify the differentiated series.
+
+For H(u,v)=sum a_k(u)y_k(v), with both arguments advanced at speed1, its second derivative has three terms a''y+2a'y'+ay''. Their absolute sums are bounded by16+16+8=40. The phase feedback difference therefore has |partial_phi^2 F(phi,d)|<=80 uniformly in d.
+
+For S1=sum a*y*b, its second derivative terms have absolute-sum bounds
+ a''yb:16, ay''b:8, ayb'':16,
+ 2a'y'b:16, 2a'yb':32, 2ay'b':16.
+Thus |(4S1)''|<=416.
+
+On one mesh interval of widthh, the trapezoid integral error is bounded byh^3 sup|f''|/12 (integrate the standard quadratic interpolation remainder, or its nonnegative Peano kernel). SummingN intervals gives M2/(12N²). For the EXACT periodic orbit the composite trapezoid equals theN-point left rectangle because the endpoint values match. Consequently atN=256 the ideal-orbit quadrature bounds improve to
+ feedback <=80/(12*256²)=0.0001017252604166667,
+ alpha <=416/(12*256²)=0.0005289713541666667.
+These are analytic integration errors ONLY, not intervals around our diagnostic outputs. Distance of the numerical phase laws to the true orbit and floating errors remain unbounded by the current computation. A periodized transient's seam and finite-time endpoint mismatch are also separate costs. This note does not rewrite the frozen SUMMARY's earlier, weaker, valid first-derivative bounds.
+
+Phase normalization remains essential. The Poincare map fixes rho^alpha for every meanalpha, so a zero return defect alone cannot distinguish rho^alpha fromrho^0. The target distance is2|alpha|. A future residual/minorization proof must either use an exact mean0 candidate or add a validated2delta correction. Our raw floating mean drift and its reported tiny value are diagnostics; they are not a rational phase certificate. Our finite-time exact-integer comparison includes the mean discrepancy in its W1 bound and therefore has no hidden normalization gap.

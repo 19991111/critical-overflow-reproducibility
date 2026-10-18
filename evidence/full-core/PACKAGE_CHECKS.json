@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "error": null,
+  "wall_seconds": 221.79005447399993,
+  "child_CPU_seconds": 218.31028799999999,
+  "child_max_RSS_kib_highwater": 167532,
+  "selected_cpu": 0,
+  "threads": 1,
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "all_completed_checks_passed": true,
+  "checks_completed": 33,
+  "stages_completed": 21,
+  "authoritative_manuscript_read_in_this_environment": false,
+  "proves_mathematical_theorems": false,
+  "historical_reference_dynamic_FP_snapshot_available": false
+}

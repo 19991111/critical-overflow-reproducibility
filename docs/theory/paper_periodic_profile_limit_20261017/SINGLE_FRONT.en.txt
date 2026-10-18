@@ -1,0 +1,38 @@
+Half-phase symmetry, normalized lattice front, and a one-dimensional drift formula
+17 October 2026. Additional analytic derivation; no front integration or fit.
+
+F1. Clocks and normalization
+Here u is the COMMUNITY MEAN clock, so x'_k=2a_(k-1)y_(k-1), y'_k=2b_(k-1)x_k. The global-clock convention of PERIODIC_PROFILE.en.txt has half these rates. Its proved half-phase identity is
+ x_k(u+1/2)=y_(k-1)(u), y_k(u+1/2)=x_k(u).
+Define z_(2k)=x_k and z_(2k+1)=y_k. Direct substitution gives
+ z'_j(u)=2z_(j-1)(u)[z_(j-2)(u)-z_j(u)],
+ z_j(u+1/2)=z_(j-1)(u).
+Set F(r)=z_0(-r/2). The identity implies for EVERY integer j and real u
+ z_j(u)=F(j-2u),
+ x_k(u)=F(2k-2u), y_k(u)=F(2k+1-2u).                    (F1)
+Consequently
+ -F'(r)=F(r-1)[F(r-2)-F(r)],
+ F(-infinity)=1, F(+infinity)=0.                         (F2)
+The endpoint limits follow first along even integer r from probability tails and then on all real r by monotonicity. All orbit atoms are positive, so the right side of F2 is strictly positive. Thus F is strictly decreasing into(0,1). The bounded-rate ODE is continuously differentiable; F2 recursively gives smoothness of all orders. The interlacing of the orbit is consistent with strict decrease of this combined front.
+The front's horizontal translation is fixed by
+ [E L_0+E R_0]/2=0.
+An arbitrary solution of the delay equation without this mean normalization is NOT asserted unique; the proved uniqueness is that of the normalized probability orbit. Translating F horizontally changes the orbit's mean origin.
+
+F2. Phase averaging becomes one real integral
+Define w(r)=[F(r)-F(r+2)]/2. It is strictly positive and integrates to1. For example, integrate over[-R,R], use the endpoint limits in the two length2 boundary integrals, and let R increase. Equivalently F(r)-F(r+2)=integral_r^(r+2)(-F'(s))ds and Tonelli gives mass2 before dividing by2.
+For u=phi+d/2, v=phi-d/2,
+ H(u,v)=sum_k [F(2k-2phi-d)-F(2k+2-2phi-d)]
+                       *F(2k+1-2phi+d).
+For the k-th term set r=2k-2phi-d. As phi runs through[0,1], the corresponding reversed intervals tile the real axis, with Jacobian1/2. Tonelli is justified by nonnegative summands. Apply the same substitution with d replaced by-d to the other term. Therefore the drift already defined in COMMON_LIMIT_AND_SPILL.en.txt is exactly
+ gbar(d)=integral_R w(r)[F(r+1+2d)-F(r+1-2d)]dr.         (F3)
+No independent averaging of the two community phases appears here. Strict decrease of F makes gbar(d)<0 for d>0. Oddness and monotonicity also follow directly. The ODE gives |F'|<=1, permitting differentiation under the integral; hence
+ gbar'(0)=4integral_R w(r)F'(r+1)dr<0.                  (F4)
+This agrees with the absolutely convergent atom formula L3, providing a second derivation rather than a different response coefficient. Dominated convergence gives gbar(d)->-sign(d) as |d| grows.
+
+F3. A conservative exponential bound in the tails
+PERIODIC_PROFILE proves the sum of the two centered cosh moments<=4 at theta=1/200. Thus each marginal has E exp(theta|A-u|)<=8, uniformly in u. For d=u-v>0, the event L_u<=R_v entails either L_u-u<=-d/2 or R_v-v>=d/2. Similarly L_v>R_u entails a centered deviation of at least d/2. Markov and a union bound give
+ H(u,v)<=16exp(-theta d/2),
+ 1-H(v,u)<=16exp(-theta d/2).
+By oddness and the trivial bound2,
+ |gbar(d)+sign(d)|<=min(2,32exp(-theta|d|/2)), d!=0.     (F5)
+This bound is deliberately loose. It establishes a far-field property of the unique drift, not a simultaneous large-parameter interchange theorem or a numerical transition scale. There is no closed form, front solver, or finite-q fit in this deliverable.

@@ -1,0 +1,13 @@
+{
+  "scope": "validated fixed-evidence core; authoritative SICOMP v2 source integration pending",
+  "authoritative_library_file_id": "libfile_ee592c5200088191aff61338f9396060",
+  "authoritative_archive_sha256": null,
+  "tested_runner_sha256": "5bed5445ed0c30ab6bc00cd58e60f8b745a981922ec1b02c0c01c5663b5ca3d2",
+  "acceptance_report": "evidence/full-core/PACKAGE_CHECKS.json",
+  "acceptance_report_sha256": "51d1705261d9b1ecc91f8ea13b215bce88506399c5cff3a94edc46586618ea02",
+  "original_repository_modified": false,
+  "license": "pending author decision",
+  "remote_repository": "19991111/critical-overflow-reproducibility",
+  "privacy": "private verified before initial connector write",
+  "initial_connector_commit": "8d910f6e77767ccd069aba911d78d8ba60fbbf81"
+}

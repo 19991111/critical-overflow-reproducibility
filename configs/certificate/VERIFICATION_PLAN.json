@@ -1,0 +1,8 @@
+{
+ "purpose":"Independent backward propagation of every terminal indicator, with64-bit directed arithmetic, instead of the forward80-bit core-column calculation. Rebuild its own certified bootstrap chain.",
+ "source":"src/backcheck.py","wall_seconds":90,"memory_MiB":1024,
+ "stages":["K4_B8_J64","K6_B16_J64","K8_B24_J128","K10_B32_J128"],
+ "same_acceptance_W1":"1/1000",
+ "different_arithmetic":"64-bit lower matrices, alternating exp lower throughdegree9; same proven input envelopes. Each later prior uses this check's own certified previous bound.",
+ "new_ODE_runs":0,"random_calls":0,"no_parameter_search":true
+}

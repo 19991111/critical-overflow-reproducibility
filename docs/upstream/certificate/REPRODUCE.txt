@@ -1,0 +1,20 @@
+Reproduce only in a disposable full repository copy or matching directory layout.
+
+The certificate reads nine old input files at their locked research paths; it runs NO ODE. Preserve those bytes and the unchanged branch/base history.
+Primary command:
+ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 -B research/paper_profile_certificate_20261017/src/run_frozen.py
+This refuses to overwrite logs/ATTEMPTS.jsonl. It runs the fixed stages, keeps failed-threshold results and stops only by the frozen rule/budget. Its original completed4 stages and skipped2 are already archived.
+
+Independent check:
+ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 -B research/paper_profile_certificate_20261017/src/backcheck.py
+It uses its own64-bit backward propagation and bootstrap, not the old forward beta values. The exact matrix files are separately retained. Prepare its output paths in a disposable copy; never overwrite sealed originals.
+
+Exact readouts:
+ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 -B research/paper_profile_certificate_20261017/src/certify_readouts.py
+It reads both completed certificate summaries and old node bytes, then uses exact rational periodic Simpson sums. No extra phases or trajectory fits are generated. Its CSV uses exclusive creation, so remove only the COPY's generated CSV if replaying there.
+
+For a clean primary replay, make a disposable clone at the same relative research layout; retain the old input directories; copy this package's source/protocol/theory files; replace only this package's results/logs in that COPY with empty directories. Run the primary command once. To replay backward/readout against the sealed exact inputs and prior primary bytes, use a separate copy retaining the sealed results; outputs should match rationally. Wall-time budget fields naturally differ.
+SOURCE_FREEZE fixes the before-stage contracts. VERIFICATION_FREEZE and READOUT_FREEZE fix their distinct sources/plans and exact input results before those operations. RESULTS_FREEZE fixes the final evidence before storage-only sealing. Never rerun old numerical models or the exploratory eight groups to verify this package.
+
+Read order: READ_FIRST -> TAIL_REFINEMENT -> MATRIX_BOOTSTRAP -> ANALYTIC_BUDGET -> per-stage CERTIFICATE -> INDEPENDENT_BACKWARD_CHECK -> CERTIFIED_READOUT_CONTRACT / CERTIFIED_READOUTS.
+All displayed decimals are secondary to rational bounds. The0.001 target is the fluid-wave W1 target, not finite-q stochastic accuracy. Preserve the previous44.95 failed package and this package's first2 threshold failures.

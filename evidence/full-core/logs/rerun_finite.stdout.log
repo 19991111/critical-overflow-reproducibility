@@ -1,0 +1,6 @@
+{"status":"selftest_passed","random_trajectories":0,"long_double_digits":64}
+{"q_completed":64,"replicates_per_lambda":128}
+{"q_completed":128,"replicates_per_lambda":128}
+{"q_completed":256,"replicates_per_lambda":256}
+{"q_completed":512,"replicates_per_lambda":1024}
+{"status":"planned_batch_completed","paired_trajectories":4608,"SDE_reference_samples":0}

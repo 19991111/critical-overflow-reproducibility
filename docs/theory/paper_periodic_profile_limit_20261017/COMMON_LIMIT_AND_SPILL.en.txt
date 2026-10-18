@@ -1,0 +1,77 @@
+The common phase-aware diffusion and the phase-locked critical spill curve
+17 October 2026. Uses the proved periodic-profile and fixed-window tracking files. The orbit and coefficients are identified implicitly and uniquely, without a numerical fit or an effective finite-q attraction rate.
+
+L1. Exact feedback, clocks and phase geometry
+Let q=2m, X_q(t)=Delta_floor(q^2t)/q (linearly interpolated), h_n=n/(2q), mu0=h_n+X_q/2 and mu1=h_n-X_q/2. For PRODUCT the conditional cross feedback is exactly
+ g_actual=P_n(L0<=R1)-P_n(L1<=R0).
+Internal conditional drift cancels. Thus the conditional one-step Delta drift is epsilon g_actual. The limiting q^2-time drift coefficient is epsilon q, NOT epsilon a or an extra factor2. The martingale variance coefficient tends to1.
+For the unique mean-locked family rho^u=(L_u,R_u), define
+ H(u,v)=P(L_u<=R_v), independent draws,
+ g(h,d)=H(h+d/2,h-d/2)-H(h-d/2,h+d/2),
+ gbar(d)=int_0^1 g(h,d)dh.                                  (L1)
+Integer translation gives period1 in h. The two community phases are h+d/2,h-d/2; they are not independent uniform phases. By the optional half-phase identity the period in h can also be taken1/2, but period1 is sufficient.
+Since an integer comparison indicator is1-Lipschitz in either coordinate, independent optimal marginal couplings and d_1(rho^u,rho^v)=2|u-v| give
+ |H(u,v)-H(u',v')|<=W1(L_u,L_u')+W1(R_v,R_v').
+Adding both terms of G gives in particular
+ |g(h,d)-g(h',d')|<=4|h-h'|+2|d-d'|.
+For clarity the inequality used for G=H(u,v)-H(v,u) is
+ |G(u,v)-G(u',v')|<=2|u-u'|+2|v-v'|.
+It follows by adding the FOUR marginal W1 costs; no smooth density is assumed. Stochastic increase of both side laws makes g nonincreasing in d. It is odd in d and bounded by1. Therefore
+ gbar is odd, nonincreasing, globally2-Lipschitz,
+ gbar(0)=0, |gbar(d)|<=min(1,2|d|).                         (L2)
+Full support of both orbit marginals makes g(h,d)<0 for every d>0: compare H(u,v) and H(v,u) through H(v,v), using strict stochastic increase and positive mass at all integer thresholds. Uniform exponential tails give g(h,d)->-sign(d) as |d|->infinity, uniformly in h. These are properties of the now-proved orbit, not an assumed sign model.
+
+L2. Local linear restoring coefficient
+Write a_k(u)=P(L_u=k), b_k(u)=P(R_u=k), and x,y for their tails. Time here is MEAN u, so the birth equations have factor2. Differentiating the bounded-rate laws and summing absolutely gives
+ partial_1 H(u,u)=-2 sum_k a_k y_k b_k,
+ partial_2 H(u,u)= 2 sum_k a_k x_k b_(k-1).
+Hence
+ gbar'(0)=-2 int_0^1 sum_k[a_k y_k b_k+a_k x_k b_(k-1)]du
+          =-4 int_0^1 sum_k a_k y_k b_k du <0.               (L3)
+The second equality integrates the derivative of the periodic H(u,u). All atoms are positive, so strict negativity is justified. Bounded rates give absolute convergence and continuity of these derivative series. Thus the finite-ratio critical drift is a continuous restoring function with a finite nonzero linear response near0, rather than a jump at0. No numerical value for L3 is claimed.
+
+L3. Unconditional diffusion limit under the stated model
+Assume epsilon q->lambda in[0,infinity). Then on every fixed slow-time horizon,
+ X_q -> X in C with uniform-path W1,
+ dX_t=dB_t+lambda gbar(X_t)dt, X_0=0.                       (L4)
+The side-profile input is NOT left as an assumption: CRITICAL_TRACKING.en.txt proves both the required integrated expected W1 error and every positive slow-time endpoint error. The theorem first applies to product; the sealed critical fixed-kernel coupling transfers it to every fixed doubly-stochastic cross kernel and the specified protected-diagonal family.
+
+Proof of L4, including fast deterministic phase averaging
+Let b_n=epsilon g_actual(n) and M_q=q^-1 sum(Delta increment-b_n). Its jumps are<=2/q and
+ <M_q>(t)=q^-2 sum_(n<q^2t)(1-b_n^2)->t uniformly,
+since |b_n|<=epsilon and epsilon=O(1/q). Each bracket jump is<=1/q^2 and the squared maximal martingale jump is<=4/q^2. Thus both expected-jump regularity conditions of Whitt's Theorem2.1(ii) hold, as does its predictable-variation hypothesis. The martingale functional CLT applies.
+The exact product feedback differs from g(h_n,X_q(n/q^2)) by at most the sum of the four empirical-profile W1 errors. CRITICAL_TRACKING R2 makes its integrated expected error vanish. Multiplication by epsilon q remains bounded.
+Now cut time into blocks of EXACTLY2q arrivals. The slow coordinate varies inside a block by
+ E max |X_q(n)-X_q(block start)|<=2sqrt(2/q)+2epsilon,
+by conditional-variance<=1 Doob and bounded drift. Freeze X at the block start. The phase h_n advances through the complete2q-point uniform grid modulo1; its average differs from the integral by at most2/q using the4-Lipschitz bound. The frozen/unfrozen errors for both g and gbar cost at most four times the displayed slow-coordinate variation. The last incomplete block costs O(1/q). Consequently
+ E sup_(t<=T)|q^-2 sum_(n<tq^2)[g(h_n,X_q(n/q^2))-gbar(X_q(n/q^2))]|
+ <=C(T+1)(q^-1/2+epsilon+q^-1)->0.                         (L5)
+No ergodicity of an auxiliary phase process, nor independence of community phases, is invoked. The phase is a deterministic fast rotation.
+Tightness follows from the bounded drift and martingale. Every subsequential limit solves L4; its globally Lipschitz drift gives a unique solution by the usual Brownian integral-equation/Picard argument. Thus convergence holds for the whole sequence. Doob also gives E sup|X_q|^2<=C(T,Lambda), so uniform integrability upgrades weak uniform-path convergence to W1 (for example via a Skorokhod coupling and truncation). Linear interpolation costs at most1/q. QED.
+If instead Y_q(t)=Delta_floor(a_q^2t)/a_q with a_q/q->sqrt(kappa), the equivalent limit is Y_t=X_(kappa t)/sqrt(kappa), with
+ dY_t=dB_t+lambda sqrt(kappa) gbar(sqrt(kappa)Y_t)dt.
+This is the exact change of clock/normalization; importing a sign drift from a different q/a regime would be incorrect.
+
+L4. The critical spill readout is not phase averaged
+Define the unique deterministic function
+ sigma(u)=.5[E(L_u)_+ +E(R_u)_+],
+ S_h(d)=sigma(h+d/2)+sigma(h-d/2).                          (L6)
+The family is stochastically increasing, so sigma is nondecreasing and1-Lipschitz. In mean clock,
+ sigma'(u)=x_0(u)y_0(u),
+because a positive-part increment occurs iff both candidates have load>=0. Thus sigma is convex, S_h is even and convex in d,1-Lipschitz in d and2-Lipschitz in h. Full support and mean0 imply sigma(0)>0. At zero imbalance the critical readout has a strictly positive internal-profile baseline2sigma(0); it is not |d|/2.
+Let integer capacities c_q satisfy c_q/m->kappa in(0,infinity) and n*=2q c_q=4mc_q. On the q-scaled critical window n_q(h)=n*+floor(2h q),
+ (Z_cq(n_q(h))/q)_(|h|<=H)
+ -> (S_h(X_kappa))_(|h|<=H) in C([-H,H]) with W1.           (L7)
+At the exact critical count the common mean is the INTEGER c_q, so the common phase is0; for the window it is h modulo1. The drift's integral over fast common phase must NOT be substituted for this endpoint readout. Integer translation of rho removes c_q exactly. Noninteger capacities require retaining their fractional phase.
+
+Proof of the curve statement without a supremum profile assumption
+At each fixed h, n_q(h)/q^2->kappa, the terminal tracking theorem applies. The positive-part function is1-Lipschitz, so its profile error in Z/q is at most half the sum of the four marginal W1 errors. Macro continuity gives Delta_(n_q(h))/q->X_kappa jointly for finitely many h. Thus the curve converges on every fixed finite grid.
+The actual spill increases by at most1 per arrival. Its linear interpolation in h is deterministically2-Lipschitz; the rounding costs at most1/q. The candidate S_h is also2-Lipschitz. A fixed finite mesh therefore upgrades the finite-grid convergence to uniform weak curve convergence. No union over all O(q) profile times is needed.
+Uniform integrability follows at one window endpoint from the critical coarse bound Z<=|Delta|/2+H_load/2 plus O(Hq) for the window offset. The normalized Delta has uniform L2; H_load/q<=C log(2Gamma/q) has uniform L2 from the exponential-potential expectation. The deterministic curve Lipschitz bound controls its whole sup norm. This yields curve W1 convergence. The same reasoning gives joint convergence with the macroscopic X path. QED.
+In the earlier sqrt(mc) window n_q(s)=floor(4mc_q+4s sqrt(mc_q)), h->s sqrt(kappa), so
+ Z(n_q(s))/q ->S_(s sqrt(kappa))(X_kappa),
+ Z(n_q(s))/sqrt(mc_q) ->(2/sqrt(kappa))S_(s sqrt(kappa))(X_kappa).
+For a=sqrt(4mc), divide instead by a: the multiplier is1/sqrt(kappa). These three normalizations are not interchangeable.
+
+Scope and remaining non-effective content
+The orbit, gbar and sigma are uniquely specified by the nonlinear fluid equations; no elementary closed form or certified numerical values are supplied. The deterministic attraction modulus has no explicit rate here, so this theorem supplies the asymptotic expected average error needed for the critical limit, not a practical finite-q precision certificate. The result requires uniform complete internal sampling and the global-left tie. Fixed cross couplings inherit it through the prior equivalence; load-aware adaptive cross responses are outside the product drift identification. No stationary interchange, arbitrary sparse-graph limit, or previously frozen empirical CDF accuracy is asserted.

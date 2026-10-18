@@ -1,0 +1,15 @@
+{
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+  "logical_cpus": 5,
+  "cpu_quota": "400000 100000",
+  "memory_limit_bytes": 17179869184,
+  "g++": "g++ (Debian 14.2.0-19) 14.2.0",
+  "git": "git version 2.52.0",
+  "tested_python": "Python 3.12.14",
+  "tested_numpy": "2.3.5",
+  "fresh_venv_created": true,
+  "fresh_venv_path": "/workspace/critical-overflow-venv",
+  "clean_source_directory": "/workspace/critical-overflow-clean-2",
+  "run_output_directory": "/workspace/critical-overflow-validation-2"
+}

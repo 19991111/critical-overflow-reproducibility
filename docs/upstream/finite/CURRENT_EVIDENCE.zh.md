@@ -1,0 +1,14 @@
+# 当前证据入口与边界
+
+本次新增证据是抽象分配模型的有限q批次和独立完整v4稿，不属于字典CPU性能或真实键集复测。所有文件在本独立目录，沿用已授权研究分支。
+
+1. v4：paper/paper_core_v4.tex及sections/，PDF为paper/paper_core_v4.pdf；编辑源包与完整归档在交付清单。
+2. 新批次执行前协议：FINITE_Q_VALIDATION_PLAN.v1.json、STATISTICAL_DECISIONS.en.txt；protocol/VALIDATION_SOURCE_FREEZE.json锁13项，RUN_INPUT_FREEZE.json锁实际二进制、查表、种子和计划。输入和输出不混充。
+3. 新原始结果：results/validation/含全部9216终态、193536检查点、完整带标签临界配置和进度；logs/含命令、出口及完整输出。results/PRIMARY_FAILURE_RATES.json、UNIVERSALITY_CDF.json、LAMBDA0_REFERENCE.json和独立检查JSON给出结论。
+4. 既有理论来源：paper_critical_pair_tables_20261017/CRITICAL_EQUIVALENCE.en.txt，paper_periodic_profile_limit_20261017/下的周期轮廓、固定窗口LLN、共同极限与single-front文件。16项旧输入逐字节锁定，见protocol/INPUT_LOCK.json。
+5. 既有数值证书：paper_profile_certificate_20261017/；最后原提交c619678de3625f0eeaba501593c0859ced2ca9f0，profile_certificate_return.tar.gz SHA256为6dc729a9d22adec4252c113100be396b47195f81fc7da62312eebae739c3e4ff。旧失败阶段均保留。
+6. 旧v3：paper_v3_diagnostic_20261017/paper/paper_core_v3.tex与.pdf，锁定不覆盖。新稿不是旧过程笔记串接，而以新的完整定理链组织。
+7. 初始字典研究线状态已在paper_scope_20261015/FINAL_EXPERIMENT_REPORT.txt封存：用户原REVIEW_REPORT已找到；v16固定源码157788c55a96ea961693f1ea932fd5e3b2551de5，分支research/sea2027-v16-realdata-20261012-aae26313。可见检索没有找到已发布v16结果，不能将源码包称作结果；不可见离线实例仍未知。作者8位SoA、容量状态、v19同机对照及其限制已有旧报告，本次未重做或冒充原v16。
+8. 原v16若在离线实例完成，准确缺件仍是结果提交，或startup_records_v16/*_startup_return.tar.gz、cloud_records_v16/*_return.tar.gz及SHA256和完整build_linux记录/程序；无需再次索要已找到的REVIEW_REPORT。真实fb/wiki源原件与完整核验、第二种CPU仍非本次新增证据。本次未改变网络权限或购买资源。
+
+论文线键和值语义、华为线仅键语义不混用；硬件109.025%计费与软件申请内存不互换。本次不修改main、华为恢复分支cbdc97bbae8ecab66e9008a6622152741c31cb85、S07、原离线实例或旧归档。

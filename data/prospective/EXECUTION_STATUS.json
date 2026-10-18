@@ -1,0 +1,101 @@
+{
+  "UTC": "2026-10-17T23:43:31.835977+00:00",
+  "status": "complete_once",
+  "CPU_seconds": 48.292927053,
+  "wall_seconds": 48.42114251300518,
+  "CPU_budget_seconds": 600,
+  "wall_budget_seconds": 1200,
+  "selected_single_core": 0,
+  "threads": 1,
+  "new_SDE_paths": 0,
+  "stages": [
+    {
+      "UTC_start": "2026-10-17T23:42:43.414917+00:00",
+      "UTC_end": "2026-10-17T23:42:44.584888+00:00",
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/workspace/huaweipro-tpht-linux/research/paper_micro_prospective_20261017/src/micro.cpp",
+        "-o",
+        "/tmp/paper_micro_prospective_20261017.bin"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stage_CPU_seconds": 1.142967968,
+      "stage_wall_seconds": 1.1700103759940248,
+      "cumulative_CPU_seconds": 1.14303059,
+      "cumulative_wall_seconds": 1.1700812210037839,
+      "OS_CPU_soft_limit_seconds": 598
+    },
+    {
+      "UTC_start": "2026-10-17T23:42:44.585515+00:00",
+      "UTC_end": "2026-10-17T23:42:44.590066+00:00",
+      "command": [
+        "/tmp/paper_micro_prospective_20261017.bin",
+        "--selftest"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stage_CPU_seconds": 0.0029341579999999645,
+      "stage_wall_seconds": 0.004566210991470143,
+      "cumulative_CPU_seconds": 1.146556297,
+      "cumulative_wall_seconds": 1.1752382800041232,
+      "OS_CPU_soft_limit_seconds": 597
+    },
+    {
+      "UTC_start": "2026-10-17T23:42:44.590683+00:00",
+      "UTC_end": "2026-10-17T23:43:09.925512+00:00",
+      "command": [
+        "/tmp/paper_micro_prospective_20261017.bin",
+        "--run",
+        "/workspace/huaweipro-tpht-linux/research/paper_micro_prospective_20261017/protocol/SEEDS_V1.txt",
+        "/workspace/huaweipro-tpht-linux/research/paper_micro_prospective_20261017/results/micro"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stage_CPU_seconds": 25.304514403000002,
+      "stage_wall_seconds": 25.334869290003553,
+      "cumulative_CPU_seconds": 26.451674236000002,
+      "cumulative_wall_seconds": 26.510709765003412,
+      "OS_CPU_soft_limit_seconds": 597
+    },
+    {
+      "UTC_start": "2026-10-17T23:43:09.979364+00:00",
+      "UTC_end": "2026-10-17T23:43:13.808513+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/huaweipro-tpht-linux/research/paper_micro_prospective_20261017/src/analyze.py"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stage_CPU_seconds": 3.8075500700000013,
+      "stage_wall_seconds": 3.8291905790101737,
+      "cumulative_CPU_seconds": 30.313002914000002,
+      "cumulative_wall_seconds": 30.393709117008257,
+      "OS_CPU_soft_limit_seconds": 572
+    },
+    {
+      "UTC_start": "2026-10-17T23:43:13.808931+00:00",
+      "UTC_end": "2026-10-17T23:43:31.834864+00:00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/huaweipro-tpht-linux/research/paper_micro_prospective_20261017/src/verify.py"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stage_CPU_seconds": 17.978469178999998,
+      "stage_wall_seconds": 18.025978532008594,
+      "cumulative_CPU_seconds": 48.291848451999996,
+      "cumulative_wall_seconds": 48.42006274701271,
+      "OS_CPU_soft_limit_seconds": 568
+    }
+  ]
+}

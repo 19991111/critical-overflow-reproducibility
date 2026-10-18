@@ -1,0 +1,14 @@
+{
+  "finite": {
+    "sha256": "6863b2b63c1376890a670853be43a1c4543c1b6ecb5662a81e097f9a58c50c0d",
+    "source_sha256": "1e5ce40680f3accc5ca06bddd9bb4e069c6145278f76d59bc1733def615e95f4"
+  },
+  "prospective": {
+    "sha256": "158d748f6dff11e54dd9de89c310f7e7ca0772a6f960cd52b79164fc264587f0",
+    "source_sha256": "9bdadc0345496e4bce051700d678e7aeeb7c9a54968ed1674ca29e63ec9069c9"
+  },
+  "reference": {
+    "sha256": "83eb3aeedc62ac1e749a372015fa5d4d2c0443f195c862ea8695fee764fab711",
+    "source_sha256": "c8b1bb07d99d46647277a4bdf1d7463e0ea543b6a0f771e24cf6d9c461ff8174"
+  }
+}

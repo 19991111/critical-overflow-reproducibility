@@ -1,0 +1,25 @@
+{
+  "status": "complete_followup_batch_analyzed",
+  "reference_endpoint_rows": 65536,
+  "new_micro_trajectories": 0,
+  "new_reference_replicates_per_lambda": 32768,
+  "reference_steps": 16384,
+  "new_primary_mean_decisions": {
+    "supported": 4,
+    "detected_mismatch": 0,
+    "inconclusive": 0
+  },
+  "new_primary_D_CDF_decisions": {
+    "supported": 4,
+    "detected_mismatch": 0,
+    "inconclusive": 0
+  },
+  "all_reference_precision_gates_passed": true,
+  "joint_confidence_at_least": "0.95 conditional on ideal independent replicate streams",
+  "scope": "q512,kappa1,lambda1/2,existing fixed/product micro kernels; finite practical tolerances only",
+  "old_primary_checks_or_manuscripts_rewritten": false,
+  "reference_CPU_seconds": 166.13038899999998,
+  "overall_computation_wall_seconds": 171.76418775500497,
+  "single_pinned_core": 0,
+  "no_seed_replacement_or_extension": true
+}

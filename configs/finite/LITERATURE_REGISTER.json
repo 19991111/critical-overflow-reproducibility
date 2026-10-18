@@ -1,0 +1,16 @@
+{
+  "checked_UTC_date": "2026-10-17",
+  "primary_sources_only": true,
+  "entries": [
+    {"key":"bcsv","edition":"SIAM J Comput35(6),1350-1385,2006","url":"https://disco.ethz.ch/courses/hs08/seminar/papers/steger1.pdf","doi":"10.1137/S009753970444435X","access":"full text inspected","comparison":"Theorem1.5/Corollary1.6 Left[d] heavy-load bounds; no assertion that they identify this two-side phase-locked profile"},
+    {"key":"ptw","edition":"Random Structures Algorithms47(4),760-775,2015","url":"https://doi.org/10.1002/rsa.20558","access":"journal metadata and abstract; direct full-text tool access unavailable","comparison":"No conference theorem numbers attributed to journal"},
+    {"key":"ptwconf","edition":"author-hosted2010conference text","url":"https://www.microsoft.com/en-us/research/wp-content/uploads/2010/01/YPeres.pdf","access":"full7-pagePDF inspected","comparison":"Theorems2.1-2.2 rank-biased exponential potential; weighted balls means ball weights"},
+    {"key":"bmw","edition":"arXiv1712.07607v2,September2018","url":"https://arxiv.org/pdf/1712.07607v2","access":"full32-pagePDF inspected","comparison":"Condition1 divergent minimum degree plus inverse-degree balance; Theorems2.1-2.2 fixed-time occupancy/tagged-process limits, no general expansion prerequisite"},
+    {"key":"stolyarwave","edition":"arXiv2004.00177v3,15April2022; journalAAP55(1),245-274,2023","url":"https://arxiv.org/html/2004.00177v3","doi":"10.1017/apr.2022.24","access":"full text inspected","comparison":"Theorem3.1 existence permits deterministic unit jumps; density condition3.4 belongs to Theorem3.2 uniqueness/attraction. Section7.2 lattice obstruction and strictL1 precedent. Primary model mismatch is nonclosing two-side fluid"},
+    {"key":"stolyarstationary","edition":"arXiv2206.01827v3,March2023; Stochastic Systems13(3),343-359,2023","url":"https://arxiv.org/pdf/2206.01827v3","doi":"10.1287/stsy.2023.0108","access":"full20-pagePDF inspected","comparison":"Theorems1-3 andSection7 stationary/tightness/strict-W1 precedent under own jump-density/moment hypotheses; no stationary-interchange claim here"},
+    {"key":"whitt","edition":"ProbabilitySurveys4,268-302,2007","url":"https://arxiv.org/pdf/0712.1929","doi":"10.1214/07-PS122","access":"full text theorem2.1(ii) inspected","comparison":"Predictable bracket and expected jump hypotheses checked in manuscript"},
+    {"key":"massart","edition":"AnnalsProbability18(3),1269-1283,1990","url":"https://projecteuclid.org/journals/annals-of-probability/volume-18/issue-3/The-Tight-Constant-in-the-Dvoretzky-Kiefer-Wolfowitz-Inequality/10.1214/aop/1176990746.full","doi":"10.1214/aop/1176990746","access":"primary journal metadata/inequality checked","comparison":"One-sample DKW bound plus union bound; no independence between kernels required"}
+  ],
+  "no_exhaustive_priority_claim": true,
+  "third_party_fulltexts_redistributed": false
+}

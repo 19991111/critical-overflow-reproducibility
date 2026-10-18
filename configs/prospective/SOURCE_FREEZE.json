@@ -1,0 +1,23 @@
+{
+  "UTC": "2026-10-17T23:42:34.701949+00:00",
+  "before_first_fresh_trajectory": true,
+  "files": {
+    "STATISTICAL_PLAN.en.md": "1d7515d3f9e8cf838d0f8528f466264574acbd084e9f03da3f6ce93d41fad111",
+    "protocol/ALPHA_CHECK.json": "c7725ec0c63bd1f4b49e333ae5ef857fdb6f53ac30bc6f40f1d9a7885aa1ab72",
+    "protocol/DUPLICATE_GUARD.json": "cda06751c590f90184b523dc7d7d9b8dcf20a69729378b6ed94776da7638db1a",
+    "protocol/ENVIRONMENT.json": "6525a1ed1f01de32969d23a63988f211cf0c7f47f85c0d1a9b508d8dc015806f",
+    "protocol/INPUT_LOCK.json": "f601a08e6732e68c5b2de18602a5a650ad514931a2234975a3da2eb7d0c7d2a7",
+    "protocol/LOCAL_BRANCHES_BEFORE.txt": "767ddb3aad91c69a67a06eb983bc95fb68c2eb22a42440cfd2e1fea98fdb22fe",
+    "protocol/OLD_RESULTS_LOCK.json": "c0716ce27157edbddfe2973a84be04e4e141995a1d4b14ff47a87564cf5db93e",
+    "protocol/PLAN_V1.json": "1be2c0e99545c6fa9cb30d4bd43b5f68bf76e8fdb782d24625b9fd020e9c72b3",
+    "protocol/PRIOR_ARCHIVES_LOCK.json": "1892535973f19b48fe9ea7e4f39783408aaf74a745d79276028c705b9c75f96d",
+    "protocol/REMOTE_REFS_BEFORE.txt": "2949549d8d8091a58f3b5fc33f3c06060f80d86bd18db99997c3c1d5c35129e6",
+    "protocol/SEEDS_V1.txt": "63cc762d85878a55416837b1090796d6a6ea0534295e233883ce1f10f4061cbc",
+    "protocol/SEED_AUDIT.json": "d221406cccff8cb1a4078a57f6a739f81dc8166e0a42481fb99071e1fe9e6df8",
+    "src/analyze.py": "fa440b13e0754ad9e75c12c2cd7e04468fd74876813fbb5ff8502c4f40bbcc52",
+    "src/freeze.py": "130bb6d604a6dc52b12c93d28ef57eb759195018060755bdabe0f8a877a3ef8c",
+    "src/micro.cpp": "9bdadc0345496e4bce051700d678e7aeeb7c9a54968ed1674ca29e63ec9069c9",
+    "src/run_pipeline.py": "8c65bc22ce64e596f13dad3a0a40fefe1f3cd3c190ce6e52737cd3ccf73e858f",
+    "src/verify.py": "33e991e054c380d9fd367136b05758f69b8427915591643169da83aad5f08dc0"
+  }
+}

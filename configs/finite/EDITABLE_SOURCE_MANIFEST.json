@@ -1,0 +1,94 @@
+{
+  "zip": "paper_v4_editable_source.zip",
+  "sha256": "6c01530504810aafe4382c172aa51a8f306859ef323209f6ce36d02976c7e883",
+  "bytes": 594301,
+  "members": [
+    {
+      "path": "BUILD.md",
+      "sha256": "590e4484de5a25701708d5cbcec74b29ed3596e647e36a27787f77acc594f8b9",
+      "bytes": 2405
+    },
+    {
+      "path": "paper/figures/critical_cdfs.pdf",
+      "sha256": "e1848c5b099ce93a537c22250ffc98d0cba51c38033bf37a2b61d1a4f251e2c2",
+      "bytes": 41081
+    },
+    {
+      "path": "paper/figures/finite_q_errors.pdf",
+      "sha256": "e2398131d0b752ac3ed7c144036c921fd371f5bab816ddf635c85c9c174a3ee3",
+      "bytes": 17418
+    },
+    {
+      "path": "paper/paper_core_v4.pdf",
+      "sha256": "02b0b71d6e370005c459a2cbb8353c4ff18169cfc55ede0d4d9423094c01c444",
+      "bytes": 517766
+    },
+    {
+      "path": "paper/paper_core_v4.tex",
+      "sha256": "06a7049fabf2fe6c4151156005c4d71fd9e6d5ab4cb818482879c02ba2379706",
+      "bytes": 2762
+    },
+    {
+      "path": "paper/references.tex",
+      "sha256": "684477226d5f1b6f22decdbf19be216ff47cd2ee8637fbe6a2e3b73444861dba",
+      "bytes": 2176
+    },
+    {
+      "path": "paper/sections/artifact.tex",
+      "sha256": "e1070a6006c809eb05ed79042fc20b15807c5c65b4597db0ff1874a1c16437e9",
+      "bytes": 2281
+    },
+    {
+      "path": "paper/sections/details.tex",
+      "sha256": "d2ddac97f59f59c4a7461d031f436862cddf44188bcd6d2179af5268460e338a",
+      "bytes": 8032
+    },
+    {
+      "path": "paper/sections/discussion.tex",
+      "sha256": "3ca85be6f0ba781eb7806660d751fc5d2cbacc666b0a4c86d5e228066c8d36e8",
+      "bytes": 2077
+    },
+    {
+      "path": "paper/sections/introduction.tex",
+      "sha256": "6039fc4a5a3acbc76ab2e61cad304f9f895c77f785183f703b24d74dbae4e23e",
+      "bytes": 5218
+    },
+    {
+      "path": "paper/sections/limit.tex",
+      "sha256": "6bcf6001febc898a5bf28cf2158eef8bd3f7a53b4447e93216700971e2706935",
+      "bytes": 8655
+    },
+    {
+      "path": "paper/sections/model.tex",
+      "sha256": "6c3e2be5685d7aedd8f304fb6b1deb46b61453817a7e7649345f95609046a74e",
+      "bytes": 5224
+    },
+    {
+      "path": "paper/sections/numerics.tex",
+      "sha256": "ec2df04571175e45775431e7140aef704b55ab85152af36f6c8a7894656c5906",
+      "bytes": 5618
+    },
+    {
+      "path": "paper/sections/profile.tex",
+      "sha256": "9038dd5b14053f72afd654355351c036420fbadc2727213f55eb00f0d22f47b2",
+      "bytes": 8800
+    },
+    {
+      "path": "paper/sections/universality.tex",
+      "sha256": "65262a4f56cf3de7a311167ea96abae17c1a9fc82c63f736bf9aea8650b16cae",
+      "bytes": 8478
+    },
+    {
+      "path": "paper/sections/validation.tex",
+      "sha256": "8688441cc32c9acedf3464dbbf67614493a32c9617de567846a5da881accc1d8",
+      "bytes": 9204
+    },
+    {
+      "path": "src/build_document.py",
+      "sha256": "9886beeca1bdcb3becd0ed7c43b81ad7119dc07328921914836dc4ae9b4f9b7a",
+      "bytes": 1265
+    }
+  ],
+  "standalone_PDF_build": true,
+  "contains_no_trajectory_runner": true
+}

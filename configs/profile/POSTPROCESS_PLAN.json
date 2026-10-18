@@ -1,0 +1,10 @@
+{
+ "reason":"Read saved states only: compare finite-time floating readouts with the already proved rational intervals, export normalized front samples and compact tables, and report the independently derived stronger ideal-orbit quadrature constants.",
+ "source":"src/postprocess_certificate.py",
+ "command":"python3 -B research/paper_profile_numerics_20261017/src/postprocess_certificate.py",
+ "read_only_inputs":"all raw profiles and certificates from the8 frozen attempts",
+ "forbidden":["ODE solving","new attempts","changing numerical source or grids","fitting a rate","promoting diagnostic means or period defects to a true-orbit certificate"],
+ "wall_seconds":30,
+ "new_theory":"QUADRATURE_AND_PHASE.en.txt",
+ "no_new_random_experiments":true
+}

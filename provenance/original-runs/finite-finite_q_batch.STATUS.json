@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/tmp/paper_v4_finite_q_model_20261017",
+    "--run",
+    "/workspace/huaweipro-tpht-linux/research/paper_v4_release_20261017/results/WAVE_TABLE.hex",
+    "/workspace/huaweipro-tpht-linux/research/paper_v4_release_20261017/protocol/SEEDS_V1.txt",
+    "/workspace/huaweipro-tpht-linux/research/paper_v4_release_20261017/results/validation"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "elapsed_budget_seconds": 22.352430977996846
+}

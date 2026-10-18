@@ -1,0 +1,19 @@
+{
+ "base_commit":"fe6e2c3a49f702e8b3855828b6a486450557204f",
+ "scientific_acceptance_W1":"1/1000",
+ "optional_early_stop_W1":"1/10000",
+ "precision_bits":80,"exponential_series_degree":4,
+ "tail_method":"proved periodic second-moment bounds, front integral recursion, pooled flux/mean anchor z_-2>89/100, and left renewal bound a=11/100,gamma=18/25 at r0=-4",
+ "stages":[
+  {"id":"K4_B8_J64","K":4,"B":8,"radius":8,"J":64},
+  {"id":"K6_B16_J64","K":6,"B":16,"radius":10,"J":64},
+  {"id":"K8_B24_J128","K":8,"B":24,"radius":12,"J":128},
+  {"id":"K10_B32_J128","K":10,"B":32,"radius":14,"J":128},
+  {"id":"K12_B40_J128","K":12,"B":40,"radius":16,"J":128},
+  {"id":"K12_B48_J256","K":12,"B":48,"radius":16,"J":256}
+ ],
+ "bootstrap":"Use only previously completed rigorous E; intersect analytic orbit bounds with saved-cycle bounds plus E; upward round E before reuse.",
+ "stop":"Stop after a completed stage if certified best E<=1/10000; scientific acceptance remains1/1000. Stop on budget/error and preserve all results. No automatic retry or parameter expansion.",
+ "budgets":{"each_stage_wall_seconds":90,"all_matrix_stages_wall_seconds":300,"memory_MiB":1024,"maximum_output_MiB":64,"threads":1},
+ "no_new_ODE_solve":true,"no_exploratory_eight_run_repeat":true,"new_random_experiments":0,"new_paid_resources":0
+}

@@ -1,0 +1,30 @@
+A concrete conditional a-posteriori certificate and its still-missing numerical inputs
+
+This lemma is independently derived here; it is not presented as an already evaluated orbit enclosure. Let v be a probability pair of EXACT combined mean0, pi the proved mean0 orbit point, and P the mean-time1 flow followed by integer shift-1. For an integerL>=1, suppose the following quantities have been VALIDATED:
+ r_L>=d1(v,P^L v);
+ tau_K>=sum_(states i outside C_K)|d_i|, d=tails(v)-tails(pi);
+ the exact difference-chain transition U overL has U_i>=beta*nu for every i in the finite core C_K, where nu is one probability measure and0<beta<=1.
+The common output shift is just a permutation of states and does not change l1. Then
+ d1(v,pi)<=r_L/beta+2*tau_K.                              (N1)
+
+Proof, including why the tail term is not divided bybeta.
+The signed tail difference has totalmass0 by exact equality of combined means. Split it into d_C+d_O. Write the core transition as beta*nu plus a positive residual of columnmass1-beta. Because sum d_C=-sum d_O,
+ ||Ud||1 <= beta*|sum d_C|+(1-beta)||d_C||1+||d_O||1
+          <=(1-beta)||d||1+2beta||d_O||1.
+Since P^L pi=pi, triangle inequality gives ||d||1<=r_L+||Ud||1, provingN1. This uses no unknown global spectral gap. If the candidate's mean is only known within delta of0, one must certify its matching-mean target or normalize exactly, then add2delta; otherwise N1's zero-totalmass step fails.
+
+How beta could be validated without knowing pi numerically.
+For the mean-clock difference generator, all off-diagonal rates are the arithmetic means of the two corresponding single-profile rates. Thus they are at least HALF the rates determined by the exact forward v(t) alone, while actual exit rates<=2. Define a known sub-Markov generator A(t) with these half-v off-diagonal rates and constant diagonal-2. Its positive evolution V is entrywise dominated by U, by Dyson expansion/positive comparison. A common finite terminal state j then gives beta=min_(i in C_K)V_(j,i)(L), if that minimum has a positive validated lower bound. Alternatively allocate finite ordered time intervals to explicit paths: e^(-2L) times products of the integrals of validated lower edge rates bounds each path probability. Merely evaluating floating rates is insufficient.
+Both statements are rigorous conditional constructions. They do not claim that the crude path bound is numerically useful: a very small beta can amplify residual uncertainty severely. Choosing the core and a longer block must be justified together with a tail bound and may require sharper interval propagation.
+
+How tau could be validated.
+For integer loads, outside-core tail differences are bounded by the sum of the two profiles' integrated marginal tails, with one-index endpoint conventions handled explicitly. A safe choice for C_K={L,R}x{-K,...,K} is
+ tau_K<=sum_(side) E_v(|A|-K)_+ +sum_(side) E_pi(|A|-K)_+.
+Indeed positive outside levels start atK+1; negative outside levels end at-K-1 and are bounded by E(-K-A)_+. The current proved pi cosh-sum<=4 at theta=.005 gives a conservative bound8e^(-theta K)/theta for its contribution. It is much too loose atK<=32 to certify the printed digits. A proposed stronger pure-wave moment supplied in messages is pending a complete independent proof; it is not inserted here as an established bound.
+
+Concrete next operation.
+1. Use the separately exported exact mean0 rational candidate, not the rounded diagnostic mean.
+2. Validate its finite-block forward path and return residual with interval/high-order defect control; the current Euler O(h) enclosure is valid but may be too wide after division bybeta.
+3. Validate finite-core common mass beta and a strong enough orbit-tail bound tau; check the resulting N1 interval BEFORE claiming digits of alpha/gbar/spill.
+4. Transfer a certified profile W1 error to the four-marginal feedback and positive-part readouts, and add the separately proved phase quadrature error.
+No item2 or3 was silently run beyond the frozen numerical batch. This file identifies the exact missing certificate, rather than treating apparent periodic convergence as its substitute.

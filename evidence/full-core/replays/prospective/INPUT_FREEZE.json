@@ -1,0 +1,10 @@
+{
+  "before_trajectory_generation": true,
+  "source_sha256": "9bdadc0345496e4bce051700d678e7aeeb7c9a54968ed1674ca29e63ec9069c9",
+  "binary_sha256": "158d748f6dff11e54dd9de89c310f7e7ca0772a6f960cd52b79164fc264587f0",
+  "seed_sha256": "63cc762d85878a55416837b1090796d6a6ea0534295e233883ce1f10f4061cbc",
+  "selected_cpu": 0,
+  "threads": 1,
+  "new_seed_labels": 0,
+  "purpose": "Replay the frozen batch, not an additional independent statistical sample."
+}

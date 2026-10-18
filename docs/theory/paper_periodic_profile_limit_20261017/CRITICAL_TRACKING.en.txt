@@ -1,0 +1,50 @@
+Fixed-window restart gives critical-time mean-locked profile tracking
+17 October 2026. Uses the proved periodic profile theorem and the existing finite-system exponential dispersion. No explicit deterministic attraction rate is assumed.
+
+Definitions and exact phase
+For the product two-community process, let nu_(c,S)^q(n) be the empirical integer-load law on a side of m=q/2 vertices. Let mu_c(n)=M_c(n)/q and rho^mu be the unique family in PERIODIC_PROFILE.en.txt. Set
+ E_q(n)=sum_(c=0,1; S=L,R) W1(nu_(c,S)^q(n),rho_S^(mu_c(n))).
+For any actual centered empirical law, its Fourier harmonic at2pi is exactly exp(-2pi i mu_c(n)); integer loads force this identity. Therefore one deterministic centered law independent of the fractional mean cannot describe all phases. Raw-law rho^mu avoids losing that phase.
+
+THEOREM
+Assume epsilon q is bounded, the actual process starts empty and has the proved uniform dispersion E Gamma_n<=Kq at theta=1/200. Then for every fixed slow horizon T,
+ lim_(A->infinity) limsup_(q->infinity)
+     sup_(Aq<=n<=Tq^2) E E_q(n)=0.                           (R1)
+Consequently, at any times n_q/q^2 bounded away from0,
+ E E_q(n_q)->0,
+ q^-2 sum_(n<Tq^2) E E_q(n)->0.                            (R2)
+Integer parts in Aq can be used throughout. R1 uses A as GLOBAL fluid time; in mean-load time the restart window is2Aq instead. There is no claimed effective q-rate, stationary finite-q mixing time, or union bound over all restart times.
+
+Proof
+1. Uniform integrability, not just small bad-event probability.
+For a community with centered potential Phi_c=(1/q)sum_c cosh(theta(A_v-mu_c)), Jensen gives
+ H_c/q<=theta^-1 log(2Phi_c), H_c=sum_c|A_v-mu_c|.
+Thus the distance of its two side laws to a bounded-spread profile at the same mean is at most a constant times1+log(2Phi_c). Its squared expectation is uniformly bounded, because log^2(2z)<=C(1+z), and E(Phi_0+Phi_1)<=K. The orbit has potential<=2. In particular sup_(q,n)E E_q(n)^2<infinity. The same bound applies to pure-internal fluid/reference profiles initialized from any actual deterministic-time state, by their potential recurrence.
+Choose a fixed M large. At the window's starting state the event max_c Phi_c>M has probability<=K/M, and its contribution to the expected profile distance, including the resulting fluid terminal distance, is<=C/sqrt(M) by the preceding L2 bound. This is why an unbounded W1 readout can be controlled from the moment input; probability alone would not suffice.
+
+2. Erase cross arrivals only inside the short comparison window.
+For a deterministic endpoint n>=w=floor(Aq), start an auxiliary pure-internal process Z at the actual load vector at n-w. On actual internal arrivals use the same labels and community. On an actual cross arrival, Z instead uses a fresh fair community and uniform internal edge. Given the complete joint past, Z's community choice is fair and its edge is uniform, so it is exactly the pure-internal chain. The actual process is unchanged, and no old matching is resampled.
+Same-edge integer greedy is nonexpansive in labeled L1; a differing candidate event costs at most2. Hence
+ max_(j<=w)||X_(n-w+j)-Z_j||1<=2 C_w, E C_w=epsilon w.
+Since empirical side W1 is the sorted load L1 divided by m, the sum of the four side discrepancies is<=4 C_w/q, with expectation<=4epsilon A. This argument works even for adaptive kernels with the moment input; only the product kernel is needed below.
+
+3. Conditional fixed-A LLN, including the tails.
+Condition on the initial actual state. Run the pure-internal ODE from its two side laws in each community. Initial error is zero. Each empirical tail coordinate has a centered martingale increment bounded by2/q, and exact conditional drift q^-1 times the vector field. In w steps the only possibly nonzero martingale coordinates have levels up to(initial maximum load)+w<=Tq^2+w. There are at most4(Tq^2+w+1) such coordinates. For the infinite remaining coordinates the martingale is identically zero. Azuma maximal inequality and a union bound therefore give an expected tail-sup error bounded by
+ delta_q(A,T)=e^(3A){C sqrt[A log(C_T q^2+qA+2)/q]+1/q}->0   (R3)
+for FIXED A,T. The bound is independent of the initial labels, load height, fractional mean and profile shape. One may apply the argument to finite triangular prefixes and then increase the prefix; no infinite-coordinate union is taken.
+To turn tail-sup error into W1, truncate about each terminal fluid mean at radius R. The middle has at most2R+3 levels and costs C R delta_q. The expected outside first-moment tails cost C exp(-theta R/2), using the uniform exponential potential for the reference chain and the fluid. Reference community means differ from their fluid means by (Bin(w,1/2)-w/2)/q; its L1 cost is C sqrt(A/q). Hence uniformly in deterministic n<=Tq^2,
+ E sum_side W1(reference empirical, fluid terminal)
+ <=C R delta_q(A,T)+C exp(-theta R/2)+C sqrt(A/q).             (R4)
+The fluid potential for an initial state with random potential is controlled conditionally by its initial potential plus a constant, so the constants after expectation do not depend on n. A bounded birth rate alone is not incorrectly used to control q-long fluid time: A stays fixed in this LLN step.
+
+4. Compact attraction, moving means and the order of limits.
+On the good initial event Phi_c<=M, translate each community by the integer part of its starting mean. Its initial fluid laws belong to the compact all-phase set K_M. The proved modulus omega_M(A) bounds terminal fluid distance to rho at the terminal fluid mean. On the bad event use C/sqrt(M) from step1.
+The actual terminal mean differs from the fluid mean by at most the cross-erasure load difference divided by q plus the reference count fluctuation. Its expected absolute discrepancy is<=2epsilon A+C sqrt(A/q). The family rho is2-Lipschitz in its mean, so this recentering adds only that vanishing cost. It is not permissible to replace either mean's fractional phase by an independent uniform phase.
+Combining the steps, with constants depending only on the fixed dispersion parameters,
+ sup_(w<=n<=Tq^2)E E_q(n)
+ <=C epsilon A+C sqrt(A/q)+C R delta_q(A,T)+C e^(-theta R/2)
+                          +2omega_M(A)+C/sqrt(M).            (R5)
+Take q->infinity with A,R,M fixed; then R->infinity; then choose M large and A large enough that omega_M(A)->0. Equivalently for every tolerance choose M first, then A from attraction, then R from tails, and only then q. This proves R1. For the time average, the first Aq states contribute at most C A/q by uniform L2; the remaining states use R5, so R2 follows. At any positive slow-time endpoint one eventually lies beyond this fixed restart window, proving the terminal assertion. QED.
+
+Extension and limitation
+The sealed critical fixed-kernel/product coupling bounds the sum of sorted side discrepancies divided by q on the whole q^2 horizon. It therefore transfers R1/R2 to every fixed doubly-stochastic cross kernel, with a vanishing change in community means and the same2-Lipschitz orbit correction. The specified protected-diagonal family transfers likewise. This does not assert the same macroscopic feedback for adaptive cross kernels: their response need not be the product comparison even when their side profiles track the same family at their own means.

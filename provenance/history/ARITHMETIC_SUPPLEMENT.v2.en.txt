@@ -1,0 +1,76 @@
+Explicit arithmetic supplement for SDE reference commit 067543228ccdc4efbce5b8df7a0849b03f5fc1ec
+Read-only mathematical audit; no new execution, random trajectories or seed changes.
+
+Conclusion. Under the arithmetic contract below, each computed Box--Muller coordinate differs from the exact midpoint-uniform coordinate by less than 1e-12. In particular the frozen 1e-9 allowance is valid. State rounding plus readout rounding divided by .5001 is less than 4e-12, hence the single frozen 1e-6 allowance covers both. The omitted derivation in the original narrative is repairable without changing a frozen tolerance or rerunning a sample.
+
+0. Arithmetic contract and constants
+All basic +,-,*,/ operations are binary round-to-nearest with p>=64 significant bits; write u=2^-64<1e-19. For a normal nonzero result fl(z)=z(1+delta), |delta|<=u. Exact zero is preserved. No operation considered here overflows or underflows. frexp and ldexp are exact radix-two operations. Hexadecimal input of the stored binary64 table values into long double is exact. The compiled code disables fast-math and contraction. The executable's type checks and saved environment support this contract; the conclusion remains conditional on the actual arithmetic obeying it.
+
+Use gamma_k=ku/(1-ku). Throughout k<=1000, so gamma_k<1.001ku. The elementary product and summation bounds follow by expanding products of (1+delta), or by the standard induction giving gamma_k. No library log/sin/cos/sqrt accuracy is assumed for sampling.
+
+The pre-sampling exporter uses exact Fraction series intervals [pilo,pihi] and [lnlo,lnhi], and checks PI in (pilo-4u,pihi+4u), LN2 in (lnlo-u,lnhi+u). Each series-interval width is <.01u, directly from its displayed geometric/alternating remainder (80 Machin terms, 100 atanh terms). Thus the actual checks imply
+ |PI-pi|<4.01u, |LN2-ln(2)|<1.01u.
+The relative error of LN2 is <2u, because ln(2)>2/3. We include the rational-series enclosure width; it is not valid to silently drop it or to assert both relative constant errors are <=u.
+
+The uniforms are exact dyadic midpoints U=(j+1/2)2^-52, so 2^-53<=U<=1-2^-53. The exact normal radius is below 9 since -2log(U)<=106log(2)<81. All series and Newton intermediates are normal finite numbers; even the smallest radius is of order 1e-8, far above underflow. Potential cancellation to zero in a state addition is harmless under an absolute-error bound.
+
+1. ownlog: relative error <=1000u+T
+For x in [1/2,2], t=(x-1)/(x+1). Sterbenz makes the numerator subtraction exact; the denominator and division give relative error at most gamma_2<3u. The exact |t|<=1/3. The program computes the 24 terms 2 sum_{j=0}^{23} t^(2j+1)/(2j+1), which all have the same sign.
+
+Each reciprocal coefficient has relative error <=u. The computed t^2 has relative error at most gamma_7. The j-th iterated power therefore has a product-error index at most 3+8j<=187; its coefficient multiplication adds at most 2. Summing 24 same-sign terms adds at most 23. A conservative 250u relative bound covers the entire polynomial computation. Multiplication by 2 is exact. At t=0 both exact and computed logarithms are zero.
+
+The exact omitted tail divided by |log(x)| is at most
+ T=3^-48/[49(1-1/9)]<1e-24,
+using |log(x)|>=2|t|. For example 3^12=531441 makes this last numerical inequality elementary. Hence the direct branch has relative error <=250u+T.
+
+For U<1/2, frexp reduction writes U=m 2^e with 1<=m<2 and -53<=e<=-2, exactly. The preceding bound applies to log(m). The computed e*LN2 has relative error <4u. Since |log U|>=log 2, log m<=|log U| and |e|log 2<=2|log U|, the final possibly subtractive addition causes no large condition number: its error relative to |log U| is at most
+ 250u+T+8u+3u <1000u+T.
+This also explains why the direct branch near U=1 is necessary: an absolute log error alone would not control its tiny radius.
+
+2. ownsqrt: relative error <=2000u+3e-64
+The code normalizes a positive input exactly to m in [1/2,2), using an even exponent, and performs seven Newton steps s <- (s+m/s)/2 from s0=1.
+
+For exact Newton arithmetic, the error coordinate r=(s-sqrt(m))/(s+sqrt(m)) is squared at each step. Initially |r0|<1/5, so after seven steps |r7|<5^-128<1e-64. Thus the relative truncation error is <3e-64.
+
+To bound rounding without needing a sharp stability argument, all exact iterates lie in [sqrt(1/2),1.5]. On the wider interval [.7,1.6], the derivative of the exact Newton map has absolute value <2. One rounded step has absolute local error <10u: m/s<3, the intermediate sum is <4.6, and division by 2 is exact. Induction therefore bounds the computed-vs-exact iterate error after j steps by 10u(2^j-1). At j=7 this is 1270u, and division by sqrt(m)>=sqrt(1/2) makes it <2000u. The same induction stays strictly inside [.7,1.6], so there is no circular range assumption. Final ldexp scaling is exact.
+
+Applying sqrt to the computed -2*ownlog(U), the input's relative error is at most 1000u+T; multiplication by -2 is exact. For |delta|<1/2, |sqrt(1+delta)-1|<=|delta|. Combining the input and Newton bounds, a deliberately loose relative radius error is <10000u+1e-23. As the exact radius is <9, its absolute error is <1e-14.
+
+3. sine/cosine and coordinate multiplication
+The quadrant calculation uses exact dyadic 4V and exact subtraction of its integer part. Multiplying the remainder by PI/2 gives absolute angle error <5u compared with the exact reduced angle, whose range is [0,pi/2]. Indeed the constant contributes <2.005u and the rounded multiplication contributes <1.6u. The computed angle is <1.6.
+
+The factorial loop up to 34 and reciprocal conversion give every inverse-factorial coefficient relative error <40u. Each cosine/sine Horner polynomial has 16 multiply-subtract stages. The generic signed-polynomial absolute roundoff bound is gamma_32 times its absolute-coefficient sum, plus the coefficient errors. That sum is bounded by exp(1.6)<5. The one rounded square of the angle may equivalently be represented by a relative perturbation <u of the angle; the final sine multiplication adds one operation. Combining these contributions, the angle-constant error, and the Lipschitz constant 1 of exact sin/cos, a safe absolute error is
+ 1000u + 2e-24
+for each reduced sine or cosine. Exact sign changes and quadrant swaps add no error.
+
+For completeness the Taylor remainders are smaller than 2e-24: both are bounded by 1.6^34/34! or 1.6^35/35!. The elementary inequalities 34!>=10!*11^10*21^14>1e34 and 2^34<2e10 suffice. Thus no opaque transcendental call or numerical grid test enters the proof.
+
+Multiplying radius and trig value, with one rounded multiplication, gives coordinate error less than
+ 1e-14 + 10*(1000u+2e-24) + 10u <1e-12.
+This is already a thousand times smaller than the frozen uniform 1e-9 coordinate allowance. The deterministic boundary tests are supplementary only.
+
+4. Midpoint Gaussian coupling and accumulated driver error
+Let Delta=2^-52 and couple a continuous uniform to the midpoint of its cell. For R(v)=sqrt(-2log v), the first cell's integrated squared radius error is bounded by
+ 4Delta[1+log 2+2log(1/Delta)].
+For the interior cells, Cauchy--Schwarz gives at most (Delta^2/2) times the integral of 1/[v^2(-2log v)] over [Delta,1-Delta]. Splitting at 1/2 bounds this contribution by 2Delta. The final cell contributes at most 8Delta^2/(1-Delta).
+The angle differs by at most pi Delta. Convexity of -log gives E R(midpoint)^2<=2. The inequality (a+b)^2<=2a^2+2b^2 now yields, for each coordinate,
+ E|Z-Zmid|^2 <=100Delta(1+log(1/Delta))<1e-12.
+The last inequality is also checked conservatively as 3800/2^52<1e-12 in the exporter.
+
+Hence each increment has L2 normal error <=1e-6+1e-9 under the frozen allowances. N=16384 increments are scaled by 1/sqrt(N)=1/128. Approximate Euler-map contraction plus Minkowski gives total L2 driver error <=128*(1e-6+1e-9)<.00013. This step does not assume cancellation or independence of the coordinate errors.
+
+To identify the ideal target increments as independent Gaussian increments, the underlying word model must be uniform and independent both within each stream and across replicate streams. Merely assuming independent seeds/replicates does not establish within-stream IID. The actual deterministic word(seed,j) implementation does not prove this premise.
+
+5. State and output rounding, jointly
+Here treat the computed normal coordinates as exact inputs; their error was already charged above. Exact dyadic h and sqrt(h) make their scaling exact. Stored binary64 lookup entries are exactly representable in long double.
+Inside the feedback table, multiplication of |state| by 512 and extraction of the fractional part are exact. Each table difference has magnitude <=2/512 and each table value has magnitude <=1. One subtraction, multiplication and addition therefore give feedback-evaluation error <10u. Constant extension and odd reflection are exact.
+
+For |state|<1155, the sum h*lambda*g+sqrt(h)*normal has magnitude <.071. Its addition rounding, the feedback-evaluation error times h*lambda, and the final state addition together give absolute per-step error <2000u. The same-state exact approximate-drift Euler map is 1-Lipschitz, so N steps accumulate at most N*2000u<3.3e-12. The exact deterministic range is <=9sqrt(N)+2=1154, leaving a unit margin, so the rounded range assumption closes by induction.
+
+The final readout interpolates values at most 16 for |state|<32; its three arithmetic operations have absolute error <100u. Outside this interval it returns |state|/2 exactly. Therefore
+ state-roundoff + readout-roundoff/.5001 <4e-12<1e-6.
+This joint bound is what the mean-error formula needs. It is not justified by assigning 1e-6 separately to both terms; the explicit smaller bounds above justify the single shared allowance.
+
+6. Sealable scope
+The frozen 1e-9 per-coordinate arithmetic and 1e-6 joint state/output arithmetic allowances are supported under the stated numerical contract, without running anything new. Together with the audited midpoint coupling, monotone Euler bound, global feedback/readout table errors and Gaussian clipping tail, the stored .0006 and .0010 mean approximation budgets and .010/.020 horizontal CDF brackets with .005 vertical coupling allowance are mathematically supported in the ideal IID-word model.
+This supplement is an analytic audit, not a machine-checked floating-point verification or a proof of PRNG independence. A reproducible environment/type/selftest check is evidence for the contract, not a replacement for it.

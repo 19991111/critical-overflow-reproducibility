@@ -1,0 +1,9 @@
+{
+  "UTC": "2026-10-17T16:32:03.950855+00:00",
+  "files": {
+    "src/normalize_candidate.py": "01a8569317eb48ca0a11b5c3ecb0051f6a454203c3296d84f91e47b924bb0996",
+    "protocol/NORMALIZATION_PLAN.json": "ce5cad7714e5c9462a85e4d7bd9fbb466d0f14ccddebd6514f6ef12298bdfc88",
+    "NEXT_CERTIFICATE.en.txt": "a2c44610061d9780b11d3c6a563f6b967a0500a2c4ca71e7178ad0c0129359a0",
+    "results/tail_h512_K24/raw_profiles.npz": "ce934a121ace06657aaf8ea516e876e37c46367489cc4d3e4460c094e814b02c"
+  }
+}

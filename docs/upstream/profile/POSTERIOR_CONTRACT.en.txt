@@ -1,0 +1,35 @@
+Completion of the posterior contract and independent review of the received theorem
+
+This records the full mathematical content of the later received certificate, including its readout extension. Source messages and their limits are described in protocol/PROVENANCE.json. The supplied independent review is team-internal mathematical review, not external peer review or machine formalization. Its claims were independently checked here; the actual instantiated result is separate from this theorem.
+
+1. Let mu=(E L+E R)/2, and require a candidatev with each side a nonnegative probability law and EXACT mu=0. Let P=T_-1 Phi_1 in MEAN time. All rho^alpha are P-fixed, with d1(rho^alpha,rho^0)=2|alpha|, so mean mismatch is an independent obstruction. Our MEAN_ZERO_CANDIDATE.json meets this exact condition.
+
+2. The stronger pure-wave cosh-sum bound25 at theta=2/5 follows by a NEW compact invariant-set construction and old finite-first-moment uniqueness, as proved in VALIDATED_RESIDUAL.en.txt. It does not follow by increasingtheta in the old weak-moment inequality. For the wave at mean0,
+ t_pi(K)=sum_side[E(X-K)_++E(-X-K-1)_+]<=125/e*exp(-2K/5)<46exp(-2K/5).
+The negative endpoint-1 comes from the exact lattice identity sum_(j<-K)(1-x_j)=E(-X-K-1)_+. The safe doubled tail constant is100.
+
+3. The two-solution tail difference has four mean-time off-diagonal rates y_j^v+y_j^pi, b_(j-1)^v+b_(j-1)^pi, x_(j+1)^v+x_(j+1)^pi, a_j^v+a_j^pi; exits<=2. If a finite core admits common massbeta>0 over integerblockB, the exact signed-mass-zero calculation in NEXT_CERTIFICATE gives
+ d1(v,pi)<=Br/beta+2t_v(K)+100exp(-2K/5),
+where r>=d1(Pv,v), since nonexpansion gives d1(P^Bv,v)<=Br. A directly validated block residualr_B can replaceBr. The outside-core term is NOT divided bybeta.
+
+4. Beta can be lower bounded with finite Metzler matrices, whose off-diagonals are rigorous whole-cell lower bounds on the candidate-only rates y_j^v,b_(j-1)^v,x_(j+1)^v,a_j^v and diagonal-2. Kill paths leaving the finite set. A nonnegative truncated series for exp(hA), with rigorous lower exp(-2h), and downward nonnegative matrix arithmetic gives a lower matrixM<=U_B. Taking each row's minimum over core columns and summing givesbeta<=1. Unknown wave masses are not replaced by floating estimates. Better validated exit-rate upper bounds may improve the diagonal; that would require a newly specified computation.
+
+5. One cycle can be reused for an integerblock. For0<=s<=1 and integerk>=0,
+ Phi_(k+s)v=T_k Phi_s(P^k v),
+ d1(Phi_(k+s)v,T_k Phi_s v)<=kr.
+Thus cyclek lower tail/atom bounds are translated by the layer indexj-k and reduced bykr, plus the first-cycle enclosure error if applicable. A single atom error is<=d1 because it is a difference of adjacent tails, whose two absolute errors are included in the l1 sum. There is no extra factor2. At grid endpoints, monotone tails and the retention bound a_j(t)>=a_j(t_l)e^[-2(t-t_l)] supply whole-cell bounds if needed. Our B=1 implementation instead uses minima of validated probability Bezier controls and the uniform residual enclosure.
+
+6. A finite-support initial law has a triangular finite tail system: for support[-H,H], tails atj<=-H stay1; equations throughlevelJ depend only on those and levels<=J. A rigorous interval ODE algorithm could therefore compute the lower levels exactly without imposing a false top feedback. For residual outside |j|<=M, M>=H+1, the common shift gives the omitted upper contribution
+ <=2E(Pois(2)-(M+1-H))_+.
+The off-by-one is essential: tails of Pv atj are original tails atj+1. For any s>0 a valid bound is2/(es)*exp[2(e^s-1)-s(M+1-H)]. Negative outside tails have zero discrepancy. Our instantiated residual uses a different equally valid construction: a finite-support probability proof path and its FULL-field residual, including the sole top outgoing coordinate. C1 controls all unrepresented future tail mass at once, so no Poisson term is omitted or double counted. No Poisson numerical experiment is run.
+
+7. If the final profile bound isE and a first-cycle numerical probability path is within e of Phi_s v uniformly for0<=s<1, extending by integer translates gives d1(vhat(u),rho^u)<=E+e for ALL realu, including negativeu. No backward ODE solve is needed. The integer comparison indicator is1-Lipschitz in each coordinate, giving
+ |Ghat-G|<=2(E+e),
+ |ghat_J(d)-gbar(d)|<=2(E+e)+2/J.
+The second term is the4-Lipschitz common-phase left-rule error; the stronger ideal-orbit trapezoid estimate in QUADRATURE_AND_PHASE can be substituted when its arithmetic hypotheses are met. Extra comparison-sum/roundoff errors must be added unless already included ine.
+For A(u)=E L_++E R_+ and S_h=[A(h+d/2)+A(h-d/2)]/2,
+ |Ahat-A|<=E+e, |Shat_h(d)-S_h(d)|<=E+e.
+The origin coefficient integrand is four times a probability involving oneL and twoR samples, giving the conservative additional profile error<=8(E+e), plus its phase quadrature and arithmetic errors.
+
+8. Actual acceptance in THIS package
+The exact mean0 candidate, probability controls, first-cycle rational defect enclosure, finite common lower matrix and positivebeta are available. The instantiated B=1,K=2 certificate gives an upper bound around44.945, which FAILS the frozen0.001 target, dominated by the conservative orbit-tail term. Consequently the reported six-digit coefficient/feedback/spill values remain diagnostic estimates. The theorem has not been upgraded to a usable finite-q stochastic error bound. No larger block/core or smaller target was introduced after seeing this result.

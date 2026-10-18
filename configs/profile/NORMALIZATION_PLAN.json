@@ -1,0 +1,10 @@
+{
+ "purpose":"Exact rational normalization of the saved primary phase0 tail data; no ODE or additional iteration",
+ "source":"src/normalize_candidate.py",
+ "input":"results/tail_h512_K24/raw_profiles.npz",
+ "normalization":"Read binary64 tail coordinates as exact rationals, difference adjacent tails to get probability masses, compute exact combined mean mu, then mix with integer shift -sign(mu) with weight abs(mu)<1. The resulting combined mean is exactly0 and the exact W1 correction is2abs(mu).",
+ "output":"results/MEAN_ZERO_CANDIDATE.json",
+ "wall_seconds":30,
+ "does_not_certify_distance_to_true_orbit":true,
+ "does_not_rerun_any_solver":true
+}

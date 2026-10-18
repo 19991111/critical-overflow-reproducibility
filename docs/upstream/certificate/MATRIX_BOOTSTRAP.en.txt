@@ -1,0 +1,16 @@
+Multiperiod common mass and validated bootstrap contract
+
+Inputs are the old exact mean0 rational candidatev, the old strict one-period residualr, and its already validated first-cycle full-field defect enclosure. No ODE is solved again. At a grid endpoint the saved binary64 tails are arbitrary EXACT rationals. The old residual proof bounds their distance to Phi_s v by e_s, including the exact mean correction. Whole-cell tail bounds use monotone true tails: left endpoint minus e_left, right endpoint plus e_right. Whole-cell atom LOWER bounds use the left atom minus e_left, multiplied by a strict lower bound on exp(-2h).
+
+Over cyclek, the actual candidate flow Phi_(k+s)v is withinkr of T_k Phi_s v, by nonexpansion and the one-period return residual. Translate level indices by-k, reduce lower bounds/increase upper bounds bykr. This applies to tails and single atoms with no extra factor2. Atom retention then gives interval-wide lower bounds. Every rounding has a directed sign.
+
+The unknown orbit is bounded first by TAIL_REFINEMENT, using F(2j-2s) orF(2j+1-2s). For a later stage, a previously VALIDATED boundE>=d1(v,Pi_0) additionally gives d1(Phi_s v,Pi_s)<=E. Its tails and atoms can therefore be enclosed by the saved first-cycle endpoints plus/minus(e_s+E), independently ofk. Intersect these bounds with the analytic bounds. A stage uses ONLY a completed prior bound; no circular assumption of the current result is made.
+
+In centered coordinates, difference-chain lower rates are the sum of candidate and orbit LOWER bounds:
+ X_j->X_(j+1): y_j; X_j->Y_j: b_(j-1);
+ Y_j->Y_(j+1): x_(j+1); Y_j->X_(j+1): a_j.
+Here each symbol denotes the sum of its two compared-law lower bounds. Crucially, the negative diagonal is a validated EXIT UPPER bound: y_(j-1)^v+y_(j-1)^Pi atX_j, x_j^v+x_j^Pi atY_j. It is not always-2. At a high starting layer, a rigorous small exit bound avoids artificial killing while the moving mean catches up. After every integer mean period shift the finite state index by-1; paths leaving the chosen finite set are killed. Such deletion preserves a lower bound on the true centered transition kernel.
+
+Write each finite lower Metzler matrix A=-2I+C, C>=0. With80-bit downward arithmetic, use the nonnegative exponential terms0..4 for exp(hC) and a rational alternating-Taylor LOWER bound on exp(-2h). A sparse left multiplication propagates all initial CORE columns, not one selected path. At each final row take the minimum across every core starting column and sum these minima. This givesbeta>0 if the finite calculation succeeds. All rows contribute, avoiding the unnecessary loss of a single-path construction.
+
+The certificate for each stage is Br/beta+2t_v(K)+2tau_pi(K). Upward round its value to80-bit dyadic before using it as the next stage's priorE. Taking the minimum with an earlier validated bound is legitimate. The core, block, state radius and grid for every stage are frozen in PLAN_V1. Later stages may be skipped only by the stated budget/precision stopping rule; there is no parameter change after seeing a failure. All completed and failed stages are retained.

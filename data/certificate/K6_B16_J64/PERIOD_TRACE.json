@@ -1,0 +1,82 @@
+[
+  {
+    "cycle_completed": 1,
+    "beta_lower_counts": "0",
+    "minimum_retained_column_mass_counts": "1008677844141801454568681"
+  },
+  {
+    "cycle_completed": 2,
+    "beta_lower_counts": "0",
+    "minimum_retained_column_mass_counts": "846718124553867300036011"
+  },
+  {
+    "cycle_completed": 3,
+    "beta_lower_counts": "33337876436698",
+    "minimum_retained_column_mass_counts": "711162243744035440116852"
+  },
+  {
+    "cycle_completed": 4,
+    "beta_lower_counts": "249636974342003311504",
+    "minimum_retained_column_mass_counts": "598421854260332457464355"
+  },
+  {
+    "cycle_completed": 5,
+    "beta_lower_counts": "47969852615195710073657",
+    "minimum_retained_column_mass_counts": "504237137653886707727733"
+  },
+  {
+    "cycle_completed": 6,
+    "beta_lower_counts": "211800054827130527265276",
+    "minimum_retained_column_mass_counts": "425274776990785093833749"
+  },
+  {
+    "cycle_completed": 7,
+    "beta_lower_counts": "313038587908862791715256",
+    "minimum_retained_column_mass_counts": "358912110408844960232770"
+  },
+  {
+    "cycle_completed": 8,
+    "beta_lower_counts": "293551435669318627715610",
+    "minimum_retained_column_mass_counts": "303044865352217763750096"
+  },
+  {
+    "cycle_completed": 9,
+    "beta_lower_counts": "252937293370728807548289",
+    "minimum_retained_column_mass_counts": "255958406526380967686768"
+  },
+  {
+    "cycle_completed": 10,
+    "beta_lower_counts": "215137958584687477563737",
+    "minimum_retained_column_mass_counts": "216240175182152169707946"
+  },
+  {
+    "cycle_completed": 11,
+    "beta_lower_counts": "182293595922355221003595",
+    "minimum_retained_column_mass_counts": "182717620865206379734340"
+  },
+  {
+    "cycle_completed": 12,
+    "beta_lower_counts": "154254643480882360378130",
+    "minimum_retained_column_mass_counts": "154412328260443729107241"
+  },
+  {
+    "cycle_completed": 13,
+    "beta_lower_counts": "130435010573603630344575",
+    "minimum_retained_column_mass_counts": "130504912260078210636703"
+  },
+  {
+    "cycle_completed": 14,
+    "beta_lower_counts": "110280127864372794763574",
+    "minimum_retained_column_mass_counts": "110307422871026329120332"
+  },
+  {
+    "cycle_completed": 15,
+    "beta_lower_counts": "93228767671860964449645",
+    "minimum_retained_column_mass_counts": "93241218053162198332116"
+  },
+  {
+    "cycle_completed": 16,
+    "beta_lower_counts": "78813411976255168768294",
+    "minimum_retained_column_mass_counts": "78818963298779283431785"
+  }
+]

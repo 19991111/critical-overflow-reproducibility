@@ -1,0 +1,24 @@
+{
+ "base_commit":"1745e5b6c293c4a3a4a97a288cb7ad67a183cd6b",
+ "clock":"community mean u; x'=2(xprev-x)yprev, y'=2(yprev-y)x; empty initial profile",
+ "phase_samples":256,
+ "period_starts":[0,3,8,16,32,64,128],
+ "final_mean_time":129,
+ "feedback_d":[0.03125,0.0625,0.25,0.5,1,2,4,8],
+ "spill_h":[-0.5,0,0.5],
+ "spill_d":[0,0.5,1,2,4],
+ "attempts":[
+  {"id":"tail_h256_K24","solver":"tail","steps_per_period":256,"K":24},
+  {"id":"tail_h512_K24","solver":"tail","steps_per_period":512,"K":24,"primary":true},
+  {"id":"tail_h1024_K24","solver":"tail","steps_per_period":1024,"K":24},
+  {"id":"tail_h512_K16","solver":"tail","steps_per_period":512,"K":16},
+  {"id":"tail_h512_K32","solver":"tail","steps_per_period":512,"K":32},
+  {"id":"atom_DOP853_K24","solver":"atom","K":24,"rtol":1e-11,"atol":1e-13,"max_step":0.125,"max_rhs_calls":200000},
+  {"id":"exact_euler_h8192","solver":"integer","step_power":13,"T":4,"K":32,"mass_bits":160},
+  {"id":"exact_euler_h16384","solver":"integer","step_power":14,"T":4,"K":32,"mass_bits":160}
+ ],
+ "budgets":{"each_attempt_wall_seconds":90,"all_attempts_wall_seconds":360,"each_address_space_MiB":1024,"max_output_MiB":64,"threads":1},
+ "guards":{"probability_violation_abort":1e-10,"nonfinite_abort":true,"automatic_expansion_or_retry":false,"preserve_all_attempts":true,"sequential_only":true},
+ "error_classes":{"integer_euler":"rigorous finite-time W1 defect bound, including exact arithmetic and top boundary; not a periodic accuracy certificate","float_solvers":"diagnostic step/width/implementation/period comparisons, with raw states preserved; no validated roundoff or periodic attraction rate","phase_integral":"analytic quadrature bounds stated separately; quadrature agreement cannot bound distance to the true periodic orbit"},
+ "no_random_numbers":true,"no_performance_benchmark":true,"no_new_resources":true
+}

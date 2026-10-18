@@ -1,0 +1,32 @@
+{
+  "UTC": "2026-10-17T19:07:47.356025+00:00",
+  "arithmetic_supplement_received": true,
+  "latest_supplement": "received/ARITHMETIC_SUPPLEMENT.v2.en.txt",
+  "superseded_supplement_preserved": "received/ARITHMETIC_SUPPLEMENT.v1.en.txt",
+  "normal_coordinate_absolute_error_upper": "1e-12",
+  "frozen_coordinate_allowance": "1e-9",
+  "joint_state_plus_readout_div_0_5001_error_upper": "4e-12",
+  "frozen_joint_allowance": "1e-6",
+  "latest_constant_bounds": {
+    "PI": "4.01u",
+    "LN2": "1.01u",
+    "u": "2^-64",
+    "angle_error": "absolute<5u"
+  },
+  "frozen_arithmetic_budget_supported": true,
+  "conditional_on": "binary RN, p>=64, normal finite operation domain, exact radix-two frexp/ldexp; ideal iid uniform input words across repeats and within streams",
+  "environment_evidence": "results/ENVIRONMENT_CONTRACT_CHECK.json",
+  "historical_dynamic_fenv_snapshot_saved": false,
+  "PRNG_iid_proved": false,
+  "new_trajectories_or_endpoint_recalculations": 0,
+  "received_files_sha256": {
+    "received/MATHEMATICAL_REVIEW.zh.txt": "9c58c934d631b6463932fa21766b71f2f6bb94f4fdb8cae96f7b7f122cefded6",
+    "received/ARITHMETIC_SUPPLEMENT.v1.en.txt": "e40b3c218f8b291e707e470fc47e1d6691b8acaa894cfec2369892b92458fc88",
+    "received/ARITHMETIC_SUPPLEMENT.v2.en.txt": "6cb3d3cbaeae1d3c84ba21e1d71342ee14d509ad0c5cd0d07464335af2ba1163"
+  },
+  "transcription_note": "parent-supplied full texts transcribed with comparison-operator HTML entities decoded; v2 replaces v1 as authoritative, v1 retained",
+  "received_v2_supersedes_v1_with_constant_width_and_absolute_angle_corrections": true,
+  "parent_reports_no_remaining_mathematical_items": true,
+  "constant_correction_note": "SUPPLEMENT_CHANGELOG.en.md",
+  "source_thread_id": "01a10bc2-b4f6-778e-bddc-05c0cb85a0f1"
+}

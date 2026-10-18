@@ -1,0 +1,26 @@
+An exact-arithmetic finite-time certificate, and what it does not certify
+
+Use the COMMUNITY MEAN clock. The full tail vector field has norm2 in tail-l1 and is4-Lipschitz. Its exact flow is nonexpansive in that metric, by the sealed conservative difference generator. Therefore an absolutely continuous probability path v(t) with integrable residual r=v'-F(v) satisfies
+ d1(v(T),Phi_T v(0)) <= d1(v(0),v_exact(0))+integral_0^T ||r(t)||1 dt. (C1)
+One proof compares v(t+h) with Phi_h v(t), uses nonexpansion and the local integral equation, and refines partitions. This avoids a Gronwall exponential.
+
+The certified solver starts delta0 on BOTH sides, keeps masses on integer levels0..K, and caps births atK. Its mass denominator is S=2^P. With h=2^-r<=1/2, the exact Euler birth flux counts at levelk<K are rounded DOWN:
+ fL_k=floor(2*a_k*tailR_k/(2^r*S)),
+ fR_k=floor(2*b_k*tailL_(k+1)/(2^r*S)).
+All symbols a,b,tails in these formulas are INTEGER COUNTS. Update masses by outgoing/incoming flux. Every rounded flux is<=the source mass, so each endpoint is a probability distribution, mass is exactly conserved, and its piecewise linear interpolation is a probability path. All operations are integer adds, multiplies and bit shifts: there is NO unvalidated binary floating-point roundoff in this path or its bound.
+
+For a step beginning atv_j, the cap-Euler rounding error in tail-l1 is<=2K/S. The interpolant's speed is<=2, since rounding only removes births. As the capped field is4-Lipschitz, its within-step residual integrates to<=4h². Relative to the FULL field, the only missing outgoing tail coordinate is a LEFT birth atK+1, of rate2*x_K*y_K; the right rate atK+1 is zero because x_(K+1)=0 on this capped path. Raw x_K,y_K are nondecreasing over time. Thus for N=T/h integer,
+ B_T :=4*T*h +2*K*N/S +2*T*x_K(T)*y_K(T),
+ d1(v(T),Phi_T(delta0,delta0))<=B_T.                      (C2)
+Here terminal x_K,y_K are normalized masses a_K/S,b_K/S. C2 is evaluated as an exact Fraction. It includes discretization, integer quantization and the omitted top tail. No lower boundary error exists: the true and approximating raw loads start nonnegative and only increase.
+
+An integer translation by-T at integerT leaves this bound unchanged. For the translated EXACT FINITE-TIME profile, sigma=.5(E L_++E R_+) has error<=B_T/2; H=P(L<=R) has error<=B_T. For two shifted copies of this same finite-time profile the feedback G difference has error<=2B_T. The local atom expression4sum a_k y_k b_k has error<=8B_T, by viewing its summand as the probability of an event in one independent L and TWO independent R samples. This is an instantaneous response expression, NOT the periodic phase-averaged origin coefficient. All displayed certified intervals refer only to these finite-time functionals.
+
+The LONG floating computations instead center once per integer mean time and cap at[-K,K]. A shift clamps any lost leftmost mass at the left edge. Raw mass/tail states, cumulative cap flux, clamp mass, mean drift, probability defects and period-return discrepancy are recorded. RK4 step refinement, K refinement and independent atom-DOP853 agreement are DIAGNOSTICS. Neither local solver tolerances nor a tiny period-return defect certifies distance to the unique orbit without a quantitative inverse/contraction or order enclosure. No rigorous roundoff bound for the floating solves is claimed.
+
+For the TRUE periodic orbit, F(phi,d) is4-Lipschitz inphi, so a left rectangle phase rule withN samples has error<=2/N for gbar. The origin integrand4sum a*y*b has derivative bounded in absolute value by40: each marginal mass-derivative l1<=4 and each tail derivative<=2, giving |S1'|<=4+2+4. Its left rectangle error is therefore<=20/N. These bounds apply to exact orbit values; floating lookup and distance-to-orbit errors must be added separately. A transient window made periodic by translation has a seam defect; its quadrature bounds need the corresponding jump term and cannot silently use exact periodicity. The report keeps this distinction.
+
+The general proven theta=.005 cosh bound supplies a rigorous but very loose orbit truncation estimate. For either marginal, E exp(theta|A-u|)<=8, so P(|A-u|>=R)<=8e^(-theta R) and E(|A-u|-R)_+<=8e^(-theta R)/theta. At widths16..32 these do not give useful precision for the true orbit. Observed tiny edge masses do not replace that missing certificate.
+
+Next certificate to investigate: a validated finite-core contraction/minorization or an order enclosure for the Poincare map, with explicit tail control. A proposed residual/minorization formula received during this task is NOT assumed proved. Finite-time C2 is independently valid without it.
+Mean normalization is a separate necessary condition. Every rho^alpha is fixed by the time1-then-shift-1 map in MEAN clock, but d1(rho^alpha,rho^0)=2|alpha|. A zero return residual therefore cannot certify the requested mean0 orbit. A candidate mean error bounded bydelta must be included via a further2delta target correction. The finite-time integer certificate compares the exact empty-start solution at its known timeT and translates by the INTEGER T; its numerical mean discrepancy is already covered by C2. The floating mean drift is recorded only diagnostically. No exact mean-normalization or posterior orbit certificate is claimed for it.

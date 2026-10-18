@@ -1,0 +1,19 @@
+{
+  "UTC": "2026-10-17T16:27:13.549212+00:00",
+  "purpose": "Before any numerical run: fixed equations, grids, truncation, precision/error contracts, all8 attempts and hard limits; no data-dependent tuning.",
+  "files": {
+    "FINITE_TIME_CERTIFICATE.en.txt": "475d427de593422fd01beaacc76a9349172bf56ecae5389c172a9d9e1f5c1243",
+    "protocol/COMMANDS.json": "e31ceee0eec1700de32ba4d2558de54aa2f5c1434b209c854c46e69600c47b46",
+    "protocol/ENVIRONMENT.json": "94f947f437d47b19149cc2f86da2fba390155515c7cc66440bebef92854d6dab",
+    "protocol/INPUT_LOCK.json": "0495936774058d7761d9666da49d74a565bfe7a83d364de0a3f50f573c753dc1",
+    "protocol/LOCAL_BRANCHES_BEFORE.txt": "537566b3d5fc652dad8de3ba0dafb69e6bd6373a303c0b31b3631e091f19c352",
+    "protocol/PLAN_V1.json": "10e0cdaedf909125f9820c018598582c6496e0a93cde86253b10bcf54529a72d",
+    "protocol/REMOTE_REFS_BEFORE.txt": "26f4956c188475d10fda6a5132edb71042beef79c9e5c2ca18e75e3b6f881d71",
+    "src/atom_solver.py": "f8193db494a1b73e8e7867e9365a4b4c0c66c37c91f8527003d9b67a6e561b33",
+    "src/certified_euler.py": "f11b70ac19f77aac44ca468a6ae0f582e168747e48a1417dcfc8fc4aed3c27a7",
+    "src/readouts.py": "bb26b19aebb604e9af85a9594badc3565603b39788d47614f46f48621188a9b7",
+    "src/run_frozen.py": "826db58a8e0e8f5103dae1357eda3c209cd7ecef797390831210e34b0bbb603f",
+    "src/summarize.py": "98a5c0d9c7b84939610d7579bb69314e4d220cc517d67f9fcbd20a852f39b01b",
+    "src/tail_solver.py": "bed5d34c7e8eb08f30afd7a867c819d49880e3db887fc36f7ca8e107260c0fce"
+  }
+}

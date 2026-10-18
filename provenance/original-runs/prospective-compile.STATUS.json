@@ -1,0 +1,24 @@
+{
+  "UTC_start": "2026-10-17T23:42:43.414917+00:00",
+  "UTC_end": "2026-10-17T23:42:44.584888+00:00",
+  "command": [
+    "g++",
+    "-std=c++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "/workspace/huaweipro-tpht-linux/research/paper_micro_prospective_20261017/src/micro.cpp",
+    "-o",
+    "/tmp/paper_micro_prospective_20261017.bin"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "stage_CPU_seconds": 1.142967968,
+  "stage_wall_seconds": 1.1700103759940248,
+  "cumulative_CPU_seconds": 1.14303059,
+  "cumulative_wall_seconds": 1.1700812210037839,
+  "OS_CPU_soft_limit_seconds": 598
+}

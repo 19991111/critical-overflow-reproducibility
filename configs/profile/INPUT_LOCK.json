@@ -1,0 +1,25 @@
+{
+  "base_commit": "1745e5b6c293c4a3a4a97a288cb7ad67a183cd6b",
+  "inputs": {
+    "research/paper_periodic_profile_limit_20261017/PERIODIC_PROFILE.en.txt": {
+      "bytes": 10393,
+      "sha256": "5ee29f1e871ccf0c016ac760552dd5d7776689e572d6d1ef10c20745b68797e0"
+    },
+    "research/paper_periodic_profile_limit_20261017/CRITICAL_TRACKING.en.txt": {
+      "bytes": 7320,
+      "sha256": "1401756efa8d83e51ee313ab8d3c3b9137f3795c0b4a20a572c4c7a5562ba239"
+    },
+    "research/paper_periodic_profile_limit_20261017/UNIFORM_WINDOW_LLN.en.txt": {
+      "bytes": 6354,
+      "sha256": "e697323f0445ab25f1c712c615f7f4510802968e3134fa0d608e939f4af549f5"
+    },
+    "research/paper_periodic_profile_limit_20261017/COMMON_LIMIT_AND_SPILL.en.txt": {
+      "bytes": 9365,
+      "sha256": "17efe9dd488dc5d49fa6afa653b5df9a14e5c08cea82a1955562d0d9d492bed2"
+    },
+    "research/paper_periodic_profile_limit_20261017/SINGLE_FRONT.en.txt": {
+      "bytes": 3625,
+      "sha256": "33a519508294c3cb1270eb8bf1b34f4bcdadd08a5fc520fddcbe3a53136cd034"
+    }
+  }
+}

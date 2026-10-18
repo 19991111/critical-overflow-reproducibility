@@ -1,0 +1,10 @@
+{
+ "formal_batch_command":"python3 -B research/paper_profile_numerics_20261017/src/run_frozen.py",
+ "working_directory":"/workspace/huaweipro-tpht-linux",
+ "execution":"one sequential frozen batch, each attempt once, no retries or parameter expansion",
+ "runner_records":"logs/ATTEMPTS.jsonl contains each exact child command and exit status",
+ "new_stochastic_experiments":0,
+ "formal_numerical_batch_not_started_before_source_freeze":true,
+ "official_software_reference":"https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html",
+ "software_reference_boundary":"Online documentation currently identifies v1.18; actual environment is scipy1.17.0 and that version is recorded. DOP853 tolerances are local error controls, not global or periodic rigorous bounds."
+}

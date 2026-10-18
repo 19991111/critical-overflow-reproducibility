@@ -1,0 +1,9 @@
+# Primary methods and checked scope
+
+- The global profile/front and spill identities are the locked repository proofs and previously certified readouts, not a fit to the microscopic validation data. The explicit monotone additive-noise Euler bound is derived in this release's frozen error-budget note; no external theorem's hidden constant is substituted.
+- The fixed-time product-capital argument is proved directly in the budget note. General betting-interval precedent: Ian Waudby-Smith and Aaditya Ramdas, [Estimating means of bounded random variables by betting, arXiv2010.09686v7](https://arxiv.org/html/2010.09686v7). We do not claim a new confidence-interval principle or use their adaptive method without its assumptions.
+- Gaussian Lipschitz concentration and bounded differences: Ramon van Handel, [Probability in High Dimension, Princeton APC550 notes, December2016](https://web.math.princeton.edu/~rvan/APC550.pdf), Theorem3.25 and Example4.4 (PDF pages72and80). They supply the variance proxies after the release's own sensitivity/Lipschitz calculations; they do not establish those model-specific sensitivities.
+- DKW with the sharp factor2: P. Massart, [The tight constant in the Dvoretzky--Kiefer--Wolfowitz inequality](https://doi.org/10.1214/aop/1176990746),1990. This release uses only individual empirical-CDF bands and a union bound, permitting cross-cell dependence.
+- Directed decimal operations and correctly rounded transcendental calls: [Python Decimal documentation](https://docs.python.org/3/library/decimal.html). Independent endpoint checking explicitly brackets log arguments, the correctly rounded logarithms and their directed sums.
+
+These sources are linked, not redistributed. The numerical driver has its own series/range/roundoff contract and deterministic tests; these source references do not certify pseudo-random independence, a finite-q convergence rate, hardware performance or external peer review.

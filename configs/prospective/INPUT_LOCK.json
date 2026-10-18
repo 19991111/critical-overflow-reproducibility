@@ -1,0 +1,61 @@
+{
+  "UTC": "2026-10-17T23:42:32.986759+00:00",
+  "files": {
+    "research/paper_v4_release_20261017/protocol/SEEDS_V1.txt": {
+      "bytes": 22528,
+      "sha256": "f11dc99d12b1cde6e7a2762c10c85ef2b45d6dfa4620bc4d1c1600b8c8ac3d9a"
+    },
+    "research/paper_sde_end_to_end_20261017/protocol/REFERENCE_SEEDS_V1.txt": {
+      "bytes": 753664,
+      "sha256": "83b7d35ab6f00dc72af32b6c573fa6f1ef56103d6bc9bfa4633ff9a84da11f9b"
+    },
+    "research/paper_v4_release_20261017/src/finite_q.cpp": {
+      "bytes": 10940,
+      "sha256": "1e5ce40680f3accc5ca06bddd9bb4e069c6145278f76d59bc1733def615e95f4"
+    },
+    "research/paper_sde_end_to_end_20261017/results/reference_endpoints.csv": {
+      "bytes": 4878625,
+      "sha256": "19daef9fe3bc0c3d6bf386861fd65815ae6ba9cd900af468b19163a4ce770de1"
+    },
+    "research/paper_sde_end_to_end_20261017/logs/reference_means.stdout.log": {
+      "bytes": 184,
+      "sha256": "d17c66b8f70ef760d11e2ff61d6c3ea6b08b6f0d7b1d1579a241cfe97209eb41"
+    },
+    "research/paper_sde_end_to_end_20261017/results/REFERENCE_QUALITY.json": {
+      "bytes": 792,
+      "sha256": "86e17c89cc979db4ccbf449944704033063a8f8c75cd4d7359b3d8815ba95f08"
+    },
+    "research/paper_sde_end_to_end_20261017/results/INDEPENDENT_INTERVAL_CHECK.json": {
+      "bytes": 3131,
+      "sha256": "5fd0a308f7625646b24c0ce98a5b6e856b6359e6fb0d11650191abc0056d9f6f"
+    },
+    "research/paper_sde_end_to_end_20261017/results/TABLE_CERTIFICATE.json": {
+      "bytes": 5591,
+      "sha256": "6b07d6d0672edd66c345a13ee2cf9aeffa37707c04d8bdcfe1ca5a6044ab7720"
+    },
+    "research/paper_sde_end_to_end_20261017/protocol/PLAN_V1.json": {
+      "bytes": 4398,
+      "sha256": "42c68fea45f5ec72c00480c4bb7f68e9420e12d1e39aecc90583b696f17198ea"
+    },
+    "research/paper_sde_end_to_end_20261017/ANALYTIC_ERROR_BUDGET.en.md": {
+      "bytes": 9597,
+      "sha256": "c1e6b0c843f084efc0ff4fa79cc4d209dee39eecf1fd2f63f7193777107475f8"
+    },
+    "research/paper_sde_posthoc_erratum_20261017/received/ARITHMETIC_SUPPLEMENT.v2.en.txt": {
+      "bytes": 10539,
+      "sha256": "6cb3d3cbaeae1d3c84ba21e1d71342ee14d509ad0c5cd0d07464335af2ba1163"
+    },
+    "research/paper_sde_posthoc_erratum_20261017/PROBABILITY_CONTRACT.en.md": {
+      "bytes": 2665,
+      "sha256": "7cbcb3cadb504d7d6d1ae82db57f1cdb41bda770dbe214257d4cdfa811a84297"
+    },
+    "research/paper_sde_posthoc_erratum_20261017/CDF_COVERAGE_ANCHOR.en.md": {
+      "bytes": 4388,
+      "sha256": "1d54fca45e6f960cf8fee1a883f887a7f6076e935096b2734221fc2ca31303f9"
+    },
+    "research/paper_sde_posthoc_erratum_20261017/protocol/MATH_REVIEW_STATUS.json": {
+      "bytes": 1770,
+      "sha256": "21b87bbdb45824df27f6e92fb97deefb62a47cfed713ea059fb0e18a306d2a49"
+    }
+  }
+}

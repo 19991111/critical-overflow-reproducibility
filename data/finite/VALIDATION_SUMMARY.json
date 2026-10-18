@@ -1,0 +1,20 @@
+{
+  "status": "planned_batch_analyzed",
+  "outcome_rows": 9216,
+  "critical_configs_independently_checked": 9216,
+  "primary_decisions": {
+    "supported": 10,
+    "detected_mismatch": 0,
+    "inconclusive": 0
+  },
+  "universality_decisions": {
+    "supported": 4,
+    "detected_mismatch": 0,
+    "inconclusive": 0
+  },
+  "lambda0_stepwise_identity_passed": true,
+  "DKW_scalar_check_exact": true,
+  "nonzero_lambda_SDE_reference_computed": false,
+  "statistical_guarantees_conditional_on_ideal_independent_stream_reference": true,
+  "elapsed_analysis_budget_seconds": 3.0804962429974694
+}

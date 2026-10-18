@@ -1,0 +1,16 @@
+{
+ "source_thread_id":"01a10bc2-b4f6-778e-bddc-05c0cb85a0f1",
+ "authorization":"Continue deterministic bounded ODE/front/readout work on the existing research branch; no stochastic experiments, paid resources or business-branch changes.",
+ "old_theory_inputs":"Five exact identities in INPUT_LOCK.json",
+ "received_records":[
+  {"path":"received/CONTRIBUTION_REVIEW.zh.txt","kind":"full readable message transcription; source access boundaries retained"},
+  {"path":"received/POSTERIOR_RECORD.zh.txt","kind":"complete normalized mathematical contract and supplied review record, not an original-file byte copy"}
+ ],
+ "unavailable_original_paths":["profile_wave_finite_certificate.zh.txt"],
+ "original_file_hashes_not_fabricated":true,
+ "independent_local_theory":["FINITE_TIME_CERTIFICATE.en.txt","QUADRATURE_AND_PHASE.en.txt","NEXT_CERTIFICATE.en.txt","VALIDATED_RESIDUAL.en.txt","POSTERIOR_CONTRACT.en.txt"],
+ "source_freezes_are_chronological":"The initial NEXT_CERTIFICATE notes a then-pending stronger moment; VALIDATED_RESIDUAL and POSTERIOR_CONTRACT subsequently prove it. Earlier frozen wording remains historical.",
+ "literature_correction":"Stolyar3.1 allows deterministic jumps; model mismatch is two-population dynamics.3.2 uniqueness/attraction additionally assumes a positive jump density.",
+ "review_status":"team-internal independent analytic review and exact arithmetic checks; no external peer review or formal proof assistant",
+ "new_random_experiments":0,"new_paid_resources":0,"old_models_rerun":0
+}

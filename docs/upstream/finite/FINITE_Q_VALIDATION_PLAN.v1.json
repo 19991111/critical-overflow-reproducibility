@@ -1,0 +1,27 @@
+{
+ "status":"pre_execution_frozen_plan",
+ "model":"empty integer loads;2 communities,q=2m each; uniform internal K_m,m; global-left tie; epsilon=lambda/q; integer c=q/2; n*=q^2",
+ "scales":[{"q":64,"replicates":128},{"q":128,"replicates":128},{"q":256,"replicates":256},{"q":512,"replicates":1024}],
+ "lambda":[0,1,2],"kernels":["fixed_identity_matching","product"],
+ "seeds":"protocol/SEEDS_V1.txt; exact1024 labels fixed before execution, prefixes by scale; no replacement, extension or selection",
+ "driver":"counter SplitMix64 mixing,2 words per arrival; exact disjoint power-of2 bit fields for event type/direction/endpoints under the ideal uniform-word reference; same words across both kernels and across cells with the same replicate label",
+ "horizon":"q^2+2q arrivals per paired trajectory; one fixed/product pair per(q,lambda,seed)",
+ "feedback_checkpoints":"16 points n=q^2/2+2q*floor[(q/4-1)j/15]+(2q*j)/16,j=0..15; common phases exactlyj/16, compared pointwise with the phase-aware wave, not with gbar",
+ "spill_h":[-1,-0.5,0,0.5,1],"spill_times":"n=q^2+2hq; retain capacity integer phase and actual d=Delta/q",
+ "wave_lookup":"piecewise linear probability tails from the existing257 saved phase nodes; E+e+1/256^2 bounds marginal-pair W1 interpolation; separately budget arithmetic",
+ "wave_feedback_error_allowance":"0.00004861","wave_spill_error_allowance":"0.00002440",
+ "primary_scale":512,
+ "primary_predictions":[
+  {"metric":"trajectory RMS of exact conditional kernel feedback minus phase-aware wave feedback over16 checkpoints","lambda":[1,2],"kernels":"both","margin":"0.10","population_failure_probability_target":"0.10","cells":4},
+  {"metric":"trajectory max over5 h values of |Z/q-S_h(actual Delta/q)|","lambda":[0,1,2],"kernels":"both","margin":"0.05","population_failure_probability_target":"0.10","cells":6}
+ ],
+ "statistical_contract":{"total_alpha":"0.05","primary_family_alpha":"0.025","primary_one_sided_alpha":"1/800","method":"certain/possible failure indicators include numerical allowance; exact binomial tails and conservative0.001-grid Clopper-Pearson bounds for10 largest-scale cells; all other scales descriptive","universality_family_alpha":"0.025","universality_comparisons":"largest-scale fixed/product endpoint CDFs of Delta/q and Z/q,lambda1 and2:4 comparisons","DKW_individual_width":"0.057","DKW_pair_width":"0.114","practical_CDF_margin":"0.20","DKW_check":"16exp(-2*1024*(57/1000)^2)<=1/40, proved with rational Taylor lower exp bound","decision":"upper bound<=margin supports specified finite-size criterion; lower bound>margin rejects it; otherwise inconclusive. Nonrejection is not certification."},
+ "secondary":"profile W1, fixed pairing-vs-product response decomposition, cluster means/MCSE, geometric size trends; no post-result threshold promotion",
+ "no_SDE_distribution_solve":true,
+ "budgets":{"model_CPU_seconds":360,"model_wall_seconds":420,"analysis_wall_seconds":120,"combined_computation_wall_seconds":600,"threads":1,"memory_MiB":1024,"raw_output_MiB":256},
+ "stopping":"stop on code invariant failure or budget; retain partial outputs and every seed status; no replacement/retry or inference from incomplete planned batch",
+ "pre_run_checks":"compile frozen source; deterministic exhaustive one-step driver/feedback tests and capped-vs-uncapped identity; verify wave lookup budget; only then run model once",
+ "raw_outputs":"all trajectory summaries; all predetermined checkpoint side histograms and fixed joint load tables in32MiB observation parts; all5 spill readouts; critical full labelled configurations; driver hashes; complete logs and exact reproducible commands",
+ "statistical_interpretation":"iid replicate guarantees refer to the declared ideal independent-stream model. Fixed pseudorandom streams are reproducible, not a proof that machine-generated words are iid.",
+ "limits":"finite sample checks do not prove an asymptotic theorem, all fixed kernels, actual dictionary performance, or a finite-q rate; old experiments remain separate"
+}

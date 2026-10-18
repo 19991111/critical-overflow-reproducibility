@@ -1,0 +1,17 @@
+{
+  "command": [
+    "g++",
+    "-std=c++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-fno-fast-math",
+    "/workspace/huaweipro-tpht-linux/research/paper_v4_release_20261017/src/finite_q.cpp",
+    "-o",
+    "/tmp/paper_v4_finite_q_model_20261017"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "elapsed_budget_seconds": 2.67424780500005
+}

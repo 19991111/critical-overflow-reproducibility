@@ -1,0 +1,32 @@
+{
+  "date_utc": "2026-10-18",
+  "authoritative_library_file_id": "libfile_ee592c5200088191aff61338f9396060",
+  "authoritative_file_name": "critical_overflow_sicomp_v2_editable.zip",
+  "reported_size_bytes": 4054233,
+  "authoritative_bytes_available_here": false,
+  "known_reference_route": {
+    "prepare_materialize": "succeeded; exact Library ID resolved",
+    "explicit_destination": "/workspace/source-input",
+    "transfer_helper": "failed to download on initial and refreshed attempts",
+    "observed_failure_origin": "execution environment network proxy, during CONNECT tunnel to returned storage host",
+    "observed_error": "Tunnel connection failed: 403 Forbidden",
+    "file_authorization_denial_observed": false
+  },
+  "search_result_route": {
+    "exact_title_search": "resolved same Library ID, file ID, name and size",
+    "helper": "current library_download.py with current companion files",
+    "input": "complete unchanged search response, selection 000, relative destination source-input-supported-search",
+    "result": "library download request failed: hosted apps tools/list request failed: network"
+  },
+  "library_read": "No readable content was found in this file for the requested mode",
+  "guessed_URLs_or_environment_switches_used": false,
+  "old_manuscript_substitution_used": false,
+  "main_thread_independent_access": "reported successful materialization and read-only checks; does not imply access in this environment",
+  "github_target": "19991111/critical-overflow-reproducibility",
+  "github_target_id": "1424643088",
+  "github_last_verified_visibility": "private",
+  "github_verified_owner": "19991111",
+  "github_verified_permissions": {"push": true, "admin": true},
+  "github_prior_public_state": "No research content uploaded while public; user changed visibility to private before upload authorization was exercised.",
+  "credential_creation": false
+}

@@ -1,0 +1,13 @@
+{
+  "model_calls": 0,
+  "ODE_calls": 0,
+  "SDE_calls": 0,
+  "input_hashes": {
+    "results/DESCRIPTIVE.json": "26fefa7bf121bd1ba9c70ce65e69315f4a2c4bea661546f8db175d284dd6353b",
+    "results/validation/outcomes.csv": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6"
+  },
+  "outputs": {
+    "paper/figures/finite_q_errors.pdf": "e2398131d0b752ac3ed7c144036c921fd371f5bab816ddf635c85c9c174a3ee3",
+    "paper/figures/critical_cdfs.pdf": "e1848c5b099ce93a537c22250ffc98d0cba51c38033bf37a2b61d1a4f251e2c2"
+  }
+}

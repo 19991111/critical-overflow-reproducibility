@@ -1,0 +1,26 @@
+{
+  "UTC": "2026-10-17T23:42:44.590239+00:00",
+  "before_first_fresh_trajectory": true,
+  "files": {
+    "results/compiled_micro.bin": "158d748f6dff11e54dd9de89c310f7e7ca0772a6f960cd52b79164fc264587f0",
+    "protocol/SEEDS_V1.txt": "63cc762d85878a55416837b1090796d6a6ea0534295e233883ce1f10f4061cbc",
+    "protocol/PLAN_V1.json": "1be2c0e99545c6fa9cb30d4bd43b5f68bf76e8fdb782d24625b9fd020e9c72b3",
+    "protocol/SOURCE_FREEZE.json": "5d61c65c7721c9ddec11d0614e85d157675b719df0843cf4dc0a3c403a352951",
+    "protocol/INPUT_LOCK.json": "f601a08e6732e68c5b2de18602a5a650ad514931a2234975a3da2eb7d0c7d2a7",
+    "STATISTICAL_PLAN.en.md": "1d7515d3f9e8cf838d0f8528f466264574acbd084e9f03da3f6ce93d41fad111"
+  },
+  "actual_executable_sha256": "158d748f6dff11e54dd9de89c310f7e7ca0772a6f960cd52b79164fc264587f0",
+  "compile_command": [
+    "g++",
+    "-std=c++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "/workspace/huaweipro-tpht-linux/research/paper_micro_prospective_20261017/src/micro.cpp",
+    "-o",
+    "/tmp/paper_micro_prospective_20261017.bin"
+  ]
+}

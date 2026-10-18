@@ -1,0 +1,16 @@
+{
+  "stage": "reference_means",
+  "command": [
+    "/tmp/paper_sde_reference_20261017",
+    "--means",
+    "/workspace/huaweipro-tpht-linux/research/paper_sde_end_to_end_20261017/results/reference_endpoints.csv"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 0.26660169800015865,
+  "CPU_seconds": 0.21761799999998233,
+  "reference_CPU_total": 166.13038899999998,
+  "CPU_limit": 180,
+  "single_core": 0,
+  "max_RSS_kib_child_highwater": 111320
+}

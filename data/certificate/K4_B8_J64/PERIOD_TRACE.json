@@ -1,0 +1,42 @@
+[
+  {
+    "cycle_completed": 1,
+    "beta_lower_counts": "224921885081",
+    "minimum_retained_column_mass_counts": "437330478063976116556063"
+  },
+  {
+    "cycle_completed": 2,
+    "beta_lower_counts": "5453948656909126273",
+    "minimum_retained_column_mass_counts": "158618102226336496731292"
+  },
+  {
+    "cycle_completed": 3,
+    "beta_lower_counts": "1757881591399451660735",
+    "minimum_retained_column_mass_counts": "59155663866397042228205"
+  },
+  {
+    "cycle_completed": 4,
+    "beta_lower_counts": "7159643980726770180467",
+    "minimum_retained_column_mass_counts": "23265204104620380845192"
+  },
+  {
+    "cycle_completed": 5,
+    "beta_lower_counts": "6001183510481733501654",
+    "minimum_retained_column_mass_counts": "9782949732079886988702"
+  },
+  {
+    "cycle_completed": 6,
+    "beta_lower_counts": "3342610119329087079895",
+    "minimum_retained_column_mass_counts": "4387575299349386333112"
+  },
+  {
+    "cycle_completed": 7,
+    "beta_lower_counts": "1672044246103915298464",
+    "minimum_retained_column_mass_counts": "2055049758237306361589"
+  },
+  {
+    "cycle_completed": 8,
+    "beta_lower_counts": "835775305653994578710",
+    "minimum_retained_column_mass_counts": "1003817392988840327483"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "lambda": 1,
+    "kernel": 0,
+    "empirical_KS_to_computed_reference": "437/32768",
+    "true_CDF_distance_interval": [
+      "0",
+      "133977/2048000"
+    ],
+    "margin": "1/5",
+    "horizontal_radius": "1/100",
+    "vertical_total": "49/1000",
+    "decision": "supported",
+    "reference_precision_passed": true
+  },
+  {
+    "lambda": 1,
+    "kernel": 1,
+    "empirical_KS_to_computed_reference": "425/32768",
+    "true_CDF_distance_interval": [
+      "0",
+      "66551/1024000"
+    ],
+    "margin": "1/5",
+    "horizontal_radius": "1/100",
+    "vertical_total": "49/1000",
+    "decision": "supported",
+    "reference_precision_passed": true
+  },
+  {
+    "lambda": 2,
+    "kernel": 0,
+    "empirical_KS_to_computed_reference": "89/8192",
+    "true_CDF_distance_interval": [
+      "0",
+      "287579/4096000"
+    ],
+    "margin": "1/5",
+    "horizontal_radius": "1/50",
+    "vertical_total": "49/1000",
+    "decision": "supported",
+    "reference_precision_passed": true
+  },
+  {
+    "lambda": 2,
+    "kernel": 1,
+    "empirical_KS_to_computed_reference": "449/32768",
+    "true_CDF_distance_interval": [
+      "0",
+      "291579/4096000"
+    ],
+    "margin": "1/5",
+    "horizontal_radius": "1/50",
+    "vertical_total": "49/1000",
+    "decision": "supported",
+    "reference_precision_passed": true
+  }
+]

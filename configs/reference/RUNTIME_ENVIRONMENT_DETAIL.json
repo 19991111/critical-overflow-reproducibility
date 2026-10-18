@@ -1,0 +1,9 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "decimal_libmpdec": "4.0.0",
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "arithmetic": "binary round-to-nearest long double digits64 checked by executable; own log/sincos/sqrt in sampling",
+  "new_resources_or_permissions": false
+}

@@ -1,0 +1,18 @@
+{
+  "stage": "reference_batch",
+  "command": [
+    "/tmp/paper_sde_reference_20261017",
+    "--sample",
+    "/workspace/huaweipro-tpht-linux/research/paper_sde_end_to_end_20261017/results/TABLES.hex",
+    "/workspace/huaweipro-tpht-linux/research/paper_sde_end_to_end_20261017/protocol/REFERENCE_SEEDS_V1.txt",
+    "/workspace/huaweipro-tpht-linux/research/paper_sde_end_to_end_20261017/results/reference_endpoints.csv"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 160.8863288979992,
+  "CPU_seconds": 160.38652599999998,
+  "reference_CPU_total": 166.13038899999998,
+  "CPU_limit": 593,
+  "single_core": 0,
+  "max_RSS_kib_child_highwater": 111320
+}

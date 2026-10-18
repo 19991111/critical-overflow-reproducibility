@@ -1,0 +1,408 @@
+[
+  {
+    "stage": "compile_finite",
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-O3",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-fno-fast-math",
+      "/workspace/critical-overflow-clean-2/src/finite/finite_q.cpp",
+      "-o",
+      "/workspace/critical-overflow-validation-2/bin/finite"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 2.1226586360000965,
+    "CPU_seconds": 2.104327,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "selftest_finite",
+    "command": [
+      "/workspace/critical-overflow-validation-2/bin/finite",
+      "--selftest",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_v4_release_20261017/results/WAVE_TABLE.hex"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.009883849000061673,
+    "CPU_seconds": 0.005893999999999594,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 30,
+    "CPU_limit_seconds": 30
+  },
+  {
+    "stage": "compile_prospective",
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-O3",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "/workspace/critical-overflow-clean-2/src/prospective/micro.cpp",
+      "-o",
+      "/workspace/critical-overflow-validation-2/bin/prospective"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.8190560169999799,
+    "CPU_seconds": 0.799488,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "selftest_prospective",
+    "command": [
+      "/workspace/critical-overflow-validation-2/bin/prospective",
+      "--selftest"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.00568552799995814,
+    "CPU_seconds": 0.0027880000000001237,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 30,
+    "CPU_limit_seconds": 30
+  },
+  {
+    "stage": "compile_reference",
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-O3",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "/workspace/critical-overflow-clean-2/src/reference/reference.cpp",
+      "-o",
+      "/workspace/critical-overflow-validation-2/bin/reference"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.8683743750000303,
+    "CPU_seconds": 0.86167,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  },
+  {
+    "stage": "selftest_reference",
+    "command": [
+      "/workspace/critical-overflow-validation-2/bin/reference",
+      "--selftest",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_sde_end_to_end_20261017/results/TABLES.hex"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.017770098000028156,
+    "CPU_seconds": 0.008860000000000035,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 30,
+    "CPU_limit_seconds": 30
+  },
+  {
+    "stage": "finite_raw_audit",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_v4_release_20261017/src/audit_observations.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 8.187534496000012,
+    "CPU_seconds": 8.145544,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 180,
+    "CPU_limit_seconds": 180
+  },
+  {
+    "stage": "finite_analysis",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_v4_release_20261017/src/analyze_validation.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 2.973344298000029,
+    "CPU_seconds": 2.951201,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "reference_means",
+    "command": [
+      "/workspace/critical-overflow-validation-2/bin/reference",
+      "--means",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_sde_end_to_end_20261017/results/reference_endpoints.csv"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.21724305199995797,
+    "CPU_seconds": 0.19056600000000135,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 180,
+    "CPU_limit_seconds": 180
+  },
+  {
+    "stage": "prospective_analysis",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_micro_prospective_20261017/src/analyze.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 4.178933096000037,
+    "CPU_seconds": 4.163377999999999,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 180,
+    "CPU_limit_seconds": 180
+  },
+  {
+    "stage": "prospective_raw_audit",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_micro_prospective_20261017/src/verify.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 17.065150619000065,
+    "CPU_seconds": 17.047223000000006,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 180,
+    "CPU_limit_seconds": 180
+  },
+  {
+    "stage": "certified_readouts",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_profile_certificate_20261017/src/certify_readouts.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.6676695190000146,
+    "CPU_seconds": 0.6243420000000015,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 45,
+    "CPU_limit_seconds": 45
+  },
+  {
+    "stage": "finite_table_export",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_v4_release_20261017/src/export_wave.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.1158917669999937,
+    "CPU_seconds": 0.08244699999999827,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "reference_table_export",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_sde_end_to_end_20261017/src/export_reference_tables.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 3.6756804240000065,
+    "CPU_seconds": 3.6508590000000014,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "rerun_finite",
+    "command": [
+      "/workspace/critical-overflow-validation-2/bin/finite",
+      "--run",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_v4_release_20261017/results/WAVE_TABLE.hex",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_v4_release_20261017/protocol/SEEDS_V1.txt",
+      "/workspace/critical-overflow-validation-2/rerun/finite/data"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 20.374402060999955,
+    "CPU_seconds": 20.367997,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 600,
+    "CPU_limit_seconds": 600
+  },
+  {
+    "stage": "rerun_prospective",
+    "command": [
+      "/workspace/critical-overflow-validation-2/bin/prospective",
+      "--run",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_micro_prospective_20261017/protocol/SEEDS_V1.txt",
+      "/workspace/critical-overflow-validation-2/rerun/prospective/data"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 24.588994871999944,
+    "CPU_seconds": 24.564889,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 600,
+    "CPU_limit_seconds": 600
+  },
+  {
+    "stage": "reference_micro_precision_gate",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_sde_end_to_end_20261017/src/analyze.py",
+      "--micro"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.16656207900007303,
+    "CPU_seconds": 0.1186630000000033,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 120,
+    "CPU_limit_seconds": 120
+  },
+  {
+    "stage": "reference_cost_calibration",
+    "command": [
+      "/workspace/critical-overflow-validation-2/bin/reference",
+      "--calibrate",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_sde_end_to_end_20261017/results/TABLES.hex"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 0.11595766499999627,
+    "CPU_seconds": 0.08695699999999751,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 60,
+    "CPU_limit_seconds": 60
+  },
+  {
+    "stage": "rerun_reference",
+    "command": [
+      "/workspace/critical-overflow-validation-2/bin/reference",
+      "--sample",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_sde_end_to_end_20261017/results/TABLES.hex",
+      "/workspace/critical-overflow-validation-2/core/work/research/paper_sde_end_to_end_20261017/protocol/REFERENCE_SEEDS_V1.txt",
+      "/workspace/critical-overflow-validation-2/rerun/reference/data/reference_endpoints.csv"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/core/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 102.66256054899998,
+    "CPU_seconds": 102.6154,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 1200,
+    "CPU_limit_seconds": 600
+  },
+  {
+    "stage": "certificate_forward",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/certificate_forward/work/research/paper_profile_certificate_20261017/src/run_frozen.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/certificate_forward/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 13.198776382000005,
+    "CPU_seconds": 13.078333,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 310,
+    "CPU_limit_seconds": 310
+  },
+  {
+    "stage": "certificate_backward",
+    "command": [
+      "/workspace/critical-overflow-venv/bin/python",
+      "-B",
+      "/workspace/critical-overflow-validation-2/certificate_backward/work/research/paper_profile_certificate_20261017/src/backcheck.py"
+    ],
+    "cwd": "/workspace/critical-overflow-validation-2/certificate_backward/work",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 16.863142169999946,
+    "CPU_seconds": 16.839461999999997,
+    "child_max_RSS_kib_highwater_so_far": 167532,
+    "selected_cpu": 0,
+    "threads": 1,
+    "wall_limit_seconds": 90,
+    "CPU_limit_seconds": 90
+  }
+]

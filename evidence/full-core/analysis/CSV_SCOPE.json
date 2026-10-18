@@ -1,0 +1,16 @@
+{
+  "endpoint_comparison.csv": "Reconstructed from fixed original outcomes via DESCRIPTIVE.json. This core schema is explicit; compatibility with unavailable manuscript prepare_figures.py remains unchecked.",
+  "mechanism": {
+    "rows": 4096,
+    "q": 512,
+    "lambda": 1,
+    "kernel": "identity_matching",
+    "both_predictions_use_observed_imbalance": true,
+    "mass_only_MAE": 0.39633750915527344,
+    "profile_MAE": 0.017408271929607397,
+    "profile_lookup_uniform_error_upper": "0.000026",
+    "is_unconditional_diffusion_test": false,
+    "is_published_algorithm_comparison": false,
+    "confidence_claim_from_MAE": false
+  }
+}

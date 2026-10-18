@@ -1,0 +1,10 @@
+{
+  "source": "src/validate_saved_cycle_v2.py",
+  "change": "Only source/result/freeze version names and upward80-bit rounding of each cell defect; no changed parameters, core, matrix, goal or ODE states",
+  "max_additional_defect_rounding": "256/2^80",
+  "wall_seconds": 85,
+  "same_target_W1": 0.001,
+  "same_core_K": 2,
+  "no_ODE_rerun": true,
+  "attempt_once": true
+}

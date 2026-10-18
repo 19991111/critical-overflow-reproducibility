@@ -1,0 +1,96 @@
+Critical-time equivalence of fixed uniform-marginal cross kernels
+17 October 2026. Self-contained working proof, independently checked against the delegated candidate and its review. Internal mathematical review, not machine formalization or external peer review. No random experiment.
+
+THEOREM (primary matching case)
+There are two communities of q=2m buckets, m on each side. All loads start at0. Every arrival chooses an internal uniform K_m,m edge in C0 or C1, with probabilities(1-epsilon)/2 each, or a cross direction with probabilities epsilon/2 each. Greedy increments the smaller integer load, always the global-left endpoint on a tie.
+F uses a fixed perfect matching in each cross direction; P uses independent uniform endpoints. The matchings are chosen before the load process, not re-sorted with loads. For q>=4, epsilon<=1/4, epsilon q<=Lambda, put
+ theta=1/200, K=16/3,
+ ell>=4, L=q ell an integer,
+ eta=min{1,32K/(theta sqrt(ell))+16K exp(-theta ell/16)
+                                      +exp(-L/48)+4epsilon ell},
+ rho=min{2,(2R+1)^2 sqrt(2eta+2/m)+16K exp(-theta(R-1))}, R>=2 integer.
+For the two genuine processes there is a coupling, with D_n the sum of absolute differences between their four separately sorted side-load vectors, such that for every N,
+ E max_(n<=N)D_n <=2epsilon min(N,L)+epsilon rho(N-L)_+.        (U0)
+In particular for N<=Tq^2,
+ E max_(n<=N)D_n/q <=2epsilon ell+(epsilon q)T rho.             (U)
+Choose ell=max(4,ceil(q^(2/3))), L=q ell, R=ceil((2/theta)log q)+1. For every fixed T and Lambda,
+ E max_(n<=Tq^2)D_n/q=O_(T,Lambda)(q^(-1/6)log^2 q)->0.       (U1)
+The constants are conservative. No optimality or useful numerical threshold at existing experiment sizes is asserted.
+
+COROLLARIES AND EXACT SCOPE
+Under the same coupling |Delta_F-Delta_P|<=D_n for the community mass difference, and |Z_c(F)-Z_c(P)|<=D_n for every common c>=0, where Z_c=sum_v(A_v-c)_+. The latter holds simultaneously over all c. Linear interpolation does not increase the maximum path error. Thus the q-normalized Delta paths and corresponding spill readouts have vanishing coupling W1 distance in the uniform metric on every fixed q^2 horizon. A capacity-independent deterministic overflow growth does not create tightness of Z_c/q away from critical fill; the statement is equivalence of the two laws, not an unproved finite limit everywhere.
+If c/m->kappa in(0,infinity), n*=4mc=2qc~kappa q^2 and a=sqrt(n*), then a/q->sqrt(kappa). The theorem applies at this critical count, including epsilon q->lambda in(0,infinity). Any established convergent subsequence for one model has the same limit for the other; this does not identify that common limit, a profile response Psi, or an SDE drift. The old sign compression assumption q/a->0 is not used.
+
+PROOF
+
+1. Uniform exponential dispersion for the actual F chain
+Set I=(1-epsilon)/2>=3/8, xi_v=A_v-M_(community(v))/q and Gamma=sum_v cosh(theta xi_v). For a community's heaviest k buckets, t=k/q, internal selection into the suffix requires both endpoints in it. If it contains a L and b R buckets, a+b=qt and ab/m^2<=t^2. Cross mass into the suffix is x<=epsilon t and into its community is y>=x. Hence conditional on that community receiving a ball,
+ p(top k)<=(I t^2+epsilon t)/(I+epsilon t)
+ <=t-delta t(1-t), delta=(I-epsilon)/(I+epsilon)
+                    =(1-3epsilon)/(1+epsilon)>=1/5.
+The numerator MUST be I-epsilon. An earlier delegated algebra shorthand omitting -epsilon is not used. A vertex's global candidate inclusion probability is1/q, so its conditional update probability is<=1/(qI)<=8/(3q).
+For sorted g_i=sinh(theta xi_i), rank summation by parts gives
+ sum_i(p_i-1/q)g_i <=-(delta/2) E|sinh Y-sinh Y'|
+ <=-delta Gamma_s/(2q)+delta/2,
+where Y is uniform on the centered theta xi values and Y' independent. The elementary zero-mean Gini fact used here is E|sinh Y-sinh Y'|>=E|sinh Y|>=Ecosh Y-1. To verify its first inequality, decompose any finite zero-mean law into cross-zero two-point laws and a mass at0. On values a,-b with zero-mean probabilities, the difference equals (a-b)(b sinh a-a sinh b)/(a+b)^2>=0 because sinh(t)/t increases. The Gini functional is concave in its law, by2 int F(1-F), while E|sinh| is linear. This proves the fact; the second inequality is pointwise.
+The centered increment at vertex i is u_i=1_selected-1/q. Its conditional second moment is at most(8/3+1/4)/q<3/q. The cosh Taylor remainder is bounded by4theta^2 Gamma_s/q (indeed a smaller constant works). Since theta<=delta/16,
+ E[Delta Gamma_s |this community updates]
+ <=-theta delta Gamma_s/(4q)+theta delta/2.
+Both update probabilities are>=3/8 and sum to1, so
+ E[Delta Gamma|state]<=-3theta delta Gamma/(32q)+theta delta/2.
+Start Gamma_0=2q; the linear recurrence gives
+ sup_n E_F Gamma(A_n)<=16q/3=Kq.                             (E)
+This uses conditional uniform cross marginals, not endpoint independence. The later swap-law proof additionally requires a STATIC candidate kernel.
+
+2. Average forgetting of a random same-side transposition
+Fix a side V and draw i,j iid uniform in it, independent of the whole actual F path. Let sigma swap them (identity if i=j), and mu_n be the actual configuration law. For every n>=L we prove
+ E_(i,j) TV(mu_n,sigma mu_n)<=eta,                            (T)
+TV being sup over events. Write mu=mu_(n-L), P the fixed-graph transition kernel. Use
+ TV(P^L mu,sigma P^L mu)
+ <=TV(P^L mu,P^L sigma mu)+TV(P^L sigma mu,sigma P^L mu).
+These two terms have different couplings. Neither requires label independence in the F process.
+
+2a. Forgetting a swapped initial state. A starts from mu and follows its true F kernel. B starts from sigma A. Until the two tags in A have equal loads, map A's internal candidates by sigma for B; uniform K_m,m and global-left tie make this a legal B internal kernel and maintain B=sigma A. Use the same REAL fixed cross edge in both; the relation can fail only if it touches a tagged vertex. Such an event has per-step probability at most2epsilon/q, window probability<=2epsilon ell. If equality occurs first, A=B at that instant; switch to common candidates forever. On a bad cross event abandon this coupling and continue any legal kernels. All marginal laws remain the original fixed-graph laws.
+Before equality or a bad cross, tag updates are internal. A left tag at height h updates with probability (1-epsilon)tail_right(h)/q; a right tag uses (1-epsilon)tail_left(h+1)/q. Each rate decreases with h. At each tag update the positive gap therefore steps down with probability>=1/2 and up with probability<=1/2. Disintegrate a transition into the tag-update event, a fresh conditional direction coin, and the remaining microstate mark. The embedded direction coins can be dominated by fresh fair coins even in an adapted environment. Waiting times need not be independent of those coins; no conditioning on future update counts is made. A cross killing event can only remove paths from the good event, or be followed by unused fair coins for the comparison.
+For a fair nearest-neighbor walk absorbed at0, reflection and the central binomial mass bound give survival for J jumps from integer d as at most min(1,4d/sqrt(J+1)). The reflection sum has at most2d lattice masses; max mass<=sqrt(2/(J+1)), so4 is safe.
+By E, each external uniform tag has E cosh(theta xi)<=2K and E initial gap<=4K/theta. The actual A community receives at least Bin(L,I) internal balls; since I>=3/8, P(increase<L/4)<=exp(-L/48). Each tag is uniform and independent of A's entire path, so a union bound at the two window endpoints gives probability<=16K exp(-theta ell/16) that any of their four centered deviations exceeds ell/16. Off these bad events, both tags together have at least2(ell/4)-4(ell/16)=ell/4 updates. If no bad cross occurs and they have not met, all these are internal tag updates. Put J=floor(ell/4); J+1>ell/4. The survival estimate averaged over the initial gap is at most32K/(theta sqrt(ell)). Thus the first TV term is bounded by the first three terms in eta plus2epsilon ell. Only A's actual dispersion is used, not a biased tag in B.
+
+2b. Approximate kernel equivariance. Compare the original kernel and sigma-conjugate kernel from the SAME initial law sigma mu. Internal kernels coincide. Their cross laws differ only on edges incident to the two swapped-side vertices. Couple the remaining cross edges exactly; the bad probability over L steps is again<=2epsilon ell. This bounds TV(P^L sigma mu,sigma P^L mu) and completes T. Simply merging the first coupling without this second term would NOT prove approximate invariance of the final law.
+
+3. A second-moment bound on pairing correlation
+For one direction U_i--V_i define, for0<=f<=1,
+ C_f(A)=m^-1 sum_i f(A_Ui,A_Vi)-m^-2 sum_ij f(A_Ui,A_Vj).
+f may depend measurably on side multisets and community means, provided those extra parameters are invariant under the chosen V transposition. It cannot depend arbitrarily on labels. The product term is invariant and |C_f(sigma A)-C_f(A)|<=2/m. For iid i,j the pointwise identity is
+ C_f(A)^2=E_ij C_f(A)[f(A_Ui,A_Vi)-f(A_Ui,A_Vj)].
+Set H_i(A)=C_f(A)f(A_Ui,A_Vi), ||H_i||infinity<=1. Since
+ H_i(sigma A)=C_f(sigma A)f(A_Ui,A_Vj),
+the bounded-test TV inequality in T, followed by the2/m difference bound, yields
+ E C_f(A_n)^2<=2eta+2/m, E|C_f(A_n)|<=sqrt(2eta+2/m).         (C)
+This is absolute correlation control, not merely its signed mean. An alternative independent derivation uses the small, antisymmetric squared-increment under a distinct random transposition; it is not necessary for this stated constant.
+
+4. Random-center truncation of the WHOLE joint table
+In direction d let Q be its actual empirical matching table, p,r its marginals. Put the two coordinate centers at floor(M_d/q),floor(M_(1-d)/q). For every FIXED integers a,b, the indicator of these centered coordinates being a,b is a bounded measurable state-dependent f with invariant extra parameters. Thus C applies to EACH such fixed offset cell. Summing only over the deterministic offset square |a|,|b|<=R uses at most(2R+1)^2 cells; there is no unjustified sup_f or random-index union.
+Outside the square, Q and p tensor r have the same marginals. Each side's expected exp(theta|xi|) is<=4K by E. Replacing a mean by its integer part costs at most1. Twice the two marginal tails bounds the sum of outside masses by16K exp(-theta(R-1)). Therefore uniformly for EVERY n>=L,
+ E||Q_n-p_n tensor r_n||1<=rho.                             (J)
+With the declared ell,R this is O(q^-1/6 log^2 q). There is no restriction n=o(q^2); the moment bound and the random-tag argument hold for all n>=L.
+
+5. Sorted-profile contraction and two true process laws
+For each side sort its m loads, and let D(x,y) be the sum of corresponding absolute differences over the four sides. Same offered coordinates and same integer tie produce a nonexpansive greedy map: if opposite choices occur, the coordinate differences d_v<d_w, and adding1 to d_v and subtracting1 from d_w cannot increase their absolute sum. Re-sorting each side gives a minimum L1 matching (the elementary ordered-pair exchange inequality), so same-rank updates followed by sorting also cannot increase D.
+Couple actual F to a true product chain. Internally use the same independent uniform ranks in the two relevant sides. These correspond bijectively to true label candidates given each state, so F still uses its original uniform internal edges.
+On cross direction d first sample F's actual fixed edge, load pair z~Q_F. Maximally couple z to a virtual load pair z'~p_F tensor r_F. Given z', independently choose a rank uniformly inside each of F's two equal-load rank blocks. Conditional on the ENTIRE joint past, these two virtual ranks are exactly independent uniform ranks: a block of size k has virtual marginal mass k/m, followed by1/k within it; the product law factors between the two blocks. Use these same ranks on the true product chain's sides. Its driver is therefore the correct product kernel. Independence is within the current driver conditional on the past; no false independence from F's future or the coupling is asserted.
+If z=z', F's actual and virtual sorted updates are identical, including the left tie; their labels/ranks need not coincide. If z!=z', the two updates of the SAME pre-state add one ball at possibly different buckets and are within sorted L1 distance2. The virtual update at F's sorted state and the product update at its own state share ranks and are nonexpansive. Thus pathwise
+ D_(n+1)<=D_n+2*1{cross and maximal load-pair coupling fails}.
+Its failure probability in direction d is TV(Q_d,p_d tensor r_d)=||C_d||1/2. Before L bound it by1; after L use J in both directions. Summing the nonnegative failure count proves U0 and U. No graph is rewired or replaced by a load-adaptive matching.
+Choosing ell,R as stated proves U1, then the Delta and spill Lipschitz bounds give the corollaries. QED.
+
+EXTENSION: any fixed doubly-stochastic cross matrix
+In each direction let B be a fixed nonnegative m by m matrix with all row and column sums1; choose edge(i,j) with conditional probability B_ij/m. The moment proof still uses only its uniform marginals. For a V transposition the kernel and its conjugate differ only in two columns of total mass2/m, so T is unchanged. The first swapped-initial-state coupling also remains exact until a cross touches a tagged V vertex.
+Define C_B=m^-1 sum_ij B_ij f(U_i,V_j)-m^-2 sum_ij f(U_i,V_j). Swapping two V columns changes this by at most2/m, by their unit column sums. Expand C_B^2 using I uniform, J|I drawn from B's row, and K' independent uniform. The conditional bounded-test argument above now swaps V_J,V_K'. J is marginally uniform by column sums, independent of K' and of the actual state; averaging its TV cost is the same eta. Hence C, J, and U hold for this weighted joint load-pair law as well. Each B may depend deterministically on q; an initially random B must be independent of the arrival randomness and is handled by conditioning on it. STATE-ADAPTIVE B is excluded. Exact two-table Markov lumping from the generator note is not claimed for this extension.
+
+PROTECTED-DIAGONAL CONNECTION (separate row-normalized edge units)
+For m>=2, the prior internal row matrix is K_in=beta0 J/m+b0 I,
+ beta0=1-epsilon*m/(m-1), b0=epsilon/(m-1).
+Its row sum is1-epsilon, diagonal1/m, off-diagonal1/m-epsilon/(m-1). Uniform internal rows are(beta0+b0)J/m. Couple their common internal mass beta0 and all cross candidates at true labels; only the total internal mass b0 can differ. Same-edge integer greedy is nonexpansive in LABELLED L1, so
+ E max_(n<=N)||A_protected-A_uniform||1<=2b0 N.
+For N<=Tq^2 and epsilon q<=Lambda, after division by q this is<=2Lambda T/(m-1)=O(1/q). Apply separately to fixed and product cross chains and use a triangle coupling. The critical equivalence extends to this explicitly specified weighted internal family, not arbitrary weighted complete support.
+Its row-normalized internal maximum is1/m; product cross maximum is epsilon/m, fixed matching cross maximum is epsilon. Same kappa_max=1/m thus requires epsilon<=1/m for the matching/product comparison. Lambda is unrestricted in the equivalence theorem, but same-max is a SUBCONTRACT: epsilon q->lambda<2 suffices eventually; lambda=2 needs pointwise checking; lambda>2 fails. For general fixed B, replace epsilon by epsilon max_ij B_ij in that maximum-edge comparison. No hardware space or billing claim is implied.

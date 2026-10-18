@@ -1,0 +1,18 @@
+[
+  {
+    "file": "reference_endpoints.csv",
+    "sha256": "19daef9fe3bc0c3d6bf386861fd65815ae6ba9cd900af468b19163a4ce770de1",
+    "expected_sha256": "19daef9fe3bc0c3d6bf386861fd65815ae6ba9cd900af468b19163a4ce770de1",
+    "exact_bytes_equal": true,
+    "passed": true,
+    "comparison": "exact raw bytes"
+  },
+  {
+    "file": "reference_endpoints.csv.progress.csv",
+    "sha256": "f27033181ccd047a67fb7f7e7911fde7cfe9d9de3e5ed717154b18ec5e468c8f",
+    "expected_sha256": "4a7b5ba68ea07787d1d3d0ff2d4d6036230fd4d62f8cca23d618f26b0a67b316",
+    "exact_bytes_equal": false,
+    "passed": true,
+    "comparison": "all frozen progress labels match; measured CPU times are retained and expected to differ"
+  }
+]

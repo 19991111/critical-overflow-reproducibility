@@ -1,0 +1,355 @@
+[
+  {
+    "name": "frozen_inputs",
+    "passed": true,
+    "detail": {
+      "files": 217,
+      "all_lengths_and_SHA256_match": true
+    }
+  },
+  {
+    "name": "finite_seeds",
+    "passed": true,
+    "detail": {
+      "labels": 1024,
+      "sha256": "f11dc99d12b1cde6e7a2762c10c85ef2b45d6dfa4620bc4d1c1600b8c8ac3d9a"
+    }
+  },
+  {
+    "name": "prospective_seeds",
+    "passed": true,
+    "detail": {
+      "labels": 4096,
+      "sha256": "63cc762d85878a55416837b1090796d6a6ea0534295e233883ce1f10f4061cbc"
+    }
+  },
+  {
+    "name": "reference_seeds",
+    "passed": true,
+    "detail": {
+      "labels": 32768,
+      "sha256": "83b7d35ab6f00dc72af32b6c573fa6f1ef56103d6bc9bfa4633ff9a84da11f9b"
+    }
+  },
+  {
+    "name": "seed_namespaces_disjoint",
+    "passed": true,
+    "detail": "No new labels generated or selected."
+  },
+  {
+    "name": "finite/DESCRIPTIVE.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "finite/PRIMARY_FAILURE_RATES.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "finite/UNIVERSALITY_CDF.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "finite/PAIRED_MEANS_NOMINAL.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "finite/LAMBDA0_REFERENCE.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "reference_mean_grid",
+    "passed": true,
+    "detail": {
+      "lambda1": {
+        "lower_grid": 69875,
+        "upper_grid": 70333
+      },
+      "lambda2": {
+        "lower_grid": 67391,
+        "upper_grid": 67781
+      },
+      "grid_denominator": 100000,
+      "log_capital_error_allowance": 1e-06,
+      "threshold": 1000
+    }
+  },
+  {
+    "name": "prospective/MICRO_MEAN_INTERVALS.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "prospective/REFERENCE_QUALITY_REUSED.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "prospective/MEAN_COMPARISONS.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "prospective/CDF_COMPARISONS.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/CERTIFIED_READOUTS.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "finite_table_bytes",
+    "passed": true,
+    "detail": {
+      "expected": "aa8ba2c1f973dd744811c8e8c4b8846539959975783d98289ec7b7e7fae8fd35",
+      "actual": "aa8ba2c1f973dd744811c8e8c4b8846539959975783d98289ec7b7e7fae8fd35"
+    }
+  },
+  {
+    "name": "reference_table_bytes",
+    "passed": true,
+    "detail": {
+      "expected": "48455dbbe470cdc807c5d419701f9a94f798ce230ca971ab2d8d9a61658a1a77",
+      "actual": "48455dbbe470cdc807c5d419701f9a94f798ce230ca971ab2d8d9a61658a1a77"
+    }
+  },
+  {
+    "name": "finite_rerun_bytes",
+    "passed": true,
+    "detail": [
+      {
+        "file": "critical_configs.bin",
+        "sha256": "196a548c94e3689e73925c92595eb54e3a425b7f10a462d25122bafd16643cb9",
+        "expected_sha256": "196a548c94e3689e73925c92595eb54e3a425b7f10a462d25122bafd16643cb9",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "observations_part00.csv",
+        "sha256": "7fe2b182cf5318110848287f230a2dc80ea4246f800af38c0adf7fae1487a978",
+        "expected_sha256": "7fe2b182cf5318110848287f230a2dc80ea4246f800af38c0adf7fae1487a978",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "observations_part01.csv",
+        "sha256": "2822076a197a0ce0224789d2c07696063225f481a3bccb7f8febd89bef3c5f5f",
+        "expected_sha256": "2822076a197a0ce0224789d2c07696063225f481a3bccb7f8febd89bef3c5f5f",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "observations_part02.csv",
+        "sha256": "87f08caadf1b769339b30c43901e4a45a471bfe0ac39bb61edfb7d986b1e19e8",
+        "expected_sha256": "87f08caadf1b769339b30c43901e4a45a471bfe0ac39bb61edfb7d986b1e19e8",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "outcomes.csv",
+        "sha256": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6",
+        "expected_sha256": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "progress.csv",
+        "sha256": "f617996cd1a9d1446d0aa233bcd7473b2a4357d9296bbe3b72b48340fe8e215c",
+        "expected_sha256": "f617996cd1a9d1446d0aa233bcd7473b2a4357d9296bbe3b72b48340fe8e215c",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      }
+    ]
+  },
+  {
+    "name": "prospective_rerun_bytes",
+    "passed": true,
+    "detail": [
+      {
+        "file": "outcomes.csv",
+        "sha256": "77bd9d4e4df33a145d0a2d02a61cf9e7ef73dd35bf8c6af07d49d8ad578bf149",
+        "expected_sha256": "77bd9d4e4df33a145d0a2d02a61cf9e7ef73dd35bf8c6af07d49d8ad578bf149",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "progress.csv",
+        "sha256": "3c9c29318a661493c528849cbdb5024bc9aebac349c1ccbfd7f5de5a6b25cbb7",
+        "expected_sha256": "3c9c29318a661493c528849cbdb5024bc9aebac349c1ccbfd7f5de5a6b25cbb7",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "terminal_configs_lambda1_part0.bin",
+        "sha256": "90ea99ec694728671d6bc445e27b0bf9ae3bbbe57796522b150af54189289aa9",
+        "expected_sha256": "90ea99ec694728671d6bc445e27b0bf9ae3bbbe57796522b150af54189289aa9",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "terminal_configs_lambda1_part1.bin",
+        "sha256": "7d2ff2c7c1c23560f076f0516e93f812c4ad4f835832d2f7535eb1fe32378810",
+        "expected_sha256": "7d2ff2c7c1c23560f076f0516e93f812c4ad4f835832d2f7535eb1fe32378810",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "terminal_configs_lambda1_part2.bin",
+        "sha256": "7a4e0651e97a19756df847eea405a3cfc433f8d096d28d6786c5f132dbb0051f",
+        "expected_sha256": "7a4e0651e97a19756df847eea405a3cfc433f8d096d28d6786c5f132dbb0051f",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "terminal_configs_lambda1_part3.bin",
+        "sha256": "e192ebdd72fd969113b3ad4e7a875014c646efc9318e251b2e96af7510d6a910",
+        "expected_sha256": "e192ebdd72fd969113b3ad4e7a875014c646efc9318e251b2e96af7510d6a910",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "terminal_configs_lambda2_part0.bin",
+        "sha256": "6679b34d6ab8096bc39911ccdf9dcabc3536e5e186278183f0dd102d7e346fc8",
+        "expected_sha256": "6679b34d6ab8096bc39911ccdf9dcabc3536e5e186278183f0dd102d7e346fc8",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "terminal_configs_lambda2_part1.bin",
+        "sha256": "128f27f7989299704ddbb2d6b23a86235cd653b90a4fda6d763fc9eb1ecadcc2",
+        "expected_sha256": "128f27f7989299704ddbb2d6b23a86235cd653b90a4fda6d763fc9eb1ecadcc2",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "terminal_configs_lambda2_part2.bin",
+        "sha256": "01c113f812ee9877ca40257fbb005b1490b639e0e46c31313df5fc1bc8aa6f2f",
+        "expected_sha256": "01c113f812ee9877ca40257fbb005b1490b639e0e46c31313df5fc1bc8aa6f2f",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "terminal_configs_lambda2_part3.bin",
+        "sha256": "a17dd04b337a414860e2933aef430e04dee55379a80ed0aa10d03d0d038d229c",
+        "expected_sha256": "a17dd04b337a414860e2933aef430e04dee55379a80ed0aa10d03d0d038d229c",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      }
+    ]
+  },
+  {
+    "name": "reference_micro_precision_gate",
+    "passed": true,
+    "detail": {
+      "all_four_precision_gates_passed": true,
+      "exact_integer_betting_inversions": true,
+      "new_micro_trajectories": 0,
+      "source_sha256": "a494ad43896440a3dc49e1edf93ce981466f96e01cf9e2117e7dba1874ba95e6"
+    }
+  },
+  {
+    "name": "reference_cost_gate",
+    "passed": true,
+    "detail": {
+      "calibration_pairs": 262144,
+      "CPU_seconds": 0.079994,
+      "main_CPU_prediction_with_factor1_5": 122.870784,
+      "random_paths": 0,
+      "checksum": -1025.1312982985744
+    }
+  },
+  {
+    "name": "reference_rerun_bytes",
+    "passed": true,
+    "detail": [
+      {
+        "file": "reference_endpoints.csv",
+        "sha256": "19daef9fe3bc0c3d6bf386861fd65815ae6ba9cd900af468b19163a4ce770de1",
+        "expected_sha256": "19daef9fe3bc0c3d6bf386861fd65815ae6ba9cd900af468b19163a4ce770de1",
+        "exact_bytes_equal": true,
+        "passed": true,
+        "comparison": "exact raw bytes"
+      },
+      {
+        "file": "reference_endpoints.csv.progress.csv",
+        "sha256": "f27033181ccd047a67fb7f7e7911fde7cfe9d9de3e5ed717154b18ec5e468c8f",
+        "expected_sha256": "4a7b5ba68ea07787d1d3d0ff2d4d6036230fd4d62f8cca23d618f26b0a67b316",
+        "exact_bytes_equal": false,
+        "passed": true,
+        "comparison": "all frozen progress labels match; measured CPU times are retained and expected to differ"
+      }
+    ]
+  },
+  {
+    "name": "certificate/K4_B8_J64/CERTIFICATE.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/K4_B8_J64/LOWER_MATRIX.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/K6_B16_J64/CERTIFICATE.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/K6_B16_J64/LOWER_MATRIX.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/K8_B24_J128/CERTIFICATE.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/K8_B24_J128/LOWER_MATRIX.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/K10_B32_J128/CERTIFICATE.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/K10_B32_J128/LOWER_MATRIX.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/SUMMARY.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  },
+  {
+    "name": "certificate/INDEPENDENT_BACKWARD_CHECK.json",
+    "passed": true,
+    "detail": "Scientific fields equal; explicit runtime fields excluded."
+  }
+]

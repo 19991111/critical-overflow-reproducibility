@@ -1,0 +1,45 @@
+Exact paired-state closure and the critical-time correlation field
+17 October 2026. Read CRITICAL_EQUIVALENCE.en.txt for the final q^2 theorem. These identities locate the correlation source but do not alone prove its decay.
+
+1. Model and exact lumping
+q=2m vertices per community, m per side. Internal events in C0,C1 each have probability(1-epsilon)/2 and uniform K_m,m edges; cross probability epsilon with the two directions equally likely. Integer loads, global-left tie, empty start. FIXED connects Ld_i to R(1-d)_i for d=0,1. PRODUCT independently samples the two endpoints within each direction.
+Let P_d(a,b)=m^-1 #{i:A_Ld_i=a,A_R(1-d)_i=b}. Write p_d,r_d for its first and second marginals and C_d=P_d-p_d tensor r_d. Thus r_d is the R(1-d) marginal; the opposite own-community side for Ld has law r_(1-d). All tables use actual raw loads. They have finite support at every finite time.
+The TWO pair tables form an exact Markov state under FIXED. At an internal event in Cd, draw z~P_d and w~P_(1-d) independently; compare z.left with w.right and increment the winning coordinate in its selected pair. At cross in direction d, draw z~P_d and increment z.left if a<=b, otherwise z.right. These operations depend only on the two tables, not any retained index labels.
+PRODUCT has the same internal table transition. Its cross chooses z,w independently from P_d, compares z.left and w.right, and updates the selected pair's coordinate. There is NO missing diagonal correction when two sampled indices happen to coincide: their types are iid draws from the fixed empirical distribution with replacement; if the types coincide, the resulting table jump is the same whether the indices coincide or not. Thus these two tables also exactly lump the product chain.
+This exact finite-dimensional-at-each-time closure is specific to uniform complete internal routing and these fixed matching/product kernels. It is not automatically a Markov closure for a general weighted cross matrix.
+
+2. Conditional drift and the zero product-jump term
+For a signed table Z define a two-coordinate birth operator L_E^* with environment E:
+ u_a=tail(second marginal of E,a), v_b=tail(first marginal of E,b+1),
+ L_E^* Z = sum_(a,b) Z(a,b){u_a[delta_(a+1,b)-delta_(a,b)]
+                                   +v_b[delta_(a,b+1)-delta_(a,b)]}.
+The +1 in v_b is required by the left-favoring tie. Let H(P)=(K-I)P, where K increments the smaller coordinate of a pair, left on a tie. Let H_L,H_R be its signed marginals, and set
+ S(P)=H(P)-H_L(P) tensor r-p tensor H_R(P).
+Then exactly, conditional on the complete state,
+ q E[Delta P_d] = (1-epsilon)L_(P_(1-d))^*P_d+epsilon H(P_d)       [FIXED],
+ q E[Delta C_d] = (1-epsilon)L_(P_(1-d))^*C_d+epsilon S(P_d)       [FIXED],
+ q E[Delta C_d] = (1-epsilon)L_(P_(1-d))^*C_d
+                                  +epsilon L_(P_d)^* C_d         [PRODUCT].
+At EVERY arrival only one bucket is incremented. In any one paired population, at most one marginal changes, so Delta p tensor Delta r is identically zero, pathwise. No finite-q product-jump correction remains. The environment is frozen only for computing a one-step conditional drift; it is not claimed independent of future martingale noise.
+S has zero row/column sums. Its L1 norm is at most4: ||H||1<=2, ||H_L||1<=2P(left wins), ||H_R||1<=2P(right wins), so the last two norms sum to at most2. Source magnitude on the accelerated fast clock is O(epsilon). A contraction-only sum over fast time of order q would be O(epsilon q), not o(1).
+
+3. A proved critical-time fast-flux estimate
+For any deterministic fixed table test phi with ||phi||infinity<=1, an empirical covariance update obeys |<Delta C,phi>|<=8/q. Hence its centered conditional martingale increment has conditional variance<=64/q^2. Starting empty, ||C_0||1=0 and ||C_n||1<=2. The exact drift equation gives, for every N>=1 and epsilon<1,
+ E |N^-1 sum_(n<N) <C_d(n),L_(P_(1-d)(n)) phi>|
+ <=2q/[(1-epsilon)N]+8/[(1-epsilon)sqrt(N)]+4epsilon/(1-epsilon).
+At N=floor(Tq^2), epsilon q bounded, this is O(1/q), WITHOUT any assumed mixing. It is a genuine statement on the actual fixed process.
+For phi(a,b)=1{a<=b}, the operator is
+ L_E phi(a,b)=-u_a 1{a=b}+v_b 1{a=b+1}.
+Thus the estimate controls time-averaged weighted diagonal correlation flux. It does not directly control <C,1{a<=b}> itself. Turning a generator balance into a feedback bound requires an additional argument; the random-transposition proof supplies one.
+
+4. An actual empty-reachable obstruction to instantaneous coercivity
+For q divisible by4, choose K>=1. In direction0 select each fixed pair i exactly2K times for the first m/2 pairs and2(K+1) times for the others, with no other arrivals. Global-left greedy alternates within each selected edge, reaching:
+ L0_i=R1_i=K or K+1 (half each), L1=R0=0.
+This is an explicit empty-start prefix of length qK+q/2, with positive probability(epsilon/q)^(qK+q/2) if epsilon>0. It is not a freely prescribed initial state.
+P0 has mass1/2 on(K,K),(K+1,K+1); C0 has +1/4 on the diagonal and-1/4 off it, ||C0||1=1. P1 is delta_(0,0), C1=0. All L_(P1) birth rates on C0's support vanish, so L_(P1)^* C0=0 EXACTLY, but
+ g_FIXED-g_PRODUCT=<C0,1{a<=b}>-<C1,1{a<=b}>=1/4.
+Consequently no uniform positive instantaneous L1 contraction, and no frozen-environment Poisson corrector modulo row/column functions for the comparison payoff, can hold over every actually reachable state. The latter follows by testing such an alleged equation against C0. For the next j arrivals at most j vertices change; uniform endpoint marginals imply the same-state kernel discrepancy changes by at most4j/q, so it remains>=1/8 through j<=q/32. This is a conditional short-window mechanism, not a typical persistent q^2 correlation counterexample. Its prefix probability is tiny; the uniform exponential-moment averaging used in the final proof handles such histories.
+The algebra check stores actual prefixes for q=4,8,K=1,2 and independently verifies the zero operator and1/4 payoff. None was treated as a random sample.
+
+5. What this round resolves beyond the drift identity
+The frozen PLAN initially proposed critical equivalence as a conjecture. The generator computation and the zero mode rule out a purely instantaneous route; they do not refute equivalence. CRITICAL_EQUIVALENCE.en.txt instead uses average forgetting of an external random label swap, preserves the fixed graph, proves L1 decorrelation of the actual joint table, and transfers it to the two genuine processes. The earlier o(q^2) query-exposure bound is not reused as a critical proof.

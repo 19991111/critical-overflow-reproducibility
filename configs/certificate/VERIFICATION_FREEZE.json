@@ -1,0 +1,18 @@
+{
+  "UTC": "2026-10-17T17:06:00.578473+00:00",
+  "files": {
+    "src/backcheck.py": "ed82af554ca1ea21e1de447052ae73e29a008c64bb48b4298a89b29c1f3ac335",
+    "protocol/VERIFICATION_PLAN.json": "0e8900ada39ff9d9e1138b324871c4a01747bd23573ff2d6074392565b22d074",
+    "src/bounds.py": "1ed667022bcc6de7e965f1b0db5766dbd3392217a1ea14fd897b9941748afb1f",
+    "protocol/SOURCE_FREEZE.json": "6581e9a552545957b70ec4d93fc9c2655a8c315a844e88ad13ec293c6257d462",
+    "results/SUMMARY.json": "5a3eb3f0ae2b041344e3903580ed0f2400cbdbed2cba7b56ef938bab46475db5",
+    "results/K10_B32_J128/CERTIFICATE.json": "6a52f05390208889dd3aa6c9c2b8ebc3a359bcee36e281bda0c5a905e8cb14e5",
+    "results/K4_B8_J64/CERTIFICATE.json": "2970b4158207db830c9a14f0470c32b8fc772aaa7a688b88dd94ee9d5b4fefbd",
+    "results/K6_B16_J64/CERTIFICATE.json": "f3d848652810ab4722610a3804392e8e285a942bbd01c6aa85019582b046bde9",
+    "results/K8_B24_J128/CERTIFICATE.json": "3d266dead2e972b3caa239a53941c6599f73f4058ef3df8bff097680f5db5816",
+    "results/K10_B32_J128/LOWER_MATRIX.json": "0017a11716fa434eee17f262e86a58d9a651a8ed1c6192bc51a07ba3655263ee",
+    "results/K4_B8_J64/LOWER_MATRIX.json": "56d268048f0a70ad5b683b5cc5eb9be1ab87a47cf4f7e462c667ddcf8e518c97",
+    "results/K6_B16_J64/LOWER_MATRIX.json": "e331faa08bb74b8362cbaf407234d0b6e11e636b36c625f88ea6f3d14fd66ca1",
+    "results/K8_B24_J128/LOWER_MATRIX.json": "bc0fe870fabb53edfa31a4ae62ace3d6bb7d5e0241c46b6affdda363d1ea0721"
+  }
+}

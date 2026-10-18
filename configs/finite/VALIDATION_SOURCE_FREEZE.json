@@ -1,0 +1,19 @@
+{
+  "UTC": "2026-10-17T17:36:22.908473+00:00",
+  "before_any_new_random_trajectory": true,
+  "files": {
+    "FINITE_Q_VALIDATION_PLAN.v1.json": "cbb29c411ac2daf90bccb6cfe220e21c8ad8f89750755fb31a9c9be12bf352c9",
+    "STATISTICAL_DECISIONS.en.txt": "71f85710352bf27bcb41d58d18e5b96dbc39ff5d444b0ed7f0703740cb3838c6",
+    "protocol/ACTIVE_WORK_CHECK.json": "369cd272cd536eea7c99efcf7623edd942d3f1c1865b2ee58924a599079431f3",
+    "protocol/AUTHORIZATION_UPDATE.zh.txt": "64e0e0305ef852a7c93fe8dee45108b57248811269a3f90dbd0fc665bf2a2c87",
+    "protocol/ENVIRONMENT.json": "37bcbede0fa83f5ecc46ecbd32c692ea9d208be1d27165cba6de3ea9e0e62ffb",
+    "protocol/INPUT_LOCK.json": "12283162fc57cd5e9648bf8a44a612aa2207824535b675d413e9158c9b5572e7",
+    "protocol/LOCAL_BRANCHES_BEFORE.txt": "467460c2300d6a25914abaa6833614d643f9779af980beb12e31a01c66cdb3ac",
+    "protocol/REMOTE_REFS_BEFORE.txt": "07fcda9d4660bcfce1133b5547124b2a8b133ad4ecf04e76d57324724cd81b8a",
+    "protocol/SEEDS_V1.txt": "f11dc99d12b1cde6e7a2762c10c85ef2b45d6dfa4620bc4d1c1600b8c8ac3d9a",
+    "src/analyze_validation.py": "6cb62566461974038bee5ab226cc3a1a9c595c0bed46c3f11f52eed1d74d50f9",
+    "src/export_wave.py": "810e4825722e6ddb26cfa74f396bd8d95e30291a4161c085e4b1a919fbf3a32c",
+    "src/finite_q.cpp": "1e5ce40680f3accc5ca06bddd9bb4e069c6145278f76d59bc1733def615e95f4",
+    "src/run_validation.py": "e6dbdb9b5feab9163388a34cea77b1ec6b64a1062e64fb77bd76118d2f49daea"
+  }
+}
