@@ -1,0 +1,30 @@
+{
+  "prepared_on": "2026-10-20",
+  "journal": "Frontiers of Computer Science",
+  "portal_status": "not_submitted",
+  "final_submission_by_user": true,
+  "fixed_numerical_input_commit": "9522bfdb3c63bbbbda8471b6548ee15c5797b2b5",
+  "new_experiments": 0,
+  "files": {
+    "paper/fcs/paper_fcs.pdf": {
+      "bytes": 383106,
+      "sha256": "61c87e1ee855a64a6b2549354ac8c3735c4e9ed06aa9d80df327bbde68709aea"
+    },
+    "paper/fcs/supplement_fcs.pdf": {
+      "bytes": 135513,
+      "sha256": "f254b502c7a6b7eff30f11728bdc0fcce24e4f140c8867f0aa0d906a403b84d4"
+    },
+    "paper/fcs/highlights_fcs.pptx": {
+      "bytes": 313633,
+      "sha256": "b09092d2fdeaed0de303d38ecef3901f8a3cea044f5851c39c5922fc5a05c62d"
+    },
+    "paper/fcs/critical_overflow_fcs_source.zip": {
+      "bytes": 329413,
+      "sha256": "30738fc897c63bca45c907f93d3e2a69dae90753739fc2766251cc038b0075ff"
+    },
+    "paper/fcs/supporting_records_fcs.zip": {
+      "bytes": 33548,
+      "sha256": "6aa2120573304ac6935e3de95f4c25b4fe49ae797769dd008bf6fb23f88b0b38"
+    }
+  }
+}

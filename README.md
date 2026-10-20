@@ -1,8 +1,12 @@
 # Critical Overflow: reproducibility repository
 
-Portable CPU reproduction for **Critical Overflow in Weakly Coupled Two-Choice Allocation**, SICOMP v2. Read the [current article](paper/output/pdf/paper_sicomp.pdf), [supplement](paper/output/pdf/supplement_sicomp.pdf), and [theorem/figure/table map](docs/PAPER_MAP.md). This private repository contains the current editable paper, selected fixed experimental evidence, original numerical sources, exact seed lists, and portable runners. It does not copy the Huawei business workspace or the full research history.
+Reproducibility materials for **Critical Overflow in Weakly Coupled Two-Choice Allocation**.
 
-The authoritative uploaded ZIP is preserved unchanged in `source_inputs/`, SHA-256 `c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432`. It was obtained from the exact private GitHub transfer commit after Library transport failed; all 112 source-manifest entries and the complete 113-file package were verified locally. Current TeX, bibliography and SIAM class bytes are unchanged. The older v4.2 manuscript is not substituted, and no link inside the paper has been changed.
+The current version is prepared for **Frontiers of Computer Science (FCS)**. Formal submission remains pending. Read the [main article](paper/fcs/paper_fcs.pdf), [supplement](paper/fcs/supplement_fcs.pdf), and [three-page highlights](paper/fcs/highlights_fcs.pptx). The [LaTeX source package](paper/fcs/critical_overflow_fcs_source.zip) includes build instructions. The [supporting records](paper/fcs/supporting_records_fcs.zip) contain the unchanged arithmetic contracts, protocols, and audit records referenced in the supplement. [File hashes](paper/fcs/FILES.json) identify this delivery.
+
+The numerical source code, fixed seeds, raw data, and Linux reproduction commands remain unchanged. Files under `paper/` outside `paper/fcs/` retain the validated SICOMP-format baseline used by the reproduction scripts. That baseline was not submitted to SICOMP. The [baseline theorem/figure/table map](docs/PAPER_MAP.md) refers to its original page numbers and source locations. The FCS revision updates formatting, explanations, proof clarifications, and public links. It adds no experiment or numerical integration.
+
+The original uploaded ZIP remains unchanged in `source_inputs/`, with SHA-256 `c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432`. All 112 source-manifest entries and the complete 113-file package were verified during baseline preparation. The following reproduction commands rebuild that fixed baseline; use the current FCS source package to compile the journal-format documents.
 
 ## Problem and evidence
 
@@ -34,7 +38,7 @@ This mode generates no new model trajectories or random words. It rebuilds the t
 
 Outputs include `PACKAGE_CHECKS.json`, `checks.json`, `stages.json`, stdout/stderr logs, and `analysis/`. `analysis/observed_imbalance_readout.csv` and `analysis/mechanism.json` reconstruct the mechanism comparison from fixed prospective outcomes and the fixed lookup. The core's `analysis/endpoint_comparison.csv` contains aggregated descriptive fields. The paper runner below separately reconstructs the actual per-endpoint schema needed by the authoritative plotting script; it does not use those aggregates as a substitute.
 
-## Rebuild all six figures and both documents
+## Rebuild the validated baseline figures and documents
 
 In addition to the core requirements, install XeLaTeX, BibTeX, Poppler tools, and standard LaTeX packages used by the bundled SIAM class, including **algorithms** (`algorithm.sty`). Typical Debian packages are `texlive-xetex`, `texlive-latex-extra`, `texlive-science` and `poppler-utils`. No shell escape is enabled. The original pdfLaTeX compatibility claim fails on the tested engine, so this entry uses the same XeTeX engine family as the original Tectonic build.
 
@@ -94,7 +98,7 @@ For the entire release, run the `all` command above followed by `build_paper.py`
 
 ## Layout, provenance, contribution
 
-`paper/` is the current paper entry; `src/` holds selected original numerical code; `configs/` holds original plans and labels; `data/` holds selected raw observations, configurations, lookup inputs and sealed comparisons, compressing large files losslessly; `tools/` contains orchestration and exact upstream figure scripts. `provenance/FILES.json` maps every selected frozen numerical file to its fixed commit, archive/member, uncompressed checksum and stored checksum. `provenance/ARCHIVES.json` records original archive checksums; `provenance/manuscript/` records the authoritative paper intake. Historical documents are retained as sources, not current paper entrypoints.
+`paper/fcs/` holds the current FCS delivery; the other files under `paper/` retain the validated baseline; `src/` holds selected original numerical code; `configs/` holds original plans and labels; `data/` holds selected raw observations, configurations, lookup inputs and sealed comparisons, compressing large files losslessly; `tools/` contains orchestration and exact upstream figure scripts. `provenance/FILES.json` maps every selected frozen numerical file to its fixed commit, archive/member, uncompressed checksum and stored checksum. `provenance/ARCHIVES.json` records original archive checksums; `provenance/manuscript/` records the authoritative paper intake. Historical documents are retained as sources, not current paper entrypoints.
 
 For a contribution, describe the change, use a new output directory, retain the fixed seed lists, and attach the relevant `PACKAGE_CHECKS.json` and logs. An additional experiment needs its own source/configuration freeze and clearly stated scope. Do not overwrite sealed data or infer proof correctness from code tests.
 
