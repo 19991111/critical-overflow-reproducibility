@@ -8,6 +8,8 @@ The original numerical source code, fixed seeds, raw data, and Linux reproductio
 
 The original uploaded ZIP remains unchanged in `source_inputs/`, with SHA-256 `c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432`. All 112 source-manifest entries and the complete 113-file package were verified during baseline preparation. The following reproduction commands rebuild that fixed baseline; use the current FCS source package to compile the journal-format documents.
 
+The October 21 editorial update clarifies restricted candidate access and capacity monitoring in the introduction and Section 7.3. For a fixed capacity, collectors can retain excess load and unused capacity separately. Histograms across resources at a common observation time support comparisons across capacities. The theoretical results and experimental values are unchanged.
+
 ## Problem and evidence
 
 Two weakly coupled communities receive two-choice allocations with a fixed left-candidate tie rule. Near total capacity, overflow depends on both the community imbalance and the internal load profiles. The mathematical work identifies the periodic load profile, the imbalance diffusion, and a phase-locked overflow readout; it also compares fixed balanced cross kernels. The retained experiments examine these mechanisms and finite-size behavior. Numerical agreement is not verification of a mathematical proof.
