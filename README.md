@@ -2,9 +2,9 @@
 
 Reproducibility materials for **Critical Overflow in Weakly Coupled Two-Choice Allocation**.
 
-The current version is prepared for **Frontiers of Computer Science (FCS)**. Formal submission remains pending. Read the [main article](paper/fcs/paper_fcs.pdf), [supplement](paper/fcs/supplement_fcs.pdf), and [three-page highlights](paper/fcs/highlights_fcs.pptx). The [LaTeX source package](paper/fcs/critical_overflow_fcs_source.zip) includes build instructions. The [supporting records](paper/fcs/supporting_records_fcs.zip) contain the unchanged arithmetic contracts, protocols, and audit records referenced in the supplement. [File hashes](paper/fcs/FILES.json) identify this delivery.
+The current version is prepared for **Frontiers of Computer Science (FCS)**. Formal submission remains pending. Read the [main article](paper/fcs/paper_fcs.pdf), [supplement](paper/fcs/supplement_fcs.pdf), and [three-page highlights](paper/fcs/highlights_fcs.pptx). The [LaTeX source package](paper/fcs/critical_overflow_fcs_source.zip) includes build instructions. The [supporting records](paper/fcs/supporting_records_fcs.zip) contain the unchanged arithmetic contracts, protocols, and audit records referenced in the supplement. The [saved sensitivity study](paper/fcs/mechanism_robustness_v1.zip) supplies its fixed source, seeds, raw endpoints, and verification records. [File hashes](paper/fcs/FILES.json) identify this delivery.
 
-The numerical source code, fixed seeds, raw data, and Linux reproduction commands remain unchanged. Files under `paper/` outside `paper/fcs/` retain the validated SICOMP-format baseline used by the reproduction scripts. That baseline was not submitted to SICOMP. The [baseline theorem/figure/table map](docs/PAPER_MAP.md) refers to its original page numbers and source locations. The FCS revision updates formatting, explanations, proof clarifications, and public links. It adds no experiment or numerical integration.
+The original numerical source code, fixed seeds, raw data, and Linux reproduction commands remain unchanged. Files under `paper/` outside `paper/fcs/` retain the validated SICOMP-format baseline used by the reproduction scripts. That baseline was not submitted to SICOMP. The [baseline theorem/figure/table map](docs/PAPER_MAP.md) refers to its original page numbers and source locations. The current FCS delivery includes revised proofs and presentation, a fixed sensitivity study completed on native Linux, and the finite-lambda matching comparison in Supplement SM9.2.
 
 The original uploaded ZIP remains unchanged in `source_inputs/`, with SHA-256 `c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432`. All 112 source-manifest entries and the complete 113-file package were verified during baseline preparation. The following reproduction commands rebuild that fixed baseline; use the current FCS source package to compile the journal-format documents.
 
@@ -13,6 +13,21 @@ The original uploaded ZIP remains unchanged in `source_inputs/`, with SHA-256 `c
 Two weakly coupled communities receive two-choice allocations with a fixed left-candidate tie rule. Near total capacity, overflow depends on both the community imbalance and the internal load profiles. The mathematical work identifies the periodic load profile, the imbalance diffusion, and a phase-locked overflow readout; it also compares fixed balanced cross kernels. The retained experiments examine these mechanisms and finite-size behavior. Numerical agreement is not verification of a mathematical proof.
 
 At the critical point used by the terminal experiments, there are `2q` bins, capacity `q/2` per bin, and `q²` arrivals. The prospective batch uses `q=512`, `κ=1`, `λ∈{1,2}`, matching/product kernels, and the same **4,096 labels across four configurations**: **16,384 terminal records**, not 16,384 independent samples. Its 8,192 paired executions include both kernels. The old microscopic batch has 9,216 trajectories and 193,536 saved checkpoints over four q scales. The reused SDE reference has 32,768 paths per λ, 65,536 endpoint rows, and 16,384 Euler steps per path; its λ cells also share their label streams.
+
+## Current FCS sensitivity study
+
+The saved study compares four internal candidate graphs under left-favored and fair ties at `q=128,256,512` and `kappa=lambda=1`.
+Its 24 configurations contain 24,576 trajectories in total.
+At `q=512` with left-favored ties, the cycle and disconnected-matching sample means of omitted overflow are 5.8 and 21.4 times the complete-bipartite mean.
+These ratios compare unconditional sample means of the aggregation gap.
+The main critical law uses complete-bipartite internal sampling; Supplement SM9.2 gives the separate order-`q^(3/2)` matching result under weak cross sampling.
+
+Download [mechanism_robustness_v1.zip](paper/fcs/mechanism_robustness_v1.zip) and extract it into a new directory.
+Run `python verify_return.py` there to verify the saved file hashes, integer endpoint identities, cell membership, means, and Monte Carlo standard errors.
+The archive's `REPRODUCE.txt` describes fixed-seed replay on native Linux.
+The LaTeX source package also contains this experiment under `reproducibility/mechanism_robustness_v1/`.
+The simultaneous intervals for 24 means and 36 graph contrasts are supplied in `verification/sensitivity_intervals_v1/` inside that source package.
+The original numerical records and historical failed runs remain at their existing repository paths and commits.
 
 ## Install and quick check
 

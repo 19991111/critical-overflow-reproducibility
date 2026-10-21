@@ -1,30 +1,52 @@
 {
-  "prepared_on": "2026-10-20",
+  "prepared_on": "2026-10-21",
   "journal": "Frontiers of Computer Science",
   "portal_status": "not_submitted",
   "final_submission_by_user": true,
+  "previous_fcs_delivery_commit": "f0a9b57b7a9909f304bfcefabf282b4e9eed44bf",
   "fixed_numerical_input_commit": "9522bfdb3c63bbbbda8471b6548ee15c5797b2b5",
-  "new_experiments": 0,
+  "all_authors_approved": true,
+  "new_experiments_executed_for_this_sync": 0,
+  "saved_sensitivity_study": {
+    "trajectories": 24576,
+    "configurations": 24,
+    "q": [
+      128,
+      256,
+      512
+    ],
+    "ties": [
+      "left",
+      "fair"
+    ],
+    "internal_graphs": 4,
+    "native_linux_run_completed_on": "2026-10-21",
+    "archive": "paper/fcs/mechanism_robustness_v1.zip"
+  },
   "files": {
     "paper/fcs/paper_fcs.pdf": {
-      "bytes": 383106,
-      "sha256": "61c87e1ee855a64a6b2549354ac8c3735c4e9ed06aa9d80df327bbde68709aea"
+      "bytes": 426992,
+      "sha256": "09d88e76881815dca1771feee051e2a1bd34b2a7900d56f98d1c81ab0d42feab"
     },
     "paper/fcs/supplement_fcs.pdf": {
-      "bytes": 135513,
-      "sha256": "f254b502c7a6b7eff30f11728bdc0fcce24e4f140c8867f0aa0d906a403b84d4"
+      "bytes": 169579,
+      "sha256": "f50bf924b87f9d83f22283cd593b96d96111bfde647638b3b3868215acb28724"
     },
     "paper/fcs/highlights_fcs.pptx": {
-      "bytes": 313633,
-      "sha256": "b09092d2fdeaed0de303d38ecef3901f8a3cea044f5851c39c5922fc5a05c62d"
+      "bytes": 359031,
+      "sha256": "d7b75c6d1bdcc7cad9c637d2f438d763aa472a5b7f83a009a8320a09816d2aae"
     },
     "paper/fcs/critical_overflow_fcs_source.zip": {
-      "bytes": 329413,
-      "sha256": "30738fc897c63bca45c907f93d3e2a69dae90753739fc2766251cc038b0075ff"
+      "bytes": 1741285,
+      "sha256": "dc403ca3e56ad25220cfb9713a9cf56fbde527cd7f5acc31d2e4fcedde1c3b7a"
     },
     "paper/fcs/supporting_records_fcs.zip": {
       "bytes": 33548,
-      "sha256": "6aa2120573304ac6935e3de95f4c25b4fe49ae797769dd008bf6fb23f88b0b38"
+      "sha256": "a65ad7ea8204b8b8d58fedbe5ef9cccdb26f2d84eadaef9720660aa5c21933ab"
+    },
+    "paper/fcs/mechanism_robustness_v1.zip": {
+      "bytes": 1338906,
+      "sha256": "f20fca4049c728b269cd5fbeac2098a2cdd2ba72ea0d0a01678cc2173cbe1e4a"
     }
   }
 }
