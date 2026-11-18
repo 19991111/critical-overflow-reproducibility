@@ -1,41 +1,34 @@
-# Critical Overflow: reproducibility repository
+# Critical Overflow in Two-Choice Allocation: Reproducibility Repository
 
-Reproducibility materials for **Critical Overflow in Two-Choice Allocation: Coupling and Hidden Capacity Loss**. Earlier artifacts retain their original titles.
+Public reproducibility code, certified numerical enclosures, fixed protocols, and simulation datasets for **Critical Overflow in Two-Choice Allocation: Coupling and Hidden Capacity Loss**.
 
-The PEVA data release supplies the additional fixed-design validation, larger-size follow-ups, boundary diagnostics, and frozen held-out forecasts used by the revised study. Download the [versioned data release](https://github.com/19991111/critical-overflow-reproducibility/releases/tag/peva-data-20261023) and its `critical_overflow_peva_reproducibility.zip` asset. The archive contains 596 members, including source, fixed protocols, seeds, raw endpoints, saved analyses, numerical evidence, and a file-level SHA-256 manifest. Its README and experiment-specific `REPRODUCE.txt` files describe native Linux reproduction.
+## Versioned reproducibility bundle
 
-The earlier **Frontiers of Computer Science (FCS)** delivery is preserved under `paper/fcs/`. Its [main article](paper/fcs/paper_fcs.pdf), [supplement](paper/fcs/supplement_fcs.pdf), [highlights](paper/fcs/highlights_fcs.pptx), [source package](paper/fcs/critical_overflow_fcs_source.zip), [supporting records](paper/fcs/supporting_records_fcs.zip), and [sensitivity study](paper/fcs/mechanism_robustness_v1.zip) identify that earlier delivery. Those documents precede the new PEVA experiments. [File hashes](paper/fcs/FILES.json) retain their identities.
+Download release [`reproducibility-v2026.11`](https://github.com/19991111/critical-overflow-reproducibility/releases/tag/reproducibility-v2026.11) and its archive asset `critical_overflow_reproducibility_bundle.zip` (SHA-256 `549448d6410f399033da66011af7ff73d69151c0fd24943615a2c63edb44e78e`, 597 members). The bundle supplies:
 
-The original numerical source code, fixed seeds, raw data, and Linux reproduction commands remain unchanged. Files under `paper/` outside `paper/fcs/` retain the validated SICOMP-format baseline used by the reproduction scripts. That baseline was not submitted to SICOMP. The [baseline theorem/figure/table map](docs/PAPER_MAP.md) refers to its original page numbers and source locations. The archived FCS delivery includes revised proofs and presentation, a fixed sensitivity study completed on native Linux, and the finite-lambda matching comparison in Supplement SM9.2.
+- Certified rational profile and readout enclosures, arithmetic supplement, probability contract, and audit receipts (`evidence/` and `CERTIFICATE_REPRODUCE.txt`);
+- Unconditional mean, coupling trade-off, linear-drift baseline, and CDF validation batches across fill horizons `kappa in {0.5, 1, 2}` and couplings `lambda in {1, 2}` at `q = 512`;
+- Multi-scale boundary-layer experiments across `q in {512, 1024, 2048, 4096}`, support-aware lower bounds, frozen three-size probability forecasts, and the held-out `q = 4096` evaluation;
+- The 24-configuration internal candidate-graph and tie-breaking study across `q in {128, 256, 512}` and its 60 simultaneous intervals;
+- Read-only vector figure rendering scripts (`prepare_tcs_figures.py` and preserved baseline scripts) and file-level SHA-256 manifests (`MANIFEST.json`), with native Linux reproduction instructions in each experiment's `REPRODUCE.txt`.
 
-The original uploaded ZIP remains unchanged in `source_inputs/`, with SHA-256 `c863979b757ef5375b6a3537d8dfbe7a48608c57c51fdc4c8044f4f5e2350432`. All 112 source-manifest entries and the complete 113-file package were verified during baseline preparation. The following reproduction commands rebuild that fixed baseline; use the archived FCS source package to compile the journal-format documents.
-
-The October 21 editorial update clarifies restricted candidate access and capacity monitoring in the introduction and Section 7.3. For a fixed capacity, collectors can retain excess load and unused capacity separately. Histograms across resources at a common observation time support comparisons across capacities. The theoretical results and experimental values are unchanged.
+The repository root provides the core C++17 / Python reproduction runner (`tools/reproduce.py`) for the original finite-scale, terminal-law, SDE reference, and rational matrix-certificate computations, with every selected frozen input verified by length and SHA-256 via [`provenance/FILES.json`](provenance/FILES.json).
 
 ## Problem and evidence
 
-Two weakly coupled communities receive two-choice allocations with a fixed left-candidate tie rule. Near total capacity, overflow depends on both the community imbalance and the internal load profiles. The mathematical work identifies the periodic load profile, the imbalance diffusion, and a phase-locked overflow readout; it also compares fixed balanced cross kernels. The retained experiments examine these mechanisms and finite-size behavior. Numerical agreement is not verification of a mathematical proof.
+Two weakly coupled communities of `q = 2m` finite-capacity bins receive greedy two-choice allocations without departures under equal-side complete-bipartite internal sampling (`K_{m,m}`) and left-favored ties, while cross-community comparisons occur at rate `varepsilon_q` with `varepsilon_q q -> lambda`. At nominal fill `n_* = 2 q c_q ~ kappa q^2`, pooling each community into a single macro-resource of capacity `q c_q` (`|Delta|/2`) omits a positive order-`q` internal overflow contribution caused by intra-community coexistence of overloaded and underfilled bins. Evaluating the attracting periodic two-type lattice profile at the same normalized community demand imbalance predicts normalized overflow with vanishing mean absolute error, couples to a scalar nonlinear restoring diffusion for community imbalance (where lattice phase averages out of drift but is retained in the local overflow curve), extends unchanged across arbitrary predetermined doubly stochastic cross kernels, and contrasts with an order-`q^(3/2)` overflow regime under internal matchings. The retained experiments test these asymptotic predictions and finite-size boundary effects; numerical agreement illustrates finite-size behavior and is not a substitute for the mathematical proofs.
 
-At the critical point used by the terminal experiments, there are `2q` bins, capacity `q/2` per bin, and `q²` arrivals. The prospective batch uses `q=512`, `κ=1`, `λ∈{1,2}`, matching/product kernels, and the same **4,096 labels across four configurations**: **16,384 terminal records**, not 16,384 independent samples. Its 8,192 paired executions include both kernels. The old microscopic batch has 9,216 trajectories and 193,536 saved checkpoints over four q scales. The reused SDE reference has 32,768 paths per λ, 65,536 endpoint rows, and 16,384 Euler steps per path; its λ cells also share their label streams.
+In the `kappa = 1` terminal-law batch (`2q` bins, capacity `c = q/2`, `n_* = q^2` arrivals at `q = 512`, `lambda in {1, 2}`, matching and product cross kernels), the four configurations share **4,096 replicate seed labels** (**16,384 terminal records** across 8,192 paired matching/product executions). The finite-scale checkpoint batch contains 9,216 trajectories and 193,536 saved checkpoints across `q in {64, 128, 256, 512}`. The reused SDE reference contains 32,768 paths per `lambda` (65,536 endpoint rows, 16,384 Euler steps per path) with shared label streams across `lambda`.
 
-## Archived FCS sensitivity study
+## Internal candidate-graph and tie-breaking study
 
-The saved study compares four internal candidate graphs under left-favored and fair ties at `q=128,256,512` and `kappa=lambda=1`.
-Its 24 configurations contain 24,576 trajectories in total.
-At `q=512` with left-favored ties, the cycle and disconnected-matching sample means of omitted overflow are 5.8 and 21.4 times the complete-bipartite mean.
-These ratios compare unconditional sample means of the aggregation gap.
-The main critical law uses complete-bipartite internal sampling; Supplement SM9.2 gives the separate order-`q^(3/2)` matching result under weak cross sampling.
+The 24-cell topology and tie-rule study compares four uniform-marginal internal bipartite graphs (`K_{m,m}`, union of 16 random permutations, degree-two cycle, and disconnected matching) under left-favored and fair ties across `q in {128, 256, 512}` at `kappa = lambda = 1` (1,024 trajectories per cell; 24,576 trajectories in total). At `q = 512` with left-favored ties, sample mean normalized omitted internal overflow on the degree-two cycle and disconnected matching reaches 5.83 and 21.38 times the `K_{m,m}` baseline, respectively, aligning with the proved `Theta(q^(3/2))` matching law under weak cross coupling.
 
-Download [mechanism_robustness_v1.zip](paper/fcs/mechanism_robustness_v1.zip) and extract it into a new directory.
-Run `python verify_return.py` there to verify the saved file hashes, integer endpoint identities, cell membership, means, and Monte Carlo standard errors.
-The archive's `REPRODUCE.txt` describes fixed-seed replay on native Linux.
-The LaTeX source package also contains this experiment under `reproducibility/mechanism_robustness_v1/`.
-The simultaneous intervals for 24 means and 36 graph contrasts are supplied in `verification/sensitivity_intervals_v1/` inside that source package.
-The original numerical records and historical failed runs remain at their existing repository paths and commits.
+To inspect or replay this study standalone, download [`mechanism_robustness_v1.zip`](paper/fcs/mechanism_robustness_v1.zip) (also included inside `critical_overflow_reproducibility_bundle.zip`), extract it into a fresh directory, and run `python verify_return.py` to check saved file hashes, integer endpoint identities, cell counts, means, and Monte Carlo standard errors; see its `REPRODUCE.txt` for fixed-seed native Linux replay.
 
 ## Install and quick check
 
-Requirements: native Linux x86-64, Python 3.11+, `g++` with C++17, and a binary long-double format with at least 64 significand bits. The tested Python version is 3.12.14. One pinned numerical dependency is used. No GPU, CMake, or external research workspace is needed.
+Requirements: native Linux x86-64, Python 3.11+ (tested on Python 3.12.14), `g++` with C++17, and binary `long double` with at least 64 significand bits. One pinned numerical dependency (`numpy`) is used; no GPU or CMake is required.
 
 ```sh
 git clone https://github.com/19991111/critical-overflow-reproducibility.git
@@ -45,42 +38,21 @@ python3 -m venv .venv
 .venv/bin/python -B tools/reproduce.py quick --out runs/quick
 ```
 
-Run commands from any working directory using the script's full path if desired. Every output directory must be new. Frozen inputs are verified by size and SHA-256 before use; existing output directories are refused. Only disposable copies inside the requested output are changed.
+Every `--out` target must be a new directory; frozen inputs are verified by byte size and SHA-256 before execution, and only disposable copies inside the requested output directory are written.
 
 ## Recompute existing data
 
-This mode generates no new model trajectories or random words. It rebuilds the three native tools, audits microscopic histograms and terminal configurations, recomputes the original failure-rate table and prospective mean/CDF comparisons, recomputes exact readouts, and regenerates both numerical lookup tables. It checks scientific results against the sealed records while retaining measured runtime fields separately.
+This mode generates no new trajectories or random words. It compiles the native verification tools, audits microscopic histograms and terminal configurations, recomputes the failure-rate table and terminal-law mean/CDF intervals, verifies exact rational readouts, and regenerates both numerical lookup tables against sealed records:
 
 ```sh
 .venv/bin/python -B tools/reproduce.py recompute --out runs/recompute
 ```
 
-Outputs include `PACKAGE_CHECKS.json`, `checks.json`, `stages.json`, stdout/stderr logs, and `analysis/`. `analysis/observed_imbalance_readout.csv` and `analysis/mechanism.json` reconstruct the mechanism comparison from fixed prospective outcomes and the fixed lookup. The core's `analysis/endpoint_comparison.csv` contains aggregated descriptive fields. The paper runner below separately reconstructs the actual per-endpoint schema needed by the authoritative plotting script; it does not use those aggregates as a substitute.
-
-## Rebuild the validated baseline figures and documents
-
-In addition to the core requirements, install XeLaTeX, BibTeX, Poppler tools, and standard LaTeX packages used by the bundled SIAM class, including **algorithms** (`algorithm.sty`). Typical Debian packages are `texlive-xetex`, `texlive-latex-extra`, `texlive-science` and `poppler-utils`. No shell escape is enabled. The original pdfLaTeX compatibility claim fails on the tested engine, so this entry uses the same XeTeX engine family as the original Tectonic build.
-
-On a Debian/Ubuntu system where these optional paper-build dependencies are missing:
-
-```sh
-sudo apt-get install --no-install-recommends texlive-xetex texlive-latex-extra texlive-science poppler-utils
-```
-
-```sh
-.venv/bin/python -m pip install -r requirements-paper.txt
-.venv/bin/python -B tools/build_paper.py --out runs/paper
-```
-
-This starts with an empty output tree, checks the authoritative ZIP and editable sources, reconstructs 25,600 original/prospective endpoint rows from fixed raw data, and regenerates every displayed figure. It checks all five plotted datasets against the authoritative retained datasets and all four tables against rational results, including outward rounding and nonzero failures. The two PDFs are built in alternating multiple passes until cross-document auxiliaries stabilize, then checked for unresolved references/citations, duplicate labels, missing characters, overfull boxes, embedded fonts and successful rendering of every page.
-
-`runs/paper/paper/output/pdf/` holds the PDFs; `runs/paper/render/` holds every rendered page and contact sheets. `DOCUMENT_CHECKS.json`, `PLOT_DATA_CHECKS.json`, `checks.json`, `stages.json` and logs are the new acceptance evidence. The uploaded revision notes referred to a missing `verification/PACKAGE_CHECKS.json`; that absence is recorded, and the new top-level acceptance report is not represented as an original file.
-
-The legacy plotting reader receives small runtime tar containers containing only byte-identical selected members. These are explicitly **not** the complete historical return archives and do not claim their archive hashes. Their members map back through `provenance/FILES.json`; original complete archive hashes remain in `provenance/ARCHIVES.json`. This keeps the repository small while rebuilding from raw outcomes, not copied plot data.
+Outputs include `PACKAGE_CHECKS.json`, `checks.json`, `stages.json`, logs, and `analysis/` (including `analysis/observed_imbalance_readout.csv` and `analysis/mechanism.json`).
 
 ## Replay the fixed stochastic batches
 
-These commands replay all original labels using unchanged sources, fixed compiler flags, lookup bytes and seeds. They do not add independent statistical evidence or choose replacements based on results. The reference replay retains its original microscopic precision gate and deterministic cost gate. All processes use one pinned CPU and one thread. The available CPU ID is recorded; a different machine cannot be described as the original hardware.
+These commands replay all original seed labels on native Linux using unchanged C++ sources, fixed compiler flags (`-fno-fast-math`, plus `-ffp-contract=off` for the terminal-law and reference executables), frozen lookup bytes, and pinned single-thread execution:
 
 ```sh
 .venv/bin/python -B tools/reproduce.py rerun --batch finite --out runs/finite
@@ -88,37 +60,42 @@ These commands replay all original labels using unchanged sources, fixed compile
 .venv/bin/python -B tools/reproduce.py rerun --batch reference --out runs/reference
 ```
 
-The original finite batch uses `-fno-fast-math`; the prospective and reference sources additionally use `-ffp-contract=off`. Sources are preserved byte for byte under `src/`. The runner stores a pre-execution source/binary/seed freeze, compares regenerated raw scientific files by SHA-256, and checks the reference's complete progress labels separately from its machine-dependent CPU timings. Failed runs and partial output remain available. No seeds are generated, extended, screened, or replaced.
-
-## Recompute the certificate matrices
+## Recompute the rational certificate matrices
 
 ```sh
 .venv/bin/python -B tools/reproduce.py certificates --out runs/certificates
 ```
 
-This replays the frozen forward stage sequence and independent 64-bit backward calculation in separate disposable directories. It compares all four retained forward matrices, stage rational bounds, threshold failures, and the backward rational summary. The archived input freezes are not edited to accept new runtime metadata. The earlier failed profile certificate and both initial failed acceptance stages remain in the fixed evidence. This command reuses the saved profile trajectory and residual enclosure; it does not rerun the ODE solver or establish the mathematical arguments that justify the certificate.
-
-For the complete core reproduction, including data recomputation, all three stochastic replays, and matrix propagation:
+This replays the four forward directed-rounding matrix stages and the independent 64-bit backward propagation from the saved candidate trajectory and residual enclosure, checking exact rational bounds (`E < 9.034e-6`, `D_* = E + e < 9.038e-6`, and `s_* = S_0(0) in [0.63127654, 0.63129462]`). To run the complete core suite in one command:
 
 ```sh
 .venv/bin/python -B tools/reproduce.py all --out runs/full
 ```
 
-For the entire release, run the `all` command above followed by `build_paper.py` in two new output directories. Measured results, command exits, runtime, memory high-water marks and retained failed setup attempts are recorded in [evidence/VALIDATION.md](evidence/VALIDATION.md). The paper build follows the supplied cross-document pass dependency with native XeLaTeX and BibTeX; it retains the original class, source and bibliography.
+Execution records and resource measurements are documented in [`evidence/VALIDATION.md`](evidence/VALIDATION.md).
 
-## Conditions and limits
+## Rebuild the preserved baseline document intake
 
-- Ideal within-stream and across-label iid input words are mathematical assumptions. The fixed counter-based PRNG is a reproducible implementation, not a proof of iid randomness. Shared drivers across cells are intentional.
-- The old post-hoc joint 95% mean/CDF statement was withdrawn. [provenance/history/STATUS_CORRECTED.json](provenance/history/STATUS_CORRECTED.json) and the correction commit remain traceable. Replaying numbers does not restore that statement. The prospective family and its unchanged conditions are kept separately.
-- The v2 manuscript uses `D_* < 9.038e-6` for the uniform profile error and `9.034e-6` for the fourth-stage W1 certificate bound. They are distinct quantities, checked separately against the retained rational values.
-- Only the terminal-law comparison tests an unconditional diffusion prediction. The mechanism MAE comparison conditions both predictions on observed imbalance, carries no confidence claim, and does not compare against published allocation algorithms.
-- Fixed-kernel comparison `O(q^(-1/6) log²q)` is not a practical uniform error bound for the whole limit. Load-adaptive kernels are excluded. Qualitative attraction does not supply an effective finite-scale convergence rate.
-- The historical SDE executable has no retained dynamic floating-point register snapshot. New runs cannot retroactively supply one. Platform arithmetic contracts and this limitation remain explicit.
+To rebuild the preserved baseline manuscript intake under `paper/` on Debian/Ubuntu Linux:
 
-## Layout, provenance, contribution
+```sh
+sudo apt-get install --no-install-recommends texlive-xetex texlive-latex-extra texlive-science poppler-utils
+.venv/bin/python -m pip install -r requirements-paper.txt
+.venv/bin/python -B tools/build_paper.py --out runs/paper
+```
 
-`paper/fcs/` holds the archived FCS delivery; the other files under `paper/` retain the validated baseline; `src/` holds selected original numerical code; `configs/` holds original plans and labels; `data/` holds selected raw observations, configurations, lookup inputs and sealed comparisons, compressing large files losslessly; `tools/` contains orchestration and exact upstream figure scripts. `provenance/FILES.json` maps every selected frozen numerical file to its fixed commit, archive/member, uncompressed checksum and stored checksum. `provenance/ARCHIVES.json` records original archive checksums; `provenance/manuscript/` records the authoritative paper intake. Historical documents are retained as sources, not current paper entrypoints.
+## Methodological scope and assumptions
 
-For a contribution, describe the change, use a new output directory, retain the fixed seed lists, and attach the relevant `PACKAGE_CHECKS.json` and logs. An additional experiment needs its own source/configuration freeze and clearly stated scope. Do not overwrite sealed data or infer proof correctness from code tests.
+- Within-stream and across-label iid uniform random words are mathematical model assumptions; the counter-based SplitMix64 generator provides deterministic stream reproducibility, and shared seed labels across configurations are accounted for by union bounds.
+- Uniform profile error `D_* < 9.038e-6` and fourth-stage `W_1` certificate bound `E < 9.034e-6` are distinct certified quantities verified against exact rational values in `data/certificate/CERTIFIED_READOUTS.json`.
+- Unconditional diffusion validation uses independent microscopic and SDE streams, whereas the conditioned readout MAE diagnostic evaluates both `|Delta|/2` and `S_0(Delta/q)` at realized microscopic imbalances without a simultaneous confidence claim.
+- Cross-kernel universality (`O(q^(-1/6) log^2 q)` coupling bound over `Theta(q^(5/3))`-step windows) applies to predetermined doubly stochastic cross kernels under `K_{m,m}` internal sampling; load-adaptive cross routing is excluded.
+- Historical arithmetic and statistical correction records (including [`provenance/history/ARITHMETIC_SUPPLEMENT.v2.en.txt`](provenance/history/ARITHMETIC_SUPPLEMENT.v2.en.txt) and [`provenance/history/STATUS_CORRECTED.json`](provenance/history/STATUS_CORRECTED.json)) remain preserved verbatim for provenance auditability.
 
-License: **pending author decision**. No third-party open-source license has been selected or granted by this repository setup.
+## Repository layout, historical provenance, and access
+
+- `src/`, `configs/`, `data/`, `tools/`: frozen C++17 / Python sources, protocols, seed lists, compressed raw observations, lookup tables, and reproduction runners.
+- `provenance/`: file-level SHA-256 map (`FILES.json`), original archive digests (`ARCHIVES.json`), baseline paper map (`PAPER_MAP.json`), and historical audit notes (`provenance/history/`).
+- Historical snapshots (`source_inputs/`, `paper/`, `paper/fcs/`, and earlier release tag `peva-data-20261023`) are retained unchanged at their original paths and SHA-256 checksums so that all historical commits and provenance references remain verifiable; see [`docs/PAPER_MAP.md`](docs/PAPER_MAP.md) for the preserved baseline intake map.
+
+Copyright and access: All rights reserved by the authors. Public read, download, and execution access is provided for peer review, scientific verification, and academic reproduction.
